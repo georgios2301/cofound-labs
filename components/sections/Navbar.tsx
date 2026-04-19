@@ -33,10 +33,11 @@ export default function Navbar() {
           <Image
             src="/logo-full.png"
             alt="Cofound Labs"
-            width={320}
-            height={80}
-            className="h-16 w-auto scale-125 origin-left"
+            width={200}
+            height={50}
+            className="h-12 w-auto"
             priority
+            unoptimized
           />
         </Link>
 

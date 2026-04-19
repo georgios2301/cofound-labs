@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -8,16 +10,11 @@ export const metadata: Metadata = {
 
 export default function Datenschutz() {
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen bg-[#FAFAFA] py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="text-indigo-600 text-sm font-medium hover:text-indigo-700 mb-8 inline-block"
-        >
-          ← Zurück zur Startseite
-        </Link>
-
-        <h1 className="text-4xl font-bold text-[#0F172A] mb-10">
+<h1 className="text-4xl font-bold text-[#0F172A] mb-10">
           Datenschutzerklärung
         </h1>
 
@@ -170,5 +167,7 @@ export default function Datenschutz() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

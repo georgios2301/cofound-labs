@@ -40,10 +40,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/logo.png",
-  },
 };
 
 export default function RootLayout({
