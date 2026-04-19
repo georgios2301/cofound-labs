@@ -29,18 +29,15 @@ export default function Navbar() {
         aria-label="Hauptnavigation"
       >
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-bold text-xl text-[#0F172A] tracking-tight hover:text-indigo-600 transition-colors"
-        >
+        <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
-            alt="Cofound Labs Logo"
-            width={32}
-            height={32}
-            className="rounded-lg"
+            src="/logo-full.png"
+            alt="Cofound Labs"
+            width={160}
+            height={40}
+            className="h-8 w-auto"
+            priority
           />
-          {SITE_NAME}
         </Link>
 
         {/* Desktop links */}
