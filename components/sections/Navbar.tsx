@@ -25,7 +25,7 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20"
         aria-label="Hauptnavigation"
       >
         {/* Logo */}
@@ -33,9 +33,9 @@ export default function Navbar() {
           <Image
             src="/logo-full.png"
             alt="Cofound Labs"
-            width={220}
-            height={56}
-            className="h-10 w-auto"
+            width={320}
+            height={80}
+            className="h-16 w-auto scale-125 origin-left"
             priority
           />
         </Link>
