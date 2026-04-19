@@ -49,12 +49,12 @@ export default function Team() {
               Georgios Apostolidis
             </h3>
             <p className="text-slate-600 leading-relaxed text-lg max-w-xl">
-              Hi, ich bin Georgios. Ich habe mir das Entwickeln selbst
-              beigebracht – von Grund auf, Schritt für Schritt. Heute baue ich
-              individuelle Softwarelösungen für Unternehmen, mit denen sie
-              nachweislich Zeit und Geld sparen. Cofound Labs ist der nächste
-              Schritt: Gründern und Teams den technischen Partner geben, den
-              sie brauchen – ohne Umwege.
+              Individuelle Software, die nachweislich Zeit und Geld spart. Als
+              Lead Developer mit absoluter Hands-on-Mentalität entwickle ich
+              Lösungen, die in der Praxis wirklich funktionieren. Meine Mission
+              mit Cofound Labs: Gründern und Teams als starker technischer
+              Partner zur Seite zu stehen, damit Visionen ohne Umwege Realität
+              werden.
             </p>
 
             <div className="mt-6 flex items-center justify-center sm:justify-start gap-4">
