@@ -28,6 +28,71 @@ body {
   color: var(--foreground);
 }
 
+/* Cookie Banner */
+#cookies-eu-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #0F172A;
+  color: #F1F5F9;
+  border: 1px solid #4F46E5;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 42rem;
+  width: calc(100% - 2rem);
+  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.2);
+  font-size: 0.875rem;
+}
+
+#cookies-eu-banner p {
+  margin: 0;
+  flex: 1;
+}
+
+#cookies-eu-more {
+  color: #818CF8;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.cookies-eu-banner-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+#cookies-eu-reject,
+#cookies-eu-accept {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+}
+
+#cookies-eu-reject:hover,
+#cookies-eu-accept:hover {
+  opacity: 0.85;
+}
+
+#cookies-eu-reject {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #94A3B8;
+}
+
+#cookies-eu-accept {
+  background: #4F46E5;
+  color: #fff;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

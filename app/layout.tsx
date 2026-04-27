@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
+import CookieBanner from "@/components/ui/CookieBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -54,6 +55,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#FAFAFA] text-[#0F172A]">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
