@@ -22,6 +22,21 @@ function clearConsent() {
   document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/`;
 }
 
+// Hier Analytics initialisieren sobald Consent erteilt wurde.
+// Solange diese Funktion nicht aufgerufen wird, lädt kein externes Script
+// und es werden keine Tracking-Cookies gesetzt.
+function initAnalytics() {
+  // Beispiel Google Analytics — auskommentiert bis du einen Tag hast:
+  // const script = document.createElement("script");
+  // script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+  // script.async = true;
+  // document.head.appendChild(script);
+  // window.dataLayer = window.dataLayer || [];
+  // function gtag(...args: unknown[]) { window.dataLayer.push(args); }
+  // gtag("js", new Date());
+  // gtag("config", "G-XXXXXXXXXX");
+}
+
 export function CookieSettingsButton({ className }: { className?: string }) {
   return (
     <button
@@ -40,7 +55,13 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (getConsent() === null) setVisible(true);
+    const consent = getConsent();
+
+    // Bereits akzeptiert (z.B. Folgebesuch) → Analytics sofort starten
+    if (consent === true) initAnalytics();
+
+    // Noch keine Entscheidung → Banner zeigen
+    if (consent === null) setVisible(true);
 
     const handler = () => setVisible(true);
     window.addEventListener("cookie-reset", handler);
@@ -50,11 +71,13 @@ export default function CookieBanner() {
   function accept() {
     setConsent(true);
     setVisible(false);
+    initAnalytics(); // Erst jetzt wird das Script geladen
   }
 
   function reject() {
     setConsent(false);
     setVisible(false);
+    // initAnalytics() wird NICHT aufgerufen → kein Script, keine Cookies
   }
 
   function openSettings() {
