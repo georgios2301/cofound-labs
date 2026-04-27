@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import { CookieSettingsButton } from "@/components/ui/CookieBanner";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -102,8 +103,9 @@ export default function Datenschutz() {
               7. Cookies
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              Diese Website verwendet keine Tracking-Cookies und setzt keine Analyse- oder Werbe-Cookies ein. Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, können ohne gesonderte Einwilligung gesetzt werden (Art. 6 Abs. 1 lit. f DSGVO).
+              Diese Website verwendet ein Cookie-Consent-Banner, das Ihre Einwilligung zur Nutzung von Cookies abfragt. Ihre Entscheidung wird in einem Cookie (<code className="bg-slate-100 px-1 rounded text-xs">hasConsented</code>) gespeichert. Rechtsgrundlage für die Verarbeitung nach Einwilligung ist Art. 6 Abs. 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit widerrufen:
             </p>
+            <CookieSettingsButton className="mt-3 text-sm text-indigo-600 hover:underline cursor-pointer bg-transparent border-none p-0" />
           </section>
 
           {/* 8 */}

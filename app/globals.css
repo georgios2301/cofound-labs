@@ -93,6 +93,30 @@ body {
   color: #fff;
 }
 
+.cookie-settings-fab {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 9998;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #0F172A;
+  border: 1px solid #4F46E5;
+  color: #818CF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: background 0.15s, color 0.15s;
+}
+
+.cookie-settings-fab:hover {
+  background: #4F46E5;
+  color: #fff;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
