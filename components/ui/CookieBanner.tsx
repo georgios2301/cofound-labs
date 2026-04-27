@@ -11,7 +11,8 @@ declare global {
 
 function resetCookieConsent() {
   document.cookie = "hasConsented=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  window.location.reload();
+  const banner = document.getElementById("cookies-eu-banner");
+  if (banner) banner.style.display = "flex";
 }
 
 export function CookieSettingsButton({ className }: { className?: string }) {
