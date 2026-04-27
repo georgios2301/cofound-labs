@@ -1,59 +1,86 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Cookie } from "lucide-react";
 
-declare global {
-  interface Window {
-    CookiesEuBanner: new (callback: () => void, waitAccept?: boolean) => void;
-  }
+const COOKIE_NAME = "hasConsent";
+const COOKIE_TTL = 33696000000; // 13 Monate
+
+function getConsent(): boolean | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(/(?:^|;\s*)hasConsent=(true|false)/);
+  if (!match) return null;
+  return match[1] === "true";
 }
 
-function resetCookieConsent() {
-  document.cookie = "hasConsented=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  const banner = document.getElementById("cookies-eu-banner");
-  if (banner) banner.style.display = "flex";
+function setConsent(value: boolean) {
+  const expires = new Date(Date.now() + COOKIE_TTL).toUTCString();
+  document.cookie = `${COOKIE_NAME}=${value}; expires=${expires}; path=/`;
+}
+
+function clearConsent() {
+  document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/`;
 }
 
 export function CookieSettingsButton({ className }: { className?: string }) {
   return (
-    <button onClick={resetCookieConsent} className={className}>
+    <button
+      onClick={() => {
+        clearConsent();
+        window.dispatchEvent(new Event("cookie-reset"));
+      }}
+      className={className}
+    >
       Cookie-Einstellungen ändern
     </button>
   );
 }
 
 export default function CookieBanner() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/cookies-eu-banner.min.js";
-    script.onload = () => {
-      new window.CookiesEuBanner(() => {}, true);
-    };
-    document.body.appendChild(script);
+  const [visible, setVisible] = useState(false);
 
-    return () => {
-      document.body.removeChild(script);
-    };
+  useEffect(() => {
+    if (getConsent() === null) setVisible(true);
+
+    const handler = () => setVisible(true);
+    window.addEventListener("cookie-reset", handler);
+    return () => window.removeEventListener("cookie-reset", handler);
   }, []);
+
+  function accept() {
+    setConsent(true);
+    setVisible(false);
+  }
+
+  function reject() {
+    setConsent(false);
+    setVisible(false);
+  }
+
+  function openSettings() {
+    clearConsent();
+    setVisible(true);
+  }
 
   return (
     <>
-      <div id="cookies-eu-banner" style={{ display: "none" }}>
-        <p>
-          Wir nutzen Cookies, um diese Website zu verbessern.{" "}
-          <a href="/datenschutz" id="cookies-eu-more">
-            Mehr erfahren
-          </a>
-        </p>
-        <div className="cookies-eu-banner-buttons">
-          <button id="cookies-eu-reject">Ablehnen</button>
-          <button id="cookies-eu-accept">Akzeptieren</button>
+      {visible && (
+        <div id="cookies-eu-banner">
+          <p>
+            Wir nutzen Cookies, um diese Website zu verbessern.{" "}
+            <a href="/datenschutz" id="cookies-eu-more">
+              Mehr erfahren
+            </a>
+          </p>
+          <div className="cookies-eu-banner-buttons">
+            <button id="cookies-eu-reject" onClick={reject}>Ablehnen</button>
+            <button id="cookies-eu-accept" onClick={accept}>Akzeptieren</button>
+          </div>
         </div>
-      </div>
+      )}
 
       <button
-        onClick={resetCookieConsent}
+        onClick={openSettings}
         className="cookie-settings-fab"
         aria-label="Cookie-Einstellungen ändern"
         title="Cookie-Einstellungen ändern"
