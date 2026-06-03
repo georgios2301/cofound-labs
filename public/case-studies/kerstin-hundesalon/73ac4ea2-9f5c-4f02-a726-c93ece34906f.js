@@ -13,7 +13,7 @@
 
   var SIZES = {
     klein:  { name: 'Kleiner Hund',  scale: 's', hours: 1, last: 17 },
-    mittel: { name: 'Mittlerer Hund', scale: 'm', hours: 2, last: 16 },
+    mittel: { name: 'Mittelgroßer Hund', scale: 'm', hours: 2, last: 16 },
     gross:  { name: 'Großer Hund',   scale: 'l', hours: 3, last: 15 }
   };
   function dogIcon(scale) { return '<i class="isvg" data-icon="dog" data-scale="' + scale + '"></i> '; }
