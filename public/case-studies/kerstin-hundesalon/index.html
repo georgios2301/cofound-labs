@@ -781,7 +781,7 @@ h1, h2, h3, .display { font-family: 'Baloo 2', sans-serif; line-height: 1.05; le
   border: 1.5px solid var(--line-2); border-radius: 10px; padding: 11px 6px; text-align: center;
   font-weight: 700; font-size: 14px; cursor: pointer; background: #fff; transition: .13s; color: var(--ink);
 }
-.slot:hover:not(:disabled) { border-color: var(--terra); color: var(--terra); }
+.slot:hover:not(:disabled):not(.active) { border-color: var(--terra); color: var(--terra); }
 .slot.active { background: var(--terra); color: #fff; border-color: var(--terra); }
 .slot:disabled { opacity: .4; cursor: not-allowed; text-decoration: line-through; }
 .slot small { display: block; font-weight: 600; font-size: 11px; opacity: .7; }
@@ -985,7 +985,7 @@ h1, h2, h3, .display { font-family: 'Baloo 2', sans-serif; line-height: 1.05; le
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="wrap inner">
-    <a href="#top" class="brand" aria-label="Kerstins Hundesalon — Startseite">
+    <a href="/case-studies/kerstin-hundesalon" class="brand" aria-label="Kerstins Hundesalon — Startseite">
       <img class="brand-logo" src="/case-studies/kerstin-hundesalon/573794ec-a493-4f9e-8c09-de8955793dd1.png" alt="Kerstins Hundesalon Logo">
     </a>
     <nav class="nav-links" id="navLinks">
