@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#fff6fb"></rect>
+    <circle cx="600" cy="330" r="180" fill="#e6207a"></circle>
+    <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M510 300c-30-14-58 4-58 40 0 34 12 68 38 88"></path>
+      <path d="M690 300c30-14 58 4 58 40 0 34-12 68-38 88"></path>
+      <path d="M488 386c0-66 52-112 112-112s112 46 112 112c0 48-22 82-48 102-22 17-28 37-82 37s-60-20-82-37c-26-20-48-54-48-102z"></path>
+      <circle cx="560" cy="386" r="10" fill="#fff" stroke="none"></circle>
+      <circle cx="640" cy="386" r="10" fill="#fff" stroke="none"></circle>
+      <circle cx="600" cy="430" r="12" fill="#fff" stroke="none"></circle>
+    </g>
+    <text x="600" y="600" font-family="'Baloo 2','Nunito',-apple-system,BlinkMacSystemFont,sans-serif" font-size="72" font-weight="800" fill="#252746" text-anchor="middle">Kerstins Hundesalon</text>
+    <text x="600" y="665" font-family="'Nunito',-apple-system,BlinkMacSystemFont,sans-serif" font-size="34" fill="#6b6d86" text-anchor="middle">Wuppertal · Varresbeck</text>
+  </svg>
