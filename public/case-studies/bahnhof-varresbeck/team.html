@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Team — Bahnhof Varresbeck</title>
+<meta name="description" content="Mitarbeiter-Tool: Status „heute geöffnet/geschlossen“ umschalten.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1a5d4a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BV Team">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="team-icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bitter:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+  body{background:var(--paper);min-height:100svh}
+  .app{min-height:100svh;display:flex;flex-direction:column}
+  .appbar{background:var(--green-dark);color:var(--on-green);display:flex;align-items:center;gap:12px;
+    padding:calc(14px + env(safe-area-inset-top)) 18px 14px;position:sticky;top:0;z-index:10}
+  .appbar img{height:32px;width:auto;filter:brightness(0) invert(1)}
+  .appbar .ttl{font-family:var(--font-head);font-weight:700;font-size:17px;color:#fff}
+  .appbar .tag{margin-left:auto;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(246,239,223,.14);padding:5px 11px;border-radius:var(--r-full)}
+  .team-main{flex:1;width:100%;max-width:520px;margin:0 auto;padding:24px 18px calc(30px + env(safe-area-inset-bottom))}
+
+  .status-card{border-radius:var(--r-2xl);padding:36px 26px;text-align:center;box-shadow:var(--sh-md);
+    border:1px solid var(--line);background:var(--cream);transition:background .25s var(--ease),border-color .25s var(--ease)}
+  .status-card .ic{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px}
+  .status-card .ic svg{width:42px;height:42px;stroke-width:2.2;fill:none}
+  .status-card .lbl{font-family:var(--font-head);font-weight:800;font-size:31px;line-height:1.1}
+  .status-card .sub{font-size:14.5px;color:var(--ink-soft);margin-top:11px;line-height:1.55}
+  .status-card.is-open .ic{background:var(--green-tint)} .status-card.is-open .ic svg{stroke:var(--green-dark)} .status-card.is-open .lbl{color:var(--green-dark)}
+  .status-card.is-closed{background:#fdeccb;border-color:#f1d49a} .status-card.is-closed .ic{background:#f6d292} .status-card.is-closed .ic svg{stroke:var(--amber-deep)} .status-card.is-closed .lbl{color:var(--amber-deep)}
+  .status-card.is-loading .ic{background:var(--line)} .status-card.is-loading .ic svg{stroke:var(--ink-mute)} .status-card.is-loading .lbl{color:var(--ink-mute);font-size:21px}
+
+  .toggle-btn{width:100%;min-height:66px;margin-top:22px;border:none;border-radius:var(--r-xl);cursor:pointer;color:#fff;
+    font-family:var(--font-body);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:var(--sh-sm);transition:transform .12s var(--ease),background .2s var(--ease)}
+  .toggle-btn:active{transform:scale(.99)}
+  .toggle-btn:disabled{opacity:.6;cursor:default}
+  .toggle-btn.to-close{background:var(--amber-deep)} .toggle-btn.to-close:active{background:#a25c0b}
+  .toggle-btn.to-open{background:var(--green)} .toggle-btn.to-open:active{background:var(--green-dark)}
+
+  .linkbtn{width:100%;margin-top:16px;background:transparent;border:2px solid var(--line-strong);color:var(--ink);
+    border-radius:var(--r-xl);padding:14px;font-family:var(--font-body);font-weight:600;font-size:15px;cursor:pointer}
+  .linkbtn:active{border-color:var(--green);color:var(--green)}
+
+  .pin-box{margin-top:18px;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
+  .pin-box label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:10px}
+  .pin-row{display:flex;gap:10px}
+  .pin-row input{flex:1;min-width:0;font-family:var(--font-mono);font-size:22px;letter-spacing:.25em;text-align:center;
+    border:2px solid var(--line-strong);border-radius:var(--r-md);padding:12px 10px;background:#fff;color:var(--ink)}
+  .pin-row input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(26,93,74,.13)}
+  .pin-row button{flex:none;background:var(--green);color:#fff;border:none;border-radius:var(--r-md);padding:0 20px;font-weight:700;font-size:16px;cursor:pointer}
+  .pin-cancel{margin-top:12px;background:none;border:none;color:var(--ink-mute);font-size:13.5px;cursor:pointer;text-decoration:underline}
+
+  .banner{margin-top:16px;border-radius:var(--r-lg);padding:13px 16px;font-size:14px;font-weight:600;text-align:center;line-height:1.45}
+  .banner.err{background:#fde2e2;color:#b42318;border:1px solid #f3c0c0}
+  .banner.warn{background:#fdeccb;color:var(--amber-deep);border:1px solid #f1d49a}
+  .banner.ok{background:var(--green-tint);color:var(--green-dark);border:1px solid #cfe2d6}
+
+  .hint{margin-top:18px;font-size:12.5px;color:var(--ink-mute);text-align:center;line-height:1.55}
+  .team-foot{margin-top:14px;text-align:center;font-size:13px}
+  .team-foot a{color:var(--green-dark);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="appbar">
+    <img src="https://bahnhof-varresbeck.de/wp-content/uploads/BV-logo_500px-e1771936444838.png" alt="">
+    <span class="ttl">Bahnhof Varresbeck</span>
+    <span class="tag">Team</span>
+  </header>
+
+  <main class="team-main">
+    <div class="status-card is-loading" id="card">
+      <div class="ic" id="cardIcon"></div>
+      <div class="lbl" id="cardLabel">Status wird geladen …</div>
+      <div class="sub" id="cardSub"></div>
+    </div>
+
+    <button class="toggle-btn to-close" id="toggleBtn" hidden>Heute schließen</button>
+    <button class="linkbtn" id="retryBtn" hidden>Erneut laden</button>
+
+    <div class="pin-box" id="pinBox" hidden>
+      <label for="pinInput">PIN eingeben, um den Status zu ändern</label>
+      <div class="pin-row">
+        <input id="pinInput" type="password" inputmode="numeric" autocomplete="one-time-code" placeholder="••••">
+        <button id="pinConfirm" type="button">OK</button>
+      </div>
+      <button class="pin-cancel" id="pinCancel" type="button">Abbrechen</button>
+    </div>
+
+    <div class="banner" id="banner" hidden></div>
+
+    <p class="hint">Die Änderung gilt für <b>heute</b> und wird über Nacht automatisch wieder auf die normalen Öffnungszeiten zurückgesetzt.</p>
+    <p class="team-foot"><a href="index.html">← Zur Website</a></p>
+  </main>
+</div>
+
+<script>
+const API='/api/biergarten-status';
+const PIN_KEY='bv_pin';
+let current=null, attempted=false, busy=false;
+const $=function(id){return document.getElementById(id)};
+const ICON_OPEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+const ICON_CLOSED='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="8" y1="12" x2="16" y2="12"/></svg>';
+const ICON_WAIT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+
+function getPin(){try{return localStorage.getItem(PIN_KEY)||''}catch(e){return ''}}
+function setPin(p){try{localStorage.setItem(PIN_KEY,p)}catch(e){}}
+function clearPin(){try{localStorage.removeItem(PIN_KEY)}catch(e){}}
+function banner(msg,type){const b=$('banner');if(!msg){b.hidden=true;return}b.hidden=false;b.className='banner '+(type||'err');b.textContent=msg}
+
+function render(){
+  const card=$('card'),btn=$('toggleBtn');
+  if(current===null){
+    card.className='status-card is-loading';
+    $('cardIcon').innerHTML=ICON_WAIT;
+    $('cardLabel').textContent=attempted?'Status nicht geladen':'Status wird geladen …';
+    $('cardSub').textContent=attempted?'Bitte Internetverbindung prüfen.':'';
+    btn.hidden=true; $('retryBtn').hidden=!attempted; return;
+  }
+  $('retryBtn').hidden=true; btn.hidden=false;
+  if(current==='closed'){
+    card.className='status-card is-closed'; $('cardIcon').innerHTML=ICON_CLOSED;
+    $('cardLabel').textContent='Heute geschlossen';
+    $('cardSub').textContent='Gäste sehen auf der Website: geschlossen.';
+    btn.className='toggle-btn to-open'; btn.textContent='Wieder öffnen';
+  }else{
+    card.className='status-card is-open'; $('cardIcon').innerHTML=ICON_OPEN;
+    $('cardLabel').textContent='Regulär geöffnet';
+    $('cardSub').textContent='Nach Öffnungszeiten — Mo–Fr ab 12, Sa/So ab 11 Uhr.';
+    btn.className='toggle-btn to-close'; btn.textContent='Heute schließen';
+  }
+}
+function targetState(){return current==='closed'?'auto':'closed'}
+function showPin(s){$('pinBox').hidden=!s; if(s){setTimeout(function(){$('pinInput').focus()},50)}}
+
+async function load(){
+  try{
+    const r=await fetch(API,{cache:'no-store',signal:AbortSignal.timeout(6000)});
+    if(r.ok){const d=await r.json(); current=d.state==='closed'?'closed':'auto'; banner('')}
+  }catch(e){ banner('Keine Verbindung — Status evtl. nicht aktuell.','warn') }
+  finally{ attempted=true; render() }
+}
+
+async function post(target,pin){
+  if(busy)return; busy=true; const btn=$('toggleBtn'); btn.disabled=true; btn.textContent='Speichern …';
+  try{
+    const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({state:target,pin:pin}),cache:'no-store',signal:AbortSignal.timeout(8000)});
+    if(r.status===401){ clearPin(); $('pinInput').value=''; banner('Falsche PIN — bitte erneut eingeben.','err'); showPin(true); return }
+    if(!r.ok){ banner('Konnte nicht speichern (Fehler '+r.status+'). Bitte erneut versuchen.','err'); return }
+    const d=await r.json(); setPin(pin); current=d.state==='closed'?'closed':'auto'; showPin(false);
+    banner(current==='closed'?'Gespeichert — heute geschlossen.':'Gespeichert — wieder geöffnet.','ok');
+    if(d.persisted===false){ banner('Hinweis: Kein Speicher konfiguriert — Änderung ist nicht dauerhaft. Bitte Vercel-KV einrichten.','warn') }
+  }catch(e){ banner('Keine Verbindung — Status nicht geändert.','err') }
+  finally{ busy=false; btn.disabled=false; render() }
+}
+
+function onToggle(){ const p=getPin(); if(!p){ showPin(true); return } post(targetState(),p) }
+
+$('toggleBtn').onclick=onToggle;
+$('retryBtn').onclick=function(){ attempted=false; render(); load() };
+$('pinConfirm').onclick=function(){ const p=$('pinInput').value.trim(); if(p.length) post(targetState(),p) };
+$('pinCancel').onclick=function(){ showPin(false); $('pinInput').value='' };
+$('pinInput').addEventListener('keydown',function(e){ if(e.key==='Enter') $('pinConfirm').click() });
+addEventListener('online',function(){ banner(''); load() });
+addEventListener('offline',function(){ banner('Offline — Änderungen erst wieder online möglich.','warn') });
+
+// Bewusst kein Service Worker: hielte sonst die ganze /bahnhof-varresbeck/-Ebene
+// (inkl. öffentlicher Seite) im Scope. Das Tool braucht ohnehin eine Verbindung,
+// um den Status zu ändern; Installierbarkeit kommt über das Web-App-Manifest.
+
+load(); setInterval(load,60000);
+</script>
+</body>
+</html>

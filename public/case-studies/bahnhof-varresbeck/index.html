@@ -865,6 +865,7 @@ mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('show'));
 // ===== OPEN / CLOSED LOGIC =====
 // Owner can flip this when closed for weather:
 const WETTER_GESCHLOSSEN=false;
+let SERVER_OVERRIDE=null; // null|'auto'|'closed' — vom Team-Tool (PWA) per API gesetzt
 function openingFor(day){ // 0=Sun..6=Sat ; returns {from} in hours
   if(day===0||day===6) return 11;     // Sa/So ab 11
   return 12;                          // Mo-Fr ab 12
@@ -874,18 +875,18 @@ function computeStatus(){
   const day=now.getDay(), h=now.getHours()+now.getMinutes()/60;
   const from=openingFor(day);
   const CLOSE=22; // heuristisches Ende (wetterabhängig)
-  let open = !WETTER_GESCHLOSSEN && h>=from && h<CLOSE;
+  const forcedClosed = WETTER_GESCHLOSSEN || SERVER_OVERRIDE==='closed';
+  let open = !forcedClosed && h>=from && h<CLOSE;
   let next;
   if(!open){
-    if(!WETTER_GESCHLOSSEN && h<from){ next='heute ab '+String(from).padStart(2,'0')+':00'; }
-    else { // find next day
+    if(!forcedClosed && h<from){ next='heute ab '+String(from).padStart(2,'0')+':00'; }
+    else { // nächster Tag
       const nd=(day+1)%7; const nf=openingFor(nd);
       const names=['So','Mo','Di','Mi','Do','Fr','Sa'];
-      next=(nd===((new Date()).getDay()+1)%7?'morgen':names[nd])+' ab '+String(nf).padStart(2,'0')+':00';
       next=names[nd]+' ab '+String(nf).padStart(2,'0')+':00';
     }
   }
-  return {open,from,next,weather:WETTER_GESCHLOSSEN};
+  return {open,from,next,closed:forcedClosed};
 }
 function paintStatus(){
   const s=computeStatus();
@@ -898,12 +899,20 @@ function paintStatus(){
   if(b){b.className='board '+(s.open?'open-now':'closed-now');
     b.querySelector('.stat .t').textContent=s.open?'Jetzt geöffnet':'Aktuell geschlossen';
     const sub=b.querySelector('.sub');
-    if(s.weather){sub.innerHTML='Wir bleiben heute <b>wetterbedingt geschlossen.</b>';}
+    if(s.closed){sub.innerHTML='Heute geschlossen. <b>Wieder geöffnet: '+s.next+'</b>';}
     else if(s.open){sub.innerHTML='Kommen Sie vorbei — wir freuen uns auf Sie. <b>Schluss je nach Wetter &amp; Lage.</b>';}
     else{sub.innerHTML='Wieder geöffnet: <b>'+s.next+'</b>';}
   }
 }
-paintStatus(); setInterval(paintStatus,60000);
+// Status vom Server holen (Team-Tool-Override); bei Fehler/Offline still auf Uhrzeit-Logik zurückfallen.
+async function refreshStatus(){
+  try{
+    const r=await fetch('/api/biergarten-status',{cache:'no-store',signal:AbortSignal.timeout(4000)});
+    if(r.ok){const d=await r.json(); if(d&&(d.state==='auto'||d.state==='closed')) SERVER_OVERRIDE=d.state;}
+  }catch(e){ /* offline/Fehler -> SERVER_OVERRIDE unverändert, Uhrzeit-Logik greift */ }
+  finally{ paintStatus(); }
+}
+refreshStatus(); setInterval(refreshStatus,60000);
 
 // reveal on scroll (progressive enhancement)
 let ioFired=false;
