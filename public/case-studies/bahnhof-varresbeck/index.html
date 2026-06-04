@@ -716,12 +716,12 @@ html.reveal-ready .reveal.in{opacity:1;transform:none}
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox"><button class="x" id="lbClose" aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button><img id="lbImg" src="" alt=""></div>
 
-<script src="events-data.js"></script>
+<script src="/case-studies/bahnhof-varresbeck/events-data.js"></script>
 <script>
 // ===== EVENTS (gemeinsame Datenquelle: events-data.js) =====
 const EVENTS=window.BV_EVENTS||[];
 document.getElementById('eventList').innerHTML=EVENTS.map(e=>`
- <a class="ev" href="Event.html?e=${e.slug}">
+ <a class="ev" href="/case-studies/bahnhof-varresbeck/Event.html?e=${e.slug}">
    <div class="date"><div class="wd">${e.wd}</div><div class="day">${e.d}</div><div class="mo">${e.m}</div></div>
    <div class="body"><h3>${e.title}</h3>
      <div class="meta"><span class="tag">${e.tag}</span><span class="tm">${e.t} Uhr</span></div>
@@ -831,7 +831,7 @@ tick();setInterval(tick,30000);
     </div>
     <div class="foot-bottom">
       <span>© 2026 — Biergarten Bahnhof-Varresbeck</span>
-      <span class="legal"><a href="Impressum.html">Impressum</a><a href="Datenschutz.html">Datenschutz</a></span>
+      <span class="legal"><a href="/case-studies/bahnhof-varresbeck/Impressum.html">Impressum</a><a href="/case-studies/bahnhof-varresbeck/Datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>
