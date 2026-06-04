@@ -119,7 +119,7 @@ window.BV_GETRAENKEKARTE = {
     // Longdrinks & Schnaps
     { cat: "longdrinks", name: "Aperol Spritz", price: "7,90" },
     { cat: "longdrinks", name: "Lillet Wild Berry", price: "7,90" },
-    { cat: "longdrinks", name: "Déjà-Vu Wild Berry", desc: "alkoholfreie Alternative", frei: true },
+    { cat: "longdrinks", name: "Déjà-Vu Wild Berry", desc: "alkoholfreie Alternative", price: "7,90", frei: true },
     { cat: "longdrinks", group: "Hauseigener Schnaps", name: "Korn / Kristall", variants: [{ l: "2 cl", p: "3,50" }] },
     { cat: "longdrinks", group: "Hauseigener Schnaps", name: "Pflaumenlikör", variants: [{ l: "2 cl", p: "3,50" }] },
     { cat: "longdrinks", group: "Hauseigener Schnaps", name: "Wacholder", variants: [{ l: "2 cl", p: "3,50" }] },
