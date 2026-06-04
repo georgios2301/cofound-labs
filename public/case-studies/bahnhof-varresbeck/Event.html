@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veranstaltung — Biergarten Bahnhof Varresbeck</title>
+<meta name="description" content="Veranstaltung im Biergarten Bahnhof Varresbeck an der Nordbahntrasse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.ev-hero{padding:0;position:relative;min-height:62vh;display:flex;align-items:flex-end;background:#1c140b;overflow:hidden}
+.ev-hero .bg{position:absolute;inset:0}
+.ev-hero .bg img{width:100%;height:100%;object-fit:cover}
+.ev-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,7,.5) 0%,rgba(20,14,7,.2) 40%,rgba(20,14,7,.82) 100%)}
+.ev-hero .inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:120px 24px 50px}
+.ev-hero .crumb{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.06em;color:rgba(255,255,255,.8);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ev-hero .crumb a:hover{color:var(--amber)}
+.ev-tag{display:inline-block;background:var(--amber);color:#3a2607;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:var(--r-full);margin-top:18px}
+.ev-hero h1{color:#fff;font-size:clamp(32px,5vw,58px);font-weight:800;letter-spacing:-.02em;margin-top:16px;max-width:18ch;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.ev-body{padding:56px 0 90px}
+.ev-grid{display:grid;grid-template-columns:1fr 320px;gap:54px;align-items:start}
+.ev-text .lead{font-size:20px;line-height:1.6;color:var(--ink);font-weight:500;margin-bottom:22px}
+.ev-text p{font-size:17px;line-height:1.78;margin-bottom:18px;color:var(--ink-soft)}
+.ev-share{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ev-share span{font-size:14px;color:var(--ink-mute);font-weight:600}
+.ev-card{position:sticky;top:96px;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-2xl);padding:28px;box-shadow:var(--sh-md)}
+.ev-card .when{display:flex;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px dashed var(--line-strong)}
+.ev-card .when .cal{text-align:center;background:var(--green);color:#fff;border-radius:var(--r-lg);padding:10px 14px;min-width:72px}
+.ev-card .when .cal .day{font-family:var(--font-head);font-weight:800;font-size:30px;line-height:1}
+.ev-card .when .cal .mo{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:3px;color:var(--amber)}
+.ev-card .when .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
+.ev-card .when .val{font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--ink)}
+.ev-meta{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:14px}
+.ev-meta li{display:flex;gap:12px;align-items:flex-start}
+.ev-meta svg{width:20px;height:20px;stroke:var(--green);stroke-width:2;fill:none;flex:none;margin-top:1px}
+.ev-meta .k{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.ev-meta .v{font-size:15px;color:var(--ink);font-weight:500}
+.ev-card .btn{width:100%;justify-content:center;margin-top:22px}
+.ev-note{font-size:12.5px;color:var(--ink-mute);text-align:center;margin-top:12px;line-height:1.5}
+/* related */
+.related{background:var(--cream);padding:70px 0 90px;border-top:1px solid var(--line)}
+.related h2{font-size:28px;font-weight:800;margin-bottom:8px}
+.related .sub{color:var(--ink-soft);margin-bottom:32px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rel-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;transition:all .22s var(--ease);display:flex;flex-direction:column}
+.rel-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:var(--green)}
+.rel-card .ph{height:160px;overflow:hidden;position:relative}
+.rel-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.rel-card:hover .ph img{transform:scale(1.06)}
+.rel-card .ph .date{position:absolute;left:12px;top:12px;background:var(--green);color:#fff;border-radius:10px;text-align:center;padding:7px 11px;min-width:54px}
+.rel-card .ph .date .day{font-family:var(--font-head);font-weight:800;font-size:20px;line-height:1}
+.rel-card .ph .date .mo{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.rel-card .c{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column;gap:8px}
+.rel-card .c .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-deep)}
+.rel-card .c h3{font-size:18px;font-weight:700;line-height:1.2}
+.rel-card .c .tm{font-family:var(--font-mono);font-size:13px;color:var(--ink-mute);margin-top:auto}
+@media(max-width:880px){.ev-grid{grid-template-columns:1fr;gap:32px}.ev-card{position:static}.rel-grid{grid-template-columns:1fr}}
+.notfound{padding:160px 24px 120px;text-align:center;max-width:600px;margin:0 auto}
+.notfound h1{font-size:38px;margin-bottom:14px}
+.notfound p{font-size:17px;color:var(--ink-soft);margin-bottom:26px}
+</style>
+</head>
+<body>
+<header class="nav solid" id="nav">
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="Bahnhof Varresbeck"><img src="https://bahnhof-varresbeck.de/wp-content/uploads/BV-logo_500px-e1771936444838.png" alt="Bahnhof Varresbeck Logo"></a>
+    <nav class="links">
+      <a href="index.html#biergarten">Biergarten</a>
+      <a href="index.html#events">Veranstaltungen</a>
+      <a href="index.html#karte">Speisen &amp; Getränke</a>
+      <a href="index.html#geschichte">Der Bahnhof</a>
+      <a href="index.html#anfahrt">Anfahrt</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#reservierung" class="btn btn-amber" style="padding:11px 20px">Reservieren</a>
+      <button class="burger" id="burger" aria-label="Menü öffnen"><svg viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Menü schließen"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="index.html#biergarten">Biergarten</a>
+  <a href="index.html#events">Veranstaltungen</a>
+  <a href="index.html#karte">Speisen &amp; Getränke</a>
+  <a href="index.html#geschichte">Der Bahnhof</a>
+  <a href="index.html#anfahrt">Anfahrt</a>
+  <a href="index.html#kontakt">Kontakt</a>
+</div>
+
+<main id="main"><!-- gerendert per JS --></main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div class="brandcol">
+        <img src="https://bahnhof-varresbeck.de/wp-content/uploads/BV-logo_500px-e1771936444838.png" alt="Bahnhof Varresbeck">
+        <p class="nm">Biergarten Bahnhof-Varresbeck</p>
+        <p class="sub">an der Nordbahntrasse</p>
+        <div class="socs">
+          <a href="https://www.facebook.com/bahnhofvarresbeck/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.instagram.com/bahnhofvarresbeck/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fh">Öffnungszeiten</h4>
+        <ul class="flist"><li><span>Mo – Fr</span><b>ab 12:00</b></li><li><span>Sa – So</span><b>ab 11:00</b></li></ul>
+        <p class="fnote">Bei schlechtem Wetter geschlossen. Ende je nach Wetter und Lage.</p>
+      </div>
+      <div>
+        <h4 class="fh">Adresse</h4>
+        <p class="fline">Benrather Str. 42<br>42115 Wuppertal</p>
+        <a class="fline link" href="tel:+4920276719650">0202 – 76 71 96 50</a>
+        <a class="fline link" href="mailto:info@bahnhof-varresbeck.de">info@bahnhof-varresbeck.de</a>
+      </div>
+      <div>
+        <h4 class="fh">Schnellzugriff</h4>
+        <ul class="flist nav">
+          <li><a href="index.html#events">Veranstaltungen</a></li>
+          <li><a href="index.html#karte">Speisen &amp; Getränke</a></li>
+          <li><a href="index.html#reservierung">Reservierung</a></li>
+          <li><a href="index.html#anfahrt">Anfahrt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 — Biergarten Bahnhof-Varresbeck</span>
+      <span class="legal-links"><a href="Impressum.html">Impressum</a><a href="Datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="events-data.js"></script>
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40||location.hash||true),{passive:true});
+const mm=document.getElementById('mobileMenu');
+document.getElementById('burger').onclick=()=>mm.classList.add('show');
+document.getElementById('closeMenu').onclick=()=>mm.classList.remove('show');
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('show'));
+
+const E=window.BV_EVENTS||[];
+const params=new URLSearchParams(location.search);
+let key=params.get('e');
+let idx=E.findIndex(x=>x.slug===key);
+if(idx<0 && key!==null && !isNaN(+key)) idx=+key; // erlaubt auch ?e=0
+const ev=idx>=0?E[idx]:null;
+const main=document.getElementById('main');
+
+function relatedCards(curIdx){
+  const others=E.map((x,i)=>({x,i})).filter(o=>o.i!==curIdx).slice(0,3);
+  return others.map(({x,i})=>`
+    <a class="rel-card" href="Event.html?e=${x.slug}">
+      <div class="ph"><img loading="lazy" src="${x.img}" alt="${x.title}">
+        <div class="date"><div class="day">${x.d}</div><div class="mo">${x.m}</div></div></div>
+      <div class="c"><span class="tag">${x.tag}</span><h3>${x.title}</h3><span class="tm">${x.wd}, ${x.d}. ${x.mLong} · ${x.t} Uhr</span></div>
+    </a>`).join('');
+}
+
+if(!ev){
+  document.title='Veranstaltung nicht gefunden — Bahnhof Varresbeck';
+  main.innerHTML=`<div class="notfound"><h1>Veranstaltung nicht gefunden</h1>
+    <p>Diese Veranstaltung ist nicht (mehr) verfügbar. Sehen Sie sich unser aktuelles Programm an.</p>
+    <a class="btn btn-primary" href="index.html#events">Zu allen Veranstaltungen</a></div>`;
+}else{
+  document.title=ev.title+' — Biergarten Bahnhof Varresbeck';
+  const bodyHtml=ev.body.map((p,i)=>i===0?`<p class="lead">${p}</p>`:`<p>${p}</p>`).join('');
+  const shareUrl=encodeURIComponent(location.href);
+  main.innerHTML=`
+  <section class="ev-hero" data-screen-label="Event: ${ev.title}">
+    <div class="bg"><img src="${ev.img}" alt="${ev.title}"></div>
+    <div class="inner">
+      <nav class="crumb"><a href="index.html">Home</a> <span>›</span> <a href="index.html#events">Veranstaltungen</a> <span>›</span> <span style="color:#fff">${ev.title}</span></nav>
+      <span class="ev-tag">${ev.tag}</span>
+      <h1>${ev.title}</h1>
+    </div>
+  </section>
+  <section class="ev-body"><div class="wrap"><div class="ev-grid">
+    <div class="ev-text">
+      ${bodyHtml}
+      <div class="ev-share">
+        <span>Teilen:</span>
+        <a class="btn btn-ghost" style="padding:9px 16px" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn btn-ghost" style="padding:9px 16px" href="https://wa.me/?text=${shareUrl}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-ghost" style="padding:9px 16px" href="mailto:?subject=${encodeURIComponent(ev.title)}&body=${shareUrl}">E-Mail</a>
+      </div>
+    </div>
+    <aside class="ev-card">
+      <div class="when">
+        <div class="cal"><div class="day">${ev.d}</div><div class="mo">${ev.m}</div></div>
+        <div><div class="lbl">Termin</div><div class="val">${ev.wd}, ${ev.d}. ${ev.mLong} ${ev.y}</div></div>
+      </div>
+      <ul class="ev-meta">
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><div class="k">Beginn</div><div class="v">${ev.t} Uhr</div></div></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 00-8-8z"/></svg><div><div class="k">Ort</div><div class="v">Biergarten Bahnhof Varresbeck<br>Benrather Str. 42, Wuppertal</div></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16"/></svg><div><div class="k">Eintritt</div><div class="v">Frei — keine Anmeldung nötig</div></div></li>
+      </ul>
+      <a class="btn btn-primary" href="index.html#anfahrt"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Anfahrt &amp; Lage</a>
+      <p class="ev-note">Alle Veranstaltungen finden wetterabhängig statt. Programmänderungen vorbehalten.</p>
+    </aside>
+  </div></div></section>
+  <section class="related"><div class="wrap">
+    <h2>Weitere Veranstaltungen</h2>
+    <p class="sub">Das könnte Ihnen auch gefallen — kommen Sie vorbei.</p>
+    <div class="rel-grid">${relatedCards(idx)}</div>
+    <div style="margin-top:32px"><a class="btn btn-ghost" href="index.html#events">Alle Veranstaltungen ansehen</a></div>
+  </div></section>`;
+}
+</script>
+</body>
+</html>

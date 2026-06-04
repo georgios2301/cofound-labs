@@ -47,6 +47,15 @@ const projects: Project[] = [
     alt: "Kerstins Hundesalon – Website Case Study",
     href: "/case-studies/kerstin-hundesalon",
   },
+  {
+    title: "Biergarten Bahnhof Varresbeck",
+    description:
+      "Warme, rustikale One-Page-Website für den Biergarten im historischen Varresbecker Bahnhof – mit Live-Status „heute geöffnet?“, Veranstaltungskalender, Reservierungsanfrage sowie eigenen Event-, Impressums- und Datenschutz-Unterseiten.",
+    tags: ["Website", "Gastronomie", "Events"],
+    image: "/images/projects/bahnhof-varresbeck.jpg",
+    alt: "Biergarten Bahnhof Varresbeck – Website Case Study",
+    href: "/case-studies/bahnhof-varresbeck",
+  },
 ];
 
 export default function Referenzen() {

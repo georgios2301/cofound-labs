@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
         source: "/case-studies/kerstin-hundesalon",
         destination: "/case-studies/kerstin-hundesalon/index.html",
       },
+      {
+        source: "/case-studies/bahnhof-varresbeck",
+        destination: "/case-studies/bahnhof-varresbeck/index.html",
+      },
     ];
   },
 };
