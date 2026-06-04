@@ -1,0 +1,103 @@
+/* =========================================================
+   Bahnhof Varresbeck — Speise-/Getränkekarte (Unterseiten)
+   Baut auf site.css (Tokens, nav, footer) auf.
+   ========================================================= */
+.menu-wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+.menu-section { padding: 40px 0 90px; }
+
+/* Karten-Umschalter Speisen <-> Getränke */
+.menu-switch { display: inline-flex; background: var(--cream); border: 1px solid var(--line);
+  border-radius: var(--r-full); padding: 5px; gap: 4px; box-shadow: var(--sh-sm); }
+.menu-switch a { font-weight: 600; font-size: 14.5px; color: var(--ink-soft); padding: 9px 20px;
+  border-radius: var(--r-full); transition: all .2s var(--ease); }
+.menu-switch a.active { background: var(--green); color: var(--on-green); box-shadow: var(--sh-sm); }
+.menu-switch a:not(.active):hover { color: var(--green); }
+
+/* Filterleiste (klebt unter der Navigation) */
+.menu-tools { position: sticky; top: 64px; z-index: 40; background: var(--paper);
+  padding: 16px 0; margin: 26px 0 6px; border-bottom: 1px solid var(--line); }
+.menu-search { position: relative; margin-bottom: 14px; }
+.menu-search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  width: 19px; height: 19px; stroke: var(--ink-mute); stroke-width: 2; fill: none; }
+.menu-search input { width: 100%; font-family: var(--font-body); font-size: 16px; color: var(--ink);
+  background: #fff; border: 2px solid var(--line-strong); border-radius: var(--r-full);
+  padding: 13px 18px 13px 44px; transition: border .18s, box-shadow .18s; }
+.menu-search input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(26,93,74,.13); }
+
+.menu-chips { display: flex; gap: 9px; flex-wrap: wrap; }
+.chip { font-family: var(--font-body); font-weight: 600; font-size: 13.5px; color: var(--ink-soft);
+  background: var(--cream); border: 1px solid var(--line-strong); border-radius: var(--r-full);
+  padding: 8px 16px; cursor: pointer; transition: all .18s var(--ease); white-space: nowrap; }
+.chip:hover { border-color: var(--green); color: var(--green); }
+.chip.active { background: var(--green); border-color: var(--green); color: var(--on-green); }
+
+.menu-toggles { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 10px; }
+.toggle { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body);
+  font-weight: 600; font-size: 13.5px; color: var(--ink-soft); background: transparent;
+  border: 1px dashed var(--line-strong); border-radius: var(--r-full); padding: 7px 15px;
+  cursor: pointer; transition: all .18s var(--ease); }
+.toggle .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--line-strong); transition: all .18s; }
+.toggle:hover { border-color: var(--green-light); color: var(--green); }
+.toggle.active { background: var(--green-tint); border-style: solid; border-color: var(--green); color: var(--green-dark); }
+.toggle.active .dot { background: var(--green); border-color: var(--green); box-shadow: 0 0 0 3px rgba(26,93,74,.15); }
+
+.menu-count { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em;
+  color: var(--ink-mute); margin: 16px 0 4px; }
+
+/* Kategorien & Positionen */
+.mcat { margin-top: 30px; }
+.mcat-h { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  padding-bottom: 8px; border-bottom: 2px solid var(--line); margin-bottom: 4px; }
+.mcat-h h2 { font-size: 23px; font-weight: 800; color: var(--ink); }
+.mcat-note { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--amber-deep); }
+.mgroup { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-mute); margin: 18px 0 2px; }
+
+.mitem { display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+  padding: 14px 0; border-bottom: 1px dashed var(--line-strong); }
+.mitem:last-child { border-bottom: none; }
+.mi-main { min-width: 0; }
+.mi-name { font-family: var(--font-body); font-size: 16.5px; font-weight: 600; color: var(--ink);
+  line-height: 1.3; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mi-desc { font-size: 13.5px; color: var(--ink-mute); margin-top: 3px; line-height: 1.5; }
+.mbadge { font-family: var(--font-body); font-weight: 700; font-size: 10px; letter-spacing: .04em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: var(--r-full); white-space: nowrap; }
+.mbadge.veg { background: var(--green-tint); color: var(--green-dark); }
+.mbadge.vegan { background: #d8f0df; color: #166534; }
+.mbadge.frei { background: #fdeccb; color: var(--amber-deep); }
+
+.mi-price { font-family: var(--font-head); font-weight: 800; font-size: 17px; color: var(--green);
+  white-space: nowrap; flex: none; }
+.mi-price.mi-na { color: var(--ink-mute); font-weight: 600; }
+.mi-vars { display: flex; flex-direction: column; gap: 3px; align-items: flex-end; flex: none; }
+.mi-var { display: flex; align-items: baseline; gap: 10px; }
+.mi-var .vl { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-mute); }
+.mi-var .vp { font-family: var(--font-head); font-weight: 800; font-size: 15.5px; color: var(--green); min-width: 64px; text-align: right; }
+
+.menu-empty { text-align: center; padding: 60px 20px; color: var(--ink-mute); font-size: 16px; }
+.menu-empty b { color: var(--ink); }
+
+.menu-note { margin-top: 30px; font-size: 13px; color: var(--ink-mute); line-height: 1.6;
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 16px 20px; }
+.menu-pdf { margin-top: 20px; font-size: 14px; }
+.menu-pdf a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.menu-pdf a:hover { color: var(--amber-deep); }
+
+/* Aktionen (Getränke) */
+.aktionen { margin-top: 50px; }
+.aktionen h2 { font-size: 23px; font-weight: 800; margin-bottom: 18px; }
+.aktionen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.aktion { background: var(--green); color: var(--on-green); border-radius: var(--r-xl); padding: 22px 24px; }
+.aktion:nth-child(even) { background: linear-gradient(150deg, var(--amber) 0%, var(--amber-dark) 100%); color: #3a2607; }
+.aktion .ak-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+.aktion h3 { font-size: 20px; font-weight: 800; margin: 8px 0 6px; color: inherit; }
+.aktion:nth-child(even) h3 { color: #2a1c05; }
+.aktion p { font-size: 14px; opacity: .92; line-height: 1.5; }
+.aktion .ak-price { font-family: var(--font-head); font-weight: 800; font-size: 26px; margin-top: 10px; }
+
+@media (max-width: 560px) {
+  .mi-name { font-size: 15.5px; }
+  .aktionen-grid { grid-template-columns: 1fr; }
+  .menu-tools { top: 58px; }
+}

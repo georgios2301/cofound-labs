@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getränkekarte — Biergarten Bahnhof Varresbeck</title>
+<meta name="description" content="Die Getränkekarte vom Biergarten Bahnhof Varresbeck: Bier vom Fass, charaktervolle Weine, Longdrinks, Alkoholfreies, Kaffee & Tee — mit Preisen, durchsuchbar und filterbar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<header class="nav solid" id="nav">
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="Bahnhof Varresbeck"><img src="https://bahnhof-varresbeck.de/wp-content/uploads/BV-logo_500px-e1771936444838.png" alt="Bahnhof Varresbeck Logo"></a>
+    <nav class="links">
+      <a href="index.html#biergarten">Biergarten</a>
+      <a href="index.html#events">Veranstaltungen</a>
+      <a href="index.html#karte">Speisen &amp; Getränke</a>
+      <a href="index.html#geschichte">Der Bahnhof</a>
+      <a href="index.html#anfahrt">Anfahrt</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#reservierung" class="btn btn-amber" style="padding:11px 20px">Reservieren</a>
+      <button class="burger" id="burger" aria-label="Menü öffnen"><svg viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Menü schließen"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  <a href="index.html#biergarten">Biergarten</a>
+  <a href="index.html#events">Veranstaltungen</a>
+  <a href="Speisekarte.html">Speisekarte</a>
+  <a href="Getraenkekarte.html">Getränkekarte</a>
+  <a href="index.html#anfahrt">Anfahrt</a>
+  <a href="index.html#kontakt">Kontakt</a>
+</div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="crumb"><a href="index.html">Home</a> <span>›</span> <a href="index.html#karte">Speisen &amp; Getränke</a> <span>›</span> <span style="color:#fff">Getränkekarte</span></nav>
+      <h1>Getränkekarte</h1>
+      <p>Bestes Bier vom Fass, charaktervolle Weine und feine Alkoholfreie — fürs Verweilen unter alten Bäumen.</p>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <div class="menu-wrap">
+      <div class="menu-switch" role="tablist" aria-label="Karte wählen">
+        <a href="Speisekarte.html">Speisekarte</a>
+        <a href="Getraenkekarte.html" class="active" aria-current="page">Getränkekarte</a>
+      </div>
+
+      <div class="menu-tools">
+        <div class="menu-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="menuSearch" type="search" placeholder="Getränk suchen — z. B. Pils, Riesling, Spezi …" aria-label="Getränkekarte durchsuchen">
+        </div>
+        <div class="menu-chips" id="menuChips" role="tablist" aria-label="Kategorien"></div>
+        <div class="menu-toggles" id="menuToggles" aria-label="Filter"></div>
+      </div>
+
+      <p class="menu-count" id="menuCount"></p>
+      <div id="menuList"></div>
+      <div class="menu-empty" id="menuEmpty" hidden>Keine Getränke gefunden — bitte einen anderen Filter oder Suchbegriff wählen.</div>
+
+      <div class="aktionen">
+        <h2>Aktionen &amp; Angebote</h2>
+        <div class="aktionen-grid" id="aktionen"></div>
+      </div>
+
+      <p class="menu-note">Selbstbedienung — bitte hinterlasst euren Platz so ordentlich, wie ihr ihn vorgefunden habt. Danke! Alle Preise in Euro inkl. MwSt. Ausschank alkoholischer Getränke nur an Personen ab 16 bzw. 18 Jahren.</p>
+      <p class="menu-pdf">Lieber die Original-Karte? <a href="https://bahnhof-varresbeck.de/wp-content/uploads/getraenkekarte.pdf" target="_blank" rel="noopener">Getränkekarte als PDF öffnen</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div class="brandcol">
+        <img src="https://bahnhof-varresbeck.de/wp-content/uploads/BV-logo_500px-e1771936444838.png" alt="Bahnhof Varresbeck">
+        <p class="nm">Biergarten Bahnhof-Varresbeck</p>
+        <p class="sub">an der Nordbahntrasse</p>
+        <div class="socs">
+          <a href="https://www.facebook.com/bahnhofvarresbeck/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.instagram.com/bahnhofvarresbeck/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="fh">Öffnungszeiten</h4>
+        <ul class="flist"><li><span>Mo – Fr</span><b>ab 12:00</b></li><li><span>Sa – So</span><b>ab 11:00</b></li></ul>
+        <p class="fnote">Bei schlechtem Wetter geschlossen. Ende je nach Wetter und Lage.</p>
+      </div>
+      <div>
+        <h4 class="fh">Adresse</h4>
+        <p class="fline">Benrather Str. 42<br>42115 Wuppertal</p>
+        <a class="fline link" href="tel:+4920276719650">0202 – 76 71 96 50</a>
+        <a class="fline link" href="mailto:info@bahnhof-varresbeck.de">info@bahnhof-varresbeck.de</a>
+      </div>
+      <div>
+        <h4 class="fh">Schnellzugriff</h4>
+        <ul class="flist nav">
+          <li><a href="Speisekarte.html">Speisekarte</a></li>
+          <li><a href="Getraenkekarte.html">Getränkekarte</a></li>
+          <li><a href="index.html#reservierung">Reservierung</a></li>
+          <li><a href="index.html#anfahrt">Anfahrt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 — Biergarten Bahnhof-Varresbeck</span>
+      <span class="legal-links"><a href="Impressum.html">Impressum</a><a href="Datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const mm=document.getElementById('mobileMenu');
+document.getElementById('burger').onclick=()=>mm.classList.add('show');
+document.getElementById('closeMenu').onclick=()=>mm.classList.remove('show');
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('show'));
+</script>
+<script src="menu-data.js"></script>
+<script src="menu.js"></script>
+<script>
+initMenu({
+  data: window.BV_GETRAENKEKARTE,
+  kind: 'getraenke',
+  toggles: [
+    { id:'frei', label:'Alkoholfrei', test:function(it){ return !!it.frei; } }
+  ]
+});
+renderAktionen('#aktionen', window.BV_AKTIONEN);
+</script>
+</body>
+</html>
