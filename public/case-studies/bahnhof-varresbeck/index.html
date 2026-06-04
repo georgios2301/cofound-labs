@@ -893,7 +893,7 @@ function paintStatus(){
   // nav pill
   const np=document.getElementById('navStatus');
   if(np){np.className='nav-status desk '+(s.open?'is-open':'is-closed');
-    np.querySelector('.txt').textContent=s.open?'Jetzt geöffnet':'Geschlossen';}
+    np.querySelector('.txt').textContent=s.open?'Jetzt geöffnet':'heute geschlossen';}
   // board
   const b=document.getElementById('board');
   if(b){b.className='board '+(s.open?'open-now':'closed-now');
