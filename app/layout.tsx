@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import CookieBanner from "@/components/ui/CookieBanner";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+// General Sans (display + body) — self-hosted for privacy & no layout shift
+const generalSans = localFont({
+  variable: "--font-general-sans",
   display: "swap",
+  src: [
+    { path: "./fonts/GeneralSans-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/GeneralSans-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/GeneralSans-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/GeneralSans-700.woff2", weight: "700", style: "normal" },
+  ],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -51,9 +58,9 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${generalSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#FAFAFA] text-[#0F172A]">
+      <body className="min-h-full">
         {children}
         <CookieBanner />
       </body>

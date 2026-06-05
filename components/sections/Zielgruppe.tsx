@@ -1,82 +1,45 @@
-"use client";
+import Reveal from "@/components/ui/Reveal";
 
-import { motion } from "framer-motion";
-import { Lightbulb, Rocket, TrendingUp } from "lucide-react";
-import Card from "@/components/ui/Card";
-
-const targets = [
-  {
-    icon: Lightbulb,
-    title: "Solo-Gründer",
-    description:
-      "Du hast die Idee, aber keinen CTO. Wir werden dein Tech-Team und bringen deine Vision zum Leben.",
-    color: "text-amber-500",
-    bg: "bg-amber-50",
-  },
-  {
-    icon: Rocket,
-    title: "Early-Stage Startups",
-    description:
-      "Ihr braucht ein MVP, um Investoren oder erste Kunden zu überzeugen – schnell, solide und skalierbar.",
-    color: "text-indigo-600",
-    bg: "bg-indigo-50",
-  },
-  {
-    icon: TrendingUp,
-    title: "Skalierende Teams",
-    description:
-      "Euer Team kommt nicht hinterher? Wir bauen parallel mit und liefern ohne Einarbeitungszeit.",
-    color: "text-emerald-500",
-    bg: "bg-emerald-50",
-  },
+const AUDIENCES: [string, string, string][] = [
+  [
+    "01",
+    "Solo-Gründer",
+    "Du hast die Idee, aber keinen CTO. Wir werden dein Tech-Team und bringen deine Vision zum Leben.",
+  ],
+  [
+    "02",
+    "Early-Stage Startups",
+    "Ihr braucht ein MVP, um Investoren oder erste Kunden zu überzeugen – schnell, solide und skalierbar.",
+  ],
+  [
+    "03",
+    "Skalierende Teams",
+    "Euer Team kommt nicht hinterher? Wir bauen parallel mit und liefern ohne Einarbeitungszeit.",
+  ],
 ];
 
 export default function Zielgruppe() {
   return (
-    <section className="py-24 bg-white" id="zielgruppe">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0F172A] tracking-tight mb-4">
-            Für wen wir bauen
-          </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Egal wo du im Startup-Zyklus bist – wir passen uns deinen Bedürfnissen an.
+    <section className="section" id="fuer-wen">
+      <div className="wrap">
+        <Reveal className="section-lead">
+          <div className="kicker">// Für wen wir bauen</div>
+          <h2 className="title">Egal wo du im Startup-Zyklus stehst.</h2>
+          <p className="desc">
+            Wir passen uns deinen Bedürfnissen an – vom ersten Prototyp bis zum
+            skalierenden Produkt.
           </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {targets.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <Card className="h-full hover:shadow-md transition-shadow duration-300 group">
-                  <div
-                    className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon size={24} className={item.color} />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </Card>
-              </motion.div>
-            );
-          })}
+        </Reveal>
+        <div className="grid grid-3">
+          {AUDIENCES.map(([num, title, desc], i) => (
+            <Reveal key={num} delay={i * 0.08}>
+              <div className="card">
+                <div className="c-num">{num}</div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
