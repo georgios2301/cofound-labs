@@ -1,9 +1,17 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 import { caseStudies } from "@/lib/case-studies";
+import { services } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+
+  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${SITE_URL}/leistungen/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   const caseStudyPages: MetadataRoute.Sitemap = caseStudies.flatMap((c) => {
     const entries: MetadataRoute.Sitemap = [
@@ -32,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/leistungen`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    ...servicePages,
     ...caseStudyPages,
   ];
 }

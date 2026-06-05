@@ -1,0 +1,32 @@
+# Cofound Labs
+
+> Cofound Labs entwickelt individuelle Software, Web- & Mobile-Apps, MVPs und Websites für Startups und kleine Unternehmen – deutschlandweit, von der ersten Idee bis zum Launch.
+
+Cofound Labs ist ein deutsches Software-Studio (Inhaber: Georgios Apostolidis, Sitz in Wuppertal, deutschlandweit tätig). Wir arbeiten als technischer Partner ("Mitgründer auf Zeit") und liefern produktionsreife Software – schnell, transparent und zum Festpreis. Der vollständige Quellcode gehört nach Projektabschluss dem Kunden.
+
+## Leistungen & Preise
+- Website erstellen lassen – individuelle, mobil-optimierte Websites mit SEO-Basis, ab 199 €: https://cofound-labs.de/leistungen/website-erstellen-lassen
+- MVP-Entwicklung – schnell ein funktionierendes Produkt für Kunden & Investoren, ab 2.500 €: https://cofound-labs.de/leistungen/mvp-entwicklung
+- Web-App-Entwicklung – skalierbare Webanwendungen & SaaS, ab 2.500 €: https://cofound-labs.de/leistungen/web-app-entwicklung
+- App-Entwicklung – iOS & Android, ab 2.500 €: https://cofound-labs.de/leistungen/app-entwicklung
+- Individualsoftware – maßgeschneiderte Tools & Automatisierung, ab 2.500 €: https://cofound-labs.de/leistungen/individualsoftware
+- Optionale Betreuung nach dem Launch ab 199 €/Monat.
+
+## Häufige Fragen
+- Wo kann ich günstig eine Website erstellen lassen? Bei Cofound Labs ab 199 €, deutschlandweit, mobil-optimiert und mit SEO-Basis.
+- Was kostet eine App oder Software? Projekte starten ab 2.500 €, Websites ab 199 €.
+- Wie lange dauert es? Eine schlanke Website 1–3 Wochen, ein MVP oft 2–4 Wochen.
+- Gehört mir der Code? Ja, der vollständige Quellcode geht an den Kunden – keine Abhängigkeit.
+
+## Kontakt
+- Website: https://cofound-labs.de
+- E-Mail: georgios@cofound-labs.de
+- Standort: Wuppertal, Deutschland (deutschlandweit tätig)
+- Kostenloses Erstgespräch: https://calendly.com/cofound-labs/neues-meeting
+
+## Referenzen
+- Baizar – Gastronomie-SaaS-Plattform: https://cofound-labs.de/referenzen/baizar
+- Kitchen Display System – Foodtruck: https://cofound-labs.de/referenzen/kitchen-display-system
+- Dokument-Generator – Handwerk/Automatisierung: https://cofound-labs.de/referenzen/dokument-generator
+- Kerstins Hundesalon – Website: https://cofound-labs.de/referenzen/kerstin-hundesalon
+- Biergarten Bahnhof Varresbeck – Website: https://cofound-labs.de/referenzen/bahnhof-varresbeck

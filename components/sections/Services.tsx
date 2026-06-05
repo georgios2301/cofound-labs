@@ -1,29 +1,7 @@
-import type { ReactNode } from "react";
-import { Smartphone, Gem } from "lucide-react";
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
-
-const SERVICES: { icon: ReactNode; title: string; desc: string }[] = [
-  {
-    icon: "</>",
-    title: "Web Apps",
-    desc: "Moderne, skalierbare Webanwendungen mit dem richtigen Stack für dein Business – von der Landing Page bis zur komplexen SaaS-Plattform.",
-  },
-  {
-    icon: <Smartphone size={22} strokeWidth={1.9} aria-hidden="true" />,
-    title: "Mobile Apps",
-    desc: "iOS & Android, nativ oder cross-platform. Wir bauen Apps, die deine Nutzer täglich benutzen wollen.",
-  },
-  {
-    icon: <Gem size={22} strokeWidth={1.9} aria-hidden="true" />,
-    title: "MVPs",
-    desc: "Schnell ein funktionierendes Produkt auf die Straße bringen. Wir bauen das Wesentliche – nichts mehr, nichts weniger.",
-  },
-  {
-    icon: "{ }",
-    title: "Backends & APIs",
-    desc: "Die unsichtbare Technik, die alles zusammenhält. Stabile, sichere und gut dokumentierte Backends und Schnittstellen.",
-  },
-];
+import { services } from "@/lib/services";
+import { SERVICE_ICONS, FALLBACK_ICON } from "@/lib/service-icons";
 
 export default function Services() {
   return (
@@ -32,24 +10,39 @@ export default function Services() {
         <Reveal className="section-lead">
           <div className="kicker">// Was wir bauen</div>
           <h2 className="title">
-            Von der ersten Zeile Code bis zum fertigen Produkt.
+            Von der Website bis zur skalierenden Software.
           </h2>
           <p className="desc">
             Wir decken den gesamten Stack ab – ein Partner, kein Flickenteppich
             aus Freelancern.
           </p>
         </Reveal>
-        <div className="grid grid-4">
-          {SERVICES.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.07}>
-              <div className="card">
-                <div className="c-ic">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="grid grid-3">
+          {services.map((service, i) => {
+            const Icon = SERVICE_ICONS[service.cardIcon] ?? FALLBACK_ICON;
+            return (
+              <Reveal key={service.slug} delay={i * 0.06}>
+                <Link className="card" href={`/leistungen/${service.slug}`}>
+                  <div className="c-ic">
+                    <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
+                  </div>
+                  <h3>{service.navLabel}</h3>
+                  <p>{service.cardDesc}</p>
+                  <div className="proj-more">
+                    Mehr erfahren <span className="btn-arrow">→</span>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
+        <Reveal>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <Link className="btn btn-ghost" href="/leistungen">
+              Alle Leistungen ansehen <span className="btn-arrow">→</span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

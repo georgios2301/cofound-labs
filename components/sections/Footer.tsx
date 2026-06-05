@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IconInstagram } from "@/components/ui/SocialIcons";
 import { SITE_NAME, NAV_LINKS, INSTAGRAM_URL } from "@/lib/constants";
+import { services } from "@/lib/services";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -23,6 +24,15 @@ export default function Footer() {
                 <IconInstagram size={16} />
               </a>
             </div>
+          </div>
+
+          <div className="fcol">
+            <h4>Leistungen</h4>
+            {services.map((s) => (
+              <Link key={s.slug} href={`/leistungen/${s.slug}`}>
+                {s.navLabel}
+              </Link>
+            ))}
           </div>
 
           <div className="fcol">

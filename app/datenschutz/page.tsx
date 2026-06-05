@@ -92,7 +92,7 @@ export default function Datenschutz() {
                 .
               </p>
 
-              <h2>5. Kontaktaufnahme per E-Mail</h2>
+              <h2>5. Kontaktaufnahme (E-Mail &amp; Kontaktformular)</h2>
               <p>
                 Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen
                 übermittelten Daten (Ihre E-Mail-Adresse sowie ggf. Ihr Name und
@@ -102,6 +102,25 @@ export default function Datenschutz() {
                 schränken die Verarbeitung ein, falls gesetzliche
                 Aufbewahrungspflichten bestehen. Rechtsgrundlage ist Art. 6 Abs.
                 1 lit. b DSGVO (vorvertragliche Maßnahmen).
+              </p>
+              <p>
+                Für das Kontaktformular auf dieser Website nutzen wir den Dienst
+                Web3Forms. Wenn Sie das Formular absenden, werden die von Ihnen
+                eingegebenen Daten (Name, E-Mail-Adresse und Ihre Nachricht) über
+                Web3Forms verarbeitet und als E-Mail an uns zugestellt. Eine
+                Übermittlung in Drittländer (z. B. USA) kann dabei nicht
+                ausgeschlossen werden. Weitere Informationen finden Sie in der
+                Datenschutzerklärung von Web3Forms:{" "}
+                <a
+                  href="https://web3forms.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  web3forms.com/privacy
+                </a>
+                . Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche
+                Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
+                an der effizienten Bearbeitung von Anfragen).
               </p>
 
               <h2>6. Calendly (Terminbuchung)</h2>
