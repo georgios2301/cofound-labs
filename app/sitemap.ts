@@ -33,17 +33,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...caseStudyPages,
-    {
-      url: `${SITE_URL}/impressum`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${SITE_URL}/datenschutz`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
   ];
 }

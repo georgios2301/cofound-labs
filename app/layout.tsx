@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_URL,
+  INSTAGRAM_URL,
+} from "@/lib/constants";
 import CookieBanner from "@/components/ui/CookieBanner";
 
 // General Sans (display + body) — self-hosted for privacy & no layout shift
@@ -24,15 +29,20 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const HOME_TITLE = `Softwareentwicklung & MVPs für Startups | ${SITE_NAME}`;
+
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} – Dein technischer Mitgründer auf Zeit`,
+    default: HOME_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: `${SITE_NAME} – Dein technischer Mitgründer auf Zeit`,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -41,13 +51,79 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} – Dein technischer Mitgründer auf Zeit`,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
   },
   robots: {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "JFN6j-BG43reeb6-x465OP5_dbQ0s3nEXWIvw8UdDPU",
+  },
+};
+
+// Strukturierte Daten (JSON-LD): Organization, LocalBusiness, WebSite, Person.
+// NAP-Daten konsistent mit dem Impressum.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo-full.png`,
+      description: SITE_DESCRIPTION,
+      email: "georgios@cofound-labs.de",
+      telephone: "+4915560410686",
+      sameAs: [INSTAGRAM_URL],
+      founder: { "@id": `${SITE_URL}/#georgios` },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "In der Krim 9",
+        postalCode: "42369",
+        addressLocality: "Wuppertal",
+        addressCountry: "DE",
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#localbusiness`,
+      name: SITE_NAME,
+      image: `${SITE_URL}/logo-full.png`,
+      url: SITE_URL,
+      telephone: "+4915560410686",
+      email: "georgios@cofound-labs.de",
+      priceRange: "€€",
+      areaServed: "DE",
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "In der Krim 9",
+        postalCode: "42369",
+        addressLocality: "Wuppertal",
+        addressCountry: "DE",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      inLanguage: "de-DE",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#georgios`,
+      name: "Georgios Apostolidis",
+      jobTitle: "Gründer & Lead Developer",
+      url: SITE_URL,
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -61,6 +137,10 @@ export default function RootLayout({
       className={`${generalSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <CookieBanner />
       </body>

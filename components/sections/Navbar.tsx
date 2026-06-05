@@ -41,7 +41,7 @@ export default function Navbar() {
           </div>
 
           <div className="nav-right">
-            <a className="nav-cta" href="#kontakt">
+            <a className="nav-cta" href="/#kontakt">
               Projekt starten
             </a>
             <button
@@ -64,7 +64,7 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <a className="btn btn-primary" href="#kontakt" onClick={close}>
+        <a className="btn btn-primary" href="/#kontakt" onClick={close}>
           Projekt starten
         </a>
       </div>

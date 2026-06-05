@@ -1,12 +1,6 @@
 import Link from "next/link";
-import { IconInstagram, IconLinkedin, IconGithub } from "@/components/ui/SocialIcons";
-import {
-  SITE_NAME,
-  NAV_LINKS,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-  GITHUB_URL,
-} from "@/lib/constants";
+import { IconInstagram } from "@/components/ui/SocialIcons";
+import { SITE_NAME, NAV_LINKS, INSTAGRAM_URL } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -27,12 +21,6 @@ export default function Footer() {
             <div className="socials">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <IconInstagram size={16} />
-              </a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <IconLinkedin size={16} />
-              </a>
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <IconGithub size={16} />
               </a>
             </div>
           </div>

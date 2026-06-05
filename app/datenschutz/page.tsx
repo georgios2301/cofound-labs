@@ -135,15 +135,14 @@ export default function Datenschutz() {
                 <CookieSettingsButton className="link-btn" />
               </p>
 
-              <h2>8. Soziale Medien (Instagram, LinkedIn)</h2>
+              <h2>8. Soziale Medien (Instagram)</h2>
               <p>
-                Auf unserer Website befinden sich Links zu unseren Profilen bei
-                Instagram (Meta Platforms Ireland Ltd.) und LinkedIn (LinkedIn
-                Ireland Unlimited Company). Beim Klick auf einen solchen Link
-                werden Sie auf die jeweilige Plattform weitergeleitet. Es erfolgt
-                erst bei Klick eine Übertragung von Daten an den jeweiligen
-                Anbieter. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
-                (berechtigtes Interesse an der Außendarstellung).
+                Auf unserer Website befindet sich ein Link zu unserem Profil bei
+                Instagram (Meta Platforms Ireland Ltd.). Beim Klick auf diesen
+                Link werden Sie auf die Plattform weitergeleitet. Es erfolgt erst
+                bei Klick eine Übertragung von Daten an den Anbieter.
+                Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+                Interesse an der Außendarstellung).
               </p>
 
               <h2>9. Ihre Rechte als betroffene Person</h2>
