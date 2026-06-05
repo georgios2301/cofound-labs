@@ -30,3 +30,16 @@ Cofound Labs ist ein deutsches Software-Studio (Inhaber: Georgios Apostolidis, S
 - Dokument-Generator – Handwerk/Automatisierung: https://cofound-labs.de/referenzen/dokument-generator
 - Kerstins Hundesalon – Website: https://cofound-labs.de/referenzen/kerstin-hundesalon
 - Biergarten Bahnhof Varresbeck – Website: https://cofound-labs.de/referenzen/bahnhof-varresbeck
+
+## Ratgeber / Blog
+Praxisnahe Artikel für Gründer und Unternehmen rund um App-, Software- und MVP-Entwicklung (Übersicht: https://cofound-labs.de/blog):
+- Was ist ein MVP? Definition, Beispiele & Vorteile für Startups: https://cofound-labs.de/blog/was-ist-ein-mvp
+- MVP entwickeln: In 6 Schritten von der Idee zum Produkt: https://cofound-labs.de/blog/mvp-entwickeln-schritt-fuer-schritt
+- Was kostet eine App? Preise & Kostenfaktoren 2026 (App-Projekte ab 2.500 €): https://cofound-labs.de/blog/was-kostet-eine-app
+- Was kostet eine Website? Preisübersicht 2026 (Websites ab 199 €): https://cofound-labs.de/blog/was-kostet-eine-website
+- Wie lange dauert App-Entwicklung? Realistischer Zeitplan (MVP oft 2–4 Wochen): https://cofound-labs.de/blog/wie-lange-dauert-app-entwicklung
+- Native vs. Cross-Platform App: Was ist die richtige Wahl?: https://cofound-labs.de/blog/native-vs-cross-platform-app
+- Web-App oder native App? Der Vergleich für Gründer: https://cofound-labs.de/blog/web-app-vs-native-app
+- Welcher Tech-Stack für dein Startup? Next.js, React & Co.: https://cofound-labs.de/blog/tech-stack-startup
+- Technischer Mitgründer gesucht? 4 Wege, dein Produkt ohne CTO zu bauen: https://cofound-labs.de/blog/technischer-mitgruender-ohne-cto
+- Individualsoftware vs. Standardsoftware: Wann lohnt sich Maßanfertigung?: https://cofound-labs.de/blog/individualsoftware-vs-standardsoftware

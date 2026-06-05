@@ -9,6 +9,7 @@ import ContactForm from "@/components/ui/ContactForm";
 import { SERVICE_ICONS, FALLBACK_ICON } from "@/lib/service-icons";
 import { services, getService } from "@/lib/services";
 import { caseStudies } from "@/lib/case-studies";
+import { posts } from "@/lib/blog";
 import { CALENDLY_URL, SITE_URL } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -55,6 +56,9 @@ export default async function ServicePage({
 
   const url = `${SITE_URL}/leistungen/${s.slug}`;
   const related = caseStudies.filter((c) => s.relatedCaseSlugs.includes(c.slug));
+  const relatedPosts = posts
+    .filter((p) => p.relatedServiceSlugs.includes(s.slug))
+    .slice(0, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -246,6 +250,30 @@ export default async function ServicePage({
                       <div className="proj-more">
                         Case Study lesen <span className="btn-arrow">→</span>
                       </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Ratgeber zum Thema */}
+        {relatedPosts.length > 0 && (
+          <section className="section">
+            <div className="wrap">
+              <div className="section-lead">
+                <div className="kicker">// Ratgeber</div>
+                <h2 className="title">Passend dazu aus dem Blog.</h2>
+              </div>
+              <div className="grid grid-3">
+                {relatedPosts.map((p) => (
+                  <Link key={p.slug} className="card" href={`/blog/${p.slug}`}>
+                    <span className="tag">{p.category}</span>
+                    <h3 style={{ marginTop: 14 }}>{p.title}</h3>
+                    <p>{p.excerpt}</p>
+                    <div className="proj-more">
+                      Artikel lesen <span className="btn-arrow">→</span>
                     </div>
                   </Link>
                 ))}

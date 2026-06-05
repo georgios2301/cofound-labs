@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 import { caseStudies } from "@/lib/case-studies";
 import { services } from "@/lib/services";
+import { posts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.8,
+  }));
+
+  const blogPages: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "monthly",
+    priority: 0.7,
   }));
 
   const caseStudyPages: MetadataRoute.Sitemap = caseStudies.flatMap((c) => {
@@ -47,6 +55,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...servicePages,
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...blogPages,
     ...caseStudyPages,
   ];
 }
