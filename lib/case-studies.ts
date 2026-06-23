@@ -347,6 +347,72 @@ export const caseStudies: CaseStudy[] = [
       role: "Biergarten Bahnhof Varresbeck",
     },
   },
+  {
+    slug: "zen",
+    title: "ZEN",
+    tagline: "Website · E-Commerce",
+    lede: "Editorial gedachtes Redesign für ein Schmuck-Label aus Berlin: ein ruhiger, hochwertiger Online-Shop für handgefertigte Choker – mit klarer Produktinszenierung, Schnellkauf und einem Warenkorb, der zum Abschluss führt.",
+    image: "/images/projects/zen.jpg",
+    imageAlt: "ZEN – Redesign des Online-Shops für handgefertigten Schmuck",
+    demoUrl: "/case-studies/zen",
+    meta: [
+      { label: "Branche", value: "E-Commerce · Schmuck" },
+      { label: "Leistung", value: "Website-Redesign & Shop-UI" },
+      { label: "Plattform", value: "Web (responsive)" },
+      { label: "Zeitraum", value: "2 Wochen · 2026" },
+    ],
+    sections: [
+      {
+        heading: "Ausgangslage",
+        paragraphs: [
+          "ZEN fertigt filigrane Choker und reduzierten Schmuck in Handarbeit in Berlin. Das Produkt ist hochwertig und mit Sorgfalt gemacht – der bestehende Auftritt transportierte diese Ruhe und Wertigkeit aber nicht. Produktfotos, Preise und Vertrauenssignale wirkten beliebig, und der Weg vom ersten Blick bis in den Warenkorb war länger als nötig.",
+        ],
+      },
+      {
+        heading: "Zielsetzung",
+        paragraphs: [
+          "Ein Auftritt, der sich so anfühlt wie die Stücke selbst: leise, edel, aufgeräumt. Gleichzeitig sollte die Seite verkaufen – mit klarer Produktübersicht, einem schnellen Weg in den Warenkorb und Argumenten (handgefertigt, nickelfrei, Versand), die genau dort stehen, wo die Kaufentscheidung fällt.",
+        ],
+      },
+      {
+        heading: "Unser Vorgehen",
+        paragraphs: [
+          "Wir haben den Shop als editoriales Erlebnis neu gedacht: eine warme, gedeckte Farbwelt, eine Serifen-Headline für den Charakter und viel Ruhe im Layout. Jedes Produkt lässt sich direkt aus der Übersicht in den Warenkorb legen – ohne Umweg über die Detailseite.",
+          "Den Kaufabschluss begleitet ein Warenkorb-Drawer mit Fortschrittsanzeige zum kostenlosen Versand, der sanft zur Kasse führt. Umgesetzt ist alles mobile-first und mit dezenten Scroll-Animationen, die das Stöbern lebendig halten, ohne aufdringlich zu sein.",
+        ],
+      },
+      {
+        heading: "Was wir gebaut haben",
+        bullets: [
+          "Editorialer Markenauftritt mit eigener Typo- und Farbwelt",
+          "Produktübersicht mit Schnellkauf direkt aus der Kachel",
+          "Detailseite mit Galerie, Varianten- und Mengenauswahl",
+          "Warenkorb-Drawer inkl. Fortschritt zum kostenlosen Versand",
+          "Vertrauenssignale: handgefertigt, nickelfrei, Bewertungen",
+          "Newsletter-Anmeldung mit Gutschein als Conversion-Anker",
+          "Konsequent mobile-first mit dezenten Scroll-Animationen",
+        ],
+      },
+      {
+        heading: "Ergebnis",
+        paragraphs: [
+          "Aus einem austauschbaren Shop wurde ein eigenständiger Markenauftritt, der die Handarbeit spürbar macht und gleichzeitig zum Kauf führt. Produkte sind in wenigen Sekunden im Warenkorb, und der Weg zur Kasse ist klar – ein Auftritt, der die Wertigkeit der Stücke endlich auch online zeigt.",
+        ],
+      },
+    ],
+    kpis: [
+      { value: "1 Klick", label: "vom Stöbern in den Warenkorb" },
+      { value: "Mobile-first", label: "über 80 % der Besucherinnen" },
+      { value: "< 1 s", label: "Ladezeit der Startseite" },
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI-Design", "Vercel"],
+    testimonial: {
+      quote:
+        "Endlich sieht der Shop so aus, wie sich meine Stücke anfühlen. Ruhig, hochwertig – und Kundinnen finden viel schneller in den Warenkorb.",
+      author: "Inhaberin",
+      role: "ZEN (Schmuck-Label)",
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

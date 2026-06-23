@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZEN · Handgefertigter Schmuck aus Berlin</title>
+<meta name="description" content="ZEN – filigrane Choker und reduzierter, handgefertigter Schmuck aus Berlin. Nickelfrei, hautfreundlich, leise Eleganz für jeden Tag.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{margin:0;background:#F2EDE4;color:#23201B;font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;width:100%;position:relative}
+  ::selection{background:#A8854E;color:#FAF7F0}
+  input::placeholder{color:#9A9183}
+  a{text-decoration:none;color:inherit}
+  button{font-family:inherit}
+  .serif{font-family:'Cormorant Garamond',serif}
+
+  /* Scroll-reveal */
+  [data-reveal]:not([data-shown]){opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1)}
+  [data-reveal][data-shown]{opacity:1 !important;transform:none !important;transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1)}
+  [data-reveal][data-delay="80"]:not([data-shown]){transition-delay:80ms}
+  [data-reveal][data-delay="100"]:not([data-shown]){transition-delay:100ms}
+  [data-reveal][data-delay="120"]:not([data-shown]){transition-delay:120ms}
+  [data-reveal][data-delay="160"]:not([data-shown]){transition-delay:160ms}
+  [data-reveal][data-delay="200"]:not([data-shown]){transition-delay:200ms}
+  [data-reveal][data-delay="240"]:not([data-shown]){transition-delay:240ms}
+
+  /* hover / focus states (ported from the design) */
+  .navlink{color:#3a352d;transition:color .25s ease}
+  .navlink:hover{color:#A8854E}
+  .iconbtn{transition:background .25s ease}
+  .iconbtn:hover{background:rgba(35,32,27,0.06)}
+  .btn-dark{transition:background .4s ease}
+  .btn-dark:hover{background:#A8854E}
+  .btn-outline{transition:all .4s ease}
+  .btn-outline:hover{border-color:#23201B;background:rgba(35,32,27,0.05)}
+  .pcard .pcard-img{transition:transform 1.1s cubic-bezier(.22,.61,.36,1)}
+  .pcard:hover .pcard-img{transform:scale(1.05)}
+  .addbtn{transition:all .35s ease}
+  .addbtn:hover{background:#A8854E !important;color:#fff !important}
+  .lookcard .look-img{transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
+  .lookcard:hover .look-img{transform:scale(1.04)}
+  .linkline{transition:color .3s ease}
+  .linkline:hover{color:#A8854E}
+  .footlink{transition:color .25s ease}
+  .footlink:hover{color:#C2A572}
+  .nlinput:focus{border-color:#A8854E !important}
+  .thumb{transition:border-color .25s ease}
+  .thumb:hover{border-color:#A8854E !important}
+  .qtybtn:hover{background:rgba(35,32,27,0.05)}
+  .closebtn:hover{background:rgba(35,32,27,0.07)}
+  .removebtn{transition:color .2s ease}
+  .removebtn:hover{color:#23201B !important}
+  .vbtn{transition:all .25s ease}
+  .linkbtn{transition:color .3s ease}
+  .linkbtn:hover{color:#23201B !important}
+  .hidden{display:none !important}
+</style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div style="background:#23201B;color:#EFE9DD;text-align:center;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding:11px 18px;font-weight:500">
+  Kostenloser Versand ab 39 € &nbsp;·&nbsp; Handgefertigt in Deutschland &nbsp;·&nbsp; Versand in 1–2 Tagen
+</div>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:60;background:rgba(242,237,228,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(35,32,27,0.10)">
+  <nav style="max-width:1320px;margin:0 auto;padding:18px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a onclick="goHome()" class="serif" style="cursor:pointer;font-size:26px;font-weight:600;letter-spacing:0.42em;padding-left:0.42em">ZEN</a>
+    <div style="display:flex;align-items:center;gap:clamp(16px,2.6vw,36px);flex-wrap:wrap;justify-content:center">
+      <a onclick="goShop()" class="navlink" style="cursor:pointer;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">Shop</a>
+      <a onclick="goChoker()" class="navlink" style="cursor:pointer;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">Choker</a>
+      <a onclick="goStory()" class="navlink" style="cursor:pointer;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">Über</a>
+      <a onclick="goContact()" class="navlink" style="cursor:pointer;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <button aria-label="Suche" class="iconbtn" style="background:none;border:none;cursor:pointer;color:#23201B;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      </button>
+      <button aria-label="Warenkorb" onclick="openCart()" class="iconbtn" style="background:none;border:none;cursor:pointer;color:#23201B;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;position:relative">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+        <span id="cartBadge" class="hidden" style="position:absolute;top:2px;right:2px;background:#A8854E;color:#fff;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<main id="homeView">
+  <!-- HERO -->
+  <section id="top" style="background:#EDE7DC;overflow:hidden">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:clamp(560px,88vh,880px)" class="hero-grid">
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,7vw,96px) clamp(20px,4vw,60px) clamp(40px,7vw,96px) 0">
+        <p style="font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:#8a6f3e;font-weight:600;margin-bottom:26px">Handgefertigt · Berlin</p>
+        <h1 class="serif" style="font-weight:500;font-size:clamp(42px,6.5vw,92px);line-height:0.97;letter-spacing:-0.02em;max-width:12ch;text-wrap:balance;color:#23201B">Leise Eleganz,<br><em style="font-style:italic;color:#5a5248">von Hand gefertigt.</em></h1>
+        <p style="font-size:clamp(15px,1.3vw,17px);color:#4b463c;max-width:44ch;margin-top:28px;line-height:1.75">Filigrane Choker und reduzierter Schmuck — Stück für Stück im Atelier gefertigt. Für alle, die das Stille schöner finden als das Laute.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:38px">
+          <button onclick="goShop()" class="btn-dark" style="background:#23201B;color:#FAF7F0;padding:16px 36px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;border-radius:2px;border:none;cursor:pointer">Kollektion entdecken</button>
+          <button onclick="goChoker()" class="btn-outline" style="background:transparent;color:#23201B;padding:16px 30px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;border:1px solid rgba(35,32,27,0.3);border-radius:2px;cursor:pointer">Choker ansehen</button>
+        </div>
+        <div style="display:flex;gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(35,32,27,0.12)">
+          <div><p class="serif" style="font-size:28px;font-weight:500;color:#23201B">2.400+</p><p style="font-size:12px;color:#8A8275;margin-top:2px;letter-spacing:0.05em">zufriedene Käuferinnen</p></div>
+          <div><p class="serif" style="font-size:28px;font-weight:500;color:#23201B">4,9 ★</p><p style="font-size:12px;color:#8A8275;margin-top:2px;letter-spacing:0.05em">Ø Bewertung</p></div>
+          <div><p class="serif" style="font-size:28px;font-weight:500;color:#23201B">ab 8 €</p><p style="font-size:12px;color:#8A8275;margin-top:2px;letter-spacing:0.05em">Handgefertigter Schmuck</p></div>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;background:#E0D5C2" class="hero-img">
+        <div style="position:absolute;inset:0;background-image:url('/case-studies/zen/imgs/arev.jpg');background-size:cover;background-position:center top"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(237,231,220,0.22) 0%,rgba(237,231,220,0) 30%)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <div style="border-bottom:1px solid rgba(35,32,27,0.10);background:#F2EDE4">
+    <div class="serif" style="max-width:1320px;margin:0 auto;padding:22px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;gap:14px clamp(28px,5vw,64px);justify-content:center;align-items:center;font-size:clamp(16px,2vw,22px);font-style:italic;color:#6b6456">
+      <span>Nickelfrei</span><span style="color:#A8854E">◇</span>
+      <span>Hautfreundlich</span><span style="color:#A8854E">◇</span>
+      <span>925er Silber &amp; 18k vergoldet</span><span style="color:#A8854E">◇</span>
+      <span>In Berlin gefertigt</span>
+    </div>
+  </div>
+
+  <!-- BESTSELLER GRID -->
+  <section id="shop" style="max-width:1320px;margin:0 auto;padding:clamp(72px,11vw,140px) clamp(20px,5vw,56px)">
+    <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:clamp(36px,5vw,64px)">
+      <div>
+        <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#8a6f3e;font-weight:600;margin-bottom:14px">Favoriten</p>
+        <h2 class="serif" style="font-weight:500;font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-0.01em">Was am liebsten getragen wird</h2>
+      </div>
+      <span id="shopCount" style="font-size:13px;color:#8A8275"></span>
+    </div>
+    <div id="shopGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:clamp(18px,2.4vw,34px)"></div>
+  </section>
+
+  <!-- LOOKBOOK -->
+  <section id="choker" style="background:#EDE7DC;border-top:1px solid rgba(35,32,27,0.08);border-bottom:1px solid rgba(35,32,27,0.08)">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
+      <div data-reveal style="text-align:center;margin-bottom:clamp(36px,5vw,60px)">
+        <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#8a6f3e;font-weight:600;margin-bottom:14px">Kollektionen</p>
+        <h2 class="serif" style="font-weight:500;font-size:clamp(30px,4.6vw,52px);line-height:1.05">Finde deinen Ton</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2vw,26px)">
+        <div onclick="goShop()" class="lookcard" data-reveal style="position:relative;cursor:pointer;aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:#E0D6C4">
+          <div class="look-img" style="position:absolute;inset:0;background-image:url('/case-studies/zen/imgs/arev-2.jpg');background-size:cover;background-position:center"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,32,27,0) 40%,rgba(35,32,27,0.5) 100%)"></div>
+          <div style="position:absolute;left:24px;bottom:22px;color:#FAF7F0"><h3 class="serif" style="font-size:30px;font-weight:500">Choker</h3><p style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.9;margin-top:6px">Das Herzstück →</p></div>
+        </div>
+        <div onclick="goShop()" class="lookcard" data-reveal data-delay="100" style="position:relative;cursor:pointer;aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:#D7DBCD">
+          <div class="look-img" style="position:absolute;inset:0;background-image:url('/case-studies/zen/imgs/luys-2.jpg');background-size:cover;background-position:center"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,32,27,0) 40%,rgba(35,32,27,0.5) 100%)"></div>
+          <div style="position:absolute;left:24px;bottom:22px;color:#FAF7F0"><h3 class="serif" style="font-size:30px;font-weight:500">Layering</h3><p style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.9;margin-top:6px">Schicht für Schicht →</p></div>
+        </div>
+        <div onclick="goShop()" class="lookcard" data-reveal data-delay="200" style="position:relative;cursor:pointer;aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:#E0D6C4">
+          <div class="look-img" style="position:absolute;inset:0;background-image:url('/case-studies/zen/imgs/astghik-2.jpg');background-size:cover;background-position:center"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,32,27,0) 40%,rgba(35,32,27,0.5) 100%)"></div>
+          <div style="position:absolute;left:24px;bottom:22px;color:#FAF7F0"><h3 class="serif" style="font-size:30px;font-weight:500">Neu</h3><p style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.9;margin-top:6px">Frisch im Atelier →</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" style="max-width:1320px;margin:0 auto;padding:clamp(72px,11vw,150px) clamp(20px,5vw,56px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(36px,6vw,90px);align-items:center">
+      <div data-reveal style="position:relative;aspect-ratio:4/5;border-radius:3px;overflow:hidden;background:#E3D9C8">
+        <div style="position:absolute;inset:0;background-image:url('/case-studies/zen/imgs/salor-2.jpg');background-size:cover;background-position:center"></div>
+      </div>
+      <div data-reveal data-delay="120">
+        <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#8a6f3e;font-weight:600;margin-bottom:20px">Handgefertigt mit Bedacht</p>
+        <h2 class="serif" style="font-weight:500;font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin-bottom:26px;text-wrap:balance">Jedes Stück entsteht<br>in ruhiger Handarbeit.</h2>
+        <p style="font-size:16px;color:#4b463c;line-height:1.8;margin-bottom:18px;max-width:52ch">Wir fertigen in kleinen Serien — gebogen, gelötet und poliert von Hand, an einem Tisch in Berlin. Kein Fließband, keine Eile. Jeder Choker bekommt die Zeit, die er braucht, damit er sich leicht anfühlt und lange bleibt.</p>
+        <p style="font-size:16px;color:#4b463c;line-height:1.8;margin-bottom:34px;max-width:52ch">Wir wählen hautfreundliche, nickelfreie Materialien und reduzieren auf das, was wirklich zählt. Schmuck, der nicht laut sein muss, um gesehen zu werden.</p>
+        <button onclick="goShop()" class="linkline" style="background:none;border:none;cursor:pointer;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#23201B;border-bottom:1px solid #A8854E;padding:0 0 5px">Zur Kollektion</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section style="background:#23201B;color:#EFE9DD">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,84px) clamp(20px,5vw,56px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(28px,4vw,48px)">
+        <div data-reveal style="text-align:center"><div class="serif" style="font-size:20px;font-weight:500;margin-bottom:8px">Handgefertigt in DE</div><p style="font-size:13px;color:#b3aa98;line-height:1.6">Jedes Stück entsteht in unserem Berliner Atelier.</p></div>
+        <div data-reveal data-delay="80" style="text-align:center"><div class="serif" style="font-size:20px;font-weight:500;margin-bottom:8px">Nickelfrei &amp; sanft</div><p style="font-size:13px;color:#b3aa98;line-height:1.6">Hautfreundliche Materialien für sensible Haut.</p></div>
+        <div data-reveal data-delay="160" style="text-align:center"><div class="serif" style="font-size:20px;font-weight:500;margin-bottom:8px">Versand ab 39 €</div><p style="font-size:13px;color:#b3aa98;line-height:1.6">Kostenfrei innerhalb Deutschlands, klimaneutral.</p></div>
+        <div data-reveal data-delay="240" style="text-align:center"><div class="serif" style="font-size:20px;font-weight:500;margin-bottom:8px">Sichere Zahlung</div><p style="font-size:13px;color:#b3aa98;line-height:1.6">PayPal, Klarna, Kreditkarte &amp; SOFORT.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,11vw,140px) clamp(20px,5vw,56px)">
+    <div data-reveal style="text-align:center;margin-bottom:clamp(40px,6vw,64px)">
+      <div style="color:#A8854E;font-size:18px;letter-spacing:4px;margin-bottom:14px">★★★★★</div>
+      <h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.2vw,48px);line-height:1.1">4,9 von 5 — über 2.400 Mal getragen &amp; geliebt</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(18px,2.4vw,30px)">
+      <div data-reveal style="background:#FAF7F0;border:1px solid rgba(35,32,27,0.08);border-radius:4px;padding:clamp(28px,3vw,40px)">
+        <div style="color:#A8854E;font-size:13px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
+        <p class="serif" style="font-size:22px;font-style:italic;line-height:1.5;color:#2c2820;margin-bottom:24px">„Der zarteste Choker, den ich besitze. Trage ihn seit Wochen jeden Tag — sogar unter der Dusche."</p>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:50%;background:#E3D9C8"></div><div><p style="font-size:14px;font-weight:600">Lea M.</p><p style="font-size:12px;color:#8A8275">Verifizierter Kauf · „Arev" Choker</p></div></div>
+      </div>
+      <div data-reveal data-delay="100" style="background:#FAF7F0;border:1px solid rgba(35,32,27,0.08);border-radius:4px;padding:clamp(28px,3vw,40px)">
+        <div style="color:#A8854E;font-size:13px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
+        <p class="serif" style="font-size:22px;font-style:italic;line-height:1.5;color:#2c2820;margin-bottom:24px">„Endlich Schmuck, der meine empfindliche Haut nicht reizt. Schlicht, edel, genau mein Stil."</p>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:50%;background:#D7DBCD"></div><div><p style="font-size:14px;font-weight:600">Yara K.</p><p style="font-size:12px;color:#8A8275">Verifizierter Kauf · „Nar" Choker</p></div></div>
+      </div>
+      <div data-reveal data-delay="200" style="background:#FAF7F0;border:1px solid rgba(35,32,27,0.08);border-radius:4px;padding:clamp(28px,3vw,40px)">
+        <div style="color:#A8854E;font-size:13px;letter-spacing:3px;margin-bottom:18px">★★★★★</div>
+        <p class="serif" style="font-size:22px;font-style:italic;line-height:1.5;color:#2c2820;margin-bottom:24px">„Wunderschön verpackt, schnell geliefert. Man merkt die Handarbeit in jedem Detail."</p>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:50%;background:#E3D9C8"></div><div><p style="font-size:14px;font-weight:600">Sophie R.</p><p style="font-size:12px;color:#8A8275">Verifizierter Kauf · „Luys" Set</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="kontakt" style="background:#D7DBCD">
+    <div data-reveal style="max-width:680px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);text-align:center">
+      <p style="font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:#6f7762;font-weight:600;margin-bottom:18px">Bleib in Verbindung</p>
+      <h2 class="serif" style="font-weight:500;font-size:clamp(30px,4.8vw,56px);line-height:1.05;margin-bottom:18px;letter-spacing:-0.01em">10 % auf deine erste Bestellung</h2>
+      <p style="font-size:16px;color:#3f4438;line-height:1.7;margin-bottom:34px;max-width:44ch;margin-left:auto;margin-right:auto">Melde dich an und erhalte deinen Code — plus leise Neuigkeiten aus dem Atelier. Kein Spam, versprochen.</p>
+      <div id="nlDone" class="hidden" style="background:#FAF7F0;border:1px solid rgba(35,32,27,0.12);border-radius:3px;padding:22px 28px;display:inline-block"><p class="serif" style="font-size:22px;font-style:italic;color:#2c2820">Willkommen ✦ Dein Code <strong style="font-style:normal;color:#A8854E;letter-spacing:0.08em">ZEN10</strong> wartet im Postfach.</p></div>
+      <form id="nlForm" onsubmit="subscribe(event)" style="display:flex;flex-wrap:wrap;gap:10px;max-width:480px;margin:0 auto;justify-content:center">
+        <input type="email" required placeholder="deine@email.de" class="nlinput" style="flex:1 1 240px;min-width:0;background:#FAF7F0;border:1px solid rgba(35,32,27,0.2);border-radius:2px;padding:16px 20px;font-size:15px;font-family:inherit;color:#23201B;outline:none"/>
+        <button type="submit" class="btn-dark" style="background:#23201B;color:#FAF7F0;border:none;cursor:pointer;padding:16px 32px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;border-radius:2px;flex:0 0 auto">Code sichern</button>
+      </form>
+      <p id="nlHint" style="font-size:12px;color:#6f7762;margin-top:14px">Mit der Anmeldung stimmst du unserer Datenschutzerklärung zu. Abmeldung jederzeit.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ================= PRODUCT DETAIL ================= -->
+<main id="productView" class="hidden" style="min-height:60vh"></main>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background:#23201B;color:#cfc7b6">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,90px) clamp(20px,5vw,56px) 40px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:clamp(32px,4vw,56px);padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid rgba(255,255,255,0.1)">
+      <div style="grid-column:1/-1;max-width:340px">
+        <div class="serif" style="font-size:28px;font-weight:600;letter-spacing:0.42em;color:#FAF7F0;padding-left:0.42em;margin-bottom:18px">ZEN</div>
+        <p style="font-size:14px;line-height:1.7;color:#a39b8a">Handgefertigter, minimalistischer Schmuck aus Berlin. Leise Eleganz für jeden Tag.</p>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#FAF7F0;margin-bottom:18px">Shop</h4>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+          <a onclick="goShop()" class="footlink" style="cursor:pointer">Choker</a>
+          <a onclick="goShop()" class="footlink" style="cursor:pointer">Halsketten</a>
+          <a onclick="goShop()" class="footlink" style="cursor:pointer">Ohrringe</a>
+          <a onclick="goShop()" class="footlink" style="cursor:pointer">Armbänder</a>
+          <a onclick="goShop()" class="footlink" style="cursor:pointer">Geschenkgutschein</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#FAF7F0;margin-bottom:18px">Service</h4>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+          <a onclick="goStory()" class="footlink" style="cursor:pointer">Über uns</a>
+          <a onclick="goContact()" class="footlink" style="cursor:pointer">Kontakt</a>
+          <a href="#" class="footlink">Versand &amp; Retoure</a>
+          <a href="#" class="footlink">Pflegehinweise</a>
+          <a href="#" class="footlink">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#FAF7F0;margin-bottom:18px">Folge uns</h4>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+          <a href="#" class="footlink">Instagram</a>
+          <a href="#" class="footlink">TikTok</a>
+          <a href="#" class="footlink">Pinterest</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding-top:28px">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+        <span style="font-size:11px;letter-spacing:0.1em;border:1px solid rgba(255,255,255,0.18);border-radius:3px;padding:5px 10px;color:#cfc7b6">VISA</span>
+        <span style="font-size:11px;letter-spacing:0.1em;border:1px solid rgba(255,255,255,0.18);border-radius:3px;padding:5px 10px;color:#cfc7b6">Mastercard</span>
+        <span style="font-size:11px;letter-spacing:0.1em;border:1px solid rgba(255,255,255,0.18);border-radius:3px;padding:5px 10px;color:#cfc7b6">PayPal</span>
+        <span style="font-size:11px;letter-spacing:0.1em;border:1px solid rgba(255,255,255,0.18);border-radius:3px;padding:5px 10px;color:#cfc7b6">Klarna</span>
+        <span style="font-size:11px;letter-spacing:0.1em;border:1px solid rgba(255,255,255,0.18);border-radius:3px;padding:5px 10px;color:#cfc7b6">SOFORT</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:12px;color:#8f8775">
+        <a href="#" class="footlink">Impressum</a>
+        <a href="#" class="footlink">Datenschutz</a>
+        <a href="#" class="footlink">AGB</a>
+        <a href="#" class="footlink">Widerruf</a>
+      </div>
+    </div>
+    <p style="font-size:12px;color:#6f6858;margin-top:26px">© 2026 ZEN · Handgefertigt in Berlin. Alle Preise inkl. MwSt.</p>
+  </div>
+</footer>
+
+<!-- ================= CART DRAWER ================= -->
+<div id="backdrop" onclick="closeCart()" style="position:fixed;inset:0;z-index:80;background:rgba(20,17,13,0.45);transition:opacity .4s ease;opacity:0;pointer-events:none"></div>
+<aside id="drawer" style="position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(420px,92vw);background:#F6F2EA;box-shadow:-12px 0 40px rgba(20,17,13,0.18);transform:translateX(101%);transition:transform .42s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 26px;border-bottom:1px solid rgba(35,32,27,0.1)">
+    <h3 class="serif" style="font-size:24px;font-weight:600">Warenkorb</h3>
+    <button onclick="closeCart()" aria-label="Schließen" class="closebtn" style="background:none;border:none;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#23201B">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+    </button>
+  </div>
+  <div id="cartBody" style="flex:1;display:flex;flex-direction:column;min-height:0"></div>
+</aside>
+
+<!-- ================= TOAST ================= -->
+<div id="toast" style="position:fixed;left:50%;bottom:28px;z-index:100;transform:translateX(-50%) translateY(16px);opacity:0;transition:all .4s cubic-bezier(.22,.61,.36,1);background:#23201B;color:#FAF7F0;padding:14px 24px;border-radius:3px;font-size:14px;box-shadow:0 8px 28px rgba(20,17,13,0.28);pointer-events:none;display:flex;align-items:center;gap:10px;white-space:nowrap">
+  <span style="color:#C2A572">✦</span> <span id="toastMsg"></span>
+</div>
+
+<style>
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr !important;min-height:auto !important} .hero-img{min-height:420px} }
+</style>
+
+<script>
+const FREE_SHIP = 39;
+const eur = n => n + ' €';
+
+const PRODUCTS = [
+  { id:'arev', name:'Arev', price:9, sub:'Handarbeit · verstellbar', badge:'Bestseller',
+    img:'/case-studies/zen/imgs/arev.jpg', gallery:['/case-studies/zen/imgs/arev.jpg','/case-studies/zen/imgs/arev-2.jpg'],
+    reviews:187, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Von Hand gefertigt, Stück für Stück. Arev passt sich deinem Hals an und sitzt so leicht, dass du ihn vergisst — bis jemand fragt, wo du ihn her hast.' },
+  { id:'amar', name:'Amar', price:9, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/amar-2.jpg', gallery:['/case-studies/zen/imgs/amar-2.jpg'],
+    reviews:142, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Reduktion auf das Wesentliche. Amar begleitet dich lautlos durch den Tag — ein Choker, der nie zu viel und nie zu wenig ist.' },
+  { id:'or', name:'Or', price:8, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/or.jpg', gallery:['/case-studies/zen/imgs/or.jpg'],
+    reviews:98, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Schlicht und klar. Or liegt nah am Hals, ohne zu drücken — der perfekte Einstieg in minimalistischen Schmuck.' },
+  { id:'nar', name:'Nar', price:9, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/nar.jpg', gallery:['/case-studies/zen/imgs/nar.jpg','/case-studies/zen/imgs/nar-2.jpg'],
+    reviews:115, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Fein und präzise gearbeitet. Nar sitzt wie gemacht — ruhig, zart, mit dieser besonderen Qualität, die man nur mit Händen erschaffen kann.' },
+  { id:'sirun', name:'Sirun', price:9, sub:'Handarbeit · verstellbar', badge:'Neu',
+    img:'/case-studies/zen/imgs/sirun.jpg', gallery:['/case-studies/zen/imgs/sirun.jpg'],
+    reviews:41, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Frisch aus dem Atelier. Sirun vereint Handarbeit und Geradlinigkeit — neu in der Kollektion, schon jetzt ein Favorit.' },
+  { id:'astghik', name:'Astghik', price:9, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/astghik.jpg', gallery:['/case-studies/zen/imgs/astghik.jpg','/case-studies/zen/imgs/astghik-2.jpg'],
+    reviews:89, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Ein Name mit Bedeutung, ein Stück mit Charakter. Astghik trägt die Ruhe in sich, die guten Dingen eigen ist.' },
+  { id:'salor', name:'Salor', price:8, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/salor.jpg', gallery:['/case-studies/zen/imgs/salor.jpg','/case-studies/zen/imgs/salor-2.jpg'],
+    reviews:66, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Klar in der Form, warm in der Wirkung. Salor ist der Choker für jeden Tag — und für die Momente dazwischen.' },
+  { id:'luys', name:'Luys', price:9, sub:'Handarbeit · verstellbar', badge:'',
+    img:'/case-studies/zen/imgs/luys.jpg', gallery:['/case-studies/zen/imgs/luys.jpg','/case-studies/zen/imgs/luys-2.jpg'],
+    reviews:103, variantLabel:'Größe', variants:['XS','S','M','L'],
+    material:'Handgefertigt · nickelfrei · individuell verstellbar',
+    desc:'Luys bedeutet Licht. Dieser Choker trägt diese Leichtigkeit — handgefertigt, hauchzart, für Trägerinnen die das Stille schöner finden als das Laute.' }
+];
+
+const byId = id => PRODUCTS.find(p => p.id === id);
+
+const state = { view:'home', currentId:null, activeImg:null, variant:null, qty:1, cart:[], cartOpen:false, checkoutDone:false };
+
+const $ = sel => document.querySelector(sel);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- product grid ---------- */
+function cardHTML(p){
+  const badge = p.badge ? `<span style="position:absolute;top:12px;left:12px;background:#23201B;color:#EFE9DD;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px">${esc(p.badge)}</span>` : '';
+  return `<div class="pcard" onclick="openProduct('${p.id}')" style="cursor:pointer">
+    <div class="pcard-shot" style="position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:3px;background:#E7DECF">
+      <div class="pcard-img" style="position:absolute;inset:0;background-image:url('${p.img}');background-size:cover;background-position:center"></div>
+      ${badge}
+      <button class="addbtn" onclick="event.stopPropagation();addFromCard('${p.id}')" aria-label="In den Warenkorb" style="position:absolute;bottom:12px;right:12px;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;background:#FAF7F0;color:#23201B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(35,32,27,0.18)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="12" y1="6" x2="12" y2="18"></line><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+      </button>
+    </div>
+    <div style="padding-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+      <h3 class="serif" style="font-size:22px;font-weight:500">${esc(p.name)}</h3>
+      <span style="font-size:14px;color:#4b463c;font-weight:500;white-space:nowrap">${eur(p.price)}</span>
+    </div>
+    <p style="font-size:13px;color:#8A8275;margin-top:3px">${esc(p.sub)}</p>
+  </div>`;
+}
+function renderShop(){
+  $('#shopGrid').innerHTML = PRODUCTS.map(cardHTML).join('');
+  $('#shopCount').textContent = PRODUCTS.length + ' Stücke · ab 8 €';
+}
+
+/* ---------- product detail ---------- */
+function renderProduct(){
+  const p = byId(state.currentId) || PRODUCTS[0];
+  const variant = state.variant || p.variants[0];
+  const active = state.activeImg || p.img;
+  const thumbs = (p.gallery || [p.img]).map(url =>
+    `<button class="thumb" onclick="setGallery('${url}')" style="flex:1;aspect-ratio:1;border:1px solid rgba(35,32,27,0.14);border-radius:3px;overflow:hidden;cursor:pointer;background-image:url('${url}');background-size:cover;background-position:center;padding:0"></button>`
+  ).join('');
+  const variants = p.variants.map(v => {
+    const sel = v === variant;
+    return `<button class="vbtn" onclick="selectVariant('${v}')" style="padding:11px 20px;border:1px solid ${sel?'#23201B':'rgba(35,32,27,0.25)'};background:${sel?'#23201B':'transparent'};color:${sel?'#FAF7F0':'#3a352d'};border-radius:2px;cursor:pointer;font-size:13px;letter-spacing:0.04em;font-family:inherit">${esc(v)}</button>`;
+  }).join('');
+  const badge = p.badge ? `<span style="display:inline-block;background:#23201B;color:#EFE9DD;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;padding:5px 11px;border-radius:2px;margin-bottom:18px">${esc(p.badge)}</span>` : '';
+  const related = PRODUCTS.filter(x => x.id !== p.id).slice(0,4).map(x =>
+    `<div onclick="openProduct('${x.id}')" class="pcard" style="cursor:pointer">
+      <div style="position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:3px;background:#E7DECF">
+        <div class="pcard-img" style="position:absolute;inset:0;background-image:url('${x.img}');background-size:cover;background-position:center"></div>
+      </div>
+      <div style="padding-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <h3 class="serif" style="font-size:19px;font-weight:500">${esc(x.name)}</h3>
+        <span style="font-size:13px;color:#4b463c;white-space:nowrap">${eur(x.price)}</span>
+      </div>
+    </div>`).join('');
+
+  $('#productView').innerHTML = `
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(20px,3vw,36px) clamp(20px,5vw,56px) 0">
+      <button onclick="goShop()" class="linkbtn" style="background:none;border:none;cursor:pointer;font-size:13px;letter-spacing:0.06em;color:#6b6456;display:inline-flex;align-items:center;gap:8px">← Zurück zum Shop</button>
+    </div>
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(20px,5vw,56px) clamp(56px,8vw,100px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:14px;position:sticky;top:90px">
+          <div style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;background-image:url('${active}');background-size:cover;background-position:center"></div>
+          <div style="display:flex;gap:12px">${thumbs}</div>
+        </div>
+        <div>
+          ${badge}
+          <h1 class="serif" style="font-weight:500;font-size:clamp(34px,5vw,54px);line-height:1.04;letter-spacing:-0.01em;margin-bottom:12px">${esc(p.name)}</h1>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+            <span style="color:#A8854E;font-size:13px;letter-spacing:3px">★★★★★</span>
+            <span style="font-size:13px;color:#8A8275">${p.reviews} Bewertungen</span>
+          </div>
+          <p class="serif" style="font-size:26px;color:#23201B;margin-bottom:26px">${eur(p.price)}</p>
+          <p style="font-size:16px;color:#4b463c;line-height:1.8;margin-bottom:30px;max-width:52ch">${esc(p.desc)}</p>
+          <p style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8275;margin-bottom:12px">${esc(p.variantLabel)}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px">${variants}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-bottom:18px">
+            <div style="display:flex;align-items:center;border:1px solid rgba(35,32,27,0.22);border-radius:2px;overflow:hidden">
+              <button onclick="decQty()" aria-label="weniger" class="qtybtn" style="width:46px;height:54px;background:none;border:none;cursor:pointer;font-size:20px;color:#23201B">−</button>
+              <span style="min-width:44px;text-align:center;font-size:15px;font-weight:600">${state.qty}</span>
+              <button onclick="incQty()" aria-label="mehr" class="qtybtn" style="width:46px;height:54px;background:none;border:none;cursor:pointer;font-size:20px;color:#23201B">+</button>
+            </div>
+            <button onclick="addCurrent()" class="btn-dark" style="flex:1 1 220px;background:#23201B;color:#FAF7F0;border:none;cursor:pointer;padding:0 32px;height:54px;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;border-radius:2px">In den Warenkorb · ${eur(p.price)}</button>
+          </div>
+          <p style="font-size:13px;color:#6f7762;margin-bottom:32px;display:flex;align-items:center;gap:8px"><span style="color:#A8854E">✦</span> Versandfertig in 1–2 Tagen · kostenloser Versand ab 39 €</p>
+          <div style="border-top:1px solid rgba(35,32,27,0.12)">
+            <div style="padding:20px 0;border-bottom:1px solid rgba(35,32,27,0.12)">
+              <p style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#23201B;font-weight:600;margin-bottom:8px">Material</p>
+              <p style="font-size:14px;color:#6b6456;line-height:1.7">${esc(p.material)}</p>
+            </div>
+            <div style="padding:20px 0;border-bottom:1px solid rgba(35,32,27,0.12)">
+              <p style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#23201B;font-weight:600;margin-bottom:8px">Pflege</p>
+              <p style="font-size:14px;color:#6b6456;line-height:1.7">Vor Wasser, Parfum und Sport ablegen. Mit dem beiliegenden Tuch sanft polieren — so bleibt der Glanz lange erhalten.</p>
+            </div>
+            <div style="padding:20px 0">
+              <p style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#23201B;font-weight:600;margin-bottom:8px">Versand &amp; Rückgabe</p>
+              <p style="font-size:14px;color:#6b6456;line-height:1.7">Klimaneutraler Versand mit DHL. 30 Tage Rückgaberecht. Jedes Stück kommt in einer wiederverwendbaren Schmuckbox.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section style="background:#EDE7DC;border-top:1px solid rgba(35,32,27,0.08)">
+      <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,100px) clamp(20px,5vw,56px)">
+        <h2 class="serif" style="font-weight:500;font-size:clamp(26px,3.6vw,40px);margin-bottom:clamp(28px,4vw,48px)">Dazu passt</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:clamp(16px,2vw,28px)">${related}</div>
+      </div>
+    </section>`;
+}
+
+/* ---------- navigation ---------- */
+function showHome(){ state.view='home'; $('#homeView').classList.remove('hidden'); $('#productView').classList.add('hidden'); }
+function showProduct(){ state.view='product'; $('#productView').classList.remove('hidden'); $('#homeView').classList.add('hidden'); }
+function scrollToId(id){ const el = document.getElementById(id); if(el) window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - 70, behavior:'smooth'}); }
+function navHome(id){ if(state.view !== 'home'){ showHome(); setTimeout(()=>scrollToId(id), 60); } else { scrollToId(id); } runReveals(true); }
+function goHome(){ closeCart(); state.checkoutDone=false; showHome(); window.scrollTo({top:0}); runReveals(true); }
+function goShop(){ closeCart(); navHome('shop'); }
+function goChoker(){ closeCart(); navHome('choker'); }
+function goStory(){ closeCart(); navHome('story'); }
+function goContact(){ closeCart(); navHome('kontakt'); }
+
+function openProduct(id){
+  const p = byId(id); if(!p) return;
+  state.currentId=id; state.activeImg=p.img; state.variant=p.variants[0]; state.qty=1;
+  closeCart(); state.checkoutDone=false;
+  renderProduct(); showProduct(); window.scrollTo({top:0}); runReveals(true);
+}
+function setGallery(url){ state.activeImg=url; renderProduct(); }
+function selectVariant(v){ state.variant=v; renderProduct(); }
+function incQty(){ state.qty++; renderProduct(); }
+function decQty(){ state.qty=Math.max(1, state.qty-1); renderProduct(); }
+
+/* ---------- cart ---------- */
+function addItem(p, variant, qty){
+  const key = p.id + '|' + variant;
+  const ex = state.cart.find(i => i.key === key);
+  if(ex){ ex.qty += qty; } else { state.cart.push({key, id:p.id, name:p.name, price:p.price, img:p.img, variant, qty}); }
+  syncCart();
+}
+function addFromCard(id){ const p = byId(id); if(!p) return; addItem(p, p.variants[0], 1); showToast(p.name + ' hinzugefügt'); }
+function addCurrent(){ const p = byId(state.currentId); if(!p) return; addItem(p, state.variant || p.variants[0], state.qty); state.checkoutDone=false; openCart(); }
+function incItem(key){ const it = state.cart.find(i=>i.key===key); if(it){ it.qty++; syncCart(); } }
+function decItem(key){ const it = state.cart.find(i=>i.key===key); if(it){ it.qty=Math.max(1,it.qty-1); syncCart(); } }
+function removeItem(key){ state.cart = state.cart.filter(i=>i.key!==key); syncCart(); }
+function checkout(){ state.checkoutDone=true; renderCart(); }
+function openCart(){ state.cartOpen=true; state.checkoutDone=false; renderCart(); $('#drawer').style.transform='translateX(0)'; $('#backdrop').style.opacity='1'; $('#backdrop').style.pointerEvents='auto'; }
+function closeCart(){ state.cartOpen=false; $('#drawer').style.transform='translateX(101%)'; $('#backdrop').style.opacity='0'; $('#backdrop').style.pointerEvents='none'; }
+
+function cartCount(){ return state.cart.reduce((a,i)=>a+i.qty,0); }
+function cartSubtotal(){ return state.cart.reduce((a,i)=>a+i.price*i.qty,0); }
+
+function syncCart(){
+  const count = cartCount();
+  const badge = $('#cartBadge');
+  badge.textContent = count;
+  badge.classList.toggle('hidden', count === 0);
+  if(state.cartOpen) renderCart();
+}
+
+function renderCart(){
+  const body = $('#cartBody');
+  const count = cartCount();
+  if(state.checkoutDone){
+    body.innerHTML = `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 32px;gap:14px">
+      <div style="width:56px;height:56px;border-radius:50%;border:1px solid #A8854E;display:flex;align-items:center;justify-content:center;color:#A8854E;font-size:24px">✦</div>
+      <h4 class="serif" style="font-size:26px;font-weight:500">Danke für deine Bestellung</h4>
+      <p style="font-size:14px;color:#6b6456;line-height:1.7;max-width:30ch">Dies ist eine Demo-Bestellung. Im fertigen Shop würde hier der sichere Checkout folgen.</p>
+      <button onclick="goHome()" class="btn-dark" style="margin-top:8px;background:#23201B;color:#FAF7F0;border:none;cursor:pointer;padding:14px 28px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;border-radius:2px">Weiter stöbern</button>
+    </div>`;
+    return;
+  }
+  if(count === 0){
+    body.innerHTML = `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 32px;gap:16px">
+      <p class="serif" style="font-size:24px;font-style:italic;color:#6b6456">Dein Warenkorb ist noch leer.</p>
+      <button onclick="closeCart()" class="btn-dark" style="background:#23201B;color:#FAF7F0;border:none;cursor:pointer;padding:14px 28px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;border-radius:2px">Jetzt entdecken</button>
+    </div>`;
+    return;
+  }
+  const subtotal = cartSubtotal();
+  const remaining = Math.max(0, FREE_SHIP - subtotal);
+  const progress = Math.min(100, subtotal / FREE_SHIP * 100);
+  const shipMsg = subtotal >= FREE_SHIP
+    ? `<p style="font-size:13px;color:#3f4438;text-align:center">✓ Du erhältst <strong>kostenlosen Versand</strong></p>`
+    : `<p style="font-size:13px;color:#6b6456;text-align:center;margin-bottom:8px">Noch <strong style="color:#A8854E">${eur(remaining)}</strong> bis zum kostenlosen Versand</p>`;
+  const items = state.cart.map(it => `
+    <div style="display:flex;gap:14px;padding:18px 0;border-bottom:1px solid rgba(35,32,27,0.08)">
+      <div style="width:72px;height:90px;flex:none;border-radius:3px;background:#E7DECF;background-image:url('${it.img}');background-size:cover;background-position:center"></div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;justify-content:space-between;gap:10px"><h4 class="serif" style="font-size:18px;font-weight:500">${esc(it.name)}</h4><button onclick="removeItem('${it.key}')" aria-label="Entfernen" class="removebtn" style="background:none;border:none;cursor:pointer;color:#9A8E78;font-size:18px;line-height:1">×</button></div>
+        <p style="font-size:12px;color:#8A8275;margin:2px 0 10px">${esc(it.variant)}</p>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="display:flex;align-items:center;border:1px solid rgba(35,32,27,0.2);border-radius:2px">
+            <button onclick="decItem('${it.key}')" class="qtybtn" style="width:30px;height:30px;background:none;border:none;cursor:pointer;font-size:16px;color:#23201B">−</button>
+            <span style="min-width:26px;text-align:center;font-size:13px;font-weight:600">${it.qty}</span>
+            <button onclick="incItem('${it.key}')" class="qtybtn" style="width:30px;height:30px;background:none;border:none;cursor:pointer;font-size:16px;color:#23201B">+</button>
+          </div>
+          <span style="font-size:14px;font-weight:500">${eur(it.price*it.qty)}</span>
+        </div>
+      </div>
+    </div>`).join('');
+  body.innerHTML = `
+    <div style="padding:16px 26px;background:#EDE7DC">
+      ${shipMsg}
+      <div style="height:4px;border-radius:2px;background:rgba(35,32,27,0.12);overflow:hidden"><div style="height:100%;background:#A8854E;width:${progress}%;transition:width .4s ease"></div></div>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:8px 26px">${items}</div>
+    <div style="padding:20px 26px 26px;border-top:1px solid rgba(35,32,27,0.1)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px"><span style="font-size:15px;color:#4b463c">Zwischensumme</span><span class="serif" style="font-size:24px">${eur(subtotal)}</span></div>
+      <p style="font-size:12px;color:#8A8275;margin-bottom:16px">inkl. MwSt., zzgl. Versand</p>
+      <button onclick="checkout()" class="btn-dark" style="width:100%;background:#23201B;color:#FAF7F0;border:none;cursor:pointer;padding:16px;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;border-radius:2px">Weiter zur Kasse</button>
+      <button onclick="closeCart()" class="linkbtn" style="width:100%;background:none;border:none;cursor:pointer;padding:14px 0 0;font-size:13px;color:#6b6456;text-decoration:underline;text-underline-offset:3px">Weiter einkaufen</button>
+    </div>`;
+}
+
+/* ---------- newsletter ---------- */
+function subscribe(e){
+  e.preventDefault();
+  const input = $('#nlForm input');
+  if(input.value.trim()){
+    $('#nlForm').classList.add('hidden');
+    $('#nlHint').classList.add('hidden');
+    $('#nlDone').classList.remove('hidden');
+  }
+}
+
+/* ---------- toast ---------- */
+let toastT;
+function showToast(msg){
+  $('#toastMsg').textContent = msg;
+  const t = $('#toast');
+  t.style.opacity='1'; t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(toastT);
+  toastT = setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(16px)'; }, 2200);
+}
+
+/* ---------- scroll reveal ---------- */
+function runReveals(force){
+  const vh = window.innerHeight || 800;
+  document.querySelectorAll('[data-reveal]:not([data-shown])').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if(force || (r.top < vh * 0.92 && r.bottom > 0)) el.setAttribute('data-shown','1');
+  });
+}
+
+/* ---------- init ---------- */
+renderShop();
+window.addEventListener('scroll', ()=>requestAnimationFrame(()=>runReveals()), {passive:true});
+window.addEventListener('resize', ()=>requestAnimationFrame(()=>runReveals()), {passive:true});
+runReveals();
+setTimeout(()=>runReveals(), 200);
+setTimeout(()=>runReveals(true), 1200);
+</script>
+</body>
+</html>

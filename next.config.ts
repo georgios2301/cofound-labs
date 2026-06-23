@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
         source: "/case-studies/bahnhof-varresbeck",
         destination: "/case-studies/bahnhof-varresbeck/index.html",
       },
+      {
+        source: "/case-studies/zen",
+        destination: "/case-studies/zen/index.html",
+      },
     ];
   },
 };

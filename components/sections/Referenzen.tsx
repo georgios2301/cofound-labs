@@ -62,6 +62,15 @@ const cases: CaseStudy[] = [
     alt: "Biergarten Bahnhof Varresbeck – Website Case Study",
     href: "/referenzen/bahnhof-varresbeck",
   },
+  {
+    title: "ZEN",
+    description:
+      "Editorial gedachtes Redesign für ein Schmuck-Label aus Berlin: ein ruhiger, hochwertiger Online-Shop für handgefertigte Choker – mit Schnellkauf, Produktdetailseite und Warenkorb, der zum Abschluss führt.",
+    tags: ["Website", "E-Commerce", "Shop-UI"],
+    image: "/images/projects/zen.jpg",
+    alt: "ZEN – Redesign des Online-Shops für handgefertigten Schmuck",
+    href: "/referenzen/zen",
+  },
 ];
 
 function Cover({ src, alt }: { src: string; alt: string }) {
