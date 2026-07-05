@@ -19,7 +19,7 @@
 
 | Phase | Erledigt | Offen |
 |---|---|---|
-| Phase 0 – Kritisch (Deploy & Alignment) | 0 | 2 |
+| Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 0 | 6 |
 | Phase 2 – Strategisch | 0 | 7 |
 | Phase 3 – Backlog | 0 | 3 |
@@ -32,19 +32,20 @@ Die Seite wurde auf ein leichtes „Plakat"-Onepager-Konzept umgestellt:
 **„Neue Website. 199 €. 48 Stunden."** für lokale Betriebe.
 Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber noch auf **Startups / MVPs / App-Entwicklung**. Diese Spaltung aufzulösen ist der rote Faden dieses Trackers.
 
-**Größtes Problem:** Der Relaunch ist **nur lokal im Code**, nicht deployt. Die Live-Startseite zeigt noch die alte H1 „Individuelle Software für Startups" – Google auditiert also die alte Seite.
+**Status (05.07.2026):** Der Relaunch ist jetzt **live** (Commit `82ad0ba`, Vercel). Die Startseite zeigt live die neue H1 „Neue Website. 199 Euro. 48 Stunden." – der Deploy-Blocker ist gelöst. Damit ist der Pivot aber **sichtbar unvollständig**: Leistungsseiten, Blog und `llms.txt` zielen live weiter auf Startups/MVP – die Auflösung dieser Spaltung läuft über Phase 1 + 2.
 
 ---
 
 ## 🔴 Phase 0 – Kritisch (zuerst, blockiert alles Weitere)
 
-- [ ] 🔴 👤 **Plakat-Relaunch auf Vercel deployen**
-  - Ohne Deploy sieht Google weiter die alte Startup-Seite; jede weitere SEO-Arbeit ist bis dahin wirkungslos.
-  - ✅ Akzeptanz: `https://cofound-labs.de` zeigt live H1 „Neue Website. 199 Euro. 48 Stunden." · Impact: **Sehr hoch** · Aufwand: 5 Min
+- [x] 🔴 **Plakat-Relaunch auf Vercel deployen** *(05.07.2026 erledigt & live verifiziert)*
+  - Der gesamte Relaunch lag uncommittet im Working Tree – nie committet, nie gepusht; die Live-Seite zeigte noch die alte Startup-H1.
+  - Production-Build lokal grün (32 Seiten, TypeScript ok) → committet (`82ad0ba`) & auf `main` gepusht → Vercel-Auto-Deploy.
+  - ✅ Verifiziert: `https://cofound-labs.de` liefert live H1 „Neue Website. 199 Euro. 48 Stunden.", neue Meta/Title, alte Startup-Hero weg (curl-geprüft, Vercel fra1 cache HIT). · Impact: **Sehr hoch**
 
-- [ ] 🔴 **Positionierung Startseite ↔ Unterbau angleichen**
-  - Startseite verkauft *Website-Auffrischung für lokale Betriebe*, Leistungen/Blog/`llms.txt` verkaufen *Startups/MVP/Apps*. Das exakte Startseiten-Angebot hat noch **keine eigene Landingpage**.
-  - Wird in Phase 1 (Quick Wins) + Phase 2 (Landingpages) konkret abgearbeitet – hier als Leitplanke notiert.
+- [~] 🔴 **Positionierung Startseite ↔ Unterbau angleichen** *(Leitplanke – wird in Phase 1 + 2 abgearbeitet)*
+  - Startseite verkauft jetzt live *Website-Auffrischung für lokale Betriebe*; Leistungen/Blog/`llms.txt` zielen aber weiter auf *Startups/MVP/Apps*. Das exakte Startseiten-Angebot hat noch **keine eigene Landingpage**.
+  - Konkrete Schritte: `llms.txt` + Nav (Phase 1) · Auffrischungs-Landingpage + Branchen-Verticals + Blog-Umlenkung (Phase 2).
   - ✅ Akzeptanz: roter Faden „199 € Website-Auffrischung / lokale Betriebe" zieht sich durch Startseite, Leistungen, Blog-Fokus & `llms.txt` · Impact: **Sehr hoch**
 
 ---
