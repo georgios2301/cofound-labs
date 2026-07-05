@@ -32,7 +32,7 @@ export default function Datenschutz() {
                 <br />
                 Cofound Labs
                 <br />
-                In der Krim 9, 42369 Wuppertal
+                Blumenstraße 12, 42119 Wuppertal
                 <br />
                 E-Mail:{" "}
                 <a href="mailto:georgios@cofound-labs.de">georgios@cofound-labs.de</a>

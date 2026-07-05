@@ -85,8 +85,8 @@ const jsonLd = {
       founder: { "@id": `${SITE_URL}/#georgios` },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "In der Krim 9",
-        postalCode: "42369",
+        streetAddress: "Blumenstraße 12",
+        postalCode: "42119",
         addressLocality: "Wuppertal",
         addressCountry: "DE",
       },
@@ -104,8 +104,8 @@ const jsonLd = {
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "In der Krim 9",
-        postalCode: "42369",
+        streetAddress: "Blumenstraße 12",
+        postalCode: "42119",
         addressLocality: "Wuppertal",
         addressCountry: "DE",
       },

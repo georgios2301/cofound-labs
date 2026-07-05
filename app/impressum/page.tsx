@@ -31,9 +31,9 @@ export default function Impressum() {
                 <br />
                 Cofound Labs
                 <br />
-                In der Krim 9
+                Blumenstraße 12
                 <br />
-                42369 Wuppertal
+                42119 Wuppertal
                 <br />
                 Deutschland
               </p>
@@ -50,9 +50,9 @@ export default function Impressum() {
               <p>
                 Georgios Apostolidis
                 <br />
-                In der Krim 9
+                Blumenstraße 12
                 <br />
-                42369 Wuppertal
+                42119 Wuppertal
               </p>
 
               <h2>Haftungsausschluss</h2>
