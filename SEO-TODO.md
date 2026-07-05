@@ -21,7 +21,7 @@
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
-| Phase 2 – Strategisch | 0 | 7 |
+| Phase 2 – Strategisch | 3 | 5 |
 | Phase 3 – Backlog | 0 | 3 |
 
 ---
@@ -74,20 +74,22 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
 
 ## 🏗️ Phase 2 – Strategische Investitionen (dieses Quartal)
 
-- [ ] 🟠 **Landingpage „Website auffrischen / Relaunch"** — dein Kernangebot als eigene Seite
-  - Ziel-Keywords: *website auffrischen lassen, website relaunch, website überarbeiten lassen, homepage auffrischen.*
-  - Datengetrieben über `lib/services.ts` (Muster wiederverwenden): eigenes Keyword/Title/H1, Service-/Offer-(199 €)/Breadcrumb-/FAQ-Schema, Canonical, OG.
-  - ✅ Akzeptanz: indexierbare Seite unter `/leistungen/website-auffrischen-lassen`, in Sitemap & Nav · Impact: **Hoch** · Aufwand: Halber Tag
+- [x] 🟠 **~~Eigene Auffrischungs-Landingpage~~ – verworfen (Startseite IST bereits die LP)**
+  - Die Startseite `/` dreht sich nach dem Plakat-Relaunch komplett um Website-Auffrischung 199 €/48 h und zielt seit Phase 1 direkt auf das Keyword (Title/Meta „Website auffrischen …"). Eine zweite Seite auf dasselbe Keyword würde die Startseite kannibalisieren. → **Kein eigenes `/leistungen/website-auffrischen-lassen`.**
 
-- [ ] 🟠 **3 Branchen-Verticals** — exakt die genannte Zielgruppe
-  - *Website für Friseure · für Gastronomie/Restaurants · für Handwerker.* Niedrige Difficulty, hohe Kaufabsicht.
-  - Datengetrieben; jeweils eigenes Keyword/H1, passende Referenz(en), FAQ, Kontaktformular.
-  - ✅ Akzeptanz: 3 Vertical-Seiten live, verlinkt & in Sitemap · Impact: **Hoch** · Aufwand: 1–2 Tage
+- [ ] 🟡 **Statt neuer Seite: Startseiten-H1 fürs Keyword schärfen** (`components/sections/Hero.tsx`)
+  - H1 ist „Neue Website. 199 Euro. 48 Stunden." – „auffrischen" steckt nur im `toplbl` darüber. Keyword näher an die H1 rücken, ohne die Plakat-Wirkung zu verlieren.
+  - ✅ Akzeptanz: „Website auffrischen" semantisch in/an der H1 · Impact: Mittel · Aufwand: 30 Min
 
-- [ ] 🟠 **Preis-/Angebotslogik entwirren + Offer-Schema angleichen**
-  - Heute widersprüchlich: 199 € = *pauschale Auffrischung in 48 h* (Startseite/FAQ) **vs.** *Startpreis Neubau, 1–3 Wochen* + *199 €/Monat Betreuung* (`lib/services.ts`, `website-erstellen-lassen`).
-  - Zwei klar getrennte Angebote definieren; Offer-Schema je Seite konsistent zum sichtbaren Preis.
-  - ✅ Akzeptanz: eindeutige Preise pro Seite, Schema stimmt mit Text überein · Impact: Hoch · Aufwand: Halber Tag
+- [x] 🟠 **4 Branchen-Verticals** — exakt die genannte Zielgruppe *(05.07.2026 erledigt, im Preview verifiziert)*
+  - **Friseure · Gastronomie · Handwerker · KMU** — datengetrieben über `lib/services.ts` (`group: "branche"`), gerendert über das bestehende SEO-Template `/leistungen/[slug]`.
+  - Je Seite: keyword-reicher Title (≤60), Meta ≤160, eigenes H1 („Website für … – aufgefrischt für 199 €, live in 48 Stunden"), branchen-spezifische Features + 5 FAQs, Service-/**Offer (199 €)**-/Breadcrumb-/FAQPage-Schema, passende Referenzen, Kontaktformular.
+  - Interne Verlinkung: neue **Branchen-Sektion auf der Startseite** (`components/sections/Branchen.tsx`, `#branchen`) + **Branchen-Hub auf `/leistungen`** + in Sitemap.
+  - URLs: `/leistungen/website-fuer-{friseure|gastronomie|handwerker|kmu}` · Impact: **Hoch**
+
+- [x] 🟠 **Preis-/Angebotslogik entwirrt** *(05.07.2026 erledigt)*
+  - Kanonisches Modell: **199 € pauschal für die Auffrischung – Bedingung: es existiert bereits eine Website.** Kompletter Neubau = individuelles Festpreisangebot.
+  - `website-erstellen-lassen` reframed (H1, Lede, Stats, Steps, FAQs): kein „Startpreis 199 € Neubau", kein „199 €/Monat Betreuung" mehr. Verticals + Startseite bereits konsistent. Offer-Schema überall 199 €.
 
 - [ ] 🟠 **Lokale Standortseite + Google Business Profile**
   - `LocalBusiness`-Schema ist da, sichtbares Standortsignal fehlt. Seite `/standort/wuppertal` (oder NRW) + GBP als größter lokaler Off-Site-Hebel.

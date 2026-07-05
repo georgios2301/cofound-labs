@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Ablauf from "@/components/sections/Ablauf";
 import Preis from "@/components/sections/Preis";
 import Referenzen from "@/components/sections/Referenzen";
+import Branchen from "@/components/sections/Branchen";
 import Software from "@/components/sections/Software";
 import Team from "@/components/sections/Team";
 import FAQ from "@/components/sections/FAQ";
@@ -34,6 +35,7 @@ export default function Home() {
         <Ablauf />
         <Preis />
         <Referenzen />
+        <Branchen />
         <Software />
         <Team />
         <FAQ />
