@@ -467,7 +467,7 @@ a.card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--acce
   :root { --pad: 24px; }
   .nav-links, .nav-right .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .section { padding: 76px 0 0; }
+  .section { padding: 76px 0; }
   .priceblock .cols { grid-template-columns: 1fr; gap: 36px; }
   .pnotes { grid-template-columns: 1fr; }
   .refs { grid-template-columns: 1fr; }
