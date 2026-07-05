@@ -21,7 +21,7 @@
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
-| Phase 2 – Strategisch | 6 | 3 |
+| Phase 2 – Strategisch | 7 | 2 |
 | Phase 3 – Backlog | 2 | 3 |
 
 ---
@@ -77,9 +77,10 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
 - [x] 🟠 **~~Eigene Auffrischungs-Landingpage~~ – verworfen (Startseite IST bereits die LP)**
   - Die Startseite `/` dreht sich nach dem Plakat-Relaunch komplett um Website-Auffrischung 199 €/48 h und zielt seit Phase 1 direkt auf das Keyword (Title/Meta „Website auffrischen …"). Eine zweite Seite auf dasselbe Keyword würde die Startseite kannibalisieren. → **Kein eigenes `/leistungen/website-auffrischen-lassen`.**
 
-- [ ] 🟡 **Statt neuer Seite: Startseiten-H1 fürs Keyword schärfen** (`components/sections/Hero.tsx`)
-  - H1 ist „Neue Website. 199 Euro. 48 Stunden." – „auffrischen" steckt nur im `toplbl` darüber. Keyword näher an die H1 rücken, ohne die Plakat-Wirkung zu verlieren.
-  - ✅ Akzeptanz: „Website auffrischen" semantisch in/an der H1 · Impact: Mittel · Aufwand: 30 Min
+- [x] 🟡 **Startseiten-H1 aufs Keyword geschärft** *(05.07.2026 erledigt, live + Mobile/Desktop verifiziert)*
+  - H1 Zeile 1 „Neue Website." → **„Website auffrischen."** – das Primär-Keyword steht jetzt im H1/LCP-Element (vorher nur im Kicker). Untertitel „gestalten neu" → „frischen komplett auf".
+  - Design gehalten: Desktop weiter 3-zeilig; auf Mobile bricht das längere Wort sauber um (`line-height` .96 → 1, clamp-min 52 → 44 px) – keine Kollision mit dem orangen 199-€-Block.
+  - CWV weiter grün: Startseiten-Score ~91–93, CLS 0, realer LCP ~2,3 s (leichter Rückgang von 95 durch das größere, schriftabhängige H1 – bewusst in Kauf genommen fürs Keyword).
 
 - [x] 🟠 **4 Branchen-Verticals** — exakt die genannte Zielgruppe *(05.07.2026 erledigt, im Preview verifiziert)*
   - **Friseure · Gastronomie · Handwerker · KMU** — datengetrieben über `lib/services.ts` (`group: "branche"`), gerendert über das bestehende SEO-Template `/leistungen/[slug]`.
