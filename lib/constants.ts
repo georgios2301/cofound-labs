@@ -1,12 +1,10 @@
 export const SITE_NAME = "Cofound Labs";
 export const SITE_DESCRIPTION =
-  "Wir frischen deine alte Website komplett auf – 199 € pauschal, alles inklusive, live in 48 Stunden. Für Friseure, Gastronomen, Handwerker und lokale Betriebe. Dazu individuelle Software, wenn's mehr sein soll.";
+  "Website auffrischen lassen für 199 € pauschal – alles inklusive, live in 48 Stunden. Für Friseure, Gastro & Handwerk. Jetzt kostenlos anfragen.";
 export const SITE_URL = "https://cofound-labs.de";
 
 export const CALENDLY_URL = "https://calendly.com/cofound-labs/neues-meeting";
 export const INSTAGRAM_URL = "https://www.instagram.com/cofound_labs/";
-export const LINKEDIN_URL = "https://linkedin.com/company/cofoundlabs";
-export const GITHUB_URL = "https://github.com/cofoundlabs";
 
 // Kontaktdaten (konsistent mit Impressum & JSON-LD)
 export const EMAIL = "georgios@cofound-labs.de";
@@ -22,5 +20,7 @@ export const NAV_LINKS = [
   { label: "Preis", href: "/#preis" },
   { label: "Referenzen", href: "/#referenzen" },
   { label: "Software", href: "/#software" },
+  { label: "Leistungen", href: "/leistungen" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ];

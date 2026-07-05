@@ -21,25 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const caseStudyPages: MetadataRoute.Sitemap = caseStudies.flatMap((c) => {
-    const entries: MetadataRoute.Sitemap = [
-      {
-        url: `${SITE_URL}/referenzen/${c.slug}`,
-        lastModified: now,
-        changeFrequency: "yearly",
-        priority: 0.7,
-      },
-    ];
-    if (c.demoUrl) {
-      entries.push({
-        url: `${SITE_URL}${c.demoUrl}`,
-        lastModified: now,
-        changeFrequency: "yearly",
-        priority: 0.5,
-      });
-    }
-    return entries;
-  });
+  // Nur die redaktionellen Case-Study-Seiten; die statischen Demo-Seiten
+  // (/case-studies/*) bleiben aus dem Index (dünner Duplicate Content).
+  const caseStudyPages: MetadataRoute.Sitemap = caseStudies.map((c) => ({
+    url: `${SITE_URL}/referenzen/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.7,
+  }));
 
   return [
     {

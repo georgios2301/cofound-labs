@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Statische Demo-Seiten der Case Studies nicht indexieren (Duplicate Content).
+      disallow: "/case-studies/",
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   };

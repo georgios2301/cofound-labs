@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const HOME_TITLE = `Website-Auffrischung für 199 € – live in 48 Stunden | ${SITE_NAME}`;
+const HOME_TITLE = `Website auffrischen für 199 € in 48 h | ${SITE_NAME}`;
 
 export const metadata: Metadata = {
   title: {

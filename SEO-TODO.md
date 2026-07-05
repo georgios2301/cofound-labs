@@ -20,7 +20,7 @@
 | Phase | Erledigt | Offen |
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
-| Phase 1 – Quick Wins | 0 | 6 |
+| Phase 1 – Quick Wins | 6 | 0 |
 | Phase 2 – Strategisch | 0 | 7 |
 | Phase 3 – Backlog | 0 | 3 |
 
@@ -50,31 +50,25 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
 
 ---
 
-## 🟠 Phase 1 – Quick Wins (diese Woche, je < 2 h)
+## 🟠 Phase 1 – Quick Wins ✅ (05.07.2026 erledigt, Build grün, im Preview verifiziert)
 
-- [ ] 🟠 **Meta-Description kürzen** (`lib/constants.ts:2`, `SITE_DESCRIPTION`)
-  - Aktuell ~205 Zeichen → wird bei ~160 abgeschnitten. Keyword „Website auffrischen" + CTA nach vorn.
-  - ✅ Akzeptanz: ≤160 Zeichen, Keyword + CTA im sichtbaren Teil · Impact: Mittel · Aufwand: 15 Min
+- [x] 🟠 **Meta-Description gekürzt** (`lib/constants.ts`, `SITE_DESCRIPTION`)
+  - Neu (143 Z.): „Website auffrischen lassen für 199 € pauschal – alles inklusive, live in 48 Stunden. Für Friseure, Gastro & Handwerk. Jetzt kostenlos anfragen." Keyword + CTA vorn.
 
-- [ ] 🟠 **Tote Footer-Links entfernen** (`components/sections/Footer.tsx:29-34`, `lib/constants.ts:8-9`)
-  - LinkedIn- & GitHub-Platzhalter (`linkedin.com/company/cofoundlabs`, `github.com/cofoundlabs`) sind wieder aktiv – im Juni bewusst entfernt. Entfernen oder auf echte Profile setzen.
-  - ✅ Akzeptanz: nur echte Social-Links (Instagram) im Footer, keine 404 · Impact: Mittel · Aufwand: 10 Min
+- [x] 🟠 **Tote Social-Links entfernt** (`components/sections/Footer.tsx` **+ `Team.tsx`**, `lib/constants.ts`)
+  - LinkedIn/GitHub-Platzhalter aus Footer **und** Team-Sektion raus; ungenutzte Konstanten `LINKEDIN_URL`/`GITHUB_URL` gelöscht. Nur noch Instagram (im Preview bestätigt).
 
-- [ ] 🟠 **`/leistungen` + `/blog` in die Navigation** (`lib/constants.ts:20`, `NAV_LINKS`)
-  - Header verlinkt nur noch Startseiten-Anker; Money-Pages & Blog hängen nur im Footer → schwache interne Link-Equity.
-  - ✅ Akzeptanz: Leistungen & Blog aus dem Header (oder klarer Sekundärnav) erreichbar · Impact: Hoch · Aufwand: 20 Min
+- [x] 🟠 **`/leistungen` + `/blog` in die Navigation** (`lib/constants.ts`, `NAV_LINKS`)
+  - Beide jetzt im Header + Mobile-Menü: `Leistungen → /leistungen`, `Blog → /blog`. Money-Pages & Blog wieder prominent intern verlinkt.
 
-- [ ] 🟡 **Demo-Seiten `noindex` + aus Sitemap** (`public/case-studies/*`, `app/sitemap.ts:33-41`)
-  - Live in der Sitemap bestätigt, kein `noindex` → dünner Duplicate Content.
-  - ✅ Akzeptanz: Demo-URLs nicht mehr in Sitemap, `noindex` gesetzt · Impact: Mittel · Aufwand: 30 Min
+- [x] 🟡 **Demo-Seiten aus dem Index** (`app/sitemap.ts`, `app/robots.ts`)
+  - Demo-URLs aus der Sitemap entfernt (0 statt vorher; 6 echte `/referenzen/`-Seiten bleiben) **+** `Disallow: /case-studies/` in robots.txt. (Bewusst kein `noindex` in den ~9 statischen HTML-Dateien – robots-Disallow deckt alle inkl. Unterseiten in einer Zeile ab. Falls GSC später eine Demo als „indexiert" meldet: für diese Datei auf `noindex` umstellen.)
 
-- [ ] 🟡 **`llms.txt` auf neue Positionierung umschreiben** (`public/llms.txt`)
-  - Führt weiter mit „Software/MVPs für Startups", vergräbt das 199-€-Hero-Angebot, nennt Friseure/Gastro/Handwerk nicht.
-  - ✅ Akzeptanz: Auffrischungs-Angebot + lokale Zielgruppe stehen oben; Software als Sekundärangebot · Impact: Mittel (GEO/AI) · Aufwand: 30 Min
+- [x] 🟡 **`llms.txt` neu geschrieben** (`public/llms.txt`)
+  - Führt jetzt mit dem 199-€-Auffrischungs-Angebot + lokaler Zielgruppe (Friseure/Gastro/Handwerk); Software/MVP/Apps als Sekundärangebot; Referenzen nach lokalen Website-Projekten sortiert.
 
-- [ ] 🟢 **Home-Title auf ≤60 Zeichen straffen** (`app/layout.tsx:36`)
-  - „Website-Auffrischung für 199 € – live in 48 Stunden | Cofound Labs" ~64 Z. → leichte SERP-Kürzung.
-  - ✅ Akzeptanz: sichtbarer Title ≤60 Zeichen inkl. Marke · Impact: Niedrig · Aufwand: 10 Min
+- [x] 🟢 **Home-Title auf 52 Zeichen gekürzt** (`app/layout.tsx`)
+  - „Website auffrischen für 199 € in 48 h | Cofound Labs" (≤60, keine SERP-Kürzung, Keyword + Preis + Speed erhalten).
 
 ---
 

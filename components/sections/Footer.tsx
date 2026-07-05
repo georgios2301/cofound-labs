@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  SITE_NAME,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-  GITHUB_URL,
-} from "@/lib/constants";
+import { SITE_NAME, INSTAGRAM_URL } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -25,12 +20,6 @@ export default function Footer() {
             <div className="socials">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 Instagram
-              </a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                LinkedIn
-              </a>
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                GitHub
               </a>
             </div>
           </div>
