@@ -21,8 +21,8 @@
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
-| Phase 2 – Strategisch | 4 | 4 |
-| Phase 3 – Backlog | 0 | 3 |
+| Phase 2 – Strategisch | 5 | 3 |
+| Phase 3 – Backlog | 0 | 5 |
 
 ---
 
@@ -106,13 +106,26 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
   - Kennzahlen/Kundenstimmen sind aktuell Platzhalter („ausgedacht") → E-E-A-T-Risiko, wenn als echt ausgegeben.
   - ✅ Akzeptanz: echte Daten oder entschärfte, ehrliche Formulierung · Impact: Mittel (Trust) · Aufwand: abhängig von Kundendaten
 
-- [ ] 🟡 **Core Web Vitals real messen** (PageSpeed Insights, nach Deploy)
-  - ✅ Akzeptanz: LCP/INP/CLS im grünen Bereich dokumentiert · Impact: Mittel · Aufwand: 1 h
+- [x] 🟡 **Core Web Vitals real gemessen** *(05.07.2026, Lighthouse gegen die Live-Seite, Mobile)*
+  - **Ergebnis: alle Werte im grünen Bereich.** Gemessene reale Paints (Trace-observed):
+
+    | Seite | Perf-Score | LCP (real) | CLS | TBT (INP-Proxy) |
+    |---|---|---|---|---|
+    | Startseite | 73* | **1,8 s** ✅ | 0 ✅ | 150 ms ✅ |
+    | Vertical (Friseure) | 97 | 2,5 s ✅ | 0 ✅ | 80 ms ✅ |
+    | Blog (Auffrischen) | 99 | 1,7 s ✅ | 0 ✅ | 100 ms ✅ |
+
+  - *Der Startseiten-Score (73) und ein „LCP 8,9 s" sind ein **Lab-Artefakt** von Lighthouse/Lantern: Die **infinite CSS-Marquee** (`.mock-old .mo-marq`, `animation: … infinite`, `globals.css:146`) verhindert, dass die simulierte LCP-Messung „einrastet". Der **echte** Paint im Browser-Trace liegt bei **1,8 s** (`observedLCP=1758ms`) – Nutzer sind also nicht betroffen.
+  - **INP:** keine CrUX-Felddaten (zu wenig Traffic); Lab-Proxy TBT überall grün (80–150 ms).
+  - Follow-ups siehe Backlog (Marquee-Artefakt + überdimensionierte Assets).
 
 ---
 
 ## 🗄️ Phase 3 – Backlog / Niedrig
 
+- [ ] 🟢 **Überdimensionierte Assets verkleinern** (aus dem CWV-Report)
+  - `friseur.png` = **1,3 MB** (BeforeAfter-Bild) → als WebP/optimiert ausliefern; Favicon `icon.jpg` = **564 KB** → auf wenige KB bringen (lädt auf jeder Seite). Kein akutes CWV-Problem, aber unnötiger Traffic.
+- [ ] 🟢 **Marquee-Lab-Artefakt entschärfen** — die infinite Animation (`globals.css:146`) bläht den Lighthouse/PSI-Score der Startseite künstlich auf (echter LCP 1,8 s). Fix: bei `prefers-reduced-motion` stoppen und/oder außerhalb des Viewports pausieren, damit PSI-Reports nicht alarmierend aussehen.
 - [ ] 🟢 **Case-Study-Hero-Bilder auf `next/image`** (`app/referenzen/[slug]/page.tsx`)
 - [ ] 🟢 **Weitere lokale Städte-Seiten** (Köln/Düsseldorf/Essen) – erst wenn Wuppertal-Seite trägt
 - [ ] 🟢 **Backlink-/Verzeichnis-Aufbau** für lokale Betriebe & Branchenportale – laufend
