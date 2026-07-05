@@ -214,7 +214,7 @@ export default async function ServicePage({
             </div>
             <div
               className="tagrow"
-              style={{ justifyContent: "center", marginTop: 8 }}
+              style={{ marginTop: 24 }}
             >
               {s.audienceChips.map((c) => (
                 <span className="chip" key={c}>

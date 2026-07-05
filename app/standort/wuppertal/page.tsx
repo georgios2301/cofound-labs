@@ -303,7 +303,7 @@ export default function StandortWuppertalPage() {
             </div>
             <div
               className="tagrow"
-              style={{ justifyContent: "center", marginTop: 8 }}
+              style={{ marginTop: 24 }}
             >
               {AREAS.map((a) => (
                 <span className="chip" key={a}>

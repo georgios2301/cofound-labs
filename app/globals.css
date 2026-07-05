@@ -387,8 +387,9 @@ a.sw-row:hover { background: rgba(255,107,75,.06); }
 .cs-nav { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 56px; }
 
 /* chips / tags */
-.chip { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); border: 1.5px solid var(--ink); padding: 6px 12px; border-radius: 7px; background: var(--paper); }
-.chip.accent { background: var(--accent); }
+.tagrow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--muted); border: 1px solid var(--accent-line); padding: 9px 18px; border-radius: 999px; background: var(--bg-2); }
+.chip.accent { background: var(--accent); color: var(--ink); border-color: var(--ink); }
 .tag { font-family: var(--font-mono); font-size: 11px; color: var(--muted); border: 1.5px solid var(--line-2); padding: 4px 10px; border-radius: 6px; display: inline-block; }
 
 /* card grids (blog / leistungen / features) */
