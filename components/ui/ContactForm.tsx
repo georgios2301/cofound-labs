@@ -11,9 +11,11 @@ const SERVICE_OPTIONS = [...services.map((s) => s.navLabel), "Etwas anderes"];
 export default function ContactForm({
   subject = "Neue Anfrage über cofound-labs.de",
   defaultService = "",
+  heading,
 }: {
   subject?: string;
   defaultService?: string;
+  heading?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -55,6 +57,7 @@ export default function ContactForm({
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
+      {heading && <p className="fh">{heading}</p>}
       <div className="field">
         <label htmlFor="cf-name">Name</label>
         <input

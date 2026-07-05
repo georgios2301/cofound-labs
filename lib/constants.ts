@@ -1,19 +1,26 @@
 export const SITE_NAME = "Cofound Labs";
 export const SITE_DESCRIPTION =
-  "Wir entwickeln individuelle Software, Web- & Mobile-Apps und MVPs für Startups – von der ersten Idee bis zum Launch. Jetzt kostenloses Erstgespräch sichern.";
+  "Wir frischen deine alte Website komplett auf – 199 € pauschal, alles inklusive, live in 48 Stunden. Für Friseure, Gastronomen, Handwerker und lokale Betriebe. Dazu individuelle Software, wenn's mehr sein soll.";
 export const SITE_URL = "https://cofound-labs.de";
 
 export const CALENDLY_URL = "https://calendly.com/cofound-labs/neues-meeting";
 export const INSTAGRAM_URL = "https://www.instagram.com/cofound_labs/";
+export const LINKEDIN_URL = "https://linkedin.com/company/cofoundlabs";
+export const GITHUB_URL = "https://github.com/cofoundlabs";
+
+// Kontaktdaten (konsistent mit Impressum & JSON-LD)
+export const EMAIL = "georgios@cofound-labs.de";
+export const PHONE_E164 = "+4915560410686";
+export const PHONE_DISPLAY = "0155 60410686";
 
 // Web3Forms – öffentlicher Access-Key (wird bewusst im Formular ausgeliefert).
 export const WEB3FORMS_ACCESS_KEY = "81d705a5-64d3-4aee-87cf-a350f796d844";
 
+// Haupt-Navigation – absolute Anker, damit sie auch von Unterseiten funktionieren.
 export const NAV_LINKS = [
-  { label: "Services", href: "/#services" },
-  { label: "Prozess", href: "/#prozess" },
+  { label: "Ablauf", href: "/#ablauf" },
+  { label: "Preis", href: "/#preis" },
   { label: "Referenzen", href: "/#referenzen" },
-  { label: "Blog", href: "/blog" },
+  { label: "Software", href: "/#software" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Kontakt", href: "/#kontakt" },
 ];

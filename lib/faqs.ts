@@ -2,23 +2,27 @@
 // FAQPage-Schema (app/page.tsx), damit beide immer synchron bleiben.
 export const FAQS: [string, string][] = [
   [
-    "Was kostet eine App bei euch?",
-    "Unsere Projekte starten ab 2.500 € – je nach Komplexität, Umfang und Laufzeit. Einfache Tools und MVPs liegen oft im unteren Bereich, komplexere Plattformen oder Apps entsprechend höher. Im kostenlosen Erstgespräch bekommst du eine ehrliche Einschätzung für dein Vorhaben.",
+    "Wie kann eine Website nur 199 € kosten?",
+    "Weil der Umfang klar ist: Wir bauen auf deinen bestehenden Inhalten auf – Texte, Bilder und Struktur sind schon da und werden aufgefrischt statt neu erfunden. Schlanke Technik, kein Agentur-Überbau, keine Meeting-Marathons.",
   ],
   [
-    "Wie lange dauert die Entwicklung?",
-    "Das hängt vom Scope ab. Ein einfaches MVP oder Tool ist oft in 2–4 Wochen fertig. Komplexere Web- oder Mobile-Apps planen wir gemeinsam mit klaren Meilensteinen – du siehst den Fortschritt wöchentlich live und weißt immer, wo wir stehen.",
+    "Fallen laufende Kosten an?",
+    "Nein – wenn deine bestehende Domain übernommen werden kann. Dann bleibt es bei den einmaligen 199 €. Falls nicht, klären wir vorher transparent, was anfällt.",
   ],
   [
-    "Was, wenn ich die Idee noch nicht fertig durchdacht habe?",
-    "Das ist kein Problem – im Gegenteil. Viele unserer besten Projekte haben mit einer groben Idee angefangen. Im Kennenlerngespräch helfen wir dir, das Wesentliche herauszuarbeiten und einen sinnvollen Scope zu definieren.",
+    "Was kosten spätere Änderungen?",
+    "20 € pro Stunde, abgerechnet auf volle halbe Stunden. Neue Öffnungszeiten oder ein aktualisierter Preis sind in einer halben Stunde erledigt – das kostet dich dann 10 €.",
   ],
   [
-    "Gehört mir der Code am Ende?",
-    "Ja, selbstverständlich. Du bekommst nach Projektabschluss den vollständigen Quellcode und alle Zugänge. Der Code gehört dir – keine Abhängigkeit von uns.",
+    "Was brauchst du von mir?",
+    "Ein kurzes Gespräch und den Zugang zu deiner Domain bzw. bisherigen Website. Texte und Bilder übernehmen wir von der alten Seite – wenn du neue Fotos hast, umso besser.",
   ],
   [
-    "Bietet ihr auch Wartung und Support nach dem Launch?",
-    "Ja. Wir bieten optionale Betreuungspakete ab 199 € im Monat an. Das umfasst Bugfixes, Sicherheitsupdates, kleine Weiterentwicklungen und einen direkten Ansprechpartner bei Fragen. Ideal, wenn du dich auf dein Business konzentrieren willst – und wir uns um die Technik kümmern.",
+    "Wirklich 48 Stunden?",
+    "Ja – weil der Ablauf klar ist: Absprache, ein Entwurf, live gehen. Größere Wünsche wie ein Shop oder Buchungssystem sprengen die 48 Stunden – das besprechen und bepreisen wir dann separat.",
+  ],
+  [
+    "Gehört die Website dann mir?",
+    "Ja. Die Website und alle Rechte gehören dir. Du bist nie an uns gebunden und kannst jederzeit weiterarbeiten lassen, wo du möchtest.",
   ],
 ];

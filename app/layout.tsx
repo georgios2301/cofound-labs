@@ -1,25 +1,29 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { JetBrains_Mono } from "next/font/google";
+import { Anton, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
   SITE_URL,
   INSTAGRAM_URL,
+  PHONE_E164,
+  EMAIL,
 } from "@/lib/constants";
 import CookieBanner from "@/components/ui/CookieBanner";
 
-// General Sans (display + body) — self-hosted for privacy & no layout shift
-const generalSans = localFont({
-  variable: "--font-general-sans",
+// „Plakat"-Typografie: Anton (Display), Hanken Grotesk (Body), JetBrains Mono (Labels)
+const anton = Anton({
+  variable: "--font-anton",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
-  src: [
-    { path: "./fonts/GeneralSans-400.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/GeneralSans-500.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/GeneralSans-600.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/GeneralSans-700.woff2", weight: "700", style: "normal" },
-  ],
+});
+
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -29,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const HOME_TITLE = `Softwareentwicklung & MVPs für Startups | ${SITE_NAME}`;
+const HOME_TITLE = `Website-Auffrischung für 199 € – live in 48 Stunden | ${SITE_NAME}`;
 
 export const metadata: Metadata = {
   title: {
@@ -75,8 +79,8 @@ const jsonLd = {
       url: SITE_URL,
       logo: `${SITE_URL}/logo-full.png`,
       description: SITE_DESCRIPTION,
-      email: "georgios@cofound-labs.de",
-      telephone: "+4915560410686",
+      email: EMAIL,
+      telephone: PHONE_E164,
       sameAs: [INSTAGRAM_URL],
       founder: { "@id": `${SITE_URL}/#georgios` },
       address: {
@@ -93,9 +97,9 @@ const jsonLd = {
       name: SITE_NAME,
       image: `${SITE_URL}/logo-full.png`,
       url: SITE_URL,
-      telephone: "+4915560410686",
-      email: "georgios@cofound-labs.de",
-      priceRange: "€€",
+      telephone: PHONE_E164,
+      email: EMAIL,
+      priceRange: "€",
       areaServed: "DE",
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
@@ -119,7 +123,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#georgios`,
       name: "Georgios Apostolidis",
-      jobTitle: "Gründer & Lead Developer",
+      jobTitle: "Gründer & Entwickler",
       url: SITE_URL,
       worksFor: { "@id": `${SITE_URL}/#organization` },
     },
@@ -134,7 +138,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${generalSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${anton.variable} ${hanken.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <script

@@ -1,11 +1,12 @@
 import { ImageResponse } from "next/og";
 import { SITE_NAME } from "@/lib/constants";
 
-export const alt = "Cofound Labs – Softwareentwicklung & MVPs für Startups";
+export const alt =
+  "Cofound Labs – Neue Website. 199 €. Live in 48 Stunden.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Dynamisch generiertes Social-Sharing-Bild in Markenfarben.
+// Dynamisch generiertes Social-Sharing-Bild in Markenfarben („Plakat").
 export default function Image() {
   return new ImageResponse(
     (
@@ -16,10 +17,11 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0C0B09",
-          color: "#F5F1E9",
+          background: "#FFFBF2",
+          color: "#16140E",
           padding: 80,
           fontFamily: "sans-serif",
+          borderBottom: "16px solid #FF6B4B",
         }}
       >
         <div
@@ -27,8 +29,8 @@ export default function Image() {
             display: "flex",
             alignItems: "center",
             fontSize: 30,
-            fontWeight: 600,
-            color: "#7C6BFF",
+            fontWeight: 700,
+            color: "#16140E",
           }}
         >
           {`// ${SITE_NAME}`}
@@ -38,24 +40,24 @@ export default function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 88,
-              fontWeight: 700,
-              lineHeight: 1.05,
+              fontSize: 104,
+              fontWeight: 800,
+              lineHeight: 1.02,
               letterSpacing: "-0.02em",
               maxWidth: 1000,
             }}
           >
-            {"Softwareentwicklung & MVPs für Startups"}
+            {"Neue Website. 199 €. 48 Stunden."}
           </div>
           <div
             style={{
               display: "flex",
               fontSize: 36,
               marginTop: 28,
-              color: "#C9C3B6",
+              color: "#5F594A",
             }}
           >
-            {"Dein technischer Mitgründer auf Zeit – von der Idee bis zum Launch."}
+            {"Website-Auffrischung zum Festpreis – für lokale Betriebe."}
           </div>
         </div>
 
@@ -67,13 +69,13 @@ export default function Image() {
             fontSize: 28,
           }}
         >
-          <span style={{ color: "#9A9486" }}>cofound-labs.de</span>
+          <span style={{ color: "#8A8371" }}>cofound-labs.de</span>
           <span
             style={{
               display: "flex",
-              height: 10,
-              width: 140,
-              background: "#7C6BFF",
+              height: 12,
+              width: 160,
+              background: "#FF6B4B",
               borderRadius: 9999,
             }}
           />

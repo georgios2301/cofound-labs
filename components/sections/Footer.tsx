@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { IconInstagram } from "@/components/ui/SocialIcons";
-import { SITE_NAME, NAV_LINKS, INSTAGRAM_URL } from "@/lib/constants";
-import { services } from "@/lib/services";
+import {
+  SITE_NAME,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  GITHUB_URL,
+} from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,39 +12,38 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="footer-top">
+        <div className="cols">
           <div className="brand">
             <Link href="/" className="logo" aria-label={SITE_NAME}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-full-dark.png" alt={SITE_NAME} />
+              <span className="mark">C</span>
+              <span>Cofound Labs</span>
             </Link>
             <p>
-              Individuelle Software und Apps für Startups – von der ersten Idee
-              bis zum Launch.
+              Website-Auffrischung zum Festpreis — und individuelle Software,
+              wenn&apos;s mehr sein soll.
             </p>
             <div className="socials">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <IconInstagram size={16} />
+                Instagram
+              </a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                LinkedIn
+              </a>
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                GitHub
               </a>
             </div>
           </div>
 
           <div className="fcol">
-            <h4>Leistungen</h4>
-            {services.map((s) => (
-              <Link key={s.slug} href={`/leistungen/${s.slug}`}>
-                {s.navLabel}
-              </Link>
-            ))}
-          </div>
-
-          <div className="fcol">
             <h4>Navigation</h4>
-            {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href}>
-                {link.label}
-              </a>
-            ))}
+            <a href="/#ablauf">Ablauf</a>
+            <a href="/#preis">Preis</a>
+            <a href="/#referenzen">Referenzen</a>
+            <a href="/#software">Software</a>
+            <Link href="/leistungen">Leistungen</Link>
+            <Link href="/blog">Blog</Link>
+            <a href="/#kontakt">Kontakt</a>
           </div>
 
           <div className="fcol">
@@ -51,13 +53,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom">
+        <div className="bottom">
           <span>
             © {year} {SITE_NAME}. Alle Rechte vorbehalten.
           </span>
-          <span>
-            Made with <span className="heart">♥</span> in Deutschland
-          </span>
+          <span>Made in Wuppertal</span>
         </div>
       </div>
     </footer>

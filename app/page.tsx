@@ -1,12 +1,12 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
-import Zielgruppe from "@/components/sections/Zielgruppe";
-import Services from "@/components/sections/Services";
-import Prozess from "@/components/sections/Prozess";
+import Ablauf from "@/components/sections/Ablauf";
+import Preis from "@/components/sections/Preis";
 import Referenzen from "@/components/sections/Referenzen";
+import Software from "@/components/sections/Software";
 import Team from "@/components/sections/Team";
 import FAQ from "@/components/sections/FAQ";
-import CTASection from "@/components/sections/CTASection";
+import Kontakt from "@/components/sections/Kontakt";
 import Footer from "@/components/sections/Footer";
 import { FAQS } from "@/lib/faqs";
 
@@ -31,13 +31,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Zielgruppe />
-        <Services />
-        <Prozess />
+        <Ablauf />
+        <Preis />
         <Referenzen />
+        <Software />
         <Team />
         <FAQ />
-        <CTASection />
+        <Kontakt />
       </main>
       <Footer />
     </>
