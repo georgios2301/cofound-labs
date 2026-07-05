@@ -21,7 +21,7 @@
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
-| Phase 2 – Strategisch | 5 | 3 |
+| Phase 2 – Strategisch | 6 | 3 |
 | Phase 3 – Backlog | 2 | 3 |
 
 ---
@@ -91,9 +91,13 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
   - Kanonisches Modell: **199 € pauschal für die Auffrischung – Bedingung: es existiert bereits eine Website.** Kompletter Neubau = individuelles Festpreisangebot.
   - `website-erstellen-lassen` reframed (H1, Lede, Stats, Steps, FAQs): kein „Startpreis 199 € Neubau", kein „199 €/Monat Betreuung" mehr. Verticals + Startseite bereits konsistent. Offer-Schema überall 199 €.
 
-- [ ] 🟠 **Lokale Standortseite + Google Business Profile**
-  - `LocalBusiness`-Schema ist da, sichtbares Standortsignal fehlt. Seite `/standort/wuppertal` (oder NRW) + GBP als größter lokaler Off-Site-Hebel.
-  - ✅ Akzeptanz: lokale Seite live; GBP angelegt & verifiziert · Impact: Hoch · Aufwand: 1 Tag + laufend
+- [x] 🟠 **Lokale Standortseite** *(05.07.2026 erledigt, im Preview + live verifiziert)*
+  - `/standort/wuppertal` live: lokaler Title/H1 („Website erstellen lassen in Wuppertal"), **sichtbare NAP** (Blumenstraße 12, 42119 Wuppertal, Telefon, E-Mail), lokaler Winkel, Branchen-Links, regionale Referenzen (Kerstin/Bahnhof Varresbeck), Einzugsgebiet-Chips, lokale FAQ, Kontaktformular.
+  - Schema: WebPage + BreadcrumbList + FAQPage (LocalBusiness-NAP kommt weiter site-weit aus `layout.tsx`). In Sitemap + Footer verlinkt.
+
+- [ ] 🟠 👤 **Google Business Profile anlegen & verifizieren** — größter lokaler Off-Site-Hebel
+  - Muss von dir im Google-Konto gemacht werden (Adress-Verifizierung per Postkarte/Telefon – nicht automatisierbar). **Fertiges Setup-Paket** (NAP, Kategorien, Beschreibung, Services, Einzugsgebiet) wurde am 05.07.2026 im Chat bereitgestellt.
+  - ✅ Akzeptanz: GBP angelegt, verifiziert, NAP zeichengenau wie auf der Seite, Website-Link auf `/standort/wuppertal` · Impact: **Hoch** · Aufwand: 20 Min + Postweg
 
 - [x] 🟡 **Blog auf Auffrischungs-Themen umgelenkt** *(05.07.2026 erledigt, im Preview verifiziert)*
   - **4 neue Artikel** im Auffrischungs-/Local-Cluster (je BlogPosting-/FAQPage-/Breadcrumb-Schema, Title ≤60, Meta ≤160, interne Links zu Verticals + Referenzen + verwandten Artikeln):
