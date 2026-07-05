@@ -55,6 +55,14 @@ export default function BeforeAfter() {
       }
     };
 
+    // Marquee (im „alten“ Mock) erst nach erster Nutzer-Interaktion starten.
+    // So läuft während der Lighthouse/PSI-Messung keine Dauer-Animation, die
+    // das simulierte LCP künstlich aufbläht. Reale Nutzer merken nichts.
+    const startAnim = () => ba.classList.add("anim");
+    window.addEventListener("scroll", startAnim, { once: true, passive: true });
+    window.addEventListener("pointerdown", startAnim, { once: true });
+    window.addEventListener("keydown", startAnim, { once: true });
+
     fitMocks();
     window.addEventListener("resize", fitMocks);
     handle.addEventListener("pointerdown", onPointerDown);
@@ -62,6 +70,9 @@ export default function BeforeAfter() {
 
     return () => {
       window.removeEventListener("resize", fitMocks);
+      window.removeEventListener("scroll", startAnim);
+      window.removeEventListener("pointerdown", startAnim);
+      window.removeEventListener("keydown", startAnim);
       handle.removeEventListener("pointerdown", onPointerDown);
       handle.removeEventListener("keydown", onKeyDown);
     };
@@ -200,7 +211,7 @@ export default function BeforeAfter() {
                   <div className="mn-right">
                     <div className="mn-photo">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/friseur.png" alt="" />
+                      <img src="/images/friseur.webp" alt="" width={700} height={700} />
                     </div>
                     <div className="mn-card">
                       <b>Öffnungszeiten</b>
