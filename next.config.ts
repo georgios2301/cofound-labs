@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
         source: "/case-studies/zen",
         destination: "/case-studies/zen/index.html",
       },
+      {
+        source: "/case-studies/hs-handwerk",
+        destination: "/case-studies/hs-handwerk/index.html",
+      },
     ];
   },
 };

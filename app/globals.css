@@ -118,10 +118,10 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
 .btnrow { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 32px; }
 
 /* ---- Vorher/Nachher-Slider ---- */
-.ba-band { margin-top: 64px; border-top: var(--bw) solid var(--ink); border-bottom: var(--bw) solid var(--ink); }
+.ba-band { max-width: 1040px; margin: 64px auto 0; border: var(--bw) solid var(--ink); overflow: hidden; }
 .ba { position: relative; --cut: 50%; aspect-ratio: 1200 / 720; overflow: hidden; touch-action: pan-y; }
 .ba .layer { position: absolute; inset: 0; }
-.ba .layer.before { background: #C8C4B4; }
+.ba .layer.before { background: #C8C4B4; clip-path: inset(0 calc(100% - var(--cut)) 0 0); }
 .ba .layer.after { background: #FAF7F2; clip-path: inset(0 0 0 var(--cut)); }
 .ba .mock { position: absolute; top: 0; left: 0; width: 1200px; height: 720px; transform: scale(var(--mockscale, 1)); transform-origin: top left; pointer-events: none; user-select: none; }
 .ba .stamp { position: absolute; top: 20px; z-index: 5; font-family: var(--font-display); text-transform: uppercase; font-size: clamp(14px, 1.6vw, 19px); letter-spacing: .04em; padding: 7px 14px 6px; pointer-events: none; }

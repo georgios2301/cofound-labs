@@ -413,6 +413,73 @@ export const caseStudies: CaseStudy[] = [
       role: "ZEN (Schmuck-Label)",
     },
   },
+  {
+    slug: "hs-handwerk",
+    title: "H&S Handwerk und Service",
+    tagline: "Website-Auffrischung · Handwerk",
+    lede: "Klare, moderne One-Page-Website für einen selbstständigen Handwerker aus Mettmann – alle Leistungen auf einen Blick, direkte Anruf- und Kontaktmöglichkeit und ein Auftritt, der Verlässlichkeit ausstrahlt. In 48 Stunden aufgefrischt.",
+    image: "/images/projects/hs-handwerk.jpg",
+    imageAlt: "Startseite der aufgefrischten Website von H&S Handwerk und Service",
+    demoUrl: "/case-studies/hs-handwerk",
+    meta: [
+      { label: "Branche", value: "Handwerk · Local Business" },
+      { label: "Leistung", value: "Website-Auffrischung – One-Pager" },
+      { label: "Ort", value: "Mettmann" },
+      { label: "Zeitraum", value: "48 Stunden · 2026" },
+    ],
+    sections: [
+      {
+        heading: "Ausgangslage",
+        paragraphs: [
+          "Heiko Schönherr ist seit 2008 als Handwerker in Mettmann selbstständig und erledigt vom Boden bis zur Decke fast alles aus einer Hand. Nach außen war davon aber kaum etwas zu sehen: kein zeitgemäßer Auftritt, keine gebündelte Leistungsübersicht, und wer anrufen wollte, musste die Nummer erst suchen.",
+          "Gesucht war keine aufwendige Agentur-Seite, sondern eine schnelle Auffrischung: ein sauberer One-Pager, der zeigt, was er kann, und Interessenten ohne Umweg zum Hörer bringt.",
+        ],
+      },
+      {
+        heading: "Zielsetzung",
+        paragraphs: [
+          "Der neue Auftritt sollte drei Dinge leisten: alle Leistungen sofort erfassbar machen, den Kontakt so einfach wie möglich gestalten (ein Tap zum Anruf) und Verlässlichkeit ausstrahlen – seriös, aufgeräumt, ohne Schnickschnack. Und das alles innerhalb von 48 Stunden, ohne langes Projekt.",
+        ],
+      },
+      {
+        heading: "Unser Vorgehen",
+        paragraphs: [
+          "Wir haben die typischen Kundenfragen in eine klare Seitenstruktur übersetzt: Hero mit Anruf-Button, vollständige Leistungsübersicht mit eigenen Icons, ein kurzer „Über mich“-Teil für Vertrauen, der Ablauf in drei Schritten und ein direkter Kontaktbereich.",
+          "Gebaut ist alles mobile-first: Auf dem Handy blendet sich unten eine feste Anruf-Leiste ein, sodass der Anruf immer nur einen Daumen entfernt ist. Das Kontaktformular öffnet vorbefüllt das E-Mail-Programm – kein Backend, keine Wartung, keine laufenden Kosten.",
+        ],
+      },
+      {
+        heading: "Was wir gebaut haben",
+        bullets: [
+          "One-Page-Website mit klarer, seriöser Bildsprache",
+          "Vollständige Leistungsübersicht mit 13 eigenen Icons",
+          "Ein-Tap-Anruf im Header, Hero und als fixe Mobil-Leiste",
+          "„Über mich“-Abschnitt für Vertrauen und Nähe",
+          "Ablauf in drei Schritten – von der Anfrage bis zur Ausführung",
+          "Kontaktformular per E-Mail – ohne Backend und Folgekosten",
+          "Konsequent mobile-first und ohne Cookie-Ballast",
+        ],
+      },
+      {
+        heading: "Ergebnis",
+        paragraphs: [
+          "Aus keinem sichtbaren Auftritt wurde in 48 Stunden eine Seite, die die Leistungen bündelt und Anfragen mit einem Tap ermöglicht. Der Betrieb wirkt online endlich so verlässlich, wie er tatsächlich arbeitet – und Interessenten finden mit einem Blick, was sie brauchen.",
+        ],
+      },
+    ],
+    kpis: [
+      { value: "48 h", label: "von der Anfrage bis online" },
+      { value: "1 Tap", label: "vom Besuch zum Anruf" },
+      { value: "0 €", label: "laufende Kosten – kein Backend" },
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Responsive Design", "Mobile-first", "Vercel"],
+    testimonial: {
+      quote:
+        "Ich mache seit über 15 Jahren meine Arbeit – jetzt sieht man das auch im Netz. Die Leute rufen direkt an, ohne lange zu suchen.",
+      author: "Heiko Schönherr",
+      role: "Inhaber, H&S Handwerk und Service",
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

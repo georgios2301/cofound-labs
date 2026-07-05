@@ -14,6 +14,11 @@ const REFS = [
     title: "Biergarten Bahnhof Varresbeck",
     desc: "One-Pager mit Live-Status „heute geöffnet?“, Veranstaltungen und Reservierungsanfrage.",
   },
+  {
+    slug: "hs-handwerk",
+    title: "H&S Handwerk und Service",
+    desc: "In 48 Stunden aufgefrischter One-Pager für einen Handwerker in Mettmann – alle Leistungen auf einen Blick, Anruf per Tap.",
+  },
 ];
 
 export default function Referenzen() {

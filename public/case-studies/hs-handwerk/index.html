@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H&amp;S Handwerk und Service – Ihr Handwerker in Mettmann</title>
+<meta name="description" content="Handwerker in Mettmann – Böden, Wände, Decken, Montagen. Seit 2008 zuverlässig im Kreis Mettmann, Düsseldorf und Wuppertal. Ein Ansprechpartner, ein fester Preis, saubere Arbeit.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF7; -webkit-font-smoothing: antialiased; font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif; color: #23282D; }
+  * { box-sizing: border-box; }
+  input::placeholder, textarea::placeholder { color: #9AA0A6; }
+  a { text-decoration: none; }
+
+  /* Interaktionen (im Design-Component über style-hover gelöst) */
+  .btn-accent:hover { filter: brightness(0.92); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.07); }
+  .nav-link:hover { color: #1F2429; }
+  .svc-card:hover { border-color: #C9C5BD; box-shadow: 0 2px 10px rgba(31,36,41,0.06); }
+  .phone-big:hover { filter: brightness(1.1); }
+  .foot-link:hover { color: #F4F3F0; }
+  .mail-link:hover { color: #E8620C; }
+  input:focus, textarea:focus { border-color: #E8620C !important; }
+
+  /* Responsives Verhalten (im Design-Component über matchMedia gelöst) */
+  .mobile-callbar { display: none; }
+  @media (max-width: 760px) {
+    .desk-nav { display: none !important; }
+    .mobile-callbar { display: block; }
+    body { padding-bottom: 76px; }
+  }
+</style>
+</head>
+<body>
+
+<div style="background: #FAFAF7; min-height: 100vh;">
+
+  <!-- ===== Sticky Header ===== -->
+  <header style="position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #E6E4DF;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 0 20px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="display: flex; align-items: baseline; gap: 8px; flex-shrink: 0;">
+        <span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: #1F2429;">H&amp;S</span>
+        <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; color: #5B6167; letter-spacing: 0.01em;">Handwerk &amp; Service</span>
+      </a>
+      <nav class="desk-nav" style="display: flex; align-items: center; gap: 28px;">
+        <a href="#leistungen" class="nav-link" style="color: #3C4248; font-weight: 500; font-size: 16px;">Leistungen</a>
+        <a href="#ueber-mich" class="nav-link" style="color: #3C4248; font-weight: 500; font-size: 16px;">Über mich</a>
+        <a href="#kontakt" class="nav-link" style="color: #3C4248; font-weight: 500; font-size: 16px;">Kontakt</a>
+      </nav>
+      <a href="tel:+491743582544" class="btn-accent" style="background: #E8620C; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; padding: 11px 20px; border-radius: 6px; display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+        Jetzt anrufen
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="top" style="background: #1F2429; color: #F4F3F0; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px);"></div>
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) 20px clamp(56px, 9vw, 104px); position: relative;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500; color: #C8CBCE; margin-bottom: 28px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #E8620C; display: inline-block;"></span>
+        Selbstständig seit 2008
+      </div>
+      <h1 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(34px, 5.5vw, 58px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 20px; max-width: 15em; text-wrap: balance;">
+        Ihr Handwerker in Mettmann – <span style="color: #E8620C;">alle Leistungen aus einer Hand.</span>
+      </h1>
+      <p style="font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: #B9BDC1; margin: 0 0 36px; max-width: 34em; text-wrap: pretty;">
+        Böden, Wände, Decken, Montagen – seit 2008 zuverlässig im Kreis Mettmann, Düsseldorf und Wuppertal. Ein Ansprechpartner, ein fester Preis, saubere Arbeit.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px;">
+        <a href="tel:+491743582544" class="btn-accent" style="background: #E8620C; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 6px; display: inline-flex; align-items: center; gap: 10px;">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+          0174 / 358 25 44
+        </a>
+        <a href="#leistungen" class="btn-ghost" style="border: 1px solid rgba(255,255,255,0.3); color: #F4F3F0; font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 6px;">
+          Leistungen ansehen
+        </a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 32px; font-size: 15px; color: #C8CBCE; font-weight: 500;">
+        <span style="display: flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; background: #E8620C; display: inline-block;"></span>Seit 2008</span>
+        <span style="display: flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; background: #E8620C; display: inline-block;"></span>Region Mettmann</span>
+        <span style="display: flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; background: #E8620C; display: inline-block;"></span>Auch am Wochenende erreichbar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Leistungen ===== -->
+  <section id="leistungen" style="scroll-margin-top: 80px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) 20px;">
+      <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8620C; margin: 0 0 12px;">Leistungen</p>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 16px; color: #1F2429;">Was ich für Sie erledige</h2>
+      <p style="font-size: 17px; line-height: 1.55; color: #5B6167; margin: 0 0 44px; max-width: 38em;">Vom Boden bis zur Decke – und alles, was sonst noch anfällt. Fragen Sie einfach an, auch wenn Ihre Arbeit hier nicht aufgeführt ist.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px;">
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"></rect><path d="M9.33 4 V20 M14.66 4 V20 M4 9.33 H20 M4 14.66 H20"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Fliesen legen</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 9.66 H21 M3 14.33 H21"></path><path d="M11 5 V9.66 M8 9.66 V14.33 M15 9.66 V14.33 M12.5 14.33 V19"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Laminat verlegen und austauschen</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="9" r="5"></circle><circle cx="8.5" cy="9" r="1.8"></circle><path d="M12.7 11.7 L20 18 V19.5 L11 15"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Teppich-, PVC- und Linoleumboden verlegen</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8.5" width="18" height="5" rx="1"></rect><circle cx="12" cy="11" r="1.1"></circle><path d="M8.5 8.5 V13.5 M15.5 8.5 V13.5"></path><path d="M3 18 H21"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Sonstige Bodenarbeiten</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="12" height="5" rx="1.5"></rect><path d="M15.5 7 H19 V11.5 H12 V13.5"></path><path d="M10.5 13.5 H13.5 V20 H10.5 Z"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Streicharbeiten / Malerarbeiten</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 H21"></path><path d="M12 4.5 V9"></path><path d="M8.5 15 A3.5 3.5 0 0 1 15.5 15 Z"></path><path d="M10.5 15 H13.5"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Deckenarbeiten</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"></rect><path d="M9.33 4 V20 M14.66 4 V20"></path><path d="M20 4 L14.66 4 L20 9.33 Z" fill="currentColor" fill-opacity="0.12"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Trockenbau</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 L12 4 L20 11"></path><path d="M6 10 V20 H18 V10"></path><rect x="10" y="14" width="4" height="6" rx="0.5"></rect></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Sonstige Arbeiten im Innenbereich</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="9" height="16" rx="1"></rect><path d="M6.3 8 H9.7 M6.3 12 H9.7 M6.3 16 H9.7"></path><path d="M20.5 8 L15 11 L20.5 14"></path><path d="M15 8.5 L12.8 9.7 M15 13.5 L12.8 12.3"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Fassadenreinigung</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="12" height="16" rx="1"></rect><path d="M9.5 4 V20 M3.5 12 H15.5"></path><path d="M14 7 L20 13"></path><path d="M12.7 8.3 L15.7 5.3"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Fenster-, Rahmen- und Wintergartenreinigung</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 H20 V19 A1 1 0 0 1 19 20 H5 A1 1 0 0 1 4 19 Z"></path><path d="M4 11 L6 8 H18 L20 11"></path><path d="M12 8 V4 M9.7 6 L12 3.7 L14.3 6"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Entrümpelungen</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"></rect><path d="M4 9 H20"></path><circle cx="8.5" cy="6.5" r="1.1"></circle><circle cx="15.5" cy="6.5" r="1.1"></circle><rect x="7" y="12" width="10" height="5" rx="0.5"></rect><path d="M9.5 10 H14.5"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Küchenmontage</div>
+        </div>
+
+        <div class="svc-card" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 42px; height: 42px; border-radius: 6px; background: rgba(232,98,12,0.1); color: #E8620C; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 V13 M7 13 H16 V4"></path><path d="M7 13 V20 M16 13 V20"></path><path d="M7 8 H16"></path></svg></div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 16.5px; line-height: 1.3; color: #1F2429;">Möbelauf- und -abbau</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Über mich ===== -->
+  <section id="ueber-mich" style="background: #FFFFFF; border-top: 1px solid #E6E4DF; border-bottom: 1px solid #E6E4DF; scroll-margin-top: 80px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;">
+      <div>
+        <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8620C; margin: 0 0 12px;">Über mich</p>
+        <h2 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 20px; color: #1F2429;">Heiko Schönherr</h2>
+        <p style="font-size: 17px; line-height: 1.65; color: #3C4248; margin: 0 0 16px; text-wrap: pretty;">
+          Seit 2008 bin ich selbstständig als Handwerker in Mettmann unterwegs. Bei mir bekommen Sie keine Vertriebsabteilung und keine Warteschleife – Sie sprechen direkt mit dem, der die Arbeit auch macht.
+        </p>
+        <p style="font-size: 17px; line-height: 1.65; color: #3C4248; margin: 0 0 28px; text-wrap: pretty;">
+          Ich sage Ihnen ehrlich, was geht und was nicht, nenne Ihnen vorab einen fairen Preis und halte Termine ein. Und weil viele Arbeiten zusammenhängen, erledige ich sie aus einer Hand – ohne dass Sie drei verschiedene Firmen koordinieren müssen.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #1F2429;"><span style="width: 10px; height: 10px; background: #E8620C; flex-shrink: 0;"></span>Verlässlich: feste Termine, klare Absprachen</div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #1F2429;"><span style="width: 10px; height: 10px; background: #E8620C; flex-shrink: 0;"></span>Faire Preise – Angebot vorab, keine Überraschungen</div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #1F2429;"><span style="width: 10px; height: 10px; background: #E8620C; flex-shrink: 0;"></span>Alle Arbeiten aus einer Hand</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <svg viewBox="0 0 400 300" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #E6E4DF;" role="img" aria-label="Foto-Platzhalter">
+          <rect width="400" height="300" fill="#F1EFEA"></rect>
+          <g fill="#E0DDD5"><rect x="0" y="0" width="400" height="10"></rect><rect x="0" y="30" width="400" height="10"></rect><rect x="0" y="60" width="400" height="10"></rect><rect x="0" y="90" width="400" height="10"></rect><rect x="0" y="120" width="400" height="10"></rect><rect x="0" y="150" width="400" height="10"></rect><rect x="0" y="180" width="400" height="10"></rect><rect x="0" y="210" width="400" height="10"></rect><rect x="0" y="240" width="400" height="10"></rect><rect x="0" y="270" width="400" height="10"></rect></g>
+          <text x="200" y="155" text-anchor="middle" font-family="monospace" font-size="14" fill="#8A8578">[ Foto: Heiko Schönherr bei der Arbeit ]</text>
+        </svg>
+        <div style="background: #1F2429; color: #F4F3F0; border-radius: 8px; padding: 20px 24px; display: flex; gap: 20px; align-items: center;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 38px; color: #E8620C; line-height: 1;">18</div>
+          <div style="font-size: 15px; line-height: 1.4; color: #C8CBCE;">Jahre selbstständig –<br>seit 2008 im Kreis Mettmann</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Ablauf ===== -->
+  <section id="ablauf" style="scroll-margin-top: 80px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) 20px;">
+      <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8620C; margin: 0 0 12px;">Ablauf</p>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 44px; color: #1F2429;">In drei Schritten zum Ergebnis</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 28px 24px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px; color: #FFFFFF; background: #E8620C; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">1</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; color: #1F2429; margin-bottom: 10px;">Anfragen</div>
+          <div style="font-size: 16px; line-height: 1.55; color: #5B6167;">Rufen Sie an oder schreiben Sie kurz, was gemacht werden soll. Sie erreichen mich Mo–Fr von 6 bis 18 Uhr, am Wochenende von 8 bis 18 Uhr.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 28px 24px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px; color: #FFFFFF; background: #E8620C; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">2</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; color: #1F2429; margin-bottom: 10px;">Besichtigung &amp; Angebot</div>
+          <div style="font-size: 16px; line-height: 1.55; color: #5B6167;">Ich schaue mir die Sache vor Ort an und Sie bekommen ein klares Angebot mit festem Preis – kostenlos und unverbindlich.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 8px; padding: 28px 24px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 15px; color: #FFFFFF; background: #E8620C; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;">3</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; color: #1F2429; margin-bottom: 10px;">Ausführung</div>
+          <div style="font-size: 16px; line-height: 1.55; color: #5B6167;">Ich erledige die Arbeit zum vereinbarten Termin – sauber, zügig und so, wie besprochen.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt ===== -->
+  <section id="kontakt" style="background: #1F2429; color: #F4F3F0; scroll-margin-top: 80px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(36px, 5vw, 72px);">
+      <div>
+        <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8620C; margin: 0 0 12px;">Kontakt</p>
+        <h2 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 12px;">Rufen Sie einfach an.</h2>
+        <p style="font-size: 17px; line-height: 1.55; color: #B9BDC1; margin: 0 0 32px; max-width: 30em;">Am schnellsten geht es telefonisch – kurz schildern, worum es geht, und wir machen einen Termin aus.</p>
+        <a href="tel:+491743582544" class="phone-big" style="display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.01em; color: #E8620C; margin-bottom: 32px;">0174 / 358 25 44</a>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 1.5;">
+          <div style="display: flex; gap: 14px;"><span style="color: #7C8288; min-width: 110px;">E-Mail</span><a href="mailto:g.rh@hotmail.de" class="mail-link" style="color: #F4F3F0;">g.rh@hotmail.de</a></div>
+          <div style="display: flex; gap: 14px;"><span style="color: #7C8288; min-width: 110px;">Adresse</span><span>Herrenhauser Str. 34<br>40822 Mettmann</span></div>
+          <div style="display: flex; gap: 14px;"><span style="color: #7C8288; min-width: 110px;">Erreichbar</span><span>Mo–Fr 6–18 Uhr<br>Sa/So 8–18 Uhr</span></div>
+          <div style="display: flex; gap: 14px;"><span style="color: #7C8288; min-width: 110px;">Einzugsgebiet</span><span>Kreis Mettmann, Düsseldorf, Wuppertal</span></div>
+        </div>
+      </div>
+      <div>
+        <div id="form-thanks" style="display: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 32px 28px; font-size: 17px; line-height: 1.55; color: #F4F3F0;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin-bottom: 10px; color: #E8620C;">Vielen Dank!</div>
+          Ihr E-Mail-Programm öffnet sich mit Ihrer Anfrage. Falls nicht, rufen Sie einfach an: 0174 / 358 25 44.
+        </div>
+        <form id="contact-form" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; margin-bottom: 2px;">Oder schreiben Sie mir kurz</div>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #B9BDC1;">
+            Ihr Name
+            <input name="name" required type="text" placeholder="Max Mustermann" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 6px; padding: 13px 14px; font-family: 'Barlow', sans-serif; font-size: 16px; color: #23282D; outline: none;">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #B9BDC1;">
+            Ihre Telefonnummer
+            <input name="phone" required type="tel" placeholder="0170 / 123 45 67" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 6px; padding: 13px 14px; font-family: 'Barlow', sans-serif; font-size: 16px; color: #23282D; outline: none;">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #B9BDC1;">
+            Ihr Anliegen
+            <textarea name="message" required rows="4" placeholder="Was soll gemacht werden?" style="background: #FFFFFF; border: 1px solid #E6E4DF; border-radius: 6px; padding: 13px 14px; font-family: 'Barlow', sans-serif; font-size: 16px; color: #23282D; outline: none; resize: vertical;"></textarea>
+          </label>
+          <button type="submit" class="btn-accent" style="background: #E8620C; color: #FFFFFF; border: none; cursor: pointer; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 17px; padding: 15px; border-radius: 6px;">Anfrage senden</button>
+          <div style="font-size: 13px; color: #7C8288; line-height: 1.45;">Die Anfrage wird über Ihr E-Mail-Programm an g.rh@hotmail.de gesendet.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer style="background: #171B1F; color: #7C8288; font-size: 14px;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 28px 20px; display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between;">
+      <span>© 2026 Heiko Schönherr – H&amp;S Handwerk und Service, Mettmann</span>
+      <span style="display: flex; gap: 24px;">
+        <a href="/case-studies/hs-handwerk/Impressum.html" class="foot-link" style="color: #A6ABB0;">Impressum</a>
+        <a href="/case-studies/hs-handwerk/Datenschutz.html" class="foot-link" style="color: #A6ABB0;">Datenschutzerklärung</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===== Sticky Mobile Call Bar ===== -->
+  <div class="mobile-callbar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(23,27,31,0.96); backdrop-filter: blur(8px); border-top: 1px solid #2A2F34;">
+    <a href="tel:+491743582544" style="background: #E8620C; color: #FFFFFF; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 17px; padding: 15px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+      Jetzt anrufen · 0174 / 358 25 44
+    </a>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var name = f.name.value.trim();
+    var phone = f.phone.value.trim();
+    var msg = f.message.value.trim();
+    var body = 'Name: ' + name + '\nTelefon: ' + phone + '\n\nAnliegen:\n' + msg;
+    window.location.href = 'mailto:g.rh@hotmail.de?subject=' +
+      encodeURIComponent('Anfrage über die Website – ' + name) +
+      '&body=' + encodeURIComponent(body);
+    f.style.display = 'none';
+    document.getElementById('form-thanks').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

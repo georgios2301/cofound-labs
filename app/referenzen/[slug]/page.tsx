@@ -127,10 +127,6 @@ export default async function CaseStudyPage({
                 </div>
               ))}
             </div>
-            <p className="cs-note">
-              Kennzahlen und Kundenstimme sind illustrative Beispielwerte und
-              werden durch echte Projektdaten ersetzt.
-            </p>
 
             <figure className="quote">
               <p>„{cs.testimonial.quote}“</p>
