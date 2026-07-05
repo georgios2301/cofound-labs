@@ -111,7 +111,7 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
    ========================================================================= */
 .hero { padding: 72px 0 0; }
 .hero .toplbl { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.hero h1 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(52px, 9.2vw, 118px); line-height: .96; letter-spacing: .005em; margin-top: 18px; }
+.hero h1 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 9.2vw, 118px); line-height: 1; letter-spacing: .005em; margin-top: 18px; }
 .hero h1 .mark-a { background: var(--accent); padding: 0 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .hero .sub { font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--muted); max-width: 620px; margin-top: 26px; font-weight: 500; }
 .hero .sub b { color: var(--ink); }

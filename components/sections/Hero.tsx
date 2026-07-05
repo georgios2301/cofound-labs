@@ -7,14 +7,14 @@ export default function Hero() {
       <div className="wrap">
         <p className="toplbl">Website-Auffrischung für lokale Betriebe</p>
         <h1>
-          Neue Website.
+          Website auffrischen.
           <br />
           <span className="mark-a">199 Euro.</span>
           <br />
           48 Stunden.
         </h1>
         <p className="sub">
-          Deine Website sieht aus wie 2010? Wir gestalten sie komplett neu —{" "}
+          Deine Website sieht aus wie 2010? Wir frischen sie komplett auf —{" "}
           <b>pauschal, alles inklusive.</b> Absprache, Entwurf, live gehen.
           Fertig.
         </p>
