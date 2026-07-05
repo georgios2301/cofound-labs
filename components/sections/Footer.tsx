@@ -32,6 +32,7 @@ export default function Footer() {
             <a href="/#software">Software</a>
             <Link href="/leistungen">Leistungen</Link>
             <Link href="/blog">Blog</Link>
+            <Link href="/standort/wuppertal">Standort Wuppertal</Link>
             <a href="/#kontakt">Kontakt</a>
           </div>
 
@@ -46,7 +47,7 @@ export default function Footer() {
           <span>
             © {year} {SITE_NAME}. Alle Rechte vorbehalten.
           </span>
-          <span>Made in Wuppertal</span>
+          <Link href="/standort/wuppertal">Made in Wuppertal</Link>
         </div>
       </div>
     </footer>
