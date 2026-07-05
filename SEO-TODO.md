@@ -22,7 +22,7 @@
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
 | Phase 2 – Strategisch | 5 | 3 |
-| Phase 3 – Backlog | 0 | 5 |
+| Phase 3 – Backlog | 2 | 3 |
 
 ---
 
@@ -115,7 +115,7 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
     | Vertical (Friseure) | 97 | 2,5 s ✅ | 0 ✅ | 80 ms ✅ |
     | Blog (Auffrischen) | 99 | 1,7 s ✅ | 0 ✅ | 100 ms ✅ |
 
-  - *Der Startseiten-Score (73) und ein „LCP 8,9 s" sind ein **Lab-Artefakt** von Lighthouse/Lantern: Die **infinite CSS-Marquee** (`.mock-old .mo-marq`, `animation: … infinite`, `globals.css:146`) verhindert, dass die simulierte LCP-Messung „einrastet". Der **echte** Paint im Browser-Trace liegt bei **1,8 s** (`observedLCP=1758ms`) – Nutzer sind also nicht betroffen.
+  - *Der Startseiten-Score (73) und ein „LCP 8,9 s" waren ein **Lab-Artefakt** von Lighthouse/Lantern: Die **infinite CSS-Marquee** (`.mock-old .mo-marq`, `globals.css:146`) verhinderte, dass die simulierte LCP-Messung „einrastet". Der **echte** Paint im Browser-Trace lag bei **1,8 s**. → **Inzwischen behoben** (Marquee gated + Assets verkleinert): Startseiten-Score jetzt **95**, realer LCP **1,4 s** (siehe Backlog, beide erledigt).
   - **INP:** keine CrUX-Felddaten (zu wenig Traffic); Lab-Proxy TBT überall grün (80–150 ms).
   - Follow-ups siehe Backlog (Marquee-Artefakt + überdimensionierte Assets).
 
@@ -123,9 +123,12 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
 
 ## 🗄️ Phase 3 – Backlog / Niedrig
 
-- [ ] 🟢 **Überdimensionierte Assets verkleinern** (aus dem CWV-Report)
-  - `friseur.png` = **1,3 MB** (BeforeAfter-Bild) → als WebP/optimiert ausliefern; Favicon `icon.jpg` = **564 KB** → auf wenige KB bringen (lädt auf jeder Seite). Kein akutes CWV-Problem, aber unnötiger Traffic.
-- [ ] 🟢 **Marquee-Lab-Artefakt entschärfen** — die infinite Animation (`globals.css:146`) bläht den Lighthouse/PSI-Score der Startseite künstlich auf (echter LCP 1,8 s). Fix: bei `prefers-reduced-motion` stoppen und/oder außerhalb des Viewports pausieren, damit PSI-Reports nicht alarmierend aussehen.
+- [x] 🟢 **Überdimensionierte Assets verkleinert** *(05.07.2026, via `sharp`)*
+  - Favicon `app/icon.jpg`: 2048px/577 KB → **512px/14 KB**. `friseur.png` (1024px/1,3 MB) → **`friseur.webp` 700px/43 KB**, PNG entfernt.
+  - Ergebnis: Startseiten-Gewicht **2.284 KiB → 446 KiB**.
+- [x] 🟢 **Marquee-Lab-Artefakt entschärft** *(05.07.2026)*
+  - Hero-Marquee läuft erst nach erster Nutzer-Interaktion (Klasse `.anim` auf `.ba`, `BeforeAfter.tsx`), respektiert weiter `prefers-reduced-motion`.
+  - Ergebnis: Startseiten-**PSI-Score 73 → 95**, Lab-LCP 8,9 s → 3,0 s (realer LCP 1,4 s). Live nachgemessen.
 - [ ] 🟢 **Case-Study-Hero-Bilder auf `next/image`** (`app/referenzen/[slug]/page.tsx`)
 - [ ] 🟢 **Weitere lokale Städte-Seiten** (Köln/Düsseldorf/Essen) – erst wenn Wuppertal-Seite trägt
 - [ ] 🟢 **Backlink-/Verzeichnis-Aufbau** für lokale Betriebe & Branchenportale – laufend
