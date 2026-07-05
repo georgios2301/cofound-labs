@@ -58,7 +58,7 @@ const FAQS: [string, string][] = [
 
 const branchen = services.filter((s) => s.group === "branche");
 const localCases = caseStudies.filter((c) =>
-  ["kerstin-hundesalon", "bahnhof-varresbeck"].includes(c.slug),
+  ["hundesalon", "biergarten-varresbeck"].includes(c.slug),
 );
 
 const AREAS = [

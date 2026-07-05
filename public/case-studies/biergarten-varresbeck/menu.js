@@ -1,5 +1,5 @@
 /* =========================================================
-   Bahnhof Varresbeck — geteilter Karten-Renderer
+   Biergarten Varresbeck — geteilter Karten-Renderer
    initMenu({ data, kind, toggles })  -> baut Filterleiste + Liste
    renderAktionen(selector, list)     -> Aktions-Band (Getränke)
    ========================================================= */

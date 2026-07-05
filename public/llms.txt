@@ -35,8 +35,8 @@ Cofound Labs ist ein deutsches Software-Studio (Inhaber: Georgios Apostolidis, S
 - Kostenloses Erstgespräch: https://calendly.com/cofound-labs/neues-meeting
 
 ## Referenzen
-- Kerstins Hundesalon – Website für einen lokalen Dienstleister: https://cofound-labs.de/referenzen/kerstin-hundesalon
-- Biergarten Bahnhof Varresbeck – Website für die Gastronomie: https://cofound-labs.de/referenzen/bahnhof-varresbeck
+- Katrins Hundesalon – Website für einen lokalen Dienstleister: https://cofound-labs.de/referenzen/hundesalon
+- Biergarten Varresbeck – Website für die Gastronomie: https://cofound-labs.de/referenzen/biergarten-varresbeck
 - Baizar – Gastronomie-SaaS-Plattform: https://cofound-labs.de/referenzen/baizar
 - Kitchen Display System – Foodtruck: https://cofound-labs.de/referenzen/kitchen-display-system
 - Dokument-Generator – Handwerk/Automatisierung: https://cofound-labs.de/referenzen/dokument-generator

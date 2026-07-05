@@ -1,5 +1,5 @@
 /* ============================================================
-   Kerstins Hundesalon — handgezeichnetes Icon-Set
+   Katrins Hundesalon — handgezeichnetes Icon-Set
    Stil: lockere Linien, runde Enden, passend zur Caveat-Schrift
    Nutzung:  <i class="isvg" data-icon="paw"></i>
    ============================================================ */

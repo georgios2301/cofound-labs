@@ -58,7 +58,7 @@ export const post: BlogPost = {
 </ul>
 
 <h2>Warum das den Unterschied macht</h2>
-<p>Ein Beispiel: Der <a href="/referenzen/bahnhof-varresbeck">Biergarten Bahnhof Varresbeck</a> zeigt mit einem Live-Status direkt, ob geöffnet ist – eine Kleinigkeit, die Gästen genau die eine Info gibt, die sie suchen. Und der <a href="/referenzen/kerstin-hundesalon">Hundesalon Kerstin</a> bringt über eine WhatsApp-Terminanfrage Anfragen, ohne dass jemand zum Telefon greifen muss. Beides sind keine großen Systeme – sondern klar gelöste Basics.</p>
+<p>Ein Beispiel: Der <a href="/referenzen/biergarten-varresbeck">Biergarten Varresbeck</a> zeigt mit einem Live-Status direkt, ob geöffnet ist – eine Kleinigkeit, die Gästen genau die eine Info gibt, die sie suchen. Und der <a href="/referenzen/hundesalon">Katrins Hundesalon</a> bringt über eine WhatsApp-Terminanfrage Anfragen, ohne dass jemand zum Telefon greifen muss. Beides sind keine großen Systeme – sondern klar gelöste Basics.</p>
 
 <h2>Für deine Branche gedacht</h2>
 <p>Worauf es im Detail ankommt, ist je nach Gewerk verschieden. Wir haben passende Seiten für <a href="/leistungen/website-fuer-friseure">Friseure</a>, <a href="/leistungen/website-fuer-gastronomie">Gastronomie</a>, <a href="/leistungen/website-fuer-handwerker">Handwerker</a> und <a href="/leistungen/website-fuer-kmu">KMU</a> – jeweils mit dem, was in der Branche wirklich zählt.</p>

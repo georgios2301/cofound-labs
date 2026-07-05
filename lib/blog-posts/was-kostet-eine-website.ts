@@ -57,7 +57,7 @@ export const post: BlogPost = {
 <li><strong>Mehrseitige Website:</strong> Mehrere Unterseiten, individuelles Design, klare Struktur für Inhalte und SEO. Der häufigste Fall für etablierte Betriebe.</li>
 <li><strong>Website mit Funktionen:</strong> Buchung, Live-Status, Mehrsprachigkeit oder Anbindungen. Hier wird die Website zur kleinen Anwendung – der Übergang zur <a href="/leistungen/web-app-entwicklung">Web-App</a> ist fließend.</li>
 </ul>
-<p>Ein gutes Beispiel für „Website mit Funktion“ ist der <a href="/referenzen/bahnhof-varresbeck">Biergarten Bahnhof Varresbeck</a>: eine klare Seite mit Live-Status, ob geöffnet ist. Auch der <a href="/referenzen/kerstin-hundesalon">Hundesalon Kerstin</a> zeigt, wie eine schlanke Seite mit WhatsApp-Terminanfrage direkt Anfragen bringt.</p>
+<p>Ein gutes Beispiel für „Website mit Funktion“ ist der <a href="/referenzen/biergarten-varresbeck">Biergarten Varresbeck</a>: eine klare Seite mit Live-Status, ob geöffnet ist. Auch der <a href="/referenzen/hundesalon">Katrins Hundesalon</a> zeigt, wie eine schlanke Seite mit WhatsApp-Terminanfrage direkt Anfragen bringt.</p>
 
 <h2>Baukasten vs. individuelle Website</h2>
 <p>Klar, ein Website-Baukasten ist erstmal billiger. Aber: Du baust und wartest alles selbst, das Design ist von der Stange, und bei Tempo, SEO und Flexibilität stößt du schnell an Grenzen. Eine individuell entwickelte Website ist auf dich zugeschnitten, lädt oft in unter einer Sekunde, ist sauber für Google aufgebaut und von Anfang an rechtssicher (Impressum, Datenschutz). Du zahlst für ein Ergebnis, das arbeitet – nicht für eine Vorlage, an der du selbst herumbastelst.</p>

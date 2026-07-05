@@ -1,5 +1,5 @@
 /* =========================================================
-   Bahnhof Varresbeck — Speise- & Getränkekarte (Datenquelle)
+   Biergarten Varresbeck — Speise- & Getränkekarte (Datenquelle)
    Eine Quelle für Speisekarte.html und Getraenkekarte.html.
    Preise nach den aktuellen PDF-Karten. Neue Positionen einfach
    hier ergänzen — Reihenfolge = Anzeige.
@@ -92,7 +92,7 @@ window.BV_GETRAENKEKARTE = {
     { cat: "bier", group: "Aus der Flasche", name: "Füchschen Alt", variants: [{ l: "0,33 l", p: "3,90" }] },
 
     // Wein & Sekt
-    { cat: "wein", name: "Sekt „Est Est Est“ (Hausmarke)", desc: "sehr brut — schön trocken; gerne mit Eiswürfeln oder als Aperol", variants: [{ l: "0,1 l", p: "3,20" }, { l: "0,75 l", p: "22,–" }] },
+    { cat: "wein", name: "Sekt (Hausmarke)", desc: "sehr brut — schön trocken; gerne mit Eiswürfeln oder als Aperol", variants: [{ l: "0,1 l", p: "3,20" }, { l: "0,75 l", p: "22,–" }] },
     { cat: "wein", name: "Hausweine — Rot, Rosé, Weiß", desc: "trocken und fruchtig, von uns für euch", variants: [{ l: "0,2 l", p: "5,60" }, { l: "0,75 l", p: "21,–" }] },
     { cat: "wein", name: "Hauck — Grauburgunder", desc: "trocken und fruchtig, ein Wein für jeden Tag", variants: [{ l: "0,2 l", p: "6,10" }, { l: "0,75 l", p: "22,50" }] },
     { cat: "wein", name: "Franz Mann — Riesling", desc: "trocken, alte Reben", variants: [{ l: "0,2 l", p: "6,50" }, { l: "0,75 l", p: "24,–" }] },

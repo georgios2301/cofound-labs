@@ -7,20 +7,20 @@ const nextConfig: NextConfig = {
       // Das komplette HTML-Dokument (mit eigenen Fonts/Skripten) liegt unter
       // public/ und wird hier auf die hübsche URL ohne .html gemappt.
       {
-        source: "/case-studies/kerstin-hundesalon",
-        destination: "/case-studies/kerstin-hundesalon/index.html",
+        source: "/case-studies/hundesalon",
+        destination: "/case-studies/hundesalon/index.html",
       },
       {
-        source: "/case-studies/bahnhof-varresbeck",
-        destination: "/case-studies/bahnhof-varresbeck/index.html",
+        source: "/case-studies/biergarten-varresbeck",
+        destination: "/case-studies/biergarten-varresbeck/index.html",
       },
       {
         source: "/case-studies/zen",
         destination: "/case-studies/zen/index.html",
       },
       {
-        source: "/case-studies/hs-handwerk",
-        destination: "/case-studies/hs-handwerk/index.html",
+        source: "/case-studies/mustermann-handwerk",
+        destination: "/case-studies/mustermann-handwerk/index.html",
       },
     ];
   },

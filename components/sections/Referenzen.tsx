@@ -5,18 +5,18 @@ import { getCaseStudy } from "@/lib/case-studies";
 
 const REFS = [
   {
-    slug: "kerstin-hundesalon",
-    title: "Kerstins Hundesalon",
+    slug: "hundesalon",
+    title: "Katrins Hundesalon",
     desc: "Website mit Terminanfrage direkt per WhatsApp — für einen Hundesalon in Wuppertal.",
   },
   {
-    slug: "bahnhof-varresbeck",
-    title: "Biergarten Bahnhof Varresbeck",
+    slug: "biergarten-varresbeck",
+    title: "Biergarten Varresbeck",
     desc: "One-Pager mit Live-Status „heute geöffnet?“, Veranstaltungen und Reservierungsanfrage.",
   },
   {
-    slug: "hs-handwerk",
-    title: "H&S Handwerk und Service",
+    slug: "mustermann-handwerk",
+    title: "Mustermann Handwerk und Service",
     desc: "In 48 Stunden aufgefrischter One-Pager für einen Handwerker in Mettmann – alle Leistungen auf einen Blick, Anruf per Tap.",
   },
 ];

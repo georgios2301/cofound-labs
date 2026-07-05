@@ -1,5 +1,5 @@
 /**
- * Bahnhof Varresbeck — geteilter Öffnungs-Status (Speicher-Layer).
+ * Biergarten Varresbeck — geteilter Öffnungs-Status (Speicher-Layer).
  *
  * Quelle der Wahrheit: ein einzelner Key in Upstash Redis / Vercel KV.
  * Datensatz: { state: "auto" | "closed", date: "YYYY-MM-DD" } (Europe/Berlin).

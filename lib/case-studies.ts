@@ -216,13 +216,13 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    slug: "kerstin-hundesalon",
-    title: "Kerstins Hundesalon",
+    slug: "hundesalon",
+    title: "Katrins Hundesalon",
     tagline: "Website · Local Business",
     lede: "Conversion-starke Website für einen Hundesalon in Wuppertal – mit Online-Terminanfrage direkt per WhatsApp, Leistungs- und Preisübersicht und einem warmen, handgezeichneten Markenauftritt.",
-    image: "/images/projects/kerstin-hundesalon.jpg",
-    imageAlt: "Startseite der Website von Kerstins Hundesalon",
-    demoUrl: "/case-studies/kerstin-hundesalon",
+    image: "/images/projects/hundesalon.jpg",
+    imageAlt: "Startseite der Website von Katrins Hundesalon",
+    demoUrl: "/case-studies/hundesalon",
     meta: [
       { label: "Branche", value: "Hundepflege · Local Business" },
       { label: "Leistung", value: "Website, Branding & WhatsApp-Terminanfrage" },
@@ -233,8 +233,8 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Ausgangslage",
         paragraphs: [
-          "Kerstin führt ihren Hundesalon mit viel Herzblut – online war davon aber kaum etwas zu sehen. Es gab nur einen knappen Google-Eintrag, Terminabsprachen liefen ausschließlich übers Telefon. Anrufe während der Arbeit am Hund blieben liegen, Rückrufe kosteten Zeit, und potenzielle Neukundinnen sprangen ab, bevor sie überhaupt eine Anfrage stellen konnten.",
-          "Gesucht war keine große Agentur-Website, sondern eine schlanke Seite, die rund um die Uhr Anfragen entgegennimmt – ohne dass Kerstin dafür am Schreibtisch sitzen muss.",
+          "Katrin führt ihren Hundesalon mit viel Herzblut – online war davon aber kaum etwas zu sehen. Es gab nur einen knappen Google-Eintrag, Terminabsprachen liefen ausschließlich übers Telefon. Anrufe während der Arbeit am Hund blieben liegen, Rückrufe kosteten Zeit, und potenzielle Neukundinnen sprangen ab, bevor sie überhaupt eine Anfrage stellen konnten.",
+          "Gesucht war keine große Agentur-Website, sondern eine schlanke Seite, die rund um die Uhr Anfragen entgegennimmt – ohne dass Katrin dafür am Schreibtisch sitzen muss.",
         ],
       },
       {
@@ -246,7 +246,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Unser Vorgehen",
         paragraphs: [
-          "In einem kurzen Kennenlerngespräch haben wir die typischen Kundenfragen gesammelt und daraus die Seitenstruktur abgeleitet. Statt eines klassischen Kontaktformulars setzen wir auf einen WhatsApp-Deep-Link: Ein Klick öffnet einen vorbereiteten Chat mit Kerstin – die Hürde für eine Anfrage sinkt damit auf ein Minimum.",
+          "In einem kurzen Kennenlerngespräch haben wir die typischen Kundenfragen gesammelt und daraus die Seitenstruktur abgeleitet. Statt eines klassischen Kontaktformulars setzen wir auf einen WhatsApp-Deep-Link: Ein Klick öffnet einen vorbereiteten Chat mit Katrin – die Hürde für eine Anfrage sinkt damit auf ein Minimum.",
           "Das Branding haben wir bewusst handgezeichnet gehalten, passend zur liebevollen, unkomplizierten Art des Salons. Gebaut ist alles mobile-first, weil über 80 % der Besucherinnen vom Smartphone kommen.",
         ],
       },
@@ -277,18 +277,18 @@ export const caseStudies: CaseStudy[] = [
     testimonial: {
       quote:
         "Endlich verpasse ich keine Anfrage mehr – die meisten Kundinnen schreiben mir einfach über WhatsApp, während ich am Hund arbeite.",
-      author: "Kerstin",
-      role: "Inhaberin, Kerstins Hundesalon",
+      author: "Katrin",
+      role: "Inhaberin, Katrins Hundesalon",
     },
   },
   {
-    slug: "bahnhof-varresbeck",
-    title: "Biergarten Bahnhof Varresbeck",
+    slug: "biergarten-varresbeck",
+    title: "Biergarten Varresbeck",
     tagline: "Website · Gastronomie",
-    lede: "Warme, rustikale One-Page-Website für den Biergarten im historischen Varresbecker Bahnhof – mit Live-Status „heute geöffnet?“, Veranstaltungskalender, Reservierungsanfrage sowie eigenen Event-, Impressums- und Datenschutz-Unterseiten.",
-    image: "/images/projects/bahnhof-varresbeck-screenshot.jpg",
-    imageAlt: "Startseite der Website des Biergartens Bahnhof Varresbeck",
-    demoUrl: "/case-studies/bahnhof-varresbeck",
+    lede: "Warme, rustikale One-Page-Website für den Biergarten in einem historischen Bahnhofsgebäude – mit Live-Status „heute geöffnet?“, Veranstaltungskalender, Reservierungsanfrage sowie eigenen Event-, Impressums- und Datenschutz-Unterseiten.",
+    image: "/images/projects/biergarten-varresbeck.jpg",
+    imageAlt: "Startseite der Website des Biergartens Varresbeck",
+    demoUrl: "/case-studies/biergarten-varresbeck",
     meta: [
       { label: "Branche", value: "Gastronomie" },
       { label: "Leistung", value: "One-Page-Website, Live-Status & Events" },
@@ -299,7 +299,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Ausgangslage",
         paragraphs: [
-          "Der Biergarten im historischen Bahnhof Varresbeck lebt von Atmosphäre – und vom Wetter. Geöffnet wird saisonal und je nach Lage, was Gäste regelmäßig vor dieselbe Frage stellte: Hat heute überhaupt offen? Informationen verteilten sich über verschiedene Social-Media-Posts, Veranstaltungen gingen darin unter, und Reservierungen waren umständlich.",
+          "Der Biergarten Varresbeck lebt von Atmosphäre – und vom Wetter. Geöffnet wird saisonal und je nach Lage, was Gäste regelmäßig vor dieselbe Frage stellte: Hat heute überhaupt offen? Informationen verteilten sich über verschiedene Social-Media-Posts, Veranstaltungen gingen darin unter, und Reservierungen waren umständlich.",
         ],
       },
       {
@@ -324,7 +324,7 @@ export const caseStudies: CaseStudy[] = [
           "Reservierungsanfrage direkt über die Seite",
           "Installierbar als PWA inklusive eigenem App-Icon",
           "Eigene Unterseiten für Events, Impressum und Datenschutz",
-          "Warmer, rustikaler Auftritt passend zum historischen Bahnhof",
+          "Warmer, rustikaler Auftritt passend zum historischen Gebäude",
         ],
       },
       {
@@ -343,8 +343,8 @@ export const caseStudies: CaseStudy[] = [
     testimonial: {
       quote:
         "Die häufigste Frage unserer Gäste war immer ‚Hat heute offen?‘ – die beantwortet die Seite jetzt von selbst. Und unsere Events finden endlich alle an einem Ort.",
-      author: "Team Bahnhof Varresbeck",
-      role: "Biergarten Bahnhof Varresbeck",
+      author: "Team Biergarten Varresbeck",
+      role: "Biergarten Varresbeck",
     },
   },
   {
@@ -414,13 +414,13 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    slug: "hs-handwerk",
-    title: "H&S Handwerk und Service",
+    slug: "mustermann-handwerk",
+    title: "Mustermann Handwerk und Service",
     tagline: "Website-Auffrischung · Handwerk",
     lede: "Klare, moderne One-Page-Website für einen selbstständigen Handwerker aus Mettmann – alle Leistungen auf einen Blick, direkte Anruf- und Kontaktmöglichkeit und ein Auftritt, der Verlässlichkeit ausstrahlt. In 48 Stunden aufgefrischt.",
-    image: "/images/projects/hs-handwerk.jpg",
-    imageAlt: "Startseite der aufgefrischten Website von H&S Handwerk und Service",
-    demoUrl: "/case-studies/hs-handwerk",
+    image: "/images/projects/mustermann-handwerk.jpg",
+    imageAlt: "Startseite der aufgefrischten Website von Mustermann Handwerk und Service",
+    demoUrl: "/case-studies/mustermann-handwerk",
     meta: [
       { label: "Branche", value: "Handwerk · Local Business" },
       { label: "Leistung", value: "Website-Auffrischung – One-Pager" },
@@ -431,7 +431,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Ausgangslage",
         paragraphs: [
-          "Heiko Schönherr ist seit 2008 als Handwerker in Mettmann selbstständig und erledigt vom Boden bis zur Decke fast alles aus einer Hand. Nach außen war davon aber kaum etwas zu sehen: kein zeitgemäßer Auftritt, keine gebündelte Leistungsübersicht, und wer anrufen wollte, musste die Nummer erst suchen.",
+          "Max Mustermann ist seit 2008 als Handwerker in Mettmann selbstständig und erledigt vom Boden bis zur Decke fast alles aus einer Hand. Nach außen war davon aber kaum etwas zu sehen: kein zeitgemäßer Auftritt, keine gebündelte Leistungsübersicht, und wer anrufen wollte, musste die Nummer erst suchen.",
           "Gesucht war keine aufwendige Agentur-Seite, sondern eine schnelle Auffrischung: ein sauberer One-Pager, der zeigt, was er kann, und Interessenten ohne Umweg zum Hörer bringt.",
         ],
       },
@@ -476,8 +476,8 @@ export const caseStudies: CaseStudy[] = [
     testimonial: {
       quote:
         "Ich mache seit über 15 Jahren meine Arbeit – jetzt sieht man das auch im Netz. Die Leute rufen direkt an, ohne lange zu suchen.",
-      author: "Heiko Schönherr",
-      role: "Inhaber, H&S Handwerk und Service",
+      author: "Max Mustermann",
+      role: "Inhaber, Mustermann Handwerk und Service",
     },
   },
 ];

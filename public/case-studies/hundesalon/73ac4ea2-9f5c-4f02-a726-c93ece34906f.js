@@ -1,15 +1,15 @@
 /* ============================================================
-   Kerstins Hundesalon — Interaktion
+   Katrins Hundesalon — Interaktion
    ============================================================ */
 (function () {
   'use strict';
 
   // ---- Daten ----
-  var WHATSAPP = '4917729114861';      // 0177 29 14 861
-  var MOBILE_DISPLAY = '0177 - 29 14 861';
-  var PHONE_DISPLAY = '0202 - 70 55 80 73';
-  var PHONE_TEL = '+4920270558073';
-  var MOBILE_TEL = '+4917729114861';
+  var WHATSAPP = '49202000000';      // Platzhalter
+  var MOBILE_DISPLAY = '0202 000000';
+  var PHONE_DISPLAY = '0202 000000';
+  var PHONE_TEL = '+49202000000';
+  var MOBILE_TEL = '+49202000000';
 
   var SIZES = {
     klein:  { name: 'Kleiner Hund',  scale: 's', hours: 1, last: 17 },
@@ -216,7 +216,7 @@
       if (window.renderIcons) window.renderIcons();
 
       // WhatsApp-Link mit vorausgefüllter Nachricht vorbereiten
-      var msg = 'Hallo Kerstin, ich moechte einen Termin anfragen:%0A' +
+      var msg = 'Hallo Katrin, ich moechte einen Termin anfragen:%0A' +
         '- Groesse: ' + cfg.name + ' (ca. ' + cfg.hours + ' Std)%0A' +
         '- Tag: ' + fmtDate(state.date) + '%0A' +
         '- Uhrzeit: ' + pad(state.time) + ':00 Uhr%0A' +
@@ -258,7 +258,7 @@
     // configure contact links
     $('#optCall').href = 'tel:' + PHONE_TEL;
     $('#optMobile').href = 'tel:' + MOBILE_TEL;
-    var waMsg = 'Hallo%20Kerstin%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Termin%20f%C3%BCr%20meinen%20Hund.';
+    var waMsg = 'Hallo%20Katrin%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Termin%20f%C3%BCr%20meinen%20Hund.';
     $('#optWa').href = 'https://wa.me/' + WHATSAPP + '?text=' + waMsg;
   }
 
