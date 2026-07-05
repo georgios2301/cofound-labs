@@ -6,14 +6,14 @@ import { posts } from "@/lib/blog";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 const BLOG_DESCRIPTION =
-  "Ehrliche Ratgeber zu App- und Software-Entwicklung, MVPs und Kosten – für Gründer:innen und Unternehmen, die aus einer Idee ein digitales Produkt machen wollen.";
+  "Ehrliche Ratgeber rund um deine Website: auffrischen, Kosten, Relaunch und was 2026 auf die Seite lokaler Betriebe gehört – plus Themen zu Software, Apps & MVPs.";
 
 export const metadata: Metadata = {
-  title: "Blog – Ratgeber für Startups & Gründer",
+  title: "Blog – Ratgeber rund um Website & Software",
   description: BLOG_DESCRIPTION,
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: `Blog – Ratgeber für Startups & Gründer | ${SITE_NAME}`,
+    title: `Blog – Ratgeber rund um Website & Software | ${SITE_NAME}`,
     description: BLOG_DESCRIPTION,
     url: `${SITE_URL}/blog`,
     type: "website",
@@ -58,9 +58,9 @@ export default function BlogIndexPage() {
             </div>
             <h1>Blog</h1>
             <p className="lede">
-              Ehrliche Einblicke zu App- und Software-Entwicklung, MVPs und
-              Kosten – für alle, die aus einer Idee ein digitales Produkt machen
-              wollen.
+              Ehrliche Ratgeber rund um deine Website – auffrischen, Kosten,
+              Relaunch und was 2026 auf die Seite lokaler Betriebe gehört. Plus
+              Themen zu Software, Apps und MVPs.
             </p>
           </div>
         </header>

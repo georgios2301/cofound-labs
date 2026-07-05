@@ -43,6 +43,10 @@ Cofound Labs ist ein deutsches Software-Studio (Inhaber: Georgios Apostolidis, S
 
 ## Ratgeber / Blog
 Praxisnahe Artikel rund um Websites, App-, Software- und MVP-Entwicklung (Übersicht: https://cofound-labs.de/blog):
+- Website auffrischen: Wann sich ein Relaunch lohnt (7 Anzeichen, 199 € pauschal): https://cofound-labs.de/blog/website-auffrischen
+- Website in 48 Stunden: Wie ein schneller Relaunch funktioniert: https://cofound-labs.de/blog/website-in-48-stunden
+- Website selbst machen oder machen lassen? Der ehrliche Vergleich: https://cofound-labs.de/blog/website-selbst-machen-oder-machen-lassen
+- Website für lokale Betriebe: 9-Punkte-Checkliste für 2026: https://cofound-labs.de/blog/website-fuer-lokale-betriebe-checkliste
 - Was kostet eine Website? Preisübersicht 2026 (Websites ab 199 €): https://cofound-labs.de/blog/was-kostet-eine-website
 - Was ist ein MVP? Definition, Beispiele & Vorteile: https://cofound-labs.de/blog/was-ist-ein-mvp
 - MVP entwickeln: In 6 Schritten von der Idee zum Produkt: https://cofound-labs.de/blog/mvp-entwickeln-schritt-fuer-schritt

@@ -2,6 +2,12 @@
 // Jeder Artikel liegt als eigene Datei in lib/blog-posts/ und wird hier zusammengeführt.
 // Neuen Artikel anlegen: Datei in lib/blog-posts/ erstellen, hier importieren & in `posts` eintragen.
 
+// Website-Auffrischung / lokale Betriebe (aktueller Fokus)
+import { post as websiteAuffrischen } from "./blog-posts/website-auffrischen";
+import { post as websiteIn48Stunden } from "./blog-posts/website-in-48-stunden";
+import { post as websiteSelbstOderMachenLassen } from "./blog-posts/website-selbst-machen-oder-machen-lassen";
+import { post as websiteLokaleBetriebeCheckliste } from "./blog-posts/website-fuer-lokale-betriebe-checkliste";
+// Kosten & Software / Startups (weiterhin relevant, im Hintergrund)
 import { post as wasIstEinMvp } from "./blog-posts/was-ist-ein-mvp";
 import { post as mvpEntwickeln } from "./blog-posts/mvp-entwickeln-schritt-fuer-schritt";
 import { post as wasKostetEineApp } from "./blog-posts/was-kostet-eine-app";
@@ -30,12 +36,17 @@ export type BlogPost = {
   relatedPostSlugs: string[]; // Block „Weiterlesen"
 };
 
-// Reihenfolge = Anzeige-Reihenfolge auf /blog (kuratiert: Einsteiger → Tiefe).
+// Reihenfolge = Anzeige-Reihenfolge auf /blog.
+// Auffrischungs-/Local-Cluster zuerst (aktueller Fokus), Startup-/Software-Artikel danach.
 export const posts: BlogPost[] = [
+  websiteAuffrischen,
+  websiteIn48Stunden,
+  websiteSelbstOderMachenLassen,
+  websiteLokaleBetriebeCheckliste,
+  wasKostetEineWebsite,
   wasIstEinMvp,
   mvpEntwickeln,
   wasKostetEineApp,
-  wasKostetEineWebsite,
   wieLangeApp,
   nativeVsCross,
   webappVsNative,

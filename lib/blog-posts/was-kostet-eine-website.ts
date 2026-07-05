@@ -24,7 +24,7 @@ export const post: BlogPost = {
     ],
     [
       "Fallen laufende Kosten an?",
-      "Ja, aber überschaubar: Domain und Hosting kosten meist nur einige Euro im Monat. Optional bieten wir Betreuung ab 199 € im Monat für Updates, Änderungen und Sicherheit. Ohne Betreuung läuft die Seite weiter – du kümmerst dich dann selbst um Aktualisierungen.",
+      "Bei einer Auffrischung bleibt es beim einmaligen Festpreis, wenn deine bestehende Domain übernommen werden kann – dann fallen keine laufenden Kosten an. Ansonsten kosten Domain und Hosting meist nur wenige Euro im Monat. Spätere Änderungen rechnen wir mit 20 €/h auf halbe Stunden genau ab – kein Abo.",
     ],
     [
       "Ist die Website für Google optimiert?",
@@ -33,9 +33,9 @@ export const post: BlogPost = {
   ],
   relatedServiceSlugs: ["website-erstellen-lassen"],
   relatedPostSlugs: [
+    "website-auffrischen",
+    "website-selbst-machen-oder-machen-lassen",
     "was-kostet-eine-app",
-    "individualsoftware-vs-standardsoftware",
-    "tech-stack-startup",
   ],
   body: `
 <p>Eine eigene Website ist für die meisten Unternehmen der erste digitale Eindruck – und die Frage nach dem Preis ist berechtigt. Die Spanne reicht von „kostenlos im Baukasten“ bis zu mehreren Tausend Euro. In diesem Artikel ordnen wir das ein: Was kostet eine Website wirklich, was treibt den Preis, und wo lohnt sich die Investition?</p>
@@ -63,10 +63,10 @@ export const post: BlogPost = {
 <p>Klar, ein Website-Baukasten ist erstmal billiger. Aber: Du baust und wartest alles selbst, das Design ist von der Stange, und bei Tempo, SEO und Flexibilität stößt du schnell an Grenzen. Eine individuell entwickelte Website ist auf dich zugeschnitten, lädt oft in unter einer Sekunde, ist sauber für Google aufgebaut und von Anfang an rechtssicher (Impressum, Datenschutz). Du zahlst für ein Ergebnis, das arbeitet – nicht für eine Vorlage, an der du selbst herumbastelst.</p>
 
 <h2>Laufende Kosten</h2>
-<p>Nach dem Launch bleiben überschaubare Posten: <strong>Domain und Hosting</strong> kosten meist nur wenige Euro im Monat. Optional übernehmen wir die <strong>Betreuung ab 199 € im Monat</strong> – für Updates, kleine Änderungen und Sicherheit. Wer will, pflegt die Seite selbst; wer sich auf sein Geschäft konzentrieren will, gibt die Technik an uns ab.</p>
+<p>Nach dem Launch bleiben die Posten überschaubar: Kann deine <strong>bestehende Domain</strong> übernommen werden, fallen bei einer Auffrischung keine laufenden Kosten an. Sonst kosten <strong>Domain und Hosting</strong> meist nur wenige Euro im Monat. Spätere Änderungen – etwa neue Öffnungszeiten oder Preise – rechnen wir mit <strong>20 €/h</strong> auf halbe Stunden genau ab. Keine Abos, kein Kleingedrucktes.</p>
 
 <h2>Was du für dein Budget bekommst</h2>
 <p>Bei uns ist die technische SEO-Basis immer dabei: schnelle Ladezeiten, mobile Optimierung, saubere Struktur, Meta-Angaben und Sitemap. Dazu Impressum und Datenschutz von Anfang an. Den genauen Preis nennen wir nach einem kurzen Gespräch als <strong>Festpreis</strong> – ohne versteckte Posten.</p>
-<p>Du willst wissen, was deine Seite konkret kostet? Schau dir unsere Leistung <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a> an oder sichere dir direkt ein kostenloses Erstgespräch. Und falls du gerade eher Richtung App denkst: <a href="/blog/was-kostet-eine-app">Was kostet eine App?</a> beantwortet die Schwesterfrage.</p>
+<p>Du hast schon eine Seite, die nur alt aussieht? Dann ist die <a href="/blog/website-auffrischen">Auffrischung für 199 € pauschal</a> der schnellste Weg. Ansonsten schau dir unsere Leistung <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a> an oder sichere dir ein kostenloses Erstgespräch. Und falls du eher Richtung App denkst: <a href="/blog/was-kostet-eine-app">Was kostet eine App?</a> beantwortet die Schwesterfrage.</p>
 `,
 };

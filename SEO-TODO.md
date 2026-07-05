@@ -21,7 +21,7 @@
 |---|---|---|
 | Phase 0 – Kritisch (Deploy & Alignment) | 1 | 1 (in Arbeit) |
 | Phase 1 – Quick Wins | 6 | 0 |
-| Phase 2 – Strategisch | 3 | 5 |
+| Phase 2 – Strategisch | 4 | 4 |
 | Phase 3 – Backlog | 0 | 3 |
 
 ---
@@ -95,10 +95,12 @@ Der bisherige Unterbau (Leistungsseiten, 10 Blogartikel, `llms.txt`) zielt aber 
   - `LocalBusiness`-Schema ist da, sichtbares Standortsignal fehlt. Seite `/standort/wuppertal` (oder NRW) + GBP als größter lokaler Off-Site-Hebel.
   - ✅ Akzeptanz: lokale Seite live; GBP angelegt & verifiziert · Impact: Hoch · Aufwand: 1 Tag + laufend
 
-- [ ] 🟡 **Blog auf lokale Website-Themen umlenken**
-  - 6/10 Artikel sind Startup/MVP/App. Neu, näher am neuen Kunden: *„Was kostet eine neue Website für kleine Betriebe", „Website veraltet – 5 Zeichen für einen Relaunch", „Website selbst machen vs. machen lassen", „Website in 48 Stunden – wie das geht".*
-  - Startup-Artikel bleiben für die Software-Sektion, treten aber in den Hintergrund.
-  - ✅ Akzeptanz: 3–5 neue Artikel im Auffrischungs-/Local-Cluster, intern verlinkt · Impact: Mittel · Aufwand: laufend
+- [x] 🟡 **Blog auf Auffrischungs-Themen umgelenkt** *(05.07.2026 erledigt, im Preview verifiziert)*
+  - **4 neue Artikel** im Auffrischungs-/Local-Cluster (je BlogPosting-/FAQPage-/Breadcrumb-Schema, Title ≤60, Meta ≤160, interne Links zu Verticals + Referenzen + verwandten Artikeln):
+    - `website-auffrischen` (Pillar, kw „website auffrischen") · `website-in-48-stunden` · `website-selbst-machen-oder-machen-lassen` · `website-fuer-lokale-betriebe-checkliste`
+  - Reihenfolge auf `/blog` umgestellt: die 4 neuen zuerst, dann „Was kostet eine Website", danach der Startup-/Software-Cluster. `/blog`-Meta & Lede von „Ratgeber für Startups" auf Website-Fokus umgeschrieben.
+  - `was-kostet-eine-website` an das neue Preismodell angeglichen (kein „199 €/Monat Betreuung" mehr) + auf die neuen Artikel verlinkt. `llms.txt`-Ratgeber-Sektion um die 4 Artikel ergänzt.
+  - Startup-Artikel (MVP/App/Tech-Stack) bleiben erhalten, treten aber in den Hintergrund. · Impact: Mittel
 
 - [ ] 🟡 **Echte KPIs & Testimonials in Referenzen** (`lib/case-studies.ts:2`)
   - Kennzahlen/Kundenstimmen sind aktuell Platzhalter („ausgedacht") → E-E-A-T-Risiko, wenn als echt ausgegeben.
