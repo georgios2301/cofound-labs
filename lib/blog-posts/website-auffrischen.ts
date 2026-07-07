@@ -5,7 +5,7 @@ export const post: BlogPost = {
   title: "Website auffrischen: Wann sich ein Relaunch wirklich lohnt",
   metaTitle: "Website auffrischen: Wann ein Relaunch lohnt",
   metaDescription:
-    "Website auffrischen statt neu bauen: 7 Anzeichen für einen überfälligen Relaunch, was es kostet (199 € pauschal) und wie er in 48 Stunden abläuft.",
+    "Website auffrischen statt neu bauen: 7 Anzeichen für einen überfälligen Relaunch, was es kostet (ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting) und wie er in 48 Stunden abläuft.",
   excerpt:
     "Deine Website sieht aus wie 2010 und bringt kaum Anfragen? Du musst nicht bei null anfangen. Wann sich das Auffrischen lohnt, was es kostet und wie es abläuft.",
   keyword: "website auffrischen",
@@ -20,7 +20,7 @@ export const post: BlogPost = {
     ],
     [
       "Was kostet es, meine Website auffrischen zu lassen?",
-      "Die Auffrischung einer bestehenden Website kostet bei uns 199 € pauschal – alles inklusive, ohne Stundenzettel und ohne Abo. Voraussetzung ist, dass bereits eine Seite existiert, die wir übernehmen. Kann deine bestehende Domain weitergenutzt werden, fallen keine laufenden Kosten an.",
+      "Die Auffrischung einer bestehenden Website kostet bei uns ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne Stundenzettel und ohne Kleingedrucktes. Voraussetzung ist, dass bereits eine Seite existiert, die wir übernehmen.",
     ],
     [
       "Muss ich neue Texte und Bilder liefern?",
@@ -28,7 +28,7 @@ export const post: BlogPost = {
     ],
     [
       "Was ist, wenn ich noch gar keine Website habe?",
-      "Der 199-€-Festpreis gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt bekommst du vorab ein transparentes Festpreisangebot, je nach Umfang und Funktionen.",
+      "Der Festpreis ab 399 € gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt gibt es den Relaunch ab 599 € – ebenfalls inkl. 12 Monate Betreuung & Hosting.",
     ],
   ],
   relatedServiceSlugs: [
@@ -60,7 +60,7 @@ export const post: BlogPost = {
 <p>Beim <strong>Auffrischen</strong> gibt es bereits eine Website. Deine Texte, Bilder und Inhalte sind da – wir übernehmen sie, gestalten alles modern neu und bringen die Technik auf den aktuellen Stand. Das ist schnell und günstig, weil das Fundament schon steht. Ein <strong>kompletter Neubau</strong> lohnt sich, wenn noch gar keine Seite existiert oder sich Ausrichtung und Inhalte grundlegend ändern.</p>
 
 <h2>Was kostet das Auffrischen?</h2>
-<p>Bei uns kostet die Auffrischung deiner bestehenden Website <strong>199 € pauschal</strong> – alles inklusive, kein Stundenzettel, keine Abos. Voraussetzung ist, dass es bereits eine Seite gibt, die wir übernehmen. Kann deine bestehende Domain weitergenutzt werden, fallen keine laufenden Kosten an. Spätere Änderungen – etwa neue Öffnungszeiten – rechnen wir mit 20 €/h auf volle halbe Stunden genau ab. Die ausführliche Übersicht steht in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a></p>
+<p>Bei uns kostet die Auffrischung deiner bestehenden Website <strong>ab 399 € pauschal – inkl. 12 Monate Betreuung &amp; Hosting</strong>. Kein Stundenzettel, kein Kleingedrucktes. Voraussetzung ist, dass es bereits eine Seite gibt, die wir übernehmen. Kleine Änderungen – etwa neue Öffnungszeiten oder Preise – sind im ersten Jahr einfach inklusive. Die ausführliche Übersicht steht in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a></p>
 
 <h2>So läuft die Auffrischung ab</h2>
 <p>In drei Schritten und 48 Stunden: <strong>Absprache</strong> (kurzes Gespräch: Was bleibt, was wird besser?), <strong>Entwurf</strong> (du bekommst nach etwa 24 Stunden eine echte Seite zum Durchklicken auf dem Handy) und <strong>Live-Gang</strong> (auf deiner gewohnten Adresse, ohne Ausfallzeit). Warum das so schnell geht, erklären wir in <a href="/blog/website-in-48-stunden">Website in 48 Stunden</a>.</p>
@@ -69,6 +69,6 @@ export const post: BlogPost = {
 <p>Vor allem für lokale Betriebe, die über ihre Seite gefunden und angefragt werden wollen. Wir haben passende Seiten für <a href="/leistungen/website-fuer-friseure">Friseure</a>, <a href="/leistungen/website-fuer-gastronomie">Gastronomie</a>, <a href="/leistungen/website-fuer-handwerker">Handwerker</a> und <a href="/leistungen/website-fuer-kmu">KMU</a>. Wie eine schlanke Seite direkt Anfragen bringt, zeigt der <a href="/referenzen/hundesalon">Katrins Hundesalon</a> mit WhatsApp-Terminanfrage.</p>
 
 <h2>Fazit</h2>
-<p>Wenn deine Website alt aussieht, auf dem Handy hakt oder keine Anfragen bringt, musst du nicht bei null anfangen. Eine Auffrischung macht aus deinem bestehenden Auftritt in 48 Stunden eine moderne Seite – für 199 € pauschal. Schau dir <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a> an oder sichere dir ein kostenloses Erstgespräch: Wir schauen gemeinsam, was deine Seite braucht.</p>
+<p>Wenn deine Website alt aussieht, auf dem Handy hakt oder keine Anfragen bringt, musst du nicht bei null anfangen. Eine Auffrischung macht aus deinem bestehenden Auftritt in 48 Stunden eine moderne Seite – ab 399 € pauschal, inkl. 12 Monate Betreuung &amp; Hosting. Schau dir <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a> an oder sichere dir ein kostenloses Erstgespräch: Wir schauen gemeinsam, was deine Seite braucht.</p>
 `,
 };

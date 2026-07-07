@@ -445,7 +445,7 @@ export const caseStudies: CaseStudy[] = [
         heading: "Unser Vorgehen",
         paragraphs: [
           "Wir haben die typischen Kundenfragen in eine klare Seitenstruktur übersetzt: Hero mit Anruf-Button, vollständige Leistungsübersicht mit eigenen Icons, ein kurzer „Über mich“-Teil für Vertrauen, der Ablauf in drei Schritten und ein direkter Kontaktbereich.",
-          "Gebaut ist alles mobile-first: Auf dem Handy blendet sich unten eine feste Anruf-Leiste ein, sodass der Anruf immer nur einen Daumen entfernt ist. Das Kontaktformular öffnet vorbefüllt das E-Mail-Programm – kein Backend, keine Wartung, keine laufenden Kosten.",
+          "Gebaut ist alles mobile-first: Auf dem Handy blendet sich unten eine feste Anruf-Leiste ein, sodass der Anruf immer nur einen Daumen entfernt ist. Das Kontaktformular öffnet vorbefüllt das E-Mail-Programm – kein Backend, kein Wartungsaufwand.",
         ],
       },
       {
@@ -470,7 +470,7 @@ export const caseStudies: CaseStudy[] = [
     kpis: [
       { value: "48 h", label: "von der Anfrage bis online" },
       { value: "1 Tap", label: "vom Besuch zum Anruf" },
-      { value: "0 €", label: "laufende Kosten – kein Backend" },
+      { value: "0", label: "Backend & Wartungsaufwand" },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Responsive Design", "Mobile-first", "Vercel"],
     testimonial: {

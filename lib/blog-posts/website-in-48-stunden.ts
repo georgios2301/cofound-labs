@@ -5,7 +5,7 @@ export const post: BlogPost = {
   title: "Website in 48 Stunden: Wie ein schneller Relaunch funktioniert",
   metaTitle: "Website in 48 Stunden: So geht der Relaunch",
   metaDescription:
-    "Website in 48 Stunden neu? Wir zeigen, warum das realistisch ist, was in den zwei Tagen passiert und wo die Grenzen liegen – für 199 € pauschal.",
+    "Website in 48 Stunden neu? Wir zeigen, warum das realistisch ist, was in den zwei Tagen passiert und wo die Grenzen liegen – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting.",
   excerpt:
     "48 Stunden für eine neue Website klingt nach Marketing – ist aber machbar, wenn der Ablauf klar ist. So sieht der Zeitplan aus, und was du dafür brauchst.",
   keyword: "website in 48 stunden",
@@ -66,7 +66,7 @@ export const post: BlogPost = {
 <p>Ehrlich bleibt ehrlich: Ein Onlineshop, ein Buchungssystem, ein Mitgliederbereich oder Mehrsprachigkeit passen nicht in zwei Tage. Solche Wünsche sind möglich, werden aber separat besprochen und bepreist – der Übergang zur <a href="/leistungen/web-app-entwicklung">Web-App</a> ist dann fließend. Die 48 Stunden gelten für die <a href="/blog/website-auffrischen">Auffrischung</a> deines Auftritts.</p>
 
 <h2>Was es kostet</h2>
-<p>Die Auffrischung kostet <strong>199 € pauschal</strong> – Voraussetzung ist eine bestehende Seite, die wir übernehmen. Kein Abo, kein Kleingedrucktes; kann deine Domain weitergenutzt werden, fallen keine laufenden Kosten an. Details stehen in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a></p>
+<p>Die Auffrischung kostet <strong>ab 399 € pauschal – inkl. 12 Monate Betreuung &amp; Hosting</strong>. Voraussetzung ist eine bestehende Seite, die wir übernehmen. Kein Stundenzettel, kein Kleingedrucktes. Details stehen in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a></p>
 
 <h2>Fazit</h2>
 <p>48 Stunden sind kein Marketing-Gag, sondern das Ergebnis eines klaren Ablaufs. Wenn du eine bestehende Seite hast, die alt aussieht, ist das der schnellste Weg zu einem modernen Auftritt. Sieh dir <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a> an oder buch dir ein kostenloses Erstgespräch.</p>

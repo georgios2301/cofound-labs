@@ -24,6 +24,10 @@ import {
   FileText,
   Clock,
   Globe,
+  Scissors,
+  UtensilsCrossed,
+  Wrench,
+  Briefcase,
   type LucideIcon,
 } from "lucide-react";
 
@@ -52,6 +56,10 @@ export const SERVICE_ICONS: Record<string, LucideIcon> = {
   file: FileText,
   clock: Clock,
   globe: Globe,
+  scissors: Scissors,
+  utensils: UtensilsCrossed,
+  wrench: Wrench,
+  briefcase: Briefcase,
 };
 
 export const FALLBACK_ICON: LucideIcon = Code2;

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { SITE_NAME } from "@/lib/constants";
 
 export const alt =
-  "Cofound Labs – Neue Website. 199 €. Live in 48 Stunden.";
+  "Cofound Labs – Neue Website ab 399 €. Ohne versteckte Gebühren.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function Image() {
               maxWidth: 1000,
             }}
           >
-            {"Neue Website. 199 €. 48 Stunden."}
+            {"Neue Website. Ab 399 €. Ohne versteckte Gebühren."}
           </div>
           <div
             style={{

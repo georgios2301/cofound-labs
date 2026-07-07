@@ -28,6 +28,8 @@ export type Service = {
   audienceText?: string;
   audienceChips: string[];
   faqs: [string, string][];
+  /** Branchenspezifischer Absatz „Was KI & Automatisierung hier heißt" am Seitenende (Spec §9), verlinkt auf /#software. */
+  aiNote?: string;
   relatedCaseSlugs: string[];
   ctaLabel: string;
   ctaHeading: string;
@@ -40,21 +42,21 @@ export const services: Service[] = [
     navLabel: "Website erstellen lassen",
     cardIcon: "globe",
     cardDesc:
-      "Individuelle, mobil-optimierte Websites mit technischer SEO-Basis – ab 199 €.",
+      "Individuelle, mobil-optimierte Websites mit technischer SEO-Basis – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting.",
     eyebrow: "Website erstellen lassen",
     keyword: "website erstellen lassen",
-    metaTitle: "Website erstellen lassen ab 199 €",
+    metaTitle: "Website erstellen lassen ab 399 €",
     metaDescription:
-      "Website erstellen lassen: bestehende Seite auffrischen für 199 € pauschal (live in 48 h) oder komplett neu nach transparentem Festpreisangebot. Jetzt anfragen.",
-    h1: "Website erstellen lassen – auffrischen für 199 € oder neu nach Angebot",
+      "Website erstellen lassen: bestehende Seite auffrischen ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Oder Relaunch komplett neu zum Festpreis. Jetzt anfragen.",
+    h1: "Website erstellen lassen – auffrischen ab 399 € oder komplett neu",
     lede:
-      "Zwei Wege zur neuen Seite: Gibt es eine bestehende Website zum Auffrischen, kostet das pauschal 199 € und ist in 48 Stunden live. Soll etwas komplett Neues entstehen, bekommst du vorab ein transparentes Festpreisangebot.",
-    offer: { price: "199", priceCurrency: "EUR" },
+      "Zwei Wege zur neuen Seite: Gibt es eine bestehende Website zum Auffrischen, kostet das ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting – ohne versteckte Gebühren. Soll etwas komplett Neues entstehen, gibt es den Relaunch zum Festpreis.",
+    offer: { price: "399", priceCurrency: "EUR" },
     serviceType: "Website-Erstellung & Webdesign",
     stats: [
-      { value: "199 €", label: "Auffrischung, pauschal" },
-      { value: "48 Std.", label: "aufgefrischt live" },
-      { value: "nach Angebot", label: "kompletter Neubau" },
+      { value: "ab 399 €", label: "Auffrischung, pauschal" },
+      { value: "0", label: "versteckte Gebühren" },
+      { value: "12 Monate", label: "Betreuung & Hosting inklusive" },
     ],
     featuresHeading: "Das steckt in deiner Website",
     features: [
@@ -70,7 +72,7 @@ export const services: Service[] = [
       { title: "Kennenlerngespräch", text: "Kostenlos & unverbindlich: Idee, Ziele, Beispiele." },
       { title: "Konzept & Festpreis", text: "Klare Seitenstruktur und ein transparenter Preis." },
       { title: "Umsetzung", text: "Wir bauen – du bekommst eine Vorschau, bevor es live geht." },
-      { title: "Launch & Änderungen", text: "Online gehen – spätere Änderungen 20 €/h, keine Abos." },
+      { title: "Launch & Betreuung", text: "Online gehen – 12 Monate Betreuung & Hosting sind inklusive." },
     ],
     audienceHeading: "Für wen wir Websites bauen",
     audienceText:
@@ -79,11 +81,11 @@ export const services: Service[] = [
     faqs: [
       [
         "Was kostet eine Website bei euch?",
-        "Die Auffrischung einer bestehenden Website kostet pauschal 199 € – alles inklusive, live in 48 Stunden. Für einen komplett neuen Aufbau bekommst du vorab ein transparentes Festpreisangebot, je nach Umfang und Funktionen.",
+        "Die Auffrischung einer bestehenden Website kostet ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Für einen kompletten Neuaufbau gibt es den Relaunch ab 599 € – ebenfalls inkl. 12 Monate Betreuung & Hosting.",
       ],
       [
         "Wo kann ich günstig eine Website erstellen lassen?",
-        "Bei Cofound Labs: Wir frischen bestehende Websites für 199 € pauschal auf – deutschlandweit, mobil-optimiert und mit technischer SEO-Basis. Neue Seiten bauen wir zum transparenten Festpreis. Das Erstgespräch ist kostenlos.",
+        "Bei Cofound Labs: Wir frischen bestehende Websites ab 399 € pauschal auf – deutschlandweit, mobil-optimiert und mit technischer SEO-Basis, inkl. 12 Monate Betreuung & Hosting. Neue Seiten bauen wir zum transparenten Festpreis. Das Erstgespräch ist kostenlos.",
       ],
       [
         "Wie lange dauert es, bis meine Website online ist?",
@@ -364,28 +366,28 @@ export const services: Service[] = [
     ctaText: "30 Minuten, kostenlos & unverbindlich. Wir schauen gemeinsam, was sich automatisieren lässt.",
   },
 
-  // ─── Branchen-Landingpages (Website-Auffrischung, 199 € pauschal) ───────────
+  // ─── Branchen-Landingpages (Website-Auffrischung, ab 399 € pauschal) ────────
 
   {
     slug: "website-fuer-friseure",
     group: "branche",
     navLabel: "Friseure",
-    cardIcon: "palette",
+    cardIcon: "scissors",
     cardDesc:
-      "Aufgefrischte Website für deinen Salon – Termine, Preise & Google, 199 € pauschal.",
+      "Aufgefrischte Website für deinen Salon – Termine, Preise & Google. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting.",
     eyebrow: "Website für Friseure",
     keyword: "website für friseure",
     metaTitle: "Website für Friseure & Salons",
     metaDescription:
-      "Website für Friseure auffrischen lassen – 199 € pauschal, live in 48 Stunden. Salon-Seite mit Terminanfrage, Preisen & Google. Jetzt anfragen.",
-    h1: "Website für Friseure – aufgefrischt für 199 €, live in 48 Stunden",
+      "Website für Friseure auffrischen lassen – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Salon-Seite mit Terminanfrage, Preisen & Google.",
+    h1: "Website für Friseure – aufgefrischt ab 399 €, ohne versteckte Gebühren",
     lede:
-      "Deine Salon-Website sieht aus wie vor zehn Jahren? Wir frischen sie komplett auf – modern, aufs Handy optimiert und mit klarer Terminanfrage. Pauschal 199 €, in 48 Stunden live. Voraussetzung: Es gibt bereits eine Seite, die wir übernehmen.",
-    offer: { price: "199", priceCurrency: "EUR" },
+      "Deine Salon-Website sieht aus wie vor zehn Jahren? Wir frischen sie komplett auf – modern, aufs Handy optimiert und mit klarer Terminanfrage. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Voraussetzung: Es gibt bereits eine Seite, die wir übernehmen.",
+    offer: { price: "399", priceCurrency: "EUR" },
     serviceType: "Website-Auffrischung für Friseursalons",
     stats: [
-      { value: "199 €", label: "pauschal, alles drin" },
-      { value: "48 Std.", label: "bis live" },
+      { value: "ab 399 €", label: "pauschal, alles drin" },
+      { value: "0", label: "versteckte Gebühren" },
       { value: "Handy", label: "zuerst optimiert" },
     ],
     featuresHeading: "Was deine neue Salon-Website mitbringt",
@@ -395,14 +397,14 @@ export const services: Service[] = [
       { icon: "smartphone", title: "Mobil zuerst", text: "Die meisten Kundinnen kommen vom Smartphone. Genau dafür gebaut." },
       { icon: "search", title: "Bei Google gefunden", text: "SEO-Basis für „Friseur + deine Stadt“." },
       { icon: "star", title: "Bewertungen & Instagram", text: "Google-Rezensionen und dein Insta-Feed direkt eingebunden." },
-      { icon: "clock", title: "Öffnungszeiten aktuell", text: "Zeiten und Feiertage in Minuten geändert – für 10 €." },
+      { icon: "clock", title: "Öffnungszeiten aktuell", text: "Zeiten und Feiertage in Minuten geändert – im ersten Jahr inklusive." },
     ],
     stepsHeading: "So läuft's",
     steps: [
       { title: "Absprache", text: "Kurzes Gespräch: Was soll bleiben, was besser werden? Kostenlos." },
       { title: "Entwurf nach ~24 h", text: "Du bekommst eine echte Seite zum Durchklicken auf dem Handy." },
       { title: "Live nach 48 h", text: "Ein Wort von dir – und dein Salon ist online, auf deiner Adresse." },
-      { title: "Danach", text: "Änderungen 20 €/h, keine Abos. Die Seite gehört dir." },
+      { title: "Danach", text: "12 Monate Betreuung & Hosting inklusive. Die Seite gehört dir." },
     ],
     audienceHeading: "Für welche Salons wir bauen",
     audienceText:
@@ -411,7 +413,7 @@ export const services: Service[] = [
     faqs: [
       [
         "Was kostet eine Website für meinen Friseursalon?",
-        "199 € pauschal – für die Auffrischung deiner bestehenden Salon-Website, alles inklusive. Hast du noch keine Seite, machen wir dir vorab ein transparentes Festpreisangebot für den Neuaufbau.",
+        "Ab 399 € pauschal – für die Auffrischung deiner bestehenden Salon-Website, inkl. 12 Monate Betreuung & Hosting. Hast du noch keine Seite, machen wir dir vorab ein transparentes Festpreisangebot für den Neuaufbau.",
       ],
       [
         "Können meine Kundinnen online Termine anfragen?",
@@ -427,9 +429,11 @@ export const services: Service[] = [
       ],
       [
         "Ich habe noch gar keine Website – geht das trotzdem?",
-        "Der 199-€-Festpreis gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt bekommst du vorab ein klares Festpreisangebot.",
+        "Der Festpreis ab 399 € gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt gibt es den Relaunch ab 599 € – ebenfalls inkl. 12 Monate Betreuung & Hosting.",
       ],
     ],
+    aiNote:
+      "Und wenn die Website steht: Mit KI & Automatisierung nehmen wir deinem Salon die Fleißarbeit ab — automatische Terminerinnerungen, die Ausfälle spürbar reduzieren, und ein Ausfall-Management, das freigewordene Termine von selbst wieder füllt.",
     relatedCaseSlugs: ["hundesalon", "biergarten-varresbeck"],
     ctaLabel: "Salon-Website auffrischen",
     ctaHeading: "Bereit für einen frischen Salon-Auftritt?",
@@ -440,22 +444,22 @@ export const services: Service[] = [
     slug: "website-fuer-gastronomie",
     group: "branche",
     navLabel: "Gastronomie",
-    cardIcon: "message",
+    cardIcon: "utensils",
     cardDesc:
-      "Aufgefrischte Website für Restaurant, Café & Bar – Karte, Reservierung & Google, 199 € pauschal.",
+      "Aufgefrischte Website für Restaurant, Café & Bar – Karte, Reservierung & Google. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting.",
     eyebrow: "Website für Gastronomie",
     keyword: "website für gastronomie",
     metaTitle: "Website für Gastronomie & Restaurants",
     metaDescription:
-      "Website für Gastronomie auffrischen lassen – 199 € pauschal, live in 48 h. Mit digitaler Speisekarte, Reservierung & Google. Jetzt anfragen.",
-    h1: "Website für Gastronomie – aufgefrischt für 199 €, live in 48 Stunden",
+      "Website für Gastronomie auffrischen lassen – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Mit digitaler Speisekarte, Reservierung & Google.",
+    h1: "Website für Gastronomie – aufgefrischt ab 399 €, ohne versteckte Gebühren",
     lede:
-      "Speisekarte als verstecktes PDF, Seite lahm auf dem Handy? Wir frischen deinen Auftritt für Restaurant, Café oder Bar komplett auf – mit lesbarer Karte, Reservierung und aktuellen Öffnungszeiten. Pauschal 199 €, in 48 Stunden live. Voraussetzung: Es gibt bereits eine Seite.",
-    offer: { price: "199", priceCurrency: "EUR" },
+      "Speisekarte als verstecktes PDF, Seite lahm auf dem Handy? Wir frischen deinen Auftritt für Restaurant, Café oder Bar komplett auf – mit lesbarer Karte, Reservierung und aktuellen Öffnungszeiten. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Voraussetzung: Es gibt bereits eine Seite.",
+    offer: { price: "399", priceCurrency: "EUR" },
     serviceType: "Website-Auffrischung für Gastronomie",
     stats: [
-      { value: "199 €", label: "pauschal, alles drin" },
-      { value: "48 Std.", label: "bis live" },
+      { value: "ab 399 €", label: "pauschal, alles drin" },
+      { value: "0", label: "versteckte Gebühren" },
       { value: "Karte", label: "immer aktuell" },
     ],
     featuresHeading: "Was deine Gastro-Website mitbringt",
@@ -472,7 +476,7 @@ export const services: Service[] = [
       { title: "Absprache", text: "Kurzes Gespräch: Was soll bleiben, was besser werden? Kostenlos." },
       { title: "Entwurf nach ~24 h", text: "Eine echte Seite zum Durchklicken – inklusive lesbarer Speisekarte." },
       { title: "Live nach 48 h", text: "Ein Wort von dir – und dein Lokal ist online, auf deiner Adresse." },
-      { title: "Danach", text: "Karte oder Zeiten ändern? 20 €/h, keine Abos. Die Seite gehört dir." },
+      { title: "Danach", text: "Karte oder Zeiten ändern? Im ersten Jahr inklusive. Die Seite gehört dir." },
     ],
     audienceHeading: "Für welche Betriebe wir bauen",
     audienceText:
@@ -481,11 +485,11 @@ export const services: Service[] = [
     faqs: [
       [
         "Was kostet eine Website für mein Restaurant?",
-        "199 € pauschal – für die Auffrischung deiner bestehenden Gastro-Website, alles inklusive. Ohne bestehende Seite bekommst du vorab ein transparentes Festpreisangebot für den Neuaufbau.",
+        "Ab 399 € pauschal – für die Auffrischung deiner bestehenden Gastro-Website, inkl. 12 Monate Betreuung & Hosting. Ohne bestehende Seite bekommst du vorab ein transparentes Festpreisangebot für den Neuaufbau.",
       ],
       [
         "Kann ich meine Speisekarte selbst aktualisieren?",
-        "Kleinere Änderungen an Karte, Preisen oder Öffnungszeiten übernehmen wir schnell (20 €/h, auf halbe Stunden genau). Auf Wunsch bauen wir die Karte so, dass du sie selbst pflegen kannst – das besprechen wir vorher.",
+        "Kleinere Änderungen an Karte, Preisen oder Öffnungszeiten übernehmen wir im ersten Jahr einfach für dich – meist noch am selben Tag. Auf Wunsch bauen wir die Karte so, dass du sie selbst pflegen kannst – das besprechen wir vorher.",
       ],
       [
         "Können Gäste online reservieren?",
@@ -500,6 +504,8 @@ export const services: Service[] = [
         "Ja – Absprache, ein Entwurf, live gehen. Texte und Bilder übernehmen wir von deiner alten Seite und frischen sie auf.",
       ],
     ],
+    aiNote:
+      "Und wenn die Website steht: Mit KI & Automatisierung halten wir deinen Laden auch digital am Laufen — Speisekarten-Updates in Sekunden statt PDF-Gefummel und Reservierungsanfragen, die sich von selbst beantworten.",
     relatedCaseSlugs: ["biergarten-varresbeck", "baizar"],
     ctaLabel: "Gastro-Website auffrischen",
     ctaHeading: "Bereit für einen frischen Gastro-Auftritt?",
@@ -510,22 +516,22 @@ export const services: Service[] = [
     slug: "website-fuer-handwerker",
     group: "branche",
     navLabel: "Handwerker",
-    cardIcon: "shield",
+    cardIcon: "wrench",
     cardDesc:
-      "Aufgefrischte Website für deinen Betrieb – Leistungen, Anfragen & Google, 199 € pauschal.",
+      "Aufgefrischte Website für deinen Betrieb – Leistungen, Anfragen & Google. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting.",
     eyebrow: "Website für Handwerker",
     keyword: "website für handwerker",
     metaTitle: "Website für Handwerker & Betriebe",
     metaDescription:
-      "Website für Handwerker auffrischen lassen – 199 € pauschal, live in 48 Stunden. Leistungen, Anfragen & Google für deinen Betrieb. Jetzt anfragen.",
-    h1: "Website für Handwerker – aufgefrischt für 199 €, live in 48 Stunden",
+      "Website für Handwerker auffrischen lassen – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Leistungen, Anfragen & Google für deinen Betrieb.",
+    h1: "Website für Handwerker – aufgefrischt ab 399 €, ohne versteckte Gebühren",
     lede:
-      "Deine Betriebs-Website bringt keine Anfragen? Wir frischen sie auf – klar strukturiert, mobil und mit einfachem Anfrageweg für neue Aufträge. Pauschal 199 €, in 48 Stunden live. Voraussetzung: Es gibt bereits eine Seite.",
-    offer: { price: "199", priceCurrency: "EUR" },
+      "Deine Betriebs-Website bringt keine Anfragen? Wir frischen sie auf – klar strukturiert, mobil und mit einfachem Anfrageweg für neue Aufträge. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Voraussetzung: Es gibt bereits eine Seite.",
+    offer: { price: "399", priceCurrency: "EUR" },
     serviceType: "Website-Auffrischung für Handwerksbetriebe",
     stats: [
-      { value: "199 €", label: "pauschal, alles drin" },
-      { value: "48 Std.", label: "bis live" },
+      { value: "ab 399 €", label: "pauschal, alles drin" },
+      { value: "0", label: "versteckte Gebühren" },
       { value: "Anfragen", label: "in einem Tipp" },
     ],
     featuresHeading: "Was deine Handwerker-Website mitbringt",
@@ -542,7 +548,7 @@ export const services: Service[] = [
       { title: "Absprache", text: "Kurzes Gespräch: Was soll bleiben, was besser werden? Kostenlos." },
       { title: "Entwurf nach ~24 h", text: "Du bekommst eine echte Seite zum Durchklicken auf dem Handy." },
       { title: "Live nach 48 h", text: "Ein Wort von dir – und dein Betrieb ist online, auf deiner Adresse." },
-      { title: "Danach", text: "Änderungen 20 €/h, keine Abos. Die Seite gehört dir." },
+      { title: "Danach", text: "12 Monate Betreuung & Hosting inklusive. Die Seite gehört dir." },
     ],
     audienceHeading: "Für welche Betriebe wir bauen",
     audienceText:
@@ -551,7 +557,7 @@ export const services: Service[] = [
     faqs: [
       [
         "Was kostet eine Website für meinen Handwerksbetrieb?",
-        "199 € pauschal – für die Auffrischung deiner bestehenden Betriebs-Website, alles inklusive. Ohne bestehende Seite bekommst du vorab ein transparentes Festpreisangebot für den Neuaufbau.",
+        "Ab 399 € pauschal – für die Auffrischung deiner bestehenden Betriebs-Website, inkl. 12 Monate Betreuung & Hosting. Ohne bestehende Seite bekommst du vorab ein transparentes Festpreisangebot für den Neuaufbau.",
       ],
       [
         "Bekomme ich über die Seite wirklich Anfragen?",
@@ -567,9 +573,11 @@ export const services: Service[] = [
       ],
       [
         "Ich habe noch keine Website – geht das trotzdem?",
-        "Der 199-€-Festpreis gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt bekommst du vorab ein klares Festpreisangebot.",
+        "Der Festpreis ab 399 € gilt für die Auffrischung einer bestehenden Seite. Für einen komplett neuen Auftritt gibt es den Relaunch ab 599 € – ebenfalls inkl. 12 Monate Betreuung & Hosting.",
       ],
     ],
+    aiNote:
+      "Und wenn die Website steht: Mit KI & Automatisierung sparst du dir den Papierkram — Angebote und Rechnungen auf Knopfdruck, direkt aus deinen Aufträgen heraus. So bleibt mehr Zeit auf der Baustelle statt am Schreibtisch.",
     relatedCaseSlugs: ["dokument-generator", "hundesalon"],
     ctaLabel: "Betriebs-Website auffrischen",
     ctaHeading: "Bereit für mehr Anfragen über deine Seite?",
@@ -580,23 +588,23 @@ export const services: Service[] = [
     slug: "website-fuer-kmu",
     group: "branche",
     navLabel: "KMU",
-    cardIcon: "boxes",
+    cardIcon: "briefcase",
     cardDesc:
-      "Aufgefrischte Website für kleine & mittlere Unternehmen – professionell, 199 € pauschal.",
+      "Aufgefrischte Website für kleine & mittlere Unternehmen – professionell. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting.",
     eyebrow: "Website für KMU",
     keyword: "website für kmu",
     metaTitle: "Website für KMU & kleine Unternehmen",
     metaDescription:
-      "Website für KMU auffrischen lassen – 199 € pauschal, live in 48 Stunden. Professioneller Auftritt für kleine & mittlere Unternehmen. Jetzt anfragen.",
-    h1: "Website für KMU – aufgefrischt für 199 €, live in 48 Stunden",
+      "Website für KMU auffrischen lassen – ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Professioneller Auftritt für kleine & mittlere Unternehmen.",
+    h1: "Website für KMU – aufgefrischt ab 399 €, ohne versteckte Gebühren",
     lede:
-      "Ein veralteter Web-Auftritt kostet dich Aufträge und Bewerber. Wir frischen die Seite deines kleinen oder mittleren Unternehmens auf – professionell, mobil und schnell. Pauschal 199 €, in 48 Stunden live. Voraussetzung: Es gibt bereits eine Seite.",
-    offer: { price: "199", priceCurrency: "EUR" },
+      "Ein veralteter Web-Auftritt kostet dich Aufträge und Bewerber. Wir frischen die Seite deines kleinen oder mittleren Unternehmens auf – professionell, mobil und schnell. Ab 399 € pauschal — inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Voraussetzung: Es gibt bereits eine Seite.",
+    offer: { price: "399", priceCurrency: "EUR" },
     serviceType: "Website-Auffrischung für KMU",
     stats: [
-      { value: "199 €", label: "pauschal, alles drin" },
-      { value: "48 Std.", label: "bis live" },
-      { value: "0 €", label: "monatlich*" },
+      { value: "ab 399 €", label: "pauschal, alles drin" },
+      { value: "0", label: "versteckte Gebühren" },
+      { value: "12 Monate", label: "Betreuung & Hosting inklusive" },
     ],
     featuresHeading: "Was deine KMU-Website mitbringt",
     features: [
@@ -612,7 +620,7 @@ export const services: Service[] = [
       { title: "Absprache", text: "Kurzes Gespräch: Was soll bleiben, was besser werden? Kostenlos." },
       { title: "Entwurf nach ~24 h", text: "Du bekommst eine echte Seite zum Durchklicken auf dem Handy." },
       { title: "Live nach 48 h", text: "Ein Wort von dir – und dein Auftritt ist online, auf deiner Adresse." },
-      { title: "Danach", text: "Änderungen 20 €/h, keine Abos. Die Seite gehört dir." },
+      { title: "Danach", text: "12 Monate Betreuung & Hosting inklusive. Die Seite gehört dir." },
     ],
     audienceHeading: "Für welche Unternehmen wir bauen",
     audienceText:
@@ -621,11 +629,11 @@ export const services: Service[] = [
     faqs: [
       [
         "Was kostet eine Website für mein Unternehmen?",
-        "199 € pauschal – für die Auffrischung eurer bestehenden Website, alles inklusive. Ohne bestehende Seite bekommt ihr vorab ein transparentes Festpreisangebot für den Neuaufbau.",
+        "Ab 399 € pauschal – für die Auffrischung eurer bestehenden Website, inkl. 12 Monate Betreuung & Hosting. Ohne bestehende Seite bekommt ihr vorab ein transparentes Festpreisangebot für den Neuaufbau.",
       ],
       [
-        "Fallen laufende Kosten an?",
-        "Nein – wenn eure bestehende Domain übernommen werden kann, bleibt es bei den einmaligen 199 €. Falls nicht, klären wir vorher transparent, was anfällt.",
+        "Was ist mit Hosting und laufenden Kosten?",
+        "Im ersten Jahr ist alles inklusive: Hosting, SSL, Domain-Verwaltung und kleine Änderungen. Wie es danach weitergeht, besprechen wir rechtzeitig gemeinsam — ohne automatische Verlängerung, ohne Kleingedrucktes.",
       ],
       [
         "Können wir die Seite später erweitern?",
@@ -640,6 +648,8 @@ export const services: Service[] = [
         "Ja – Absprache, ein Entwurf, live gehen. Texte und Bilder übernehmen wir von eurer alten Seite und frischen sie auf.",
       ],
     ],
+    aiNote:
+      "Und wenn die Website steht: Mit KI & Automatisierung verschlanken wir eure Abläufe — Dokumenten-Workflows vom Angebot bis zur Rechnung, automatisch erstellt, geprüft und abgelegt. Weniger Verwaltung, mehr Kerngeschäft.",
     relatedCaseSlugs: ["dokument-generator", "baizar"],
     ctaLabel: "Firmen-Website auffrischen",
     ctaHeading: "Bereit für einen professionellen Auftritt?",

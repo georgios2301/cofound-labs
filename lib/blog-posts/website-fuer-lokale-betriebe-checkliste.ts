@@ -28,7 +28,7 @@ export const post: BlogPost = {
     ],
     [
       "Was kostet so eine Website?",
-      "Die Auffrischung einer bestehenden Seite kostet bei uns 199 € pauschal, live in 48 Stunden. Kann deine Domain weitergenutzt werden, fallen keine laufenden Kosten an. Ein komplett neuer Aufbau wird nach Umfang als Festpreis angeboten.",
+      "Die Auffrischung einer bestehenden Seite kostet bei uns ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, live in 48 Stunden. Ein kompletter Neuaufbau (Relaunch) kostet ab 599 €, ebenfalls inkl. 12 Monate Betreuung & Hosting.",
     ],
   ],
   relatedServiceSlugs: [
@@ -64,6 +64,6 @@ export const post: BlogPost = {
 <p>Worauf es im Detail ankommt, ist je nach Gewerk verschieden. Wir haben passende Seiten für <a href="/leistungen/website-fuer-friseure">Friseure</a>, <a href="/leistungen/website-fuer-gastronomie">Gastronomie</a>, <a href="/leistungen/website-fuer-handwerker">Handwerker</a> und <a href="/leistungen/website-fuer-kmu">KMU</a> – jeweils mit dem, was in der Branche wirklich zählt.</p>
 
 <h2>Fazit</h2>
-<p>Die meisten Punkte auf dieser Liste sind kein Hexenwerk – sie fehlen nur auf vielen älteren Seiten. Wenn deine Website ein paar davon reißt, lohnt sich eine <a href="/blog/website-auffrischen">Auffrischung</a>: für <strong>199 € pauschal</strong>, in 48 Stunden live. Sichere dir ein kostenloses Erstgespräch, und wir gehen die Liste gemeinsam durch.</p>
+<p>Die meisten Punkte auf dieser Liste sind kein Hexenwerk – sie fehlen nur auf vielen älteren Seiten. Wenn deine Website ein paar davon reißt, lohnt sich eine <a href="/blog/website-auffrischen">Auffrischung</a>: <strong>ab 399 € pauschal</strong>, inkl. 12 Monate Betreuung &amp; Hosting, in 48 Stunden live. Sichere dir ein kostenloses Erstgespräch, und wir gehen die Liste gemeinsam durch.</p>
 `,
 };

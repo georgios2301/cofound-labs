@@ -2,16 +2,16 @@
 // FAQPage-Schema (app/page.tsx), damit beide immer synchron bleiben.
 export const FAQS: [string, string][] = [
   [
-    "Wie kann eine Website nur 199 € kosten?",
-    "Weil der Umfang klar ist: Wir bauen auf deinen bestehenden Inhalten auf – Texte, Bilder und Struktur sind schon da und werden aufgefrischt statt neu erfunden. Schlanke Technik, kein Agentur-Überbau, keine Meeting-Marathons.",
+    "Wie kann eine Website nur 399 € kosten?",
+    "Weil der Umfang klar ist: Wir bauen auf deinen bestehenden Inhalten auf – Texte, Bilder und Struktur sind schon da und werden aufgefrischt statt neu erfunden. Schlanke Technik, kein Agentur-Überbau, keine Meeting-Marathons. Und weil unser Ablauf hochgradig automatisiert ist — die Zeit stecken wir in dein Design, nicht in Verwaltung.",
   ],
   [
-    "Fallen laufende Kosten an?",
-    "Nein – wenn deine bestehende Domain übernommen werden kann. Dann bleibt es bei den einmaligen 199 €. Falls nicht, klären wir vorher transparent, was anfällt.",
+    "Was ist mit Hosting und laufenden Kosten?",
+    "Im ersten Jahr ist alles inklusive: Hosting, SSL, Domain-Verwaltung und kleine Änderungen wie neue Öffnungszeiten oder Preise. Du musst dich um nichts kümmern. Wie es danach weitergeht, besprechen wir rechtzeitig gemeinsam — ohne automatische Verlängerung, ohne Kleingedrucktes.",
   ],
   [
     "Was kosten spätere Änderungen?",
-    "20 € pro Stunde, abgerechnet auf volle halbe Stunden. Neue Öffnungszeiten oder ein aktualisierter Preis sind in einer halben Stunde erledigt – das kostet dich dann 10 €.",
+    "Kleine Änderungen — Öffnungszeiten, Preise, ein neues Foto — sind im ersten Jahr einfach inklusive. Schreib uns eine WhatsApp oder E-Mail, wir erledigen das meist noch am selben Tag. Größere Erweiterungen wie neue Seiten oder Funktionen bepreisen wir vorher transparent zum Festpreis.",
   ],
   [
     "Was brauchst du von mir?",
@@ -24,5 +24,9 @@ export const FAQS: [string, string][] = [
   [
     "Gehört die Website dann mir?",
     "Ja. Die Website und alle Rechte gehören dir. Du bist nie an uns gebunden und kannst jederzeit weiterarbeiten lassen, wo du möchtest.",
+  ],
+  [
+    "Was heißt „KI & Automatisierung“ konkret?",
+    "Alles, was dir wiederkehrende Arbeit abnimmt: Angebote und Rechnungen auf Knopfdruck, automatische Antworten auf Anfragen, Terminerinnerungen, Social-Media-Beiträge aus deinem Alltag. Wir schauen uns deinen Betrieb an, finden den Ablauf, der dich am meisten Zeit kostet — und bauen dafür eine Lösung zum Festpreis. Beispiele findest du weiter oben unter „KI & Automatisierung“.",
   ],
 ];

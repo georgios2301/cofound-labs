@@ -6,6 +6,7 @@ import Footer from "@/components/sections/Footer";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import ContactForm from "@/components/ui/ContactForm";
 import { services } from "@/lib/services";
+import { SERVICE_ICONS, FALLBACK_ICON } from "@/lib/service-icons";
 import { caseStudies } from "@/lib/case-studies";
 import {
   SITE_URL,
@@ -20,12 +21,12 @@ const url = `${SITE_URL}/standort/wuppertal`;
 export const metadata: Metadata = {
   title: "Website erstellen lassen in Wuppertal",
   description:
-    "Website erstellen lassen in Wuppertal: Auffrischung für 199 € pauschal, live in 48 Stunden. Persönlich vor Ort im Bergischen Land, deutschlandweit tätig.",
+    "Website erstellen lassen in Wuppertal: Auffrischung ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Persönlich vor Ort im Bergischen Land.",
   alternates: { canonical: "/standort/wuppertal" },
   openGraph: {
     title: "Website erstellen lassen in Wuppertal | Cofound Labs",
     description:
-      "Deine Website aus Wuppertal – Auffrischung für 199 € pauschal, live in 48 Stunden. Persönlich vor Ort, deutschlandweit tätig.",
+      "Deine Website aus Wuppertal – Auffrischung ab 399 € pauschal, inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Persönlich vor Ort, deutschlandweit tätig.",
     url,
     type: "website",
     images: ["/opengraph-image"],
@@ -44,7 +45,7 @@ const FAQS: [string, string][] = [
   ],
   [
     "Was kostet eine Website in Wuppertal?",
-    "Die Auffrischung einer bestehenden Website kostet pauschal 199 € – alles inklusive, live in 48 Stunden. Für einen komplett neuen Aufbau bekommst du vorab ein transparentes Festpreisangebot.",
+    "Die Auffrischung einer bestehenden Website kostet ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Für einen kompletten Neuaufbau gibt es den Relaunch ab 599 €.",
   ],
   [
     "Wie schnell ist meine Website online?",
@@ -52,7 +53,7 @@ const FAQS: [string, string][] = [
   ],
   [
     "Betreut ihr die Website nach dem Launch?",
-    "Kann deine bestehende Domain übernommen werden, fallen keine laufenden Kosten an. Spätere Änderungen rechnen wir mit 20 €/h auf halbe Stunden genau ab – keine Abos, die Website gehört dir.",
+    "Ja — 12 Monate Betreuung & Hosting sind inklusive: SSL, Domain-Verwaltung und kleine Änderungen wie neue Öffnungszeiten übernehmen wir im ersten Jahr einfach für dich. Die Website gehört dir.",
   ],
 ];
 
@@ -128,10 +129,10 @@ export default function StandortWuppertalPage() {
             <div className="kicker" style={{ marginTop: 28 }}>
               // Standort Wuppertal
             </div>
-            <h1>Website erstellen lassen in Wuppertal – 199 € pauschal</h1>
+            <h1>Website erstellen lassen in Wuppertal – ab 399 € pauschal</h1>
             <p className="lede">
               Dein Web-Studio aus dem Bergischen Land: Wir frischen deine
-              Website auf – pauschal 199 €, live in 48 Stunden. Persönlich vor
+              Website auf – ab 399 € pauschal, ohne versteckte Gebühren. Persönlich vor
               Ort in Wuppertal, auf Wunsch deutschlandweit.
             </p>
             <div className="cs-nav" style={{ marginTop: 32 }}>
@@ -145,12 +146,12 @@ export default function StandortWuppertalPage() {
 
             <div className="kpis" style={{ marginTop: 44 }}>
               <div className="kpi">
-                <div className="kn">199 €</div>
+                <div className="kn">ab 399 €</div>
                 <div className="kl">pauschal, alles drin</div>
               </div>
               <div className="kpi">
-                <div className="kn">48 Std.</div>
-                <div className="kl">bis live</div>
+                <div className="kn">0</div>
+                <div className="kl">versteckte Gebühren</div>
               </div>
               <div className="kpi">
                 <div className="kn">vor Ort</div>
@@ -217,8 +218,8 @@ export default function StandortWuppertalPage() {
               <div className="card">
                 <h3>Schnell &amp; verlässlich</h3>
                 <p>
-                  Kurze Wege, klare Absprachen, fester Preis: 199 € pauschal,
-                  in 48 Stunden live – ohne Meeting-Marathon.
+                  Kurze Wege, klare Absprachen, fester Preis: ab 399 € pauschal,
+                  ohne versteckte Gebühren – und ohne Meeting-Marathon.
                 </p>
               </div>
             </div>
@@ -232,20 +233,26 @@ export default function StandortWuppertalPage() {
               <div className="kicker">// Für deine Branche</div>
               <h2 className="title">Websites für Wuppertaler Betriebe</h2>
             </div>
-            <div className="grid grid-3">
-              {branchen.map((s) => (
-                <Link
-                  key={s.slug}
-                  className="card"
-                  href={`/leistungen/${s.slug}`}
-                >
-                  <h3>{s.navLabel}</h3>
-                  <p>{s.cardDesc}</p>
-                  <div className="proj-more">
-                    Mehr erfahren <span className="btn-arrow">→</span>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-4">
+              {branchen.map((s) => {
+                const Icon = SERVICE_ICONS[s.cardIcon] ?? FALLBACK_ICON;
+                return (
+                  <Link
+                    key={s.slug}
+                    className="card"
+                    href={`/leistungen/${s.slug}`}
+                  >
+                    <div className="c-ic">
+                      <Icon size={22} strokeWidth={1.9} aria-hidden="true" />
+                    </div>
+                    <h3>{s.navLabel}</h3>
+                    <p>{s.cardDesc}</p>
+                    <div className="proj-more">
+                      Mehr erfahren <span className="btn-arrow">→</span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

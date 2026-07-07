@@ -28,7 +28,7 @@ export const post: BlogPost = {
     ],
     [
       "Sind im Preis auch Wartung und Support enthalten?",
-      "Die Entwicklung ist das eine, der Betrieb das andere. Wir bieten optionale Betreuungspakete ab 199 € im Monat an – für Bugfixes, Sicherheitsupdates und kleine Weiterentwicklungen. So bleibt deine App nach dem Launch stabil und aktuell.",
+      "Die Entwicklung ist das eine, der Betrieb das andere. Wir bieten optionale Betreuungspakete zum monatlichen Festpreis an – für Bugfixes, Sicherheitsupdates und kleine Weiterentwicklungen. So bleibt deine App nach dem Launch stabil und aktuell.",
     ],
   ],
   relatedServiceSlugs: ["app-entwicklung", "mvp-entwicklung"],
@@ -65,7 +65,7 @@ export const post: BlogPost = {
 <p>Du musst nicht alles auf einmal bauen – und solltest es meistens auch nicht. Mit einem <a href="/blog/was-ist-ein-mvp">MVP</a> startest du mit dem Kernfeature, bringst es schnell auf den Markt und baust auf Basis von echtem Nutzerfeedback weiter. Das hat zwei Effekte: Dein Anfangsbudget ist deutlich kleiner, und du steckst kein Geld in Funktionen, die am Ende niemand benutzt. Wie das abläuft, zeigt unser Leitfaden <a href="/blog/mvp-entwickeln-schritt-fuer-schritt">MVP entwickeln in 6 Schritten</a>.</p>
 
 <h2>Laufende Kosten nicht vergessen</h2>
-<p>Die Entwicklung ist eine einmalige Investition, aber eine App lebt weiter: Server, App-Store-Gebühren, Updates für neue Betriebssystemversionen, Bugfixes. Dafür bieten wir optionale <strong>Betreuungspakete ab 199 € im Monat</strong> an – damit deine App stabil und aktuell bleibt, ohne dass du dich selbst um die Technik kümmern musst.</p>
+<p>Die Entwicklung ist eine einmalige Investition, aber eine App lebt weiter: Server, App-Store-Gebühren, Updates für neue Betriebssystemversionen, Bugfixes. Dafür bieten wir optionale <strong>Betreuungspakete zum monatlichen Festpreis</strong> an – damit deine App stabil und aktuell bleibt, ohne dass du dich selbst um die Technik kümmern musst.</p>
 
 <h2>Warum Festpreis statt Stundenzettel</h2>
 <p>Wir nennen den Preis, bevor wir anfangen. Nach dem Erstgespräch und einem klar definierten Scope bekommst du einen <strong>Festpreis</strong> – keine offene Rechnung, die mit jeder Stunde wächst. Das gibt dir Planungssicherheit und uns den Anreiz, effizient zu arbeiten.</p>

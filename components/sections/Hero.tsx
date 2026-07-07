@@ -9,14 +9,14 @@ export default function Hero() {
         <h1>
           Website auffrischen.
           <br />
-          <span className="mark-a">199 Euro.</span>
+          <span className="mark-a">Ab 399 Euro.</span>
           <br />
-          48 Stunden.
+          Ohne versteckte Gebühren.
         </h1>
         <p className="sub">
           Deine Website sieht aus wie 2010? Wir frischen sie komplett auf —{" "}
-          <b>pauschal, alles inklusive.</b> Absprache, Entwurf, live gehen.
-          Fertig.
+          <b>ab 399 €, inklusive 12 Monate Betreuung &amp; Hosting.</b>{" "}
+          Absprache, Entwurf, live gehen. Fertig.
         </p>
         <div className="btnrow">
           <a className="btn btn-p" href="#kontakt">

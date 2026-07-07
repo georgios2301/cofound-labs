@@ -28,7 +28,7 @@ export const post: BlogPost = {
     ],
     [
       "Was passiert nach dem Launch?",
-      "Nach der Veröffentlichung beginnt die Phase aus Feedback und Weiterentwicklung. Auf Wunsch betreuen wir die App fortlaufend (ab 199 € im Monat) und bauen gezielt die nächsten Funktionen, die deine Nutzer wirklich brauchen.",
+      "Nach der Veröffentlichung beginnt die Phase aus Feedback und Weiterentwicklung. Auf Wunsch betreuen wir die App fortlaufend zum monatlichen Festpreis und bauen gezielt die nächsten Funktionen, die deine Nutzer wirklich brauchen.",
     ],
   ],
   relatedServiceSlugs: ["app-entwicklung"],

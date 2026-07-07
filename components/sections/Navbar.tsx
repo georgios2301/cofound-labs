@@ -2,13 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
 
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
     <Link href="/" className="logo" aria-label={SITE_NAME} onClick={onClick}>
-      <span className="mark">C</span>
-      <span>Cofound Labs</span>
+      <Image
+        src="/logo-full.png"
+        alt={SITE_NAME}
+        width={132}
+        height={40}
+        priority
+        className="logo-full"
+      />
     </Link>
   );
 }

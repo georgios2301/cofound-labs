@@ -1,6 +1,6 @@
 export const SITE_NAME = "Cofound Labs";
 export const SITE_DESCRIPTION =
-  "Website auffrischen lassen für 199 € pauschal – alles inklusive, live in 48 Stunden. Für Friseure, Gastro & Handwerk. Jetzt kostenlos anfragen.";
+  "Website auffrischen lassen ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Für Friseure, Gastro & Handwerk. Jetzt kostenlos anfragen.";
 export const SITE_URL = "https://cofound-labs.de";
 
 export const CALENDLY_URL = "https://calendly.com/cofound-labs/neues-meeting";

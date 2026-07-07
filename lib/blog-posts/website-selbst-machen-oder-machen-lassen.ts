@@ -20,11 +20,11 @@ export const post: BlogPost = {
     ],
     [
       "Was kostet es, die Website machen zu lassen?",
-      "Die Auffrischung einer bestehenden Website kostet bei uns 199 € pauschal, live in 48 Stunden. Ein komplett neuer Aufbau wird nach Umfang als Festpreis angeboten. Beides ohne Abo – kann deine Domain weitergenutzt werden, fallen keine laufenden Kosten an.",
+      "Die Auffrischung einer bestehenden Website kostet bei uns ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, live in 48 Stunden. Ein kompletter Neuaufbau (Relaunch) kostet ab 599 €, ebenfalls inkl. 12 Monate Betreuung & Hosting.",
     ],
     [
       "Kann ich die Seite später selbst pflegen?",
-      "Ja. Die Website gehört dir – du bist nie an uns gebunden. Kleinere Änderungen übernehmen wir für 20 €/h, oder wir bauen die Seite so, dass du bestimmte Inhalte selbst aktualisieren kannst. Das besprechen wir vorher.",
+      "Ja. Die Website gehört dir – du bist nie an uns gebunden. Kleinere Änderungen übernehmen wir im ersten Jahr einfach für dich, oder wir bauen die Seite so, dass du bestimmte Inhalte selbst aktualisieren kannst. Das besprechen wir vorher.",
     ],
     [
       "Ist eine selbst gebaute Seite schlechter für Google?",
@@ -58,7 +58,7 @@ export const post: BlogPost = {
 </ul>
 
 <h2>Unser Mittelweg</h2>
-<p>Du hast schon eine Seite, die nur alt aussieht? Dann brauchst du weder Baukasten-Frust noch ein teures Neuprojekt. Wir <a href="/blog/website-auffrischen">frischen deine bestehende Website auf</a> – für <strong>199 € pauschal</strong>, in 48 Stunden live, alles inklusive. Was das genau kostet, steht in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a>, und die passende Leistung findest du unter <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a>.</p>
+<p>Du hast schon eine Seite, die nur alt aussieht? Dann brauchst du weder Baukasten-Frust noch ein teures Neuprojekt. Wir <a href="/blog/website-auffrischen">frischen deine bestehende Website auf</a> – <strong>ab 399 € pauschal</strong>, in 48 Stunden live, inkl. 12 Monate Betreuung &amp; Hosting. Was das genau kostet, steht in <a href="/blog/was-kostet-eine-website">Was kostet eine Website?</a>, und die passende Leistung findest du unter <a href="/leistungen/website-erstellen-lassen">Website erstellen lassen</a>.</p>
 
 <h2>Fazit</h2>
 <p>Selbst machen spart Geld, kostet aber Zeit und stößt schnell an Grenzen. Machen lassen kostet Geld, spart aber Zeit und bringt ein Ergebnis, das arbeitet. Wenn schon eine Seite existiert, ist das Auffrischen der beste Kompromiss aus beidem. Melde dich für ein kostenloses Erstgespräch – wir sagen dir ehrlich, was für dich sinnvoll ist.</p>

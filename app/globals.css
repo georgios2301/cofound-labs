@@ -90,6 +90,9 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
 .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.02em; font-size: 18px; color: var(--ink); }
 .logo .mark { width: 28px; height: 28px; border-radius: 6px; background: var(--ink); color: var(--accent); display: grid; place-items: center; font-size: 15px; font-weight: 800; }
+.logo .logo-full { display: block; height: 36px; width: auto; }
+.logo .mark.mark-img { background: var(--bg); padding: 3px; }
+.logo .mark.mark-img img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .nav-links { display: flex; gap: 26px; font-size: 15px; font-weight: 700; }
 .nav-links a { position: relative; color: var(--ink); }
 .nav-links a:hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
@@ -222,21 +225,63 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
 .step .t { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .07em; background: var(--ink); color: var(--accent); padding: 4px 9px; border-radius: 5px; margin-top: 16px; }
 
 /* =========================================================================
-   PREIS
+   PREIS — drei Angebote als „Angebotszettel"-Karten
    ========================================================================= */
-.priceblock { background: var(--ink); color: var(--ink-inv); padding: 76px 0 80px; }
-.priceblock .cols { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
-.priceblock .huge { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(72px, 9vw, 120px); line-height: .95; color: var(--accent); }
-.priceblock .huge small { display: block; font-size: clamp(28px, 3.4vw, 40px); color: var(--ink-inv); margin-top: 10px; }
-.priceblock .plbl { font-size: 17px; color: rgba(255,251,242,.72); margin-top: 22px; max-width: 430px; line-height: 1.55; }
-.priceblock .plbl b { color: var(--ink-inv); }
-.plist { list-style: none; }
-.plist li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,251,242,.18); font-size: 16.5px; font-weight: 600; }
-.plist li:last-child { border-bottom: 0; }
-.plist .ck { flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-size: 13px; font-weight: 800; margin-top: 2px; }
-.pnotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
-.pnote { border: 1.5px dashed color-mix(in srgb, var(--accent) 60%, transparent); border-radius: 10px; padding: 18px 20px; font-size: 14.5px; line-height: 1.5; color: rgba(255,251,242,.85); }
-.pnote b { color: var(--accent); }
+.priceblock { background: var(--ink); color: var(--ink-inv); padding: 96px 0 100px; }
+.priceblock .kicker { color: rgba(255,251,242,.55); }
+.priceblock h2.title { color: var(--ink-inv); }
+.priceblock .plead { font-size: 17.5px; color: rgba(255,251,242,.72); margin-top: 16px; max-width: 560px; line-height: 1.55; }
+.priceblock .plead b { color: var(--ink-inv); }
+
+.pgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 46px; align-items: stretch; }
+.pc {
+  display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink);
+  border: var(--bw) solid var(--ink); border-radius: 12px; padding: 26px 26px 28px;
+  box-shadow: 5px 5px 0 rgba(255,251,242,.22);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.pc:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 rgba(255,251,242,.22); }
+.pc-featured { box-shadow: 5px 5px 0 var(--accent), 5px 5px 0 1.5px var(--ink); }
+.pc-featured:hover { box-shadow: 8px 8px 0 var(--accent), 8px 8px 0 1.5px var(--ink); }
+.pc-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  letter-spacing: .07em; text-transform: uppercase; color: var(--muted);
+}
+.pc-badge {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+  background: var(--accent); color: var(--ink); border: 1.5px solid var(--ink);
+  border-radius: 6px; padding: 3px 9px;
+}
+.pc-price {
+  font-size: clamp(38px, 4vw, 50px); line-height: 1; color: var(--ink); margin-top: 18px;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.pc-once { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--muted); text-transform: none; }
+.pc-once-line { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+.pc-lede { font-size: 15px; color: var(--muted); line-height: 1.55; margin-top: 12px; }
+.pc-sep { border: 0; border-top: 1.5px dashed var(--line-2); margin: 18px 0 6px; }
+.pc-list { list-style: none; flex: 1; }
+.pc-list li { display: flex; gap: 10px; align-items: flex-start; font-family: var(--font-mono); font-size: 13px; line-height: 1.55; padding: 7px 0; }
+.pc-list li .ck {
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 5px;
+  background: var(--accent); color: var(--ink); display: grid; place-items: center;
+  font-size: 11px; font-weight: 800; margin-top: 1px;
+}
+.pc-list li b { font-weight: 700; }
+.pc .btn { width: 100%; margin-top: 20px; }
+.pc-sub { display: block; text-align: center; margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.pc-sub:hover { color: var(--ink); }
+
+/* Volle-Breite-Kachel: Individuelle Software & KI — hell wie die anderen
+   Karten, Abhebung nur über einen orangen Kantenstreifen links. */
+.pc-wide { grid-column: 1 / -1; border-left: 8px solid var(--accent); }
+.pc-wide-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px 40px; align-items: start; }
+.pc-wide .btn { width: auto; margin-top: 24px; }
+
+.pnote-line { margin-top: 36px; font-size: 15px; line-height: 1.6; color: rgba(255,251,242,.8); max-width: 820px; }
+.pnote-line b { color: var(--accent); }
 
 /* =========================================================================
    REFERENZEN
@@ -469,8 +514,8 @@ a.card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--acce
   .nav-links, .nav-right .nav-cta { display: none; }
   .hamburger { display: flex; }
   .section { padding: 76px 0; }
-  .priceblock .cols { grid-template-columns: 1fr; gap: 36px; }
-  .pnotes { grid-template-columns: 1fr; }
+  .pgrid { grid-template-columns: minmax(0, 1fr); }
+  .pc-wide-inner { grid-template-columns: minmax(0, 1fr); }
   .refs { grid-template-columns: 1fr; }
   .kontakt .cols { grid-template-columns: 1fr; gap: 32px; }
   .sw-row { grid-template-columns: 1fr auto; gap: 4px 16px; }

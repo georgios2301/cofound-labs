@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_NAME, INSTAGRAM_URL } from "@/lib/constants";
 
 export default function Footer() {
@@ -10,7 +11,15 @@ export default function Footer() {
         <div className="cols">
           <div className="brand">
             <Link href="/" className="logo" aria-label={SITE_NAME}>
-              <span className="mark">C</span>
+              <span className="mark mark-img">
+                <Image
+                  src="/logo-mark.png"
+                  alt=""
+                  width={22}
+                  height={22}
+                  aria-hidden="true"
+                />
+              </span>
               <span>Cofound Labs</span>
             </Link>
             <p>
