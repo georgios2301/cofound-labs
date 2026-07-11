@@ -38,6 +38,7 @@ export default function Footer() {
             <a href="/#ablauf">Ablauf</a>
             <a href="/#preis">Preis</a>
             <a href="/#referenzen">Referenzen</a>
+            <Link href="/beispiele">Beispiele</Link>
             <a href="/#software">Software</a>
             <Link href="/leistungen">Leistungen</Link>
             <Link href="/blog">Blog</Link>

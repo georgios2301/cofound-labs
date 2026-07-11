@@ -128,12 +128,14 @@ export default async function CaseStudyPage({
               ))}
             </div>
 
-            <figure className="quote">
-              <p>„{cs.testimonial.quote}“</p>
-              <figcaption className="q-author">
-                {cs.testimonial.author} · {cs.testimonial.role}
-              </figcaption>
-            </figure>
+            {cs.testimonial && (
+              <figure className="quote">
+                <p>„{cs.testimonial.quote}“</p>
+                <figcaption className="q-author">
+                  {cs.testimonial.author} · {cs.testimonial.role}
+                </figcaption>
+              </figure>
+            )}
 
             <div className="cs-stack-block">
               <div className="kicker">// Eingesetzte Technologien</div>

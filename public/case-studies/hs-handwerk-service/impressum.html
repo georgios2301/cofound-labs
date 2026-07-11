@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Impressum – H&amp;S Handwerk &amp; Service, Heiko Schönherr</title>
+<meta name="description" content="Impressum von Heiko Schönherr – H&S Handwerk und Service, Mülheim an der Ruhr.">
+<link rel="preload" href="/case-studies/hs-handwerk-service/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/case-studies/hs-handwerk-service/fonts.css">
+<style>
+  :root {
+    color-scheme: light dark;
+    --accent: #E8620C; --accentSoft: rgba(232,98,12,0.10);
+    --bg: #FAFAF7; --surface: #FFFFFF;
+    --panel: #1F2429; --panel-2: #171B1F;
+    --ink: #1F2429; --ink-soft: #23282D; --ink-2: #3C4248; --muted: #5B6167;
+    --border: #E6E4DF; --border-2: #EEEBE5; --border-3: #C9C5BD;
+    --brand: #16305B; --logo-sub: #5B6167;
+    --on-panel: #F4F3F0; --on-panel-muted: #B9BDC1; --on-panel-dim: #7C8288; --on-panel-soft: #C8CBCE;
+    --header-bg: rgba(250,250,247,0.95);
+  }
+  /* Dunkelmodus bewusst = Hellmodus (siehe index.html). */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #E8620C; --accentSoft: rgba(232,98,12,0.10);
+      --bg: #FAFAF7; --surface: #FFFFFF;
+      --panel: #1F2429; --panel-2: #171B1F;
+      --ink: #1F2429; --ink-soft: #23282D; --ink-2: #3C4248; --muted: #5B6167;
+      --border: #E6E4DF; --border-2: #EEEBE5; --border-3: #C9C5BD;
+      --brand: #16305B; --logo-sub: #5B6167;
+      --on-panel: #F4F3F0; --on-panel-muted: #B9BDC1; --on-panel-dim: #7C8288; --on-panel-soft: #C8CBCE;
+      --header-bg: rgba(250,250,247,0.95);
+    }
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased;
+         font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif; color: var(--ink-soft); min-height: 100vh;
+         display: flex; flex-direction: column; }
+  * { box-sizing: border-box; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  .btn-call { text-decoration: none; background: var(--accent); color: #FFF;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; border-radius: 6px;
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .btn-call:hover { filter: brightness(0.92); }
+  .contact-link:hover { filter: brightness(1.1); }
+  .foot-link { color: var(--on-panel-muted); text-decoration: none; }
+  .foot-link:hover { color: #F4F3F0; }
+  .back:hover { color: #F4F3F0; }
+  .nav a { text-decoration: none; color: var(--ink-2); font-weight: 500; font-size: 16px; }
+  .nav a:hover { color: var(--ink); }
+  .bottombar { display: none; }
+  @media (max-width: 760px) {
+    .nav { display: none !important; }
+    .bottombar { display: block; }
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky Header ===== -->
+  <header style="position: sticky; top: 0; z-index: 100; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);">
+    <div class="wrap" style="padding: 0 20px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="/case-studies/hs-handwerk-service/index.html#top" style="text-decoration: none; display: flex; align-items: baseline; gap: 8px; flex-shrink: 0;">
+        <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--brand);">H&amp;S</span>
+        <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px; color: var(--logo-sub); letter-spacing: 0.01em;">Handwerk &amp; Service</span>
+      </a>
+      <nav class="nav" style="display: flex; align-items: center; gap: 28px;">
+        <a href="/case-studies/hs-handwerk-service/index.html#leistungen">Leistungen</a>
+        <a href="/case-studies/hs-handwerk-service/index.html#referenzen">Referenzen</a>
+        <a href="/case-studies/hs-handwerk-service/index.html#ueber-mich">Über mich</a>
+        <a href="/case-studies/hs-handwerk-service/index.html#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn-call" href="tel:+491743582544" style="font-size: 15px; padding: 11px 20px;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+        Jetzt anrufen
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Seitenkopf ===== -->
+  <section style="background: var(--panel); color: var(--on-panel); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px);"></div>
+    <div class="wrap" style="padding: clamp(40px, 6vw, 64px) 20px; position: relative;">
+      <a class="back" href="/case-studies/hs-handwerk-service/index.html" style="text-decoration: none; color: var(--on-panel-muted); font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 L5 8 L10 13"></path></svg>
+        Zurück zur Startseite
+      </a>
+      <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Impressum</p>
+      <h1 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0; color: var(--on-panel);">Angaben gemäß § 5 TMG</h1>
+    </div>
+  </section>
+
+  <!-- ===== Impressum ===== -->
+  <main style="flex: 1 0 auto;">
+    <div class="wrap" style="padding: clamp(40px, 6vw, 72px) 20px;">
+      <div style="font-size: 16px; line-height: 1.7; color: var(--ink-2); max-width: 40em;">
+        <p style="margin: 0 0 24px;">
+          <strong style="color: var(--ink);">Heiko Schönherr</strong><br>
+          Handwerkerservice und Gebäudereinigung<br>
+          Müllerstraße 54<br>
+          45473 Mülheim an der Ruhr
+        </p>
+        <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: var(--ink); margin: 0 0 10px;">Kontakt</h2>
+        <p style="margin: 0 0 24px;">
+          <span style="color: var(--muted);">Mobil:</span> 0174 / 358 25 44<br>
+          <span style="color: var(--muted);">E-Mail:</span> <a class="contact-link" href="mailto:g.rh@hotmail.de" style="color: var(--accent); text-decoration: none;">g.rh@hotmail.de</a>
+        </p>
+        <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: var(--ink); margin: 0 0 10px;">Steuernummer</h2>
+        <p style="margin: 0 0 24px;">120 / 5250 / 3678</p>
+        <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 18px; color: var(--ink); margin: 0 0 10px;">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p style="margin: 0;">Heiko Schönherr, Anschrift wie oben.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer style="background: var(--panel-2); color: var(--on-panel-dim); font-size: 14px; flex-shrink: 0;">
+    <div class="wrap" style="padding: 28px 20px; display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between;">
+      <span>© 2026 Heiko Schönherr – H&amp;S Handwerk und Service, Mülheim an der Ruhr</span>
+      <span style="display: flex; gap: 24px;">
+        <a class="foot-link" href="/case-studies/hs-handwerk-service/impressum.html">Impressum</a>
+        <a class="foot-link" href="/case-studies/hs-handwerk-service/datenschutz.html">Datenschutzerklärung</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===== Sticky Mobile Call Bar ===== -->
+  <div class="bottombar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(23,27,31,0.96); backdrop-filter: blur(8px); border-top: 1px solid #2A2F34;">
+    <a href="tel:+491743582544" style="text-decoration: none; background: var(--accent); color: #FFFFFF; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; padding: 15px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+      Jetzt anrufen · 0174 / 358 25 44
+    </a>
+  </div>
+
+</body>
+</html>

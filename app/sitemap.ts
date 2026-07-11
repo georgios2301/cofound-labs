@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...servicePages,
     {
+      url: `${SITE_URL}/beispiele`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/standort/wuppertal`,
       lastModified: now,
       changeFrequency: "monthly",

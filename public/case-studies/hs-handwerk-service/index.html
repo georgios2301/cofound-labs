@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>H&amp;S Handwerk &amp; Service – Heiko Schönherr, ganz NRW</title>
+<meta name="description" content="Handwerker seit 2008: Böden, Wände, Decken, Montagen, Reinigung – alle Leistungen aus einer Hand. Tätig in ganz Nordrhein-Westfalen (NRW).">
+<link rel="preload" href="/case-studies/hs-handwerk-service/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/case-studies/hs-handwerk-service/fonts.css">
+<style>
+  :root {
+    color-scheme: light dark;
+    --accent: #E8620C; --accentSoft: rgba(232,98,12,0.10);
+    --bg: #FAFAF7; --surface: #FFFFFF;
+    --panel: #1F2429; --panel-2: #171B1F;
+    --ink: #1F2429; --ink-soft: #23282D; --ink-2: #3C4248; --muted: #5B6167;
+    --border: #E6E4DF; --border-2: #EEEBE5; --border-3: #C9C5BD;
+    --brand: #16305B; --logo-sub: #5B6167;
+    --on-panel: #F4F3F0; --on-panel-muted: #B9BDC1; --on-panel-dim: #7C8288; --on-panel-soft: #C8CBCE;
+    --field-bg: #FFFFFF;
+  }
+  /* Dunkelmodus bewusst = Hellmodus: Seite soll immer hell erscheinen.
+     color-scheme bleibt "light dark", damit erzwungene Dunkelmodi (z.B. Samsung
+     Internet) die Seite als dark-aware erkennen und nicht selbst invertieren. */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #E8620C; --accentSoft: rgba(232,98,12,0.10);
+      --bg: #FAFAF7; --surface: #FFFFFF;
+      --panel: #1F2429; --panel-2: #171B1F;
+      --ink: #1F2429; --ink-soft: #23282D; --ink-2: #3C4248; --muted: #5B6167;
+      --border: #E6E4DF; --border-2: #EEEBE5; --border-3: #C9C5BD;
+      --brand: #16305B; --logo-sub: #5B6167;
+      --on-panel: #F4F3F0; --on-panel-muted: #B9BDC1; --on-panel-dim: #7C8288; --on-panel-soft: #C8CBCE;
+      --field-bg: #FFFFFF;
+    }
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased;
+         font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif; color: var(--ink-soft); min-height: 100vh; }
+  * { box-sizing: border-box; }
+  input::placeholder, textarea::placeholder { color: #9AA0A6; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
+  /* nav */
+  .nav a { text-decoration: none; color: var(--ink-2); font-weight: 500; font-size: 16px; }
+  .nav a:hover { color: var(--ink); }
+  .btn-call { text-decoration: none; background: var(--accent); color: #FFF;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; border-radius: 6px;
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .btn-call:hover { filter: brightness(0.92); }
+  .btn-ghost { text-decoration: none; border: 1px solid rgba(255,255,255,0.3); color: #F4F3F0;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; border-radius: 6px; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.07); }
+
+  .service:hover { border-color: var(--border-3); box-shadow: 0 2px 10px rgba(0,0,0,0.10); }
+
+  /* hero */
+  .hero {
+    display: grid; grid-template-columns: 1.15fr 1fr;
+    gap: clamp(36px, 5vw, 56px); align-items: center;
+    padding: clamp(48px, 7vw, 72px) 20px clamp(48px, 7vw, 64px);
+  }
+  .hero__badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+    padding: 6px 14px; font-size: 14px; font-weight: 500; color: var(--muted);
+    margin-bottom: 26px;
+  }
+  .hero__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .hero__title {
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800;
+    font-size: clamp(34px, 5vw, 50px); line-height: 1.08;
+    letter-spacing: -0.02em; margin: 0 0 18px; color: var(--ink); text-wrap: balance;
+  }
+  .hero__mark { box-shadow: inset 0 -0.35em var(--accentSoft); }
+  .hero__lead {
+    font-size: clamp(17px, 2vw, 18px); line-height: 1.55; color: var(--muted);
+    margin: 0 0 32px; max-width: 30em; text-wrap: pretty;
+  }
+  .hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+  .btn {
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px;
+    padding: 15px 26px; border-radius: 6px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn--primary { background: var(--accent); color: #FFFFFF; }
+  .btn--primary:hover { filter: brightness(0.92); }
+  .btn--ghost { border: 1px solid var(--border-3); color: var(--ink); font-weight: 600; }
+  .btn--ghost:hover { background: rgba(128,128,128,0.08); }
+  .hero__facts {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 8px 26px;
+    font-size: 15px; color: var(--muted); font-weight: 500;
+  }
+  .hero__facts li { display: flex; align-items: center; gap: 8px; }
+  .hero__tick { width: 6px; height: 6px; background: var(--accent); }
+  .hero__media { position: relative; }
+  .hero__media::before {
+    content: ""; position: absolute;
+    top: 16px; left: 16px; right: -16px; bottom: -16px;
+    background: var(--accent); border-radius: 8px;
+  }
+  .hero__img {
+    position: relative; width: 100%; height: auto; aspect-ratio: 4 / 3;
+    border-radius: 8px; display: block; object-fit: cover;
+  }
+  .hero__mediacap {
+    position: absolute; left: 14px; bottom: 14px; z-index: 1;
+    background: rgba(23,27,31,0.85); backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 6px;
+    padding: 10px 16px; font-size: 14px; font-weight: 500; color: #F4F3F0;
+  }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero__media::before { right: 0; bottom: -12px; left: 12px; top: 12px; }
+  }
+
+  /* galerie */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; grid-auto-flow: dense; gap: 14px; }
+  .gallery figure { margin: 0; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 14px 10px;
+    font-size: 13.5px; font-weight: 500; color: #FFF; letter-spacing: 0.01em;
+    background: linear-gradient(to top, rgba(23,27,31,0.72), transparent); }
+  .g-wide { grid-column: span 2; }
+  .g-tall { grid-row: span 2; }
+  @media (max-width: 760px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+    .gallery figcaption { font-size: 12px; }
+  }
+  .gallery img { cursor: zoom-in; }
+
+  /* lightbox */
+  .lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(15,17,20,0.93);
+    display: none; align-items: center; justify-content: center; padding: 24px; }
+  .lightbox.open { display: flex; }
+  .lightbox figure { margin: 0; max-width: 92vw; max-height: 88vh; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 8px; object-fit: contain;
+    box-shadow: 0 12px 44px rgba(0,0,0,0.55); }
+  .lightbox figcaption { color: #E7E4DF; font-size: 15px; font-weight: 500; text-align: center; }
+  .lb-btn { position: absolute; background: rgba(255,255,255,0.12); border: none; color: #FFF;
+    width: 48px; height: 48px; border-radius: 50%; cursor: pointer; line-height: 1;
+    display: flex; align-items: center; justify-content: center; font-size: 24px; }
+  .lb-btn:hover { background: rgba(255,255,255,0.24); }
+  .lb-close { top: 20px; right: 20px; font-size: 20px; }
+  .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+  @media (max-width: 760px) {
+    .lb-prev { left: 10px; } .lb-next { right: 10px; }
+    .lb-btn { width: 42px; height: 42px; }
+  }
+
+  /* vorher/nachher slider */
+  .ba { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);
+    aspect-ratio: 4 / 3; user-select: none; -webkit-user-select: none; }
+  .ba-before, .ba-after { position: absolute; inset: 0; }
+  .ba-before { clip-path: inset(0 50% 0 0); }
+  .ba-after { clip-path: inset(0 0 0 50%); }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+  .ba-line { position: absolute; z-index: 3; top: 0; bottom: 0; left: 50%; width: 3px; background: #FFF;
+    transform: translateX(-50%); pointer-events: none; box-shadow: 0 0 8px rgba(0,0,0,0.35); }
+  .ba-line::after { content: '⇔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 40px; height: 40px; border-radius: 50%; background: #FFF; color: #1F2429;
+    display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; }
+  .ba input[type=range] { position: absolute; z-index: 4; inset: 0; width: 100%; height: 100%; margin: 0;
+    opacity: 0; cursor: ew-resize; touch-action: none; }
+  .ba-tag { position: absolute; top: 12px; z-index: 2; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700;
+    font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #FFF;
+    background: rgba(23,27,31,0.72); padding: 6px 12px; border-radius: 999px; pointer-events: none; }
+  .ba-tag.vorher { left: 12px; }
+  .ba-tag.nachher { right: 12px; background: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  .contact-link:hover { color: var(--accent); }
+  .phone-big:hover { filter: brightness(1.1); }
+  .foot-link { color: var(--on-panel-muted); text-decoration: none; }
+  .foot-link:hover { color: #F4F3F0; }
+
+  input, textarea { background: var(--field-bg); border: 1px solid var(--border); border-radius: 6px;
+    padding: 13px 14px; font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; color: var(--ink-soft); outline: none; }
+  input:focus, textarea:focus { border-color: var(--accent); }
+  .submit { background: var(--accent); color: #FFF; border: none; cursor: pointer;
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; padding: 15px; border-radius: 6px; }
+  .submit:hover { filter: brightness(0.92); }
+  .submit:disabled { opacity: 0.6; cursor: default; }
+
+  /* trust-leiste */
+  .trust { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
+  .trust__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .trust__item { display: flex; gap: 14px; align-items: flex-start; padding: 26px 24px; }
+  .trust__item + .trust__item { border-left: 1px solid var(--border-2); }
+  .trust__ic { width: 42px; height: 42px; border-radius: 8px; background: var(--accentSoft);
+    color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .trust__t { font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700;
+    font-size: 16px; color: var(--ink); margin-bottom: 3px; }
+  .trust__s { font-size: 14px; line-height: 1.4; color: var(--muted); }
+  @media (max-width: 760px) {
+    .trust__grid { grid-template-columns: repeat(2, 1fr); }
+    .trust__item { padding: 20px 16px; }
+    .trust__item:nth-child(odd) { border-left: none; }
+    .trust__item:nth-child(n+3) { border-top: 1px solid var(--border-2); }
+  }
+
+  /* responsive: hide desktop nav + show mobile call bar under 760px */
+  .bottombar { display: none; }
+  @media (max-width: 760px) {
+    .nav { display: none !important; }
+    header .btn-call { display: none !important; }
+    .bottombar { display: block; }
+    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== Sticky Header ===== -->
+  <header style="position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border);">
+    <div class="wrap" style="padding: 0 20px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="text-decoration: none; display: flex; align-items: baseline; gap: 8px; flex-shrink: 0;">
+        <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; color: var(--brand);">H&amp;S</span>
+        <span style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px; color: var(--logo-sub); letter-spacing: 0.01em;">Handwerk &amp; Service</span>
+      </a>
+      <nav class="nav" style="display: flex; align-items: center; gap: 28px;">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn-call" href="tel:+491743582544" style="font-size: 15px; padding: 11px 20px;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+        Jetzt anrufen
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="top">
+    <div class="wrap hero">
+      <div class="hero__text">
+        <div class="hero__badge">
+          <span class="hero__dot"></span>
+          Selbstständig seit 2008
+        </div>
+        <h1 class="hero__title">
+          Ein Handwerker für alles –
+          <span class="hero__mark">aus einer Hand, seit 2008.</span>
+        </h1>
+        <p class="hero__lead">
+          Böden, Wände, Decken, Montagen – seit 2008 zuverlässig
+          in ganz Nordrhein-Westfalen.
+        </p>
+        <div class="hero__cta">
+          <a href="tel:+491743582544" class="btn btn--primary">
+            <svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"/></svg>
+            0174 / 358 25 44
+          </a>
+          <a href="#leistungen" class="btn btn--ghost">Leistungen ansehen</a>
+        </div>
+        <ul class="hero__facts">
+          <li><span class="hero__tick"></span>Fester Preis vorab</li>
+          <li><span class="hero__tick"></span>Auch am Wochenende erreichbar</li>
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer3.jpg" alt="Fertig sanierte Walk-in-Dusche mit dunklen Fliesen" width="1400" height="1050" fetchpriority="high" class="hero__img">
+        <div class="hero__mediacap">
+          <span style="color: var(--accent); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700;">Referenz</span> · Badsanierung, Kreis Mettmann
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Trust-Leiste ===== -->
+  <section class="trust">
+    <div class="wrap trust__grid">
+      <div class="trust__item">
+        <div class="trust__ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L21 6.5 V12 C21 17 17.5 20.8 12 22 C6.5 20.8 3 17 3 12 V6.5 Z"/><path d="M8.5 12 L11 14.5 L15.5 9.5"/></svg>
+        </div>
+        <div>
+          <div class="trust__t">Seit 2008</div>
+          <div class="trust__s">18 Jahre selbstständig im Handwerk</div>
+        </div>
+      </div>
+      <div class="trust__item">
+        <div class="trust__ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2 C8 2 5 5 5 9 C5 14 12 22 12 22 C12 22 19 14 19 9 C19 5 16 2 12 2 Z"/></svg>
+        </div>
+        <div>
+          <div class="trust__t">In ganz NRW</div>
+          <div class="trust__s">Tätig in ganz Nordrhein-Westfalen</div>
+        </div>
+      </div>
+      <div class="trust__item">
+        <div class="trust__ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 5.4 L9 17 L3.4 11.4"/></svg>
+        </div>
+        <div>
+          <div class="trust__t">Fester Preis vorab</div>
+          <div class="trust__s">Angebot vorab – keine Überraschungen</div>
+        </div>
+      </div>
+      <div class="trust__item">
+        <div class="trust__ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15.5 14"/></svg>
+        </div>
+        <div>
+          <div class="trust__t">Auch am Wochenende</div>
+          <div class="trust__s">Mo–Fr 6–18 Uhr, Sa/So 8–18 Uhr</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Leistungen ===== -->
+  <section id="leistungen" style="scroll-margin-top: 80px;">
+    <div class="wrap" style="padding: clamp(64px, 9vw, 104px) 20px;">
+      <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Leistungen</p>
+      <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 16px; color: var(--ink);">Was ich für Sie erledige</h2>
+      <p style="font-size: 17px; line-height: 1.55; color: var(--muted); margin: 0 0 44px; max-width: 38em;">Vom Boden bis zur Decke – und alles, was sonst noch anfällt. Fragen Sie einfach an, auch wenn Ihre Arbeit hier nicht aufgeführt ist.</p>
+      <div id="services" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px;"></div>
+    </div>
+  </section>
+
+  <!-- ===== Referenzen ===== -->
+  <section id="referenzen" style="background: var(--surface); border-top: 1px solid var(--border); scroll-margin-top: 80px;">
+    <div class="wrap" style="padding: clamp(64px, 9vw, 104px) 20px;">
+      <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Referenzen</p>
+      <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 16px; color: var(--ink);">Vorher – Nachher: echte Baustellen</h2>
+      <p style="font-size: 17px; line-height: 1.55; color: var(--muted); margin: 0 0 36px; max-width: 38em;">Ziehen Sie den Regler und vergleichen Sie selbst – vom Rohbau bis zum fertigen Bad, alles aus einer Hand.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-bottom: 56px;">
+        <div>
+          <div class="ba">
+            <div class="ba-before">
+              <img src="/case-studies/hs-handwerk-service/Bilder/web/Baustelle5.jpg" alt="Badewanne im Rohbau mit Trockenbauwand und Anschlüssen" width="1400" height="787" loading="lazy" style="object-position: right;">
+              <span class="ba-tag vorher">Vorher</span>
+            </div>
+            <div class="ba-after">
+              <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer5.jpg" alt="Fertige Badewanne mit grauen Großformatfliesen und Armatur" width="1400" height="787" loading="lazy">
+              <span class="ba-tag nachher">Nachher</span>
+            </div>
+            <div class="ba-line"></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Vorher-Nachher-Vergleich: Badsanierung mit Badewanne">
+          </div>
+          <p style="font-size: 15px; color: var(--muted); margin: 12px 4px 0;">Komplette Badsanierung – Trockenbau, Abdichtung, Fliesen, Sanitär.</p>
+        </div>
+        <div>
+          <div class="ba">
+            <div class="ba-before">
+              <img src="/case-studies/hs-handwerk-service/Bilder/web/Vorher.jpg" alt="Bad im Rohbau mit altem Fenster und freigelegten Wänden" width="1050" height="1400" loading="lazy">
+              <span class="ba-tag vorher">Vorher</span>
+            </div>
+            <div class="ba-after">
+              <img src="/case-studies/hs-handwerk-service/Bilder/web/Nachher.jpg" alt="Fertig saniertes Bad mit Fliesen, Handtuchheizkörper und Waschtisch" width="1050" height="1400" loading="lazy">
+              <span class="ba-tag nachher">Nachher</span>
+            </div>
+            <div class="ba-line"></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Vorher-Nachher-Vergleich: Badsanierung vom Rohbau zum fertigen Bad">
+          </div>
+          <p style="font-size: 15px; color: var(--muted); margin: 12px 4px 0;">Komplette Badsanierung – vom Rohbau bis zum fertig gefliesten Bad mit Fenster, Heizkörper und Sanitär.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: clamp(20px, 2.5vw, 24px); letter-spacing: -0.01em; margin: 0 0 20px; color: var(--ink);">Einblicke in meine Arbeit</h3>
+      <div class="gallery">
+        <figure class="g-wide">
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer2.jpg" alt="Modernes Bad mit Holzwaschtisch, dunklen Fliesen und Glasdusche" width="1400" height="646" loading="lazy">
+          <figcaption>Badsanierung mit Holz-Waschtisch und Glasdusche</figcaption>
+        </figure>
+        <figure class="g-tall">
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Dusche.jpg" alt="Ebenerdige Dusche mit Regenbrause und Glastüren" width="787" height="1400" loading="lazy">
+          <figcaption>Ebenerdige Dusche mit Regenbrause</figcaption>
+        </figure>
+        <figure class="g-wide">
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer5.jpg" alt="Badewanne mit grauen Großformatfliesen" width="1400" height="787" loading="lazy">
+          <figcaption>Wanne und Boden in Großformatfliesen</figcaption>
+        </figure>
+        <figure>
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer4.jpg" alt="Gäste-WC mit Holzboden und neuem Waschtisch" width="1050" height="1400" loading="lazy">
+          <figcaption>Gäste-WC, komplett erneuert</figcaption>
+        </figure>
+        <figure>
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Badezimmer.jpg" alt="Saniertes Bad mit Wanne und grauen Fliesen" width="787" height="1400" loading="lazy">
+          <figcaption>Bad komplett – Fliesen, Wanne, Sanitär</figcaption>
+        </figure>
+        <figure>
+          <img src="/case-studies/hs-handwerk-service/Bilder/web/Baustelle2.jpg" alt="Trockenbau mit Dampfsperre im Dachgeschoss" width="1400" height="787" loading="lazy">
+          <figcaption>Trockenbau und Dämmung im Dachgeschoss</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Über mich ===== -->
+  <section id="ueber-mich" style="border-top: 1px solid var(--border); scroll-margin-top: 80px;">
+    <div class="wrap" style="padding: clamp(64px, 9vw, 104px) 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;">
+      <div>
+        <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Über mich</p>
+        <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 20px; color: var(--ink);">Heiko Schönherr</h2>
+        <p style="font-size: 17px; line-height: 1.65; color: var(--ink-2); margin: 0 0 16px; text-wrap: pretty;">
+          Seit 2008 bin ich selbstständig als Handwerker in ganz Nordrhein-Westfalen unterwegs. Bei mir bekommen Sie keine Vertriebsabteilung und keine Warteschleife – Sie sprechen direkt mit dem, der die Arbeit auch macht.
+        </p>
+        <p style="font-size: 17px; line-height: 1.65; color: var(--ink-2); margin: 0 0 28px; text-wrap: pretty;">
+          Ich sage Ihnen ehrlich, was geht und was nicht, nenne Ihnen vorab einen fairen Preis und halte Termine ein. Und weil viele Arbeiten zusammenhängen, erledige ich sie aus einer Hand – ohne dass Sie drei verschiedene Firmen koordinieren müssen.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: var(--ink);"><span style="width: 10px; height: 10px; background: var(--accent); flex-shrink: 0;"></span>Verlässlich: feste Termine, klare Absprachen</div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: var(--ink);"><span style="width: 10px; height: 10px; background: var(--accent); flex-shrink: 0;"></span>Faire Preise – Angebot vorab, keine Überraschungen</div>
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: var(--ink);"><span style="width: 10px; height: 10px; background: var(--accent); flex-shrink: 0;"></span>Alle Arbeiten aus einer Hand</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: var(--panel); color: var(--on-panel); border-radius: 8px; padding: 28px; display: flex; gap: 22px; align-items: center;">
+          <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 52px; color: var(--accent); line-height: 1;">18</div>
+          <div style="font-size: 16px; line-height: 1.45; color: var(--on-panel-soft);">Jahre selbstständig –<br>seit 2008 in ganz NRW</div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 22px 24px; display: flex; gap: 16px; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 6px; background: var(--accentSoft); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L21 6.5 V12 C21 17 17.5 20.8 12 22 C6.5 20.8 3 17 3 12 V6.5 Z"></path><path d="M8.5 12 L11 14.5 L15.5 9.5"></path></svg>
+          </div>
+          <div>
+            <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16.5px; color: var(--ink);">Ein Ansprechpartner</div>
+            <div style="font-size: 15px; line-height: 1.45; color: var(--muted);">Beratung, Angebot und Ausführung – alles direkt bei mir.</div>
+          </div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 22px 24px; display: flex; gap: 16px; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 6px; background: var(--accentSoft); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"></circle><path d="M12 2 C8 2 5 5 5 9 C5 14 12 22 12 22 C12 22 19 14 19 9 C19 5 16 2 12 2 Z"></path></svg>
+          </div>
+          <div>
+            <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16.5px; color: var(--ink);">In ganz NRW</div>
+            <div style="font-size: 15px; line-height: 1.45; color: var(--muted);">In ganz Nordrhein-Westfalen für Sie unterwegs – schnelle Termine.</div>
+          </div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 22px 24px; display: flex; gap: 16px; align-items: center;">
+          <div style="width: 44px; height: 44px; border-radius: 6px; background: var(--accentSoft); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 V12 L15.5 14"></path></svg>
+          </div>
+          <div>
+            <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 16.5px; color: var(--ink);">Auch am Wochenende</div>
+            <div style="font-size: 15px; line-height: 1.45; color: var(--muted);">Erreichbar Mo–Fr 6–18 Uhr, Sa/So 8–18 Uhr.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Ablauf ===== -->
+  <section id="ablauf" style="background: var(--surface); border-top: 1px solid var(--border); scroll-margin-top: 80px;">
+    <div class="wrap" style="padding: clamp(64px, 9vw, 104px) 20px;">
+      <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Ablauf</p>
+      <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 44px; color: var(--ink);">In drei Schritten zum Ergebnis</h2>
+      <div id="steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;"></div>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt ===== -->
+  <section id="kontakt" style="background: var(--panel); color: var(--on-panel); scroll-margin-top: 80px;">
+    <div class="wrap" style="padding: clamp(64px, 9vw, 104px) 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(36px, 5vw, 72px);">
+      <div>
+        <p style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px;">Kontakt</p>
+        <h2 style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; margin: 0 0 12px;">Rufen Sie einfach an.</h2>
+        <p style="font-size: 17px; line-height: 1.55; color: var(--on-panel-muted); margin: 0 0 32px; max-width: 30em;">Am schnellsten geht es telefonisch – kurz schildern, worum es geht, und wir machen einen Termin aus.</p>
+        <a class="phone-big" href="tel:+491743582544" style="text-decoration: none; display: inline-block; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.01em; color: var(--accent); margin-bottom: 32px;">0174 / 358 25 44</a>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 1.5;">
+          <div style="display: flex; gap: 14px;"><span style="color: var(--on-panel-dim); min-width: 110px;">E-Mail</span><a class="contact-link" href="mailto:g.rh@hotmail.de" style="color: var(--on-panel); text-decoration: none;">g.rh@hotmail.de</a></div>
+          <div style="display: flex; gap: 14px;"><span style="color: var(--on-panel-dim); min-width: 110px;">Adresse</span><span>Müllerstraße 54<br>45473 Mülheim an der Ruhr</span></div>
+          <div style="display: flex; gap: 14px;"><span style="color: var(--on-panel-dim); min-width: 110px;">Erreichbar</span><span>Mo–Fr 6–18 Uhr<br>Sa/So 8–18 Uhr</span></div>
+          <div style="display: flex; gap: 14px;"><span style="color: var(--on-panel-dim); min-width: 110px;">Einzugsgebiet</span><span>Ganz Nordrhein-Westfalen</span></div>
+        </div>
+      </div>
+      <div>
+        <div id="formThanks" style="display: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 32px 28px; font-size: 17px; line-height: 1.55; color: var(--on-panel);" role="status">
+          <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 21px; margin-bottom: 10px; color: var(--accent);">Vielen Dank!</div>
+          <span id="formThanksMsg">Ihre Anfrage wurde gesendet. Ich melde mich zeitnah bei Ihnen – wenn es eilt, rufen Sie einfach an: 0174 / 358 25 44.</span>
+        </div>
+        <form id="contactForm" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; margin-bottom: 2px;">Oder schreiben Sie mir kurz</div>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: var(--on-panel-muted);">
+            Ihr Name
+            <input name="name" required type="text" placeholder="Max Mustermann">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: var(--on-panel-muted);">
+            Ihre Telefonnummer
+            <input name="phone" required type="tel" placeholder="0170 / 123 45 67">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: var(--on-panel-muted);">
+            Ihr Anliegen
+            <textarea name="message" required rows="4" placeholder="Was soll gemacht werden?" style="resize: vertical;"></textarea>
+          </label>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px;">
+          <button type="submit" class="submit">Anfrage senden</button>
+          <div id="formError" style="display: none; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.45); border-radius: 6px; padding: 12px 14px; font-size: 14.5px; line-height: 1.5; color: var(--on-panel);" role="alert">
+            Das Senden hat leider nicht geklappt. Bitte versuchen Sie es noch einmal – oder rufen Sie direkt an: <a href="tel:+491743582544" style="color: var(--accent); text-decoration: none; font-weight: 600;">0174 / 358 25 44</a>.
+          </div>
+          <div style="font-size: 13px; color: var(--on-panel-dim); line-height: 1.45;">Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet. Details in der <a href="/case-studies/hs-handwerk-service/datenschutz.html" style="color: var(--on-panel-muted);">Datenschutzerklärung</a>.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer style="background: var(--panel-2); color: var(--on-panel-dim); font-size: 14px;">
+    <div class="wrap" style="padding: 28px 20px; display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between;">
+      <span>© 2026 Heiko Schönherr – H&amp;S Handwerk und Service, Mülheim an der Ruhr</span>
+      <span style="display: flex; gap: 24px;">
+        <a class="foot-link" href="/case-studies/hs-handwerk-service/impressum.html">Impressum</a>
+        <a class="foot-link" href="/case-studies/hs-handwerk-service/datenschutz.html">Datenschutzerklärung</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===== Sticky Mobile Call Bar ===== -->
+  <div class="bottombar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(23,27,31,0.96); backdrop-filter: blur(8px); border-top: 1px solid #2A2F34;">
+    <a href="tel:+491743582544" style="text-decoration: none; background: var(--accent); color: #FFFFFF; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 17px; padding: 15px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 4-2 1.5c1 2 2 3 4 4L11 9.5l4 1.5v3c0 .5-.5 1-1 1C7 15 1 9 1 3c0-.5.5-1 1-1z" fill="currentColor"></path></svg>
+      Jetzt anrufen · 0174 / 358 25 44
+    </a>
+  </div>
+
+  <!-- ===== Lightbox ===== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="lb-btn lb-close" type="button" aria-label="Schließen">✕</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Vorheriges Bild">‹</button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" type="button" aria-label="Nächstes Bild">›</button>
+  </div>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  function icon(paths) {
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('width', 26); svg.setAttribute('height', 26);
+    svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', 1.6);
+    svg.setAttribute('stroke-linecap', 'round'); svg.setAttribute('stroke-linejoin', 'round');
+    paths.forEach(function (p) {
+      var el = document.createElementNS(NS, p.t);
+      for (var k in p) { if (k !== 't') el.setAttribute(k, p[k]); }
+      svg.appendChild(el);
+    });
+    return svg;
+  }
+
+  var builders = {
+    fliesen: function () { return icon([
+      { t:'rect', x:4, y:4, width:16, height:16, rx:1 },
+      { t:'path', d:'M9.33 4 V20 M14.66 4 V20 M4 9.33 H20 M4 14.66 H20' } ]); },
+    laminat: function () { return icon([
+      { t:'rect', x:3, y:5, width:18, height:14, rx:1 },
+      { t:'path', d:'M3 9.66 H21 M3 14.33 H21' },
+      { t:'path', d:'M11 5 V9.66 M8 9.66 V14.33 M15 9.66 V14.33 M12.5 14.33 V19' } ]); },
+    belag: function () { return icon([
+      { t:'circle', cx:8.5, cy:9, r:5 },
+      { t:'circle', cx:8.5, cy:9, r:1.8 },
+      { t:'path', d:'M12.7 11.7 L20 18 V19.5 L11 15' } ]); },
+    boden: function () { return icon([
+      { t:'rect', x:3, y:8.5, width:18, height:5, rx:1 },
+      { t:'circle', cx:12, cy:11, r:1.1 },
+      { t:'path', d:'M8.5 8.5 V13.5 M15.5 8.5 V13.5' },
+      { t:'path', d:'M3 18 H21' } ]); },
+    maler: function () { return icon([
+      { t:'rect', x:3.5, y:4.5, width:12, height:5, rx:1.5 },
+      { t:'path', d:'M15.5 7 H19 V11.5 H12 V13.5' },
+      { t:'path', d:'M10.5 13.5 H13.5 V20 H10.5 Z' } ]); },
+    decke: function () { return icon([
+      { t:'path', d:'M3 4.5 H21' },
+      { t:'path', d:'M12 4.5 V9' },
+      { t:'path', d:'M8.5 15 A3.5 3.5 0 0 1 15.5 15 Z' },
+      { t:'path', d:'M10.5 15 H13.5' } ]); },
+    trocken: function () { return icon([
+      { t:'rect', x:4, y:4, width:16, height:16, rx:1 },
+      { t:'path', d:'M9.33 4 V20 M14.66 4 V20' },
+      { t:'path', d:'M20 4 L14.66 4 L20 9.33 Z', fill:'currentColor', 'fill-opacity':0.12 } ]); },
+    innen: function () { return icon([
+      { t:'path', d:'M4 11 L12 4 L20 11' },
+      { t:'path', d:'M6 10 V20 H18 V10' },
+      { t:'rect', x:10, y:14, width:4, height:6, rx:0.5 } ]); },
+    fassade: function () { return icon([
+      { t:'rect', x:3.5, y:4, width:9, height:16, rx:1 },
+      { t:'path', d:'M6.3 8 H9.7 M6.3 12 H9.7 M6.3 16 H9.7' },
+      { t:'path', d:'M20.5 8 L15 11 L20.5 14' },
+      { t:'path', d:'M15 8.5 L12.8 9.7 M15 13.5 L12.8 12.3' } ]); },
+    fenster: function () { return icon([
+      { t:'rect', x:3.5, y:4, width:12, height:16, rx:1 },
+      { t:'path', d:'M9.5 4 V20 M3.5 12 H15.5' },
+      { t:'path', d:'M14 7 L20 13' },
+      { t:'path', d:'M12.7 8.3 L15.7 5.3' } ]); },
+    entruempeln: function () { return icon([
+      { t:'path', d:'M4 11 H20 V19 A1 1 0 0 1 19 20 H5 A1 1 0 0 1 4 19 Z' },
+      { t:'path', d:'M4 11 L6 8 H18 L20 11' },
+      { t:'path', d:'M12 8 V4 M9.7 6 L12 3.7 L14.3 6' } ]); },
+    kueche: function () { return icon([
+      { t:'rect', x:4, y:4, width:16, height:16, rx:1 },
+      { t:'path', d:'M4 9 H20' },
+      { t:'circle', cx:8.5, cy:6.5, r:1.1 },
+      { t:'circle', cx:15.5, cy:6.5, r:1.1 },
+      { t:'rect', x:7, y:12, width:10, height:5, rx:0.5 },
+      { t:'path', d:'M9.5 10 H14.5' } ]); },
+    moebel: function () { return icon([
+      { t:'path', d:'M7 4 V13 M7 13 H16 V4' },
+      { t:'path', d:'M7 13 V20 M16 13 V20' },
+      { t:'path', d:'M7 8 H16' } ]); }
+  };
+
+  var serviceDefs = [
+    ['Fliesen legen', 'fliesen'],
+    ['Laminat verlegen und austauschen', 'laminat'],
+    ['Vinylboden verlegen', 'laminat'],
+    ['Teppich-, PVC- und Linoleumboden verlegen', 'belag'],
+    ['Sonstige Bodenarbeiten', 'boden'],
+    ['Streicharbeiten / Renovierung', 'maler'],
+    ['Deckenarbeiten', 'decke'],
+    ['Trockenbau', 'trocken'],
+    ['Sonstige Arbeiten im Innenbereich', 'innen'],
+    ['Fassadenreinigung', 'fassade'],
+    ['Fenster-, Rahmen- und Wintergartenreinigung', 'fenster'],
+    ['Entrümpelungen', 'entruempeln'],
+    ['Küchenmontage', 'kueche'],
+    ['Möbelauf- und -abbau', 'moebel']
+  ];
+
+  var grid = document.getElementById('services');
+  serviceDefs.forEach(function (def) {
+    var card = document.createElement('div');
+    card.className = 'service';
+    card.style.cssText = 'background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;transition:border-color .15s,box-shadow .15s;';
+    var chip = document.createElement('div');
+    chip.style.cssText = 'width:42px;height:42px;border-radius:6px;background:var(--accentSoft);color:var(--accent);display:flex;align-items:center;justify-content:center;';
+    chip.appendChild(builders[def[1]]());
+    var label = document.createElement('div');
+    label.style.cssText = "font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--ink);";
+    label.textContent = def[0];
+    card.appendChild(chip); card.appendChild(label);
+    grid.appendChild(card);
+  });
+
+  var steps = [
+    { n:'1', title:'Anfragen', text:'Rufen Sie an oder schreiben Sie kurz, was gemacht werden soll. Sie erreichen mich Mo–Fr von 6 bis 18 Uhr, am Wochenende von 8 bis 18 Uhr.' },
+    { n:'2', title:'Besichtigung & Angebot', text:'Ich schaue mir die Sache vor Ort an und Sie bekommen ein klares Angebot mit festem Preis – kostenlos und unverbindlich.' },
+    { n:'3', title:'Ausführung', text:'Ich erledige die Arbeit zum vereinbarten Termin – sauber, zügig und so, wie besprochen.' }
+  ];
+  var stepGrid = document.getElementById('steps');
+  steps.forEach(function (s) {
+    var card = document.createElement('div');
+    card.style.cssText = 'background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 24px;';
+    var num = document.createElement('div');
+    num.style.cssText = "font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:15px;color:#FFF;background:var(--accent);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;";
+    num.textContent = s.n;
+    var t = document.createElement('div');
+    t.style.cssText = "font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:19px;color:var(--ink);margin-bottom:10px;";
+    t.textContent = s.title;
+    var txt = document.createElement('div');
+    txt.style.cssText = 'font-size:16px;line-height:1.55;color:var(--muted);';
+    txt.textContent = s.text;
+    card.appendChild(num); card.appendChild(t); card.appendChild(txt);
+    stepGrid.appendChild(card);
+  });
+
+  document.querySelectorAll('.ba').forEach(function (el) {
+    var range = el.querySelector('input[type=range]');
+    var before = el.querySelector('.ba-before');
+    var after = el.querySelector('.ba-after');
+    var line = el.querySelector('.ba-line');
+    function set(v) {
+      before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+      after.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+      line.style.left = v + '%';
+    }
+    range.addEventListener('input', function () { set(this.value); });
+    set(range.value);
+  });
+
+  /* Galerie-Lightbox */
+  var galImgs = Array.prototype.slice.call(document.querySelectorAll('.gallery img'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  var lbCap = lb.querySelector('figcaption');
+  var lbIdx = 0;
+  function lbShow(i) {
+    lbIdx = (i + galImgs.length) % galImgs.length;
+    var img = galImgs[lbIdx];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    var fc = img.parentNode.querySelector('figcaption');
+    lbCap.textContent = fc ? fc.textContent : '';
+  }
+  function lbOpen(i) { lbShow(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function lbClose() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  galImgs.forEach(function (img, i) {
+    img.addEventListener('click', function () { lbOpen(i); });
+  });
+  lb.querySelector('.lb-close').addEventListener('click', lbClose);
+  lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); lbShow(lbIdx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); lbShow(lbIdx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') lbClose(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose();
+    else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  });
+
+  /* Web3Forms Access Key: kostenlos erzeugen auf https://web3forms.com
+     (E-Mail g.rh@hotmail.de eintragen, Key kommt per Mail) und hier einsetzen.
+     Solange der Platzhalter steht, öffnet das Formular ersatzweise das E-Mail-Programm. */
+  var W3F_KEY = '880828fd-868a-4b18-a618-6b8c6b979dc6';
+
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.elements.name.value.trim();
+    var phone = form.elements.phone.value.trim();
+    var msg = form.elements.message.value.trim();
+    var thanks = document.getElementById('formThanks');
+
+    // Fallback: ohne gültigen Key (UUID) per E-Mail-Programm senden
+    if (!/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(W3F_KEY)) {
+      var body = 'Name: ' + name + '\nTelefon: ' + phone + '\n\nAnliegen:\n' + msg;
+      window.location.href = 'mailto:g.rh@hotmail.de?subject=' +
+        encodeURIComponent('Anfrage über die Website – ' + name) +
+        '&body=' + encodeURIComponent(body);
+      document.getElementById('formThanksMsg').textContent =
+        'Ihr E-Mail-Programm öffnet sich mit Ihrer Anfrage. Falls nicht, rufen Sie einfach an: 0174 / 358 25 44.';
+      form.style.display = 'none';
+      thanks.style.display = 'block';
+      return;
+    }
+
+    var btn = form.querySelector('.submit');
+    var errBox = document.getElementById('formError');
+    errBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet …';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: W3F_KEY,
+        subject: 'Anfrage über die Website – ' + name,
+        from_name: 'H&S Website',
+        name: name,
+        phone: phone,
+        message: msg,
+        botcheck: form.elements.botcheck.checked
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d.success) throw new Error(d.message || 'Senden fehlgeschlagen');
+      form.style.display = 'none';
+      thanks.style.display = 'block';
+    })
+    .catch(function () {
+      errBox.style.display = 'block';
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = 'Anfrage senden';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -3,24 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
-      // Case Study: eigenständige, statische Demo-Seite unter sauberer URL.
-      // Das komplette HTML-Dokument (mit eigenen Fonts/Skripten) liegt unter
-      // public/ und wird hier auf die hübsche URL ohne .html gemappt.
+      // Case Studies / Beispiele: eigenständige, statische Demo-Seiten unter
+      // sauberer URL. Die kompletten HTML-Dokumente (mit eigenen Fonts/Skripten)
+      // liegen unter public/case-studies/<slug>/ und werden hier auf die hübsche
+      // URL ohne .html gemappt. Rewrites greifen erst, wenn keine echte Datei
+      // passt – Unterseiten wie /case-studies/<slug>/longevity.html laufen also
+      // weiterhin direkt über public/.
       {
-        source: "/case-studies/hundesalon",
-        destination: "/case-studies/hundesalon/index.html",
-      },
-      {
-        source: "/case-studies/biergarten-varresbeck",
-        destination: "/case-studies/biergarten-varresbeck/index.html",
-      },
-      {
-        source: "/case-studies/zen",
-        destination: "/case-studies/zen/index.html",
-      },
-      {
-        source: "/case-studies/mustermann-handwerk",
-        destination: "/case-studies/mustermann-handwerk/index.html",
+        source: "/case-studies/:slug",
+        destination: "/case-studies/:slug/index.html",
       },
     ];
   },
