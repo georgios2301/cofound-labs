@@ -15,9 +15,9 @@ const REFS = [
     desc: "One-Pager mit Live-Status „heute geöffnet?“, Veranstaltungen und Reservierungsanfrage.",
   },
   {
-    slug: "mustermann-handwerk",
-    title: "Mustermann Handwerk und Service",
-    desc: "In 48 Stunden aufgefrischter One-Pager für einen Handwerker in Mettmann – alle Leistungen auf einen Blick, Anruf per Tap.",
+    slug: "hs-handwerk-service",
+    title: "H&S Handwerk & Service",
+    desc: "One-Pager für einen Handwerker aus Mülheim an der Ruhr, tätig in ganz NRW – echte Vorher-Nachher-Baustellen, Anruf per Tap.",
   },
 ];
 

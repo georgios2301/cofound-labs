@@ -19,6 +19,7 @@ export const NAV_LINKS = [
   { label: "Ablauf", href: "/#ablauf" },
   { label: "Preis", href: "/#preis" },
   { label: "Referenzen", href: "/#referenzen" },
+  { label: "Beispiele", href: "/beispiele" },
   { label: "Software", href: "/#software" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Blog", href: "/blog" },

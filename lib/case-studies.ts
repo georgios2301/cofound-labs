@@ -21,7 +21,8 @@ export type CaseStudy = {
   sections: CaseStudySection[];
   kpis: { value: string; label: string }[];
   stack: string[];
-  testimonial: { quote: string; author: string; role: string };
+  /** Optional – nur setzen, wenn ein echtes (freigegebenes) Zitat vorliegt. */
+  testimonial?: { quote: string; author: string; role: string };
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -414,71 +415,65 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    slug: "mustermann-handwerk",
-    title: "Mustermann Handwerk und Service",
-    tagline: "Website-Auffrischung · Handwerk",
-    lede: "Klare, moderne One-Page-Website für einen selbstständigen Handwerker aus Mettmann – alle Leistungen auf einen Blick, direkte Anruf- und Kontaktmöglichkeit und ein Auftritt, der Verlässlichkeit ausstrahlt. In 48 Stunden aufgefrischt.",
-    image: "/images/projects/mustermann-handwerk.jpg",
-    imageAlt: "Startseite der aufgefrischten Website von Mustermann Handwerk und Service",
-    demoUrl: "/case-studies/mustermann-handwerk",
+    slug: "hs-handwerk-service",
+    title: "H&S Handwerk & Service",
+    tagline: "Website · Handwerk",
+    lede: "One-Page-Website für Heiko Schönherr aus Mülheim an der Ruhr – Handwerker seit 2008, tätig in ganz NRW. Alle Leistungen auf einen Blick, echte Vorher-Nachher-Baustellen und der Anruf immer nur einen Tap entfernt.",
+    image: "/images/projects/hs-handwerk-service.jpg",
+    imageAlt: "Startseite der Website von H&S Handwerk & Service",
+    demoUrl: "/case-studies/hs-handwerk-service",
     meta: [
       { label: "Branche", value: "Handwerk · Local Business" },
-      { label: "Leistung", value: "Website-Auffrischung – One-Pager" },
-      { label: "Ort", value: "Mettmann" },
-      { label: "Zeitraum", value: "48 Stunden · 2026" },
+      { label: "Leistung", value: "Website – One-Pager" },
+      { label: "Ort", value: "Mülheim an der Ruhr · tätig in ganz NRW" },
+      { label: "Zeitraum", value: "2026" },
     ],
     sections: [
       {
         heading: "Ausgangslage",
         paragraphs: [
-          "Max Mustermann ist seit 2008 als Handwerker in Mettmann selbstständig und erledigt vom Boden bis zur Decke fast alles aus einer Hand. Nach außen war davon aber kaum etwas zu sehen: kein zeitgemäßer Auftritt, keine gebündelte Leistungsübersicht, und wer anrufen wollte, musste die Nummer erst suchen.",
-          "Gesucht war keine aufwendige Agentur-Seite, sondern eine schnelle Auffrischung: ein sauberer One-Pager, der zeigt, was er kann, und Interessenten ohne Umweg zum Hörer bringt.",
+          "Heiko Schönherr ist seit 2008 als Handwerker selbstständig und erledigt Böden, Wände, Decken, Montagen und Reinigung aus einer Hand – in ganz Nordrhein-Westfalen. Nach außen war davon kaum etwas zu sehen: kein eigener Auftritt, keine gebündelte Leistungsübersicht, und wer ihn beauftragen wollte, musste die Nummer erst suchen.",
+          "Gesucht war keine aufwendige Agentur-Seite, sondern ein sauberer One-Pager, der zeigt, was er kann, und Interessenten ohne Umweg zum Hörer bringt.",
         ],
       },
       {
         heading: "Zielsetzung",
         paragraphs: [
-          "Der neue Auftritt sollte drei Dinge leisten: alle Leistungen sofort erfassbar machen, den Kontakt so einfach wie möglich gestalten (ein Tap zum Anruf) und Verlässlichkeit ausstrahlen – seriös, aufgeräumt, ohne Schnickschnack. Und das alles innerhalb von 48 Stunden, ohne langes Projekt.",
+          "Der Auftritt sollte drei Dinge leisten: alle Leistungen sofort erfassbar machen, den Kontakt so einfach wie möglich gestalten (ein Tap zum Anruf) und Verlässlichkeit ausstrahlen – seriös, aufgeräumt, ohne Schnickschnack.",
         ],
       },
       {
         heading: "Unser Vorgehen",
         paragraphs: [
-          "Wir haben die typischen Kundenfragen in eine klare Seitenstruktur übersetzt: Hero mit Anruf-Button, vollständige Leistungsübersicht mit eigenen Icons, ein kurzer „Über mich“-Teil für Vertrauen, der Ablauf in drei Schritten und ein direkter Kontaktbereich.",
-          "Gebaut ist alles mobile-first: Auf dem Handy blendet sich unten eine feste Anruf-Leiste ein, sodass der Anruf immer nur einen Daumen entfernt ist. Das Kontaktformular öffnet vorbefüllt das E-Mail-Programm – kein Backend, kein Wartungsaufwand.",
+          "Wir haben die typischen Kundenfragen in eine klare Seitenstruktur übersetzt: Hero mit Anruf-Button und echtem Baustellenfoto, vollständige Leistungsübersicht, eine Vorher-Nachher-Galerie echter Baustellen, ein „Über mich“-Teil für Vertrauen, der Ablauf in drei Schritten und ein direkter Kontaktbereich.",
+          "Statt Stockfotos zeigen wir durchgehend echte Arbeit – etwa eine Badsanierung im Kreis Mettmann. Die Schriften laden lokal, es gibt keinen Cookie-Ballast, und auf dem Handy ist der Anruf immer nur einen Daumen entfernt.",
         ],
       },
       {
         heading: "Was wir gebaut haben",
         bullets: [
           "One-Page-Website mit klarer, seriöser Bildsprache",
-          "Vollständige Leistungsübersicht mit 13 eigenen Icons",
-          "Ein-Tap-Anruf im Header, Hero und als fixe Mobil-Leiste",
-          "„Über mich“-Abschnitt für Vertrauen und Nähe",
-          "Ablauf in drei Schritten – von der Anfrage bis zur Ausführung",
-          "Kontaktformular per E-Mail – ohne Backend und Folgekosten",
-          "Konsequent mobile-first und ohne Cookie-Ballast",
+          "Vollständige Leistungsübersicht – Böden, Wände, Decken, Montagen, Reinigung",
+          "Vorher-Nachher-Galerie mit echten Baustellenfotos",
+          "Ein-Tap-Anruf im Header, Hero und Kontaktbereich",
+          "Trust-Band: seit 2008, ganz NRW, fester Preis vorab, am Wochenende erreichbar",
+          "Ablauf in drei Schritten – von der Anfrage bis zum Ergebnis",
+          "Lokal geladene Schriften, kein Cookie-Banner nötig",
         ],
       },
       {
         heading: "Ergebnis",
         paragraphs: [
-          "Aus keinem sichtbaren Auftritt wurde in 48 Stunden eine Seite, die die Leistungen bündelt und Anfragen mit einem Tap ermöglicht. Der Betrieb wirkt online endlich so verlässlich, wie er tatsächlich arbeitet – und Interessenten finden mit einem Blick, was sie brauchen.",
+          "Aus keinem sichtbaren Auftritt wurde eine Seite, die 18 Jahre Handwerkserfahrung endlich zeigt: echte Baustellen statt Stockfotos, alle Leistungen gebündelt, und der Anruf ist von jeder Stelle der Seite aus einen Tap entfernt.",
         ],
       },
     ],
     kpis: [
-      { value: "48 h", label: "von der Anfrage bis online" },
+      { value: "Seit 2008", label: "Erfahrung, endlich sichtbar" },
       { value: "1 Tap", label: "vom Besuch zum Anruf" },
-      { value: "0", label: "Backend & Wartungsaufwand" },
+      { value: "Ganz NRW", label: "Einsatzgebiet auf einen Blick" },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Responsive Design", "Mobile-first", "Vercel"],
-    testimonial: {
-      quote:
-        "Ich mache seit über 15 Jahren meine Arbeit – jetzt sieht man das auch im Netz. Die Leute rufen direkt an, ohne lange zu suchen.",
-      author: "Max Mustermann",
-      role: "Inhaber, Mustermann Handwerk und Service",
-    },
   },
 ];
 
