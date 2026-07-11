@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Longevity — Praxis Sonnenthal (Demo)</title>
+  <meta name="description" content="Konzept-Demo: Longevity-Medizin für die Haut — messbare Diagnostik, priorisierte Prävention und eine sorgfältige, datensparsame Anamnese.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F4639'/%3E%3Cpath d='M32 14c10 0 18 8 18 18v18H14V32c0-10 8-18 18-18z' fill='%23F7F2E9'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23A9895A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Praxis Sonnenthal — zur Startseite">
+      <span class="brand__name">SONNENTHAL</span>
+      <span class="brand__sub">Dermatologie · Ästhetik · Longevity</span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="longevity.html" aria-current="page">Longevity</a></li>
+        <li><a href="index.html#aerztin">Ärztin</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <a class="nav__phone" href="tel:+41440000000">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        +41 44 000 00 00
+      </a>
+      <a class="btn btn--primary btn--sm nav__cta" href="#anamnese">Anamnese starten</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="nav-panel" id="nav-panel">
+  <ul>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="longevity.html">Longevity</a></li>
+    <li><a href="index.html#aerztin">Ärztin</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <div class="nav-panel__actions">
+    <a class="btn btn--primary" href="#anamnese">Anamnese starten</a>
+    <a class="btn btn--ghost" href="tel:+41440000000">+41 44 000 00 00 anrufen</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- Seiten-Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb reveal">
+        <li><a href="index.html">Startseite</a></li>
+        <li aria-current="page">Longevity</li>
+      </ol>
+      <p class="kicker reveal">Longevity-Medizin für die Haut</p>
+      <h1 class="reveal" style="--reveal-delay:.08s">Ihre Haut altert. <em style="font-style:italic;color:var(--sage-deep)">Wie</em>, können Sie mitentscheiden.</h1>
+      <p class="lead reveal" style="--reveal-delay:.16s">
+        Longevity heisst bei uns nicht «jünger aussehen um jeden Preis», sondern:
+        Hautalterung verstehen, messbar machen und mit den wirksamsten Massnahmen
+        gezielt verlangsamen — medizinisch fundiert, ohne Produktflut.
+      </p>
+      <div class="hero__actions reveal" style="--reveal-delay:.24s; margin-top: var(--space-3);">
+        <a class="btn btn--primary" href="#anamnese">
+          Anamnese starten
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#konzept">Das Konzept verstehen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Konzept -->
+  <section class="section" id="konzept">
+    <div class="container split split--rev">
+      <!-- CI-SWAP-PUNKT: Stimmungsbild Longevity/Wellness (4:5). -->
+      <figure class="media media--arch reveal" data-swap="longevity-stimmung">
+        <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platzhalterbild: natürliche Regeneration, ruhige Wellness-Atmosphäre">
+          <rect width="600" height="640" fill="#E3EAE0"/>
+          <circle cx="420" cy="180" r="130" fill="#E9DFC9"/>
+          <circle cx="420" cy="180" r="75" fill="#DCCFB2"/>
+          <path d="M0 470 C180 400 430 570 600 450 L600 640 L0 640 Z" fill="#D8CBB0"/>
+          <path d="M0 540 C210 470 400 620 600 510 L600 640 L0 640 Z" fill="#3E5A4B" opacity="0.22"/>
+          <g stroke="#A9895A" stroke-width="1.4" fill="none" opacity="0.55">
+            <path d="M80 580 a260 260 0 0 1 260 -260"/>
+            <path d="M80 580 a330 330 0 0 1 330 -330"/>
+          </g>
+        </svg>
+        <figcaption class="media__tag">Platzhalter · Longevity-Motiv</figcaption>
+      </figure>
+
+      <div>
+        <div class="section-head reveal" style="margin-bottom: var(--space-3);">
+          <p class="kicker">Das Konzept</p>
+          <h2>Prävention mit Plan — nicht mit Trends</h2>
+          <p class="lead">
+            80 Prozent der sichtbaren Hautalterung sind beeinflussbar. Entscheidend ist
+            nicht, alles zu tun — sondern das Richtige, in der richtigen Reihenfolge.
+          </p>
+        </div>
+        <ul class="checklist reveal">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+            <span><strong>Messbar statt gefühlt.</strong> Standardisierte Hautanalyse und
+            Verlaufsbilder machen Fortschritt sichtbar — Jahr für Jahr.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+            <span><strong>Priorisiert statt maximal.</strong> Ihr Plan enthält wenige,
+            wirksame Massnahmen — von Sonnenschutz über Wirkstoffpflege bis zu gezielten
+            Behandlungen. Nichts, was Sie nicht brauchen.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+            <span><strong>Begleitet statt verkauft.</strong> Jahresrhythmus mit Kontrollterminen.
+            Ihr Plan wird angepasst, wenn sich Haut oder Leben verändern.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drei Säulen -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="kicker">Drei Säulen</p>
+        <h2>So arbeitet das Programm</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <span class="pillar__num">Säule 01</span>
+          <h3>Verstehen</h3>
+          <p>Ausführliche Anamnese, digitale Hautanalyse und Ihre Lebensgewohnheiten ergeben ein präzises Bild Ihres Hautzustands — Ihre Basislinie.</p>
+        </div>
+        <div class="pillar reveal" style="--reveal-delay:.1s">
+          <span class="pillar__num">Säule 02</span>
+          <h3>Schützen</h3>
+          <p>Die grossen Hebel zuerst: UV-Schutz, Barrierepflege, Schlaf und Stressregulation — abgestimmt auf Ihren Alltag, nicht auf ein Idealbild.</p>
+        </div>
+        <div class="pillar reveal" style="--reveal-delay:.2s">
+          <span class="pillar__num">Säule 03</span>
+          <h3>Regenerieren</h3>
+          <p>Wo sinnvoll, ergänzen gezielte Behandlungen — von Wirkstofftherapie bis Laser — die Prävention. Immer indikationsbasiert, nie nach Katalog.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anamnese -->
+  <section class="section" id="anamnese">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <p class="kicker">Longevity-Anamnese</p>
+        <h2>Der erste Schritt: fünf Minuten für Ihre Haut</h2>
+        <p class="lead">
+          Diese Angaben helfen uns, Ihren Ersttermin optimal vorzubereiten.
+          Alles ist freiwillig — was Sie hier nicht angeben möchten, besprechen
+          wir einfach im Gespräch.
+        </p>
+      </div>
+
+      <div class="panel wizard reveal" data-wizard>
+        <div class="wizard__progress">
+          <div class="wizard__steps-label">
+            <span>Schritt <strong data-step-now>1</strong> von 5</span>
+            <strong data-step-title>Über Sie</strong>
+          </div>
+          <div class="wizard__bar"><span></span></div>
+        </div>
+
+        <form data-demo aria-label="Longevity-Anamnese (Demo)">
+
+          <!-- Schritt 1 -->
+          <section class="wizard__step" data-title="Über Sie">
+            <h3>Über Sie</h3>
+            <p>Zwei Angaben, die den grössten Einfluss auf Ihre Hautalterung haben.</p>
+
+            <fieldset class="field-group" data-summary-group="Altersgruppe">
+              <legend>Ihre Altersgruppe</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="alter" value="unter 30" required> unter 30</label>
+                <label class="choice"><input type="radio" name="alter" value="30–39"> 30 – 39</label>
+                <label class="choice"><input type="radio" name="alter" value="40–49"> 40 – 49</label>
+                <label class="choice"><input type="radio" name="alter" value="50–59"> 50 – 59</label>
+                <label class="choice"><input type="radio" name="alter" value="60+"> 60 +</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-summary-group="Hauttyp">
+              <legend>Ihr Hauttyp <span class="optional" style="font-weight:400;color:var(--ink-soft)">(Einschätzung genügt)</span></legend>
+              <div class="choice-grid">
+                <label class="choice"><input type="radio" name="hauttyp" value="hell, verbrennt schnell"> Hell — verbrennt schnell</label>
+                <label class="choice"><input type="radio" name="hauttyp" value="mittel, bräunt langsam"> Mittel — bräunt langsam</label>
+                <label class="choice"><input type="radio" name="hauttyp" value="dunkler, verbrennt selten"> Dunkler — verbrennt selten</label>
+                <label class="choice"><input type="radio" name="hauttyp" value="weiss nicht"> Weiss ich nicht</label>
+              </div>
+            </fieldset>
+          </section>
+
+          <!-- Schritt 2 -->
+          <section class="wizard__step" data-title="Ihre Haut heute">
+            <h3>Ihre Haut heute</h3>
+            <p>Was beschäftigt Sie aktuell? Mehrfachauswahl möglich.</p>
+
+            <fieldset class="field-group" data-summary-group="Hautanliegen">
+              <legend>Aktuelle Anliegen</legend>
+              <div class="choice-grid">
+                <label class="choice"><input type="checkbox" name="anliegen" value="Trockenheit"> Trockenheit / Spannungsgefühl</label>
+                <label class="choice"><input type="checkbox" name="anliegen" value="Pigmentflecken"> Pigmentflecken / Sonnenschäden</label>
+                <label class="choice"><input type="checkbox" name="anliegen" value="Falten"> Falten / Elastizitätsverlust</label>
+                <label class="choice"><input type="checkbox" name="anliegen" value="Rötungen"> Rötungen / Empfindlichkeit</label>
+                <label class="choice"><input type="checkbox" name="anliegen" value="Unreinheiten"> Unreinheiten / Akne</label>
+                <label class="choice"><input type="checkbox" name="anliegen" value="Keine Beschwerden"> Aktuell keine Beschwerden</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-summary-group="Zufriedenheit mit der Haut">
+              <legend>Wie zufrieden sind Sie insgesamt mit Ihrer Haut?</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="zufrieden" value="zufrieden"> Zufrieden</label>
+                <label class="choice"><input type="radio" name="zufrieden" value="teils-teils"> Teils-teils</label>
+                <label class="choice"><input type="radio" name="zufrieden" value="unzufrieden"> Unzufrieden</label>
+              </div>
+            </fieldset>
+          </section>
+
+          <!-- Schritt 3 -->
+          <section class="wizard__step" data-title="Lebensstil">
+            <h3>Lebensstil</h3>
+            <p>Die grossen Hebel der Hautalterung — ehrliche Antworten helfen, niemand bewertet.</p>
+
+            <fieldset class="field-group" data-summary-group="Sonnenexposition">
+              <legend>Sonnenexposition im Alltag</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="sonne" value="gering"> Gering</label>
+                <label class="choice"><input type="radio" name="sonne" value="mittel"> Mittel</label>
+                <label class="choice"><input type="radio" name="sonne" value="hoch"> Hoch (Outdoor, Sport)</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-summary-group="Rauchen">
+              <legend>Rauchen Sie?</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="rauchen" value="nein"> Nein</label>
+                <label class="choice"><input type="radio" name="rauchen" value="gelegentlich"> Gelegentlich</label>
+                <label class="choice"><input type="radio" name="rauchen" value="täglich"> Täglich</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-summary-group="Schlaf">
+              <legend>Ihr Schlaf</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="schlaf" value="erholsam"> Meist erholsam</label>
+                <label class="choice"><input type="radio" name="schlaf" value="wechselhaft"> Wechselhaft</label>
+                <label class="choice"><input type="radio" name="schlaf" value="oft zu kurz"> Oft zu kurz</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-summary-group="Stresslevel">
+              <legend>Ihr Stresslevel</legend>
+              <div class="choice-grid choice-grid--3">
+                <label class="choice"><input type="radio" name="stress" value="niedrig"> Niedrig</label>
+                <label class="choice"><input type="radio" name="stress" value="mittel"> Mittel</label>
+                <label class="choice"><input type="radio" name="stress" value="hoch"> Hoch</label>
+              </div>
+            </fieldset>
+          </section>
+
+          <!-- Schritt 4 -->
+          <section class="wizard__step" data-title="Ihre Ziele">
+            <h3>Ihre Ziele</h3>
+            <p>Woran sollen wir gemeinsam arbeiten?</p>
+
+            <fieldset class="field-group" data-summary-group="Ziele">
+              <legend>Das ist mir wichtig</legend>
+              <div class="choice-grid">
+                <label class="choice"><input type="checkbox" name="ziele" value="Vorbeugen"> Vorbeugen, bevor etwas sichtbar wird</label>
+                <label class="choice"><input type="checkbox" name="ziele" value="Sichtbare Verbesserung"> Sichtbare Verbesserung bestehender Zeichen</label>
+                <label class="choice"><input type="checkbox" name="ziele" value="Routine vereinfachen"> Meine Pflegeroutine vereinfachen</label>
+                <label class="choice"><input type="checkbox" name="ziele" value="Gesamtkonzept"> Ein langfristiges Gesamtkonzept</label>
+              </div>
+            </fieldset>
+
+            <div class="field" data-summary-group="Notiz">
+              <label for="lg-notiz">Möchten Sie uns etwas mitgeben? <span class="optional">(optional)</span></label>
+              <textarea id="lg-notiz" rows="3" placeholder="Zum Beispiel: bisherige Behandlungen, Unverträglichkeiten, konkrete Wünsche …"></textarea>
+              <p class="hint">Bitte keine sensiblen Gesundheitsdaten — Details klären wir im persönlichen Gespräch.</p>
+            </div>
+          </section>
+
+          <!-- Schritt 5 -->
+          <section class="wizard__step" data-title="Zusammenfassung">
+            <h3>Zusammenfassung &amp; Terminwunsch</h3>
+            <p>Bitte prüfen Sie Ihre Angaben — ändern können Sie alles über «Zurück».</p>
+
+            <dl class="summary" data-summary></dl>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="lg-name">Name</label>
+                <input id="lg-name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="lg-kontakt">E-Mail oder Telefon</label>
+                <input id="lg-kontakt" type="text" autocomplete="email" required>
+              </div>
+            </div>
+
+            <label class="check" style="margin-top: var(--space-2);">
+              <input type="checkbox" required>
+              <span>Meine Angaben dürfen zur Vorbereitung des Ersttermins verwendet werden.
+              Sie werden nicht für andere Zwecke genutzt und auf Wunsch jederzeit gelöscht.
+              Details: <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+            </label>
+
+            <button class="btn btn--primary" type="submit" style="margin-top: var(--space-3);">
+              Anamnese senden &amp; Termin anfragen
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__note" style="margin-top: var(--space-2);">Demo-Formular: Es werden keine Daten übertragen oder gespeichert.</p>
+          </section>
+
+          <div class="wizard__nav">
+            <button class="btn btn--ghost" type="button" data-prev>Zurück</button>
+            <button class="btn btn--primary" type="button" data-next>
+              Weiter
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="form-success" role="status">
+          <span class="form-success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+          </span>
+          <h3>Vielen Dank — Ihre Anamnese ist bei uns</h3>
+          <p>Wir bereiten Ihren Ersttermin damit persönlich vor und melden uns
+          innert eines Arbeitstages mit Terminvorschlägen.<br>
+          <em>(Demo: Es wurden keine Daten versendet.)</em></p>
+        </div>
+      </div>
+
+      <div class="notice reveal" style="max-width: 44rem; margin: var(--space-4) auto 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="m9.5 12 2 2 3.5-4"/></svg>
+        <p style="margin:0">
+          <strong>Datensparsamkeit:</strong> Wir fragen nur, was die Vorbereitung Ihres
+          Termins wirklich verbessert. Alle Angaben sind freiwillig, werden vertraulich
+          behandelt und ausschliesslich zweckgebunden verwendet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-Band -->
+  <section class="section section--sage cta-band">
+    <div class="container">
+      <p class="kicker reveal" style="color: var(--gold);">Lieber zuerst sprechen?</p>
+      <h2 class="reveal" style="--reveal-delay:.08s">Auch ohne Anamnese sind Sie <em>willkommen.</em></h2>
+      <p class="lead reveal" style="--reveal-delay:.16s">Vereinbaren Sie einfach ein Erstgespräch — alles Weitere ergibt sich dort.</p>
+      <div class="cta-band__actions reveal" style="--reveal-delay:.24s">
+        <a class="btn btn--light" href="index.html#kontakt">
+          Termin anfragen
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="tel:+41440000000">Oder anrufen: +41 44 000 00 00</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand__name">SONNENTHAL</span>
+          <span class="brand__sub">Dermatologie · Ästhetik · Longevity</span>
+        </a>
+        <p class="footer__demo">
+          Konzept-/Demo-Website — Praxis, Ärztin und alle Angaben sind fiktiv.
+          Gestaltet als Portfolio-Arbeit.
+        </p>
+      </div>
+      <nav aria-label="Footer Seiten">
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="longevity.html">Longevity</a></li>
+          <li><a href="index.html#kontakt">Termin anfragen</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer Leistungen">
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="leistungen.html">Klassische Dermatologie</a></li>
+          <li><a href="leistungen.html">Ästhetische Dermatologie</a></li>
+          <li><a href="longevity.html">Longevity-Programm</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Sonnenquai 8, 8008 Zürich</li>
+          <li><a href="tel:+41440000000">+41 44 000 00 00</a></li>
+          <li><a href="https://wa.me/41440000000" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Praxis Sonnenthal (fiktiv) — Konzept-/Demo-Website</p>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<div class="float-cta">
+  <a class="btn btn--primary" href="#anamnese">Anamnese starten</a>
+</div>
+
+<div class="consent" role="dialog" aria-label="Hinweis zum Datenschutz">
+  <p><strong>Datenschutz-Hinweis:</strong> Diese Demo-Seite verwendet keine Cookies
+  und keine Tracker. Gespeichert wird nur diese Auswahl (lokal in Ihrem Browser).
+  Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="consent__actions">
+    <button class="btn btn--primary btn--sm" data-consent-ok>Verstanden</button>
+    <a href="datenschutz.html">Mehr erfahren</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
