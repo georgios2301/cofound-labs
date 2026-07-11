@@ -12,10 +12,10 @@ export default function Kontakt() {
     <section className="kontakt" id="kontakt">
       <div className="wrap">
         <Reveal>
-          <h2>Schick uns deine alte Website.</h2>
+          <h2>Du hast den Ablauf im Kopf. Wir bauen das Tool.</h2>
           <p className="lede">
-            Wir schauen kostenlos drüber und sagen dir ehrlich, was wir daraus
-            machen würden — innerhalb eines Werktags.
+            Erzähl uns in 15 Minuten, was dich im Alltag aufhält — wir sagen
+            dir ehrlich, ob und wie Software das löst. Und was es kostet.
           </p>
         </Reveal>
 
@@ -30,7 +30,7 @@ export default function Kontakt() {
               >
                 <span className="ic">◷</span>
                 <span>
-                  <b>Gesprächstermin buchen</b>
+                  <b>Strategiegespräch buchen</b>
                   <span className="d">
                     15 Minuten, kostenlos &amp; unverbindlich — via Calendly
                   </span>
@@ -48,7 +48,7 @@ export default function Kontakt() {
                 <span>
                   <b>{EMAIL}</b>
                   <span className="d">
-                    Schick uns einfach den Link zu deiner Website
+                    Beschreib kurz deinen Ablauf oder deine Idee
                   </span>
                 </span>
               </a>
@@ -58,8 +58,8 @@ export default function Kontakt() {
           <Reveal>
             <ContactForm
               heading="Oder schreib uns direkt:"
-              subject="Website-Auffrischung – Anfrage über die Startseite"
-              defaultService="Website erstellen lassen"
+              subject="Individualsoftware – Anfrage über die Startseite"
+              defaultService="Individualsoftware"
             />
           </Reveal>
         </div>

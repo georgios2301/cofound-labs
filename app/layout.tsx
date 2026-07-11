@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const HOME_TITLE = `Website auffrischen ab 399 € — ohne versteckte Gebühren | ${SITE_NAME}`;
+const HOME_TITLE = `Individuelle Software & Apps — in 7 Tagen nutzbar | ${SITE_NAME}`;
 
 export const metadata: Metadata = {
   title: {
@@ -101,6 +101,13 @@ const jsonLd = {
       email: EMAIL,
       priceRange: "€",
       areaServed: "DE",
+      serviceType: [
+        "Individualsoftware-Entwicklung",
+        "App-Entwicklung",
+        "Web-App-Entwicklung",
+        "MVP-Entwicklung",
+        "Website-Erstellung & Webdesign",
+      ],
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",

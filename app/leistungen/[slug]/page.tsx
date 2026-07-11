@@ -237,12 +237,18 @@ export default async function ServicePage({
                 {related.map((c) => (
                   <Link className="proj" href={`/referenzen/${c.slug}`} key={c.slug}>
                     <div className="shot">
-                      <Image
-                        src={c.image}
-                        alt={c.imageAlt}
-                        fill
-                        sizes="(max-width: 980px) 100vw, 50vw"
-                      />
+                      {c.image ? (
+                        <Image
+                          src={c.image}
+                          alt={c.imageAlt ?? c.title}
+                          fill
+                          sizes="(max-width: 980px) 100vw, 50vw"
+                        />
+                      ) : (
+                        <div className="ph">
+                          <span>Screenshot folgt — Projekt läuft produktiv</span>
+                        </div>
+                      )}
                     </div>
                     <div className="body">
                       <h3>{c.title}</h3>

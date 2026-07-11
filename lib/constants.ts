@@ -1,6 +1,6 @@
 export const SITE_NAME = "Cofound Labs";
 export const SITE_DESCRIPTION =
-  "Website auffrischen lassen ab 399 € pauschal – inkl. 12 Monate Betreuung & Hosting, ohne versteckte Gebühren. Für Friseure, Gastro & Handwerk. Jetzt kostenlos anfragen.";
+  "Individuelle Software & Apps für Betriebe: erste nutzbare Version in 7 Tagen – sonst zahlst du nichts. Festpreis vorab, voller Code-Besitz, EU-Hosting. Jetzt kostenloses Erstgespräch sichern.";
 export const SITE_URL = "https://cofound-labs.de";
 
 export const CALENDLY_URL = "https://calendly.com/cofound-labs/neues-meeting";
@@ -16,12 +16,11 @@ export const WEB3FORMS_ACCESS_KEY = "81d705a5-64d3-4aee-87cf-a350f796d844";
 
 // Haupt-Navigation – absolute Anker, damit sie auch von Unterseiten funktionieren.
 export const NAV_LINKS = [
+  { label: "Projekte", href: "/#projekte" },
   { label: "Ablauf", href: "/#ablauf" },
-  { label: "Preis", href: "/#preis" },
-  { label: "Referenzen", href: "/#referenzen" },
-  { label: "Beispiele", href: "/beispiele" },
-  { label: "Software", href: "/#software" },
   { label: "Leistungen", href: "/leistungen" },
+  { label: "Referenzen", href: "/referenzen" },
+  { label: "Websites", href: "/#websites" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ];

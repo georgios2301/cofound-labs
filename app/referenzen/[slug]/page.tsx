@@ -42,8 +42,8 @@ export default async function CaseStudyPage({
       <main>
         <header className="subhero">
           <div className="wrap">
-            <Link href="/#referenzen" className="backlink">
-              ← Zurück zu Referenzen
+            <Link href="/referenzen" className="backlink">
+              ← Alle Referenzen
             </Link>
             <div className="kicker" style={{ marginTop: 28 }}>
               // Case Study · {cs.tagline}
@@ -97,8 +97,14 @@ export default async function CaseStudyPage({
         <section className="section" style={{ paddingTop: 24 }}>
           <div className="wrap">
             <div className="cs-shot">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={cs.image} alt={cs.imageAlt} />
+              {cs.image ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={cs.image} alt={cs.imageAlt ?? cs.title} />
+              ) : (
+                <div className="ph">
+                  <span>Screenshot folgt — Projekt läuft produktiv</span>
+                </div>
+              )}
             </div>
 
             <div className="prose" style={{ marginTop: 56 }}>

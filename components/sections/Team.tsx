@@ -21,9 +21,10 @@ export default function Team() {
               <h3>Georgios Apostolidis</h3>
               <p>
                 <b>Kein Agentur-Überbau:</b> Du sprichst direkt mit dem, der
-                deine Website baut. Ich entwickle Websites und Software, die im
-                Alltag wirklich benutzt werden — schnell, ehrlich und zum
-                vereinbarten Preis.
+                deine Software baut. Ich entwickle Systeme, die produktiv
+                laufen — von der NFC-Treueplattform über Bestell-Apps und
+                Kassenzähl-Tools bis zum Lohnabrechnungs-Portal. Täglich im
+                Betrieb benutzt, ehrlich gebaut und zum vereinbarten Festpreis.
               </p>
               <div className="socials">
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">

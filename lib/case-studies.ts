@@ -12,9 +12,14 @@ export type CaseStudy = {
   slug: string;
   title: string;
   tagline: string; // erscheint im Kicker, z. B. "Website · Local Business"
+  /** Gruppierung für /referenzen und die Projekte-Sektion. */
+  kind: "software" | "website";
   lede: string;
-  image: string;
-  imageAlt: string;
+  /** Screenshot optional – fehlt er, rendern die Seiten den .ph-Platzhalter. */
+  image?: string;
+  imageAlt?: string;
+  /** Kompakte Teaser-Struktur für die Projekte-Sektion der Homepage. */
+  teaser?: { about: string; task: string; facts: string[] };
   /** Pfad zur echten Live-Demo (statische Seite unter /public/case-studies). Optional – nicht jedes Projekt hat eine öffentliche Demo. */
   demoUrl?: string;
   meta: { label: string; value: string }[];
@@ -27,9 +32,206 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "nfc-loyalty-plattform",
+    title: "NFC-Loyalty-Plattform",
+    tagline: "SaaS · NFC",
+    kind: "software",
+    lede: "Multi-Tenant-SaaS für Loyalty und Reaktivierung in lokalen Betrieben: fälschungssicherer Check-in per NFC-Chip, Treuekarte im Apple- und Google-Wallet und ein Operator-Dashboard mit echten Kennzahlen – von der Konzeption bis zum Deployment eigenverantwortlich umgesetzt.",
+    teaser: {
+      about:
+        "Digitale Treuekarte statt Papier-Stempelkarte: Gäste checken per NFC-Chip ein, die Karte liegt im Handy-Wallet, und der Betrieb erkennt inaktive Kunden, bevor sie ganz wegbleiben.",
+      task: "Konzeption, Architektur, Fullstack-Entwicklung und Deployment der gesamten Plattform – eigenverantwortlich.",
+      facts: ["NTAG424 DNA · AES-128/CMAC", "Apple & Google Wallet mit Push", "Mandantensicher per Row-Level-Security"],
+    },
+    meta: [
+      { label: "Branche", value: "Gastronomie & Dienstleister · SaaS" },
+      { label: "Leistung", value: "Konzeption, Architektur, Fullstack & Betrieb" },
+      { label: "Plattform", value: "Web-App + NFC + Apple/Google Wallet" },
+      { label: "Zeitraum", value: "laufend" },
+    ],
+    sections: [
+      {
+        heading: "Ausgangslage",
+        paragraphs: [
+          "Papier-Stempelkarten gehen verloren, lassen sich beliebig fälschen und verraten dem Betrieb nichts: Wer kommt wie oft? Wer war lange nicht mehr da? Lokale Betriebe verlieren Stammkunden oft unbemerkt – es fehlt schlicht das Werkzeug, Wiederkehr zu messen und inaktive Kunden gezielt zurückzuholen.",
+        ],
+      },
+      {
+        heading: "Zielsetzung",
+        paragraphs: [
+          "Eine Treue- und Reaktivierungsplattform, die mehrere Betriebe gleichzeitig bedient – mit strikt getrennten Daten pro Betrieb, einem Check-in, der sich nicht fälschen lässt, und einer Treuekarte, die Kunden immer dabei haben: im Wallet ihres Smartphones.",
+        ],
+      },
+      {
+        heading: "Unser Vorgehen",
+        paragraphs: [
+          "Das Fundament ist eine Fullstack-Anwendung mit Next.js (App Router) und Supabase: PostgreSQL, Auth und Row-Level-Security sorgen dafür, dass jeder Betrieb ausschließlich seine eigenen Kunden und Kennzahlen sieht – Mandantentrennung auf Datenbank-Ebene statt im Anwendungscode.",
+          "Der Check-in läuft über NTAG424-DNA-Chips: Jeder Scan erzeugt eine kryptografische Signatur (AES-128/CMAC), die serverseitig geprüft wird. Kopierte oder abgespielte Chips fliegen auf – der Check-in ist fälschungssicher.",
+          "Die Treuekarte selbst liegt im Apple Wallet oder Google Wallet und aktualisiert sich per Push (APNs bzw. Google Wallet API): Neuer Stempel, neue Prämie – die Karte im Handy ist immer aktuell. Deployment läuft über Vercel mit Preview-Branches; alle User-Flows (Check-in, Wallet-Pass, Reaktivierung) sind systematisch inklusive Edge-Cases und cross-device auf iOS und Android geprüft.",
+        ],
+      },
+      {
+        heading: "Was wir gebaut haben",
+        bullets: [
+          "Multi-Tenant-Architektur mit Row-Level-Security zur mandantensicheren Datentrennung",
+          "Fälschungssicherer NFC-Check-in mit NTAG424-DNA-Chips und AES-128/CMAC-Signaturprüfung",
+          "Treuekarten in Apple Wallet und Google Wallet inkl. Push-Aktualisierung der Pässe",
+          "Operator-Dashboard mit Besuchsfrequenz, ARPU und Reaktivierungs-Kennzahlen",
+          "Erkennung inaktiver Kunden über Median-Besuchsintervalle",
+          "DSGVO-konforme Verarbeitung, EU-Hosting und technische Dokumentation der Architektur",
+        ],
+      },
+      {
+        heading: "Ergebnis",
+        paragraphs: [
+          "Betriebe bekommen eine Treuekarte, die Kunden wirklich benutzen – weil sie im Wallet liegt statt im Portemonnaie zu vergilben. Und zum ersten Mal echte Zahlen dazu: Wer kommt wieder, wer bleibt weg, und welche Reaktivierung wirkt.",
+        ],
+      },
+    ],
+    kpis: [
+      { value: "Multi-Tenant", label: "ein System, viele Betriebe – sauber getrennt" },
+      { value: "AES-128/CMAC", label: "fälschungssicherer NFC-Check-in" },
+      { value: "EU-Hosting", label: "DSGVO-konform verarbeitet" },
+    ],
+    stack: ["Next.js", "Supabase", "PostgreSQL", "Row-Level-Security", "NTAG424 DNA", "Apple/Google Wallet", "Vercel"],
+  },
+  {
+    slug: "lohnabrechnungs-verteiler",
+    title: "Lohnabrechnungs-Verteiler",
+    tagline: "Individualsoftware · HR",
+    kind: "software",
+    lede: "Automatisierte, DSGVO-konforme Verteilung von Lohnabrechnungen: OCR trennt das Sammel-PDF, ordnet jede Abrechnung dem richtigen Mitarbeiter zu, und ein Self-Service-Portal ersetzt das händische Splitten und Versenden – komplett auf eigenem EU-Server, ohne Cloud-Dienste.",
+    teaser: {
+      about:
+        "Jeden Monat ein Sammel-PDF mit allen Lohnabrechnungen – früher händisch gesplittet und einzeln gemailt. Heute: hochladen, fertig. Jeder Mitarbeiter sieht im Portal genau seine eigenen Abrechnungen.",
+      task: "Anforderungsklärung, Entwicklung und Betrieb auf eigener EU-Infrastruktur.",
+      facts: ["OCR statt Handarbeit (Tesseract)", "Eigener EU-Server statt Cloud", "Monatlich produktiv im Einsatz"],
+    },
+    meta: [
+      { label: "Branche", value: "HR · Lohnbuchhaltung" },
+      { label: "Leistung", value: "Anforderungsklärung, Entwicklung & Betrieb" },
+      { label: "Plattform", value: "OCR-Pipeline + Self-Service-Portal, EU-Server" },
+      { label: "Status", value: "produktiv · monatlich im Einsatz" },
+    ],
+    sections: [
+      {
+        heading: "Ausgangslage",
+        paragraphs: [
+          "Die Lohnabrechnungen kamen als ein großes Sammel-PDF – und wurden dann händisch zerlegt: pro Mitarbeiter die richtigen Seiten heraussuchen, einzeln speichern, einzeln per E-Mail verschicken. Fehleranfällig, zeitraubend und bei Gehaltsdaten besonders heikel: Eine falsch adressierte Mail genügt, und sensible Daten liegen beim falschen Empfänger.",
+        ],
+      },
+      {
+        heading: "Zielsetzung",
+        paragraphs: [
+          "Ein Ablauf, bei dem niemand mehr Seiten sortiert: Sammel-PDF hochladen, die Software erledigt Trennung und Zuordnung – und jeder Mitarbeiter holt sich seine Abrechnungen selbst, sieht dabei aber ausschließlich die eigenen. Und das Ganze so datenschutzfreundlich wie möglich.",
+        ],
+      },
+      {
+        heading: "Unser Vorgehen",
+        paragraphs: [
+          "Kern ist eine lokale OCR-Pipeline auf Basis von Tesseract: Sie erkennt Namen und Personalnummern, trennt das Sammel-PDF automatisch in einzelne Abrechnungen und legt sie in den richtigen Mitarbeiter-Ordnern ab. Darauf sitzt ein Self-Service-Portal mit lokalem Login und strikter Zugriffsbeschränkung.",
+          "Die Architektur ist bewusst datenschutzfreundlich: Gehaltsdaten verlassen das System nicht – keine Cloud-Dienste, Verarbeitung und Hosting laufen auf einem eigenen EU-Server (Hetzner). Die Erkennungs- und Zuordnungslogik ist systematisch gegen Edge-Cases geprüft: mehrseitige Abrechnungen, OCR-Fehllesungen, Namensdubletten.",
+        ],
+      },
+      {
+        heading: "Was wir gebaut haben",
+        bullets: [
+          "Automatische Trennung von Sammel-Lohn-PDFs per OCR (Tesseract)",
+          "Zuordnung zu Mitarbeiter-Ordnern anhand erkannter Namen bzw. Personalnummern",
+          "Self-Service-Portal mit lokalem Login – jeder sieht nur die eigenen Abrechnungen",
+          "Verarbeitung und Hosting vollständig auf eigenem EU-Server (Hetzner), ohne Cloud-Dienste",
+          "Systematische Prüfung der Zuordnungslogik inkl. Edge-Cases",
+          "Technische Dokumentation und Übergabe für den produktiven Einsatz",
+        ],
+      },
+      {
+        heading: "Ergebnis",
+        paragraphs: [
+          "Aus einem manuellen, fehleranfälligen Prozess wurde eine nachvollziehbare Pipeline: Das Tool läuft produktiv und verteilt jeden Monat die Lohnabrechnungen – ohne händisches Splitten, ohne Mail-Risiko, ohne dass Gehaltsdaten das eigene System verlassen.",
+        ],
+      },
+    ],
+    kpis: [
+      { value: "1 Upload", label: "statt händischem Splitten & Mailen" },
+      { value: "0 Cloud", label: "Gehaltsdaten bleiben auf dem EU-Server" },
+      { value: "Monatlich", label: "produktiv im Einsatz" },
+    ],
+    stack: ["Tesseract OCR", "PDF-Pipeline", "Self-Service-Portal", "Hetzner (EU)", "Lokale Auth"],
+  },
+  {
+    slug: "euer-buchhaltungs-dashboard",
+    title: "EÜR-Buchhaltungs-Dashboard",
+    tagline: "Automatisierung · Buchhaltung",
+    kind: "software",
+    lede: "Buchhaltungs-Dashboard zur Einnahmenüberschussrechnung: Belege und Rechnungen kommen per Mail-Parsing automatisch ins System, n8n orchestriert die Pipeline, und ein Next.js-Dashboard zeigt die laufende EÜR – statt händischer Tabellenpflege.",
+    teaser: {
+      about:
+        "Belege von Vinted, AliExpress & Co. landen im Mail-Postfach – und buchen sich von dort selbst: Die relevanten Daten werden extrahiert, zugeordnet und laufen live in die EÜR-Übersicht.",
+      task: "Datenmodell, Mail-Parsing, Workflow-Automatisierung und Dashboard – von der Belegerfassung bis zur Auswertung.",
+      facts: ["Mail-Parsing statt Abtippen", "n8n-Workflow-Automatisierung", "Stornos & Teilerstattungen abgebildet"],
+    },
+    meta: [
+      { label: "Branche", value: "E-Commerce · Buchhaltung" },
+      { label: "Leistung", value: "Datenmodell, Automatisierung & Dashboard" },
+      { label: "Plattform", value: "Next.js-Dashboard + n8n-Pipeline" },
+      { label: "Zeitraum", value: "laufend" },
+    ],
+    sections: [
+      {
+        heading: "Ausgangslage",
+        paragraphs: [
+          "Belege sammeln, Rechnungen abtippen, Tabellen pflegen: Die Buchhaltung für den E-Commerce-Verkauf über Plattformen wie Vinted und AliExpress lief komplett von Hand. Jede Bestellung, jede Erstattung, jeder Storno musste einzeln erfasst werden – aufwendig und fehleranfällig.",
+        ],
+      },
+      {
+        heading: "Zielsetzung",
+        paragraphs: [
+          "Eine Pipeline, die Belege dort abholt, wo sie ankommen – im Mail-Postfach – und daraus ohne Handarbeit eine laufende, korrekte Einnahmenüberschussrechnung macht. Inklusive der unbequemen Fälle: Stornierungen, Rücksendungen, Teilerstattungen.",
+        ],
+      },
+      {
+        heading: "Unser Vorgehen",
+        paragraphs: [
+          "Eingehende E-Mails werden automatisch ausgewertet: Ein Mail-Parser extrahiert die relevanten Buchungsdaten aus den unterschiedlichen Formaten der Plattformen, n8n übernimmt Ingestion und Workflow-Automatisierung.",
+          "Das Datenmodell in Supabase (PostgreSQL) bildet Einnahmen, Ausgaben und Belegzuordnung ab – inklusive Sonderfällen wie Stornierungen und Rücksendungen. Die Parsing- und Zuordnungslogik ist systematisch gegen Edge-Cases geprüft: abweichende Mail-Formate, Teilerstattungen, Doppelbuchungen. Ausgewertet wird alles über ein Next.js-Dashboard mit laufender EÜR-Übersicht.",
+        ],
+      },
+      {
+        heading: "Was wir gebaut haben",
+        bullets: [
+          "Automatisiertes Einlesen von Belegen und Rechnungen per Mail-Parsing (Vinted, AliExpress u. a.)",
+          "Ingestion und Workflow-Automatisierung mit n8n",
+          "Datenmodell in Supabase: Einnahmen, Ausgaben, Belegzuordnung inkl. Stornos und Rücksendungen",
+          "Next.js-Dashboard mit laufender EÜR-Übersicht statt manueller Tabellenpflege",
+          "Systematische Prüfung der Parsing-Logik inkl. Edge-Cases (Teilerstattungen, Doppelbuchungen)",
+          "Technische Dokumentation von Datenmodell und Abläufen",
+        ],
+      },
+      {
+        heading: "Ergebnis",
+        paragraphs: [
+          "Aus verstreuten Belegen wurde eine automatisierte, nachvollziehbare Buchhaltungs-Pipeline: Die EÜR-Übersicht ist jederzeit aktuell, ohne dass jemand Belege sammelt oder Tabellen pflegt – und Sonderfälle wie Teilerstattungen landen korrekt in der Auswertung statt als Fehler in der Steuer.",
+        ],
+      },
+    ],
+    kpis: [
+      { value: "Automatisch", label: "vom Mail-Eingang zur Buchung" },
+      { value: "Live-EÜR", label: "statt manueller Tabellenpflege" },
+      { value: "Edge-Cases", label: "Stornos & Teilerstattungen abgebildet" },
+    ],
+    stack: ["Next.js", "Supabase", "PostgreSQL", "n8n", "Mail-Parsing", "Vercel"],
+  },
+  {
     slug: "baizar",
     title: "Baizar",
     tagline: "SaaS · Gastronomie",
+    kind: "software",
+    teaser: {
+      about:
+        "Interne App, die den Bestell- und Beschaffungsprozess in der Gastronomie digitalisiert – ein zentraler, nachvollziehbarer Ablauf statt Zettel, Zuruf und unübersichtlicher Bestellungen.",
+      task: "Fullstack-Umsetzung mit Next.js und Supabase, iterativ direkt mit den operativen Nutzern entwickelt.",
+      facts: ["Täglich produktiv im Einsatz", "Lieferanten & Artikel strukturiert", "Next.js + Supabase"],
+    },
     lede: "Gastronomie-SaaS-Plattform für die digitale Verwaltung von Speisekarten, Bestellungen und Tischreservierungen – mobil optimiert für den täglichen Gastro-Betrieb.",
     image: "/images/projects/baizar.png",
     imageAlt: "Baizar – Dashboard der Gastronomie-SaaS-Plattform",
@@ -94,6 +296,13 @@ export const caseStudies: CaseStudy[] = [
     slug: "kitchen-display-system",
     title: "Kitchen Display System",
     tagline: "Realtime · Foodtruck",
+    kind: "software",
+    teaser: {
+      about:
+        "Digitales Küchendisplay für einen Foodtruck: Bestellungen laufen in Echtzeit von der Kasse in die Küche – statt Bons auf Papier und Zuruf im Stress.",
+      task: "Konzeption und Umsetzung des Realtime-Systems inklusive Kassen-Anbindung.",
+      facts: ["Echtzeit statt Zettel", "1 Tap pro Status-Update", "In 2 Wochen produktiv"],
+    },
     lede: "Digitales Küchendisplay für einen Foodtruck: Echtzeit-Bestellanzeige, Status-Updates und nahtlose Kommunikation zwischen Kasse und Küche.",
     image: "/images/projects/kds.png",
     imageAlt: "Kitchen Display System – Küchendisplay mit Echtzeit-Bestellungen",
@@ -157,6 +366,13 @@ export const caseStudies: CaseStudy[] = [
     slug: "dokument-generator",
     title: "Dokument-Generator",
     tagline: "Automatisierung · Handwerk",
+    kind: "software",
+    teaser: {
+      about:
+        "Angebote, Lieferscheine und Rechnungen auf Knopfdruck – automatisch aus den Auftragsdaten eines Handwerksbetriebs erzeugt, statt händisch getippt und formatiert.",
+      task: "Anforderungsklärung, PDF-Pipeline und Umsetzung bis zur produktiven Nutzung.",
+      facts: ["1 Klick pro Dokument", "0 Tippfehler durch Berechnung", "Minuten → Sekunden"],
+    },
     lede: "Automatisierte Dokumentenerstellung für eine Schleiferei – individuelle Angebote, Lieferscheine und Rechnungen auf Knopfdruck, direkt aus dem Auftragssystem.",
     image: "/images/projects/dokumente.webp",
     imageAlt: "Dokument-Generator – automatisch erzeugte Angebote und Rechnungen",
@@ -220,6 +436,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "hundesalon",
     title: "Katrins Hundesalon",
     tagline: "Website · Local Business",
+    kind: "website",
     lede: "Conversion-starke Website für einen Hundesalon in Wuppertal – mit Online-Terminanfrage direkt per WhatsApp, Leistungs- und Preisübersicht und einem warmen, handgezeichneten Markenauftritt.",
     image: "/images/projects/hundesalon.jpg",
     imageAlt: "Startseite der Website von Katrins Hundesalon",
@@ -286,6 +503,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "biergarten-varresbeck",
     title: "Biergarten Varresbeck",
     tagline: "Website · Gastronomie",
+    kind: "website",
     lede: "Warme, rustikale One-Page-Website für den Biergarten in einem historischen Bahnhofsgebäude – mit Live-Status „heute geöffnet?“, Veranstaltungskalender, Reservierungsanfrage sowie eigenen Event-, Impressums- und Datenschutz-Unterseiten.",
     image: "/images/projects/biergarten-varresbeck.jpg",
     imageAlt: "Startseite der Website des Biergartens Varresbeck",
@@ -352,6 +570,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "zen",
     title: "ZEN",
     tagline: "Website · E-Commerce",
+    kind: "website",
     lede: "Editorial gedachtes Redesign für ein Schmuck-Label aus Berlin: ein ruhiger, hochwertiger Online-Shop für handgefertigte Choker – mit klarer Produktinszenierung, Schnellkauf und einem Warenkorb, der zum Abschluss führt.",
     image: "/images/projects/zen.jpg",
     imageAlt: "ZEN – Redesign des Online-Shops für handgefertigten Schmuck",
@@ -418,6 +637,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "hs-handwerk-service",
     title: "H&S Handwerk & Service",
     tagline: "Website · Handwerk",
+    kind: "website",
     lede: "One-Page-Website für Heiko Schönherr aus Mülheim an der Ruhr – Handwerker seit 2008, tätig in ganz NRW. Alle Leistungen auf einen Blick, echte Vorher-Nachher-Baustellen und der Anruf immer nur einen Tap entfernt.",
     image: "/images/projects/hs-handwerk-service.jpg",
     imageAlt: "Startseite der Website von H&S Handwerk & Service",

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { SITE_NAME } from "@/lib/constants";
 
 export const alt =
-  "Cofound Labs – Neue Website ab 399 €. Ohne versteckte Gebühren.";
+  "Cofound Labs – Individuelle Software & Apps. In 7 Tagen nutzbar, sonst zahlst du nichts.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function Image() {
               maxWidth: 1000,
             }}
           >
-            {"Neue Website. Ab 399 €. Ohne versteckte Gebühren."}
+            {"Deine Software. Nutzbar in 7 Tagen. Sonst zahlst du nichts."}
           </div>
           <div
             style={{
@@ -57,7 +57,7 @@ export default function Image() {
               color: "#5F594A",
             }}
           >
-            {"Website-Auffrischung zum Festpreis – für lokale Betriebe."}
+            {"Individuelle Software & Apps für Betriebe – Festpreis, Code-Besitz, EU-Hosting."}
           </div>
         </div>
 

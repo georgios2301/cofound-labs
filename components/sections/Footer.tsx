@@ -23,8 +23,8 @@ export default function Footer() {
               <span>Cofound Labs</span>
             </Link>
             <p>
-              Website-Auffrischung zum Festpreis — und individuelle Software,
-              wenn&apos;s mehr sein soll.
+              Individuelle Software &amp; Apps zum Festpreis — und
+              Website-Auffrischung, wenn&apos;s die Website ist.
             </p>
             <div className="socials">
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -35,11 +35,11 @@ export default function Footer() {
 
           <div className="fcol">
             <h4>Navigation</h4>
+            <a href="/#projekte">Projekte</a>
             <a href="/#ablauf">Ablauf</a>
-            <a href="/#preis">Preis</a>
-            <a href="/#referenzen">Referenzen</a>
+            <Link href="/referenzen">Referenzen</Link>
             <Link href="/beispiele">Beispiele</Link>
-            <a href="/#software">Software</a>
+            <a href="/#websites">Websites</a>
             <Link href="/leistungen">Leistungen</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/standort/wuppertal">Standort Wuppertal</Link>

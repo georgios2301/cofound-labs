@@ -1,11 +1,13 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
+import Projekte from "@/components/sections/Projekte";
+import Problem from "@/components/sections/Problem";
+import Loesung from "@/components/sections/Loesung";
 import Ablauf from "@/components/sections/Ablauf";
-import Preis from "@/components/sections/Preis";
-import Referenzen from "@/components/sections/Referenzen";
-import Branchen from "@/components/sections/Branchen";
-import Software from "@/components/sections/Software";
+import Vergleich from "@/components/sections/Vergleich";
 import Team from "@/components/sections/Team";
+import Garantie from "@/components/sections/Garantie";
+import Websites from "@/components/sections/Websites";
 import FAQ from "@/components/sections/FAQ";
 import Kontakt from "@/components/sections/Kontakt";
 import Footer from "@/components/sections/Footer";
@@ -32,12 +34,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Projekte />
+        <Problem />
+        <Loesung />
         <Ablauf />
-        <Preis />
-        <Referenzen />
-        <Branchen />
-        <Software />
+        <Vergleich />
         <Team />
+        <Garantie />
+        <Websites />
         <FAQ />
         <Kontakt />
       </main>

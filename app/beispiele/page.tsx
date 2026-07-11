@@ -110,7 +110,7 @@ export default function BeispielePage() {
               >
                 So eine Seite will ich auch <span className="btn-arrow">→</span>
               </a>
-              <Link className="btn btn-ghost" href="/#referenzen">
+              <Link className="btn btn-ghost" href="/referenzen">
                 Echte Projekte ansehen
               </Link>
             </div>

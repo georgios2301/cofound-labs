@@ -7,7 +7,7 @@
 
 /* =========================================================================
    COFOUND LABS — „Plakat" Redesign (hell, Akzent Orange)
-   Website-Auffrischung für lokale Betriebe · 200 € · 48 Stunden
+   Individuelle Software & Apps · erste nutzbare Version in 7 Tagen
    ========================================================================= */
 :root {
   --bg: #FFFBF2;
@@ -112,13 +112,15 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
 /* =========================================================================
    HERO
    ========================================================================= */
-.hero { padding: 72px 0 0; }
+.hero { padding: 72px 0 96px; }
 .hero .toplbl { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .hero h1 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 9.2vw, 118px); line-height: 1; letter-spacing: .005em; margin-top: 18px; }
 .hero h1 .mark-a { background: var(--accent); padding: 0 14px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .hero .sub { font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--muted); max-width: 620px; margin-top: 26px; font-weight: 500; }
 .hero .sub b { color: var(--ink); }
 .btnrow { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 32px; }
+.trustrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.trust { font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 6px; padding: 6px 12px; background: var(--paper); }
 
 /* ---- Vorher/Nachher-Slider ---- */
 .ba-band { max-width: 1040px; margin: 64px auto 0; border: var(--bw) solid var(--ink); overflow: hidden; }
@@ -296,6 +298,42 @@ h2.title { font-family: var(--font-display); font-weight: 400; text-transform: u
 .ref h3 { font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
 .ref .go { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
 .ref p { font-size: 14.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+/* Projekte-Sektion (Homepage) — Case-Teaser im .ref-Look, ohne Thumb */
+.ref-wide { grid-column: 1 / -1; }
+.ref .body-lg { padding: 26px 28px 28px; }
+.case-lbl { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted-2); margin-top: 16px; }
+.ref .body-lg > p { margin-top: 6px; }
+.ref .stackrow { margin-top: 16px; }
+.ref .stackrow .chip { font-family: var(--font-mono); font-size: 11.5px; padding: 6px 12px; }
+.refs-foot { margin-top: 28px; text-align: center; }
+
+/* =========================================================================
+   PROBLEM — dunkle Sektion (klont die .priceblock-Farbwelt)
+   ========================================================================= */
+.problemblock { background: var(--ink); color: var(--ink-inv); padding: 96px 0 100px; }
+.problemblock .kicker { color: rgba(255,251,242,.55); }
+.problemblock h2.title { color: var(--ink-inv); }
+.problemblock .plead { font-size: 17.5px; color: rgba(255,251,242,.72); margin-top: 16px; max-width: 560px; line-height: 1.55; }
+.problemblock .plead b { color: var(--ink-inv); }
+.pain-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 46px; }
+.pain-grid .pc h3 { font-size: 19px; font-weight: 800; letter-spacing: -.01em; margin-top: 12px; }
+.pain-grid .pc p { font-size: 15px; color: var(--muted); line-height: 1.55; margin-top: 8px; }
+
+/* =========================================================================
+   VERGLEICH — Ohne uns / Mit uns
+   ========================================================================= */
+.vs { display: grid; grid-template-columns: 1fr 1fr; border: var(--bw) solid var(--ink); border-radius: 14px; overflow: hidden; margin-top: 38px; }
+.vs-col { padding: 34px 32px 36px; background: var(--paper); }
+.vs-col.good { background: var(--accent); border-left: var(--bw) solid var(--ink); }
+.vs-col h3 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: 24px; letter-spacing: .01em; color: var(--ink); }
+.vs-col ul { list-style: none; margin-top: 20px; }
+.vs-col li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.55; padding: 9px 0; color: var(--muted); font-weight: 500; }
+.vs-col.good li { color: rgba(22,20,14,.8); }
+.vs-col li .vx { flex-shrink: 0; font-family: var(--font-mono); font-weight: 800; font-size: 14px; margin-top: 1px; }
+.vs-col li .vx.no { color: #c0341d; }
+.vs-col.good li .vx { color: var(--ink); }
+.vs-col.good li b, .vs-col li b { color: var(--ink); }
 
 /* =========================================================================
    SOFTWARE (kompakt)
@@ -517,6 +555,7 @@ a.card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--acce
   .pgrid { grid-template-columns: minmax(0, 1fr); }
   .pc-wide-inner { grid-template-columns: minmax(0, 1fr); }
   .refs { grid-template-columns: 1fr; }
+  .pain-grid { grid-template-columns: minmax(0, 1fr); }
   .kontakt .cols { grid-template-columns: 1fr; gap: 32px; }
   .sw-row { grid-template-columns: 1fr auto; gap: 4px 16px; }
   .sw-row p { grid-column: 1 / -1; }
@@ -531,6 +570,8 @@ a.card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--acce
 @media (max-width: 700px) {
   .steps { grid-template-columns: 1fr; }
   .step + .step { border-left: 0; border-top: var(--bw) solid var(--ink); }
+  .vs { grid-template-columns: 1fr; }
+  .vs-col.good { border-left: 0; border-top: var(--bw) solid var(--ink); }
   .ueber { grid-template-columns: 1fr; padding: 28px; }
   .ueber .photo { width: 100%; max-width: 220px; height: 260px; }
   .ba .ba-handle { width: 64px; height: 64px; font-size: 12px; }

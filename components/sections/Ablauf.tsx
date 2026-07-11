@@ -3,21 +3,21 @@ import Reveal from "@/components/ui/Reveal";
 const STEPS = [
   {
     n: "1",
-    title: "Absprache",
-    text: "Kurzes Gespräch am Telefon oder vor Ort: Was soll bleiben, was soll besser werden? Mehr brauchen wir nicht von dir.",
-    t: "Stunde 0 · kostenlos",
+    title: "Beratung",
+    text: "Kostenloses Erstgespräch: Wir verstehen deinen Ablauf, klären die Machbarkeit und legen fest, was die erste Version können muss. Danach bekommst du ein Konzept und einen Festpreis.",
+    t: "Tag 0 · kostenlos",
   },
   {
     n: "2",
-    title: "Entwurf",
-    text: "Du bekommst einen fertigen Entwurf — als echte Seite zum Durchklicken auf deinem Handy. Kein PDF, keine Skizze.",
-    t: "nach ~24 h",
+    title: "Umsetzung",
+    text: "Wir bauen die erste nutzbare Version — echte Software, die deinen Kern-Ablauf erledigt. Du testest sie im Alltag, nicht auf Folien. Nicht zufrieden? Dann zahlst du nichts.",
+    t: "Tag 7 · nutzbar",
   },
   {
     n: "3",
-    title: "Live gehen",
-    text: "Ein Wort von dir, und deine neue Website ist online — auf deiner gewohnten Adresse, ohne Ausfallzeit.",
-    t: "nach 48 h",
+    title: "Weiterentwicklung",
+    text: "Aus der echten Nutzung lernen und gezielt ausbauen: neue Funktionen, Betreuung, Hosting und Betrieb — so lange und so weit, wie du willst.",
+    t: "laufend",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function Ablauf() {
       <div className="wrap">
         <Reveal className="section-lead">
           <p className="kicker">// So läuft&apos;s ab</p>
-          <h2 className="title">Drei Schritte. Fertig.</h2>
+          <h2 className="title">Drei Phasen. Ein Produkt.</h2>
         </Reveal>
         <Reveal>
           <div className="steps">
