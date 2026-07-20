@@ -183,6 +183,15 @@ section{padding:88px 0}
 .zeiten td{padding:7px 0;border-bottom:1px dashed rgba(125,132,113,.35)}
 .zeiten td:last-child{text-align:right;font-weight:800;color:var(--gruen)}
 .hinweis{background:var(--sand);border-radius:var(--radius-s);padding:14px 18px;font-size:.87rem;font-weight:600;margin-top:20px;display:flex;gap:10px;align-items:flex-start}
+
+/* Anfahrt */
+.anfahrt{border-top:var(--border)}
+.anfahrt-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.map-wrap{border-radius:var(--radius);overflow:hidden;border:var(--border);background:var(--sand)}
+.map-wrap iframe{width:100%;height:400px;border:0;display:block}
+.map-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:16px}
+.map-osm{font-size:.85rem;font-weight:700;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.map-osm:hover{color:var(--terra)}
 .hinweis .icon{color:var(--terra);margin-top:2px}
 .form-card{background:var(--creme);border:var(--border);border-radius:var(--radius);padding:34px}
 .form-card h3{font-size:1.25rem;margin-bottom:20px}
@@ -223,6 +232,8 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
 /* Responsive */
 @media (max-width:960px){
   .hero .container,.about .container,.salon .container,.kontakt .container{grid-template-columns:1fr;gap:40px}
+  .anfahrt-grid{grid-template-columns:1fr;gap:40px}
+  .map-wrap iframe{height:320px}
   .cards,.price-grid{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr 1fr}
@@ -270,6 +281,8 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5S3.5 15 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 5.8-8.5 11.3-8.5 11.3z"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 7.8v.4"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16.5v2M19 16.5v2"/><path d="M4.5 11 6 6.5c.3-.9 1-1.5 2-1.5h8c1 0 1.7.6 2 1.5L19.5 11"/><rect x="3.5" y="11" width="17" height="5.5" rx="1.8"/><path d="M6.5 13.8h.4M17.1 13.8h.4"/></symbol>
+    <symbol id="i-train" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="13.5" rx="3"/><path d="M5.5 10.5h13"/><path d="M9.3 14h.4M14.3 14h.4"/><path d="m8 20.5 1.5-3.5M16 20.5l-1.5-3.5"/></symbol>
   </defs>
 </svg>
 
@@ -287,6 +300,7 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
         <li><a href="#ablauf">Ablauf</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#anfahrt">Anfahrt</a></li>
       </ul>
     </nav>
     <div class="header-cta">
@@ -519,6 +533,43 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
       <button class="btn btn-primary" type="submit"><svg class="icon"><use href="#i-mail"/></svg>Anfrage senden</button>
       <p class="form-note">Öffnet Ihr E-Mail-Programm – oder rufen Sie uns einfach direkt an.</p>
     </form>
+  </div>
+</section>
+
+<!-- ANFAHRT -->
+<section class="anfahrt reveal" id="anfahrt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">So finden Sie uns</span>
+      <h2>Anfahrt</h2>
+      <p>Sie finden uns in Wuppertal-Varresbeck, direkt am Großmarkt – gut erreichbar mit Auto und Schwebebahn.</p>
+    </div>
+    <div class="anfahrt-grid">
+      <div>
+        <div class="map-wrap">
+          <iframe title="Karte: Hundepension Zu Fuchswinkel, Benrather Str. 45a, 42115 Wuppertal" src="https://www.openstreetmap.org/export/embed.html?bbox=7.0877%2C51.2475%2C7.1077%2C51.2575&amp;layer=mapnik&amp;marker=51.25246%2C7.09771" loading="lazy"></iframe>
+        </div>
+        <div class="map-links">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Benrather%20Str.%2045a%2C%2042115%20Wuppertal" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Route planen</a>
+          <a class="map-osm" href="https://www.openstreetmap.org/?mlat=51.25246&amp;mlon=7.09771#map=16/51.25246/7.09771" target="_blank" rel="noopener">Größere Karte anzeigen</a>
+        </div>
+      </div>
+      <div>
+        <div class="k-item">
+          <div class="k-icon"><svg class="icon"><use href="#i-pin"/></svg></div>
+          <div><h3>Adresse</h3><p>Benrather Str. 45a · 42115 Wuppertal<br>Varresbeck, direkt am Großmarkt</p></div>
+        </div>
+        <div class="k-item">
+          <div class="k-icon"><svg class="icon"><use href="#i-car"/></svg></div>
+          <div><h3>Mit dem Auto</h3><p>Über die A46, Ausfahrt Wuppertal-Varresbeck, dann Richtung Großmarkt. Zum Bringen und Abholen können Sie direkt bei uns vorfahren.</p></div>
+        </div>
+        <div class="k-item">
+          <div class="k-icon"><svg class="icon"><use href="#i-train"/></svg></div>
+          <div><h3>Mit Bus &amp; Schwebebahn</h3><p>Die Schwebebahn-Station Varresbeck liegt in der Nähe – von dort sind es nur wenige Minuten zu Fuß in Richtung Großmarkt.</p></div>
+        </div>
+        <div class="hinweis"><svg class="icon"><use href="#i-info"/></svg><span>Bitte beachten Sie unsere Bring- &amp; Abholzeiten (siehe Kontakt) – so bleibt der Tagesablauf für alle Pensionsgäste entspannt.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
