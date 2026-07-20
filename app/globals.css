@@ -614,6 +614,24 @@ a.card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--acce
 .cookie-settings-fab:hover { background: var(--accent); }
 
 /* =========================================================================
+   ZUGANG (Passwort-Gate für Entwürfe)
+   ========================================================================= */
+.zugang { min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 24px; background: var(--bg); }
+.zugang-card { width: 100%; max-width: 440px; background: var(--paper); border: 1.5px solid var(--ink); border-radius: var(--r-xl); padding: 40px 36px; box-shadow: 6px 6px 0 var(--accent), 6px 6px 0 1.5px var(--ink); }
+.zugang-logo { display: inline-block; margin-bottom: 28px; }
+.zugang-logo img { display: block; height: 34px; width: auto; }
+.zugang-card h1 { font-size: clamp(30px, 5vw, 40px); line-height: 1; margin-bottom: 12px; }
+.zugang-sub { color: var(--muted); font-size: 15.5px; line-height: 1.55; margin-bottom: 24px; }
+.zugang .contact-form .btn-primary { width: 100%; margin-top: 18px; }
+.zugang .contact-form .form-error { margin-top: 10px; }
+.zugang-note { margin-top: 22px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: center; }
+.zugang-note a { text-decoration: underline; text-underline-offset: 3px; }
+.zugang-note a:hover { color: var(--ink); }
+@media (max-width: 480px) {
+  .zugang-card { padding: 30px 22px; }
+}
+
+/* =========================================================================
    SCROLLBAR
    ========================================================================= */
 ::-webkit-scrollbar { width: 10px; }

@@ -1,24 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
+import { DRAFT_PASSWORD, DRAFT_COOKIE } from "@/lib/draft-auth";
 
 // Passwortschutz für unveröffentlichte Entwürfe unter /entwuerfe/*.
-// Passwort per Vercel-Env DRAFT_PASSWORD überschreibbar; Benutzername egal.
-const DRAFT_PASSWORD = process.env.DRAFT_PASSWORD ?? "fuchswinkel";
-
+// Ohne gültiges Cookie geht es zur Passwort-Seite /zugang (eigenes Formular
+// im Cofound-Stil); das Cookie setzt /api/zugang nach korrekter Eingabe.
 export function proxy(request: NextRequest) {
-  const auth = request.headers.get("authorization");
-  if (auth?.startsWith("Basic ")) {
-    const decoded = atob(auth.slice(6));
-    const password = decoded.slice(decoded.indexOf(":") + 1);
-    if (password === DRAFT_PASSWORD) {
-      return NextResponse.next();
-    }
+  if (request.cookies.get(DRAFT_COOKIE)?.value === DRAFT_PASSWORD) {
+    return NextResponse.next();
   }
-  return new NextResponse("Zugang nur mit Passwort.", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate": 'Basic realm="Entwurf", charset="UTF-8"',
-    },
-  });
+  const login = new URL("/zugang", request.url);
+  login.searchParams.set("from", request.nextUrl.pathname);
+  return NextResponse.redirect(login);
 }
 
 export const config = {
