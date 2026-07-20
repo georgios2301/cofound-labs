@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
         source: "/case-studies/:slug",
         destination: "/case-studies/:slug/index.html",
       },
+      // Entwürfe: unveröffentlichte Akquise-Drafts, nur per Direktlink
+      // erreichbar (noindex, nicht in Sitemap, nirgends verlinkt).
+      {
+        source: "/entwuerfe/hundepension-fuchswinkel",
+        destination: "/entwuerfe/hundepension-fuchswinkel/index.html",
+      },
     ];
   },
 };

@@ -7,7 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // Statische Demo-Seiten der Case Studies nicht indexieren (Duplicate Content).
-      disallow: "/case-studies/",
+      // Entwürfe: unveröffentlichte Akquise-Drafts, nur per Direktlink.
+      disallow: ["/case-studies/", "/entwuerfe/"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
