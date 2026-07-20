@@ -73,8 +73,8 @@ section{padding:88px 0}
 .brand-name small{display:block;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--salbei)}
 .main-nav{margin-left:auto}
 .main-nav ul{display:flex;gap:26px;list-style:none}
-.main-nav a{text-decoration:none;font-weight:700;font-size:.92rem;color:var(--text);opacity:.85;transition:.2s}
-.main-nav a:hover{color:var(--terra);opacity:1}
+.main-nav ul a{text-decoration:none;font-weight:700;font-size:.92rem;color:var(--text);opacity:.85;transition:.2s}
+.main-nav ul a:hover{color:var(--terra);opacity:1}
 .header-cta{display:flex;align-items:center;gap:16px}
 .header-phone{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;color:var(--gruen);font-size:.95rem;white-space:nowrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.95rem;transition:.2s;border:none;cursor:pointer;font-family:inherit;white-space:nowrap}
@@ -82,8 +82,14 @@ section{padding:88px 0}
 .btn-primary:hover{background:var(--terra-dark)}
 .btn-outline{border:2px solid var(--gruen);color:var(--gruen)}
 .btn-outline:hover{background:var(--gruen);color:var(--creme)}
-.nav-toggle{display:none;margin-left:auto;background:none;border:none;color:var(--gruen);cursor:pointer}
-.nav-toggle svg{width:28px;height:28px}
+.nav-toggle{display:none;margin-left:auto;background:none;border:none;cursor:pointer;width:44px;height:44px;padding:10px}
+.nav-toggle span{display:block;width:24px;height:2.5px;margin:0 auto;background:var(--gruen);border-radius:2px;transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .25s ease,background .3s ease}
+.nav-toggle span+span{margin-top:5.5px}
+.nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:scaleX(.3)}
+.nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+body.nav-open .nav-toggle span{background:var(--creme)}
+.nav-extra{display:none}
 
 /* Hero */
 .hero{padding:72px 0 88px}
@@ -227,14 +233,42 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .card:hover{transform:none}
+  .main-nav,.main-nav li,.nav-extra,.nav-toggle span{transition:none!important}
 }
 
 /* Responsive */
 @media (max-width:1100px){
-  .main-nav,.header-cta{display:none}
-  .nav-toggle{display:block}
-  .main-nav.open{display:block;position:absolute;top:74px;left:0;right:0;background:var(--weiss);border-bottom:var(--border);padding:20px 24px}
-  .main-nav.open ul{flex-direction:column;gap:16px}
+  .header-cta{display:none}
+  .nav-toggle{display:block;position:relative;z-index:220}
+  body.nav-open{overflow:hidden}
+  body.nav-open .site-header{z-index:210;background:transparent;border-bottom-color:transparent;backdrop-filter:none}
+  body.nav-open .brand{position:relative;z-index:220}
+  body.nav-open .brand-name{color:var(--creme)}
+  body.nav-open .brand-name small{color:var(--sand)}
+  body.nav-open .brand-mark{background:var(--sand);color:var(--gruen)}
+  .main-nav{position:fixed;inset:0;z-index:200;margin-left:0;background:linear-gradient(170deg,var(--gruen) 0%,var(--tanne) 100%);display:flex;flex-direction:column;justify-content:center;padding:100px 30px 42px;
+    opacity:0;visibility:hidden;clip-path:circle(0 at calc(100% - 42px) 37px);
+    transition:clip-path .6s cubic-bezier(.66,0,.26,1),opacity .45s ease,visibility 0s .6s}
+  .main-nav.open{opacity:1;visibility:visible;clip-path:circle(150% at calc(100% - 42px) 37px);transition:clip-path .6s cubic-bezier(.66,0,.26,1),opacity .3s ease,visibility 0s}
+  .main-nav ul{flex-direction:column;gap:0;counter-reset:navi;max-width:420px;width:100%;margin:0 auto}
+  .main-nav li{counter-increment:navi;opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+  .main-nav.open li{opacity:1;transform:none}
+  .main-nav.open li:nth-child(1){transition-delay:.15s}
+  .main-nav.open li:nth-child(2){transition-delay:.21s}
+  .main-nav.open li:nth-child(3){transition-delay:.27s}
+  .main-nav.open li:nth-child(4){transition-delay:.33s}
+  .main-nav.open li:nth-child(5){transition-delay:.39s}
+  .main-nav.open li:nth-child(6){transition-delay:.45s}
+  .main-nav.open li:nth-child(7){transition-delay:.51s}
+  .main-nav ul a{display:flex;align-items:baseline;gap:16px;font-family:'Fraunces',serif;font-size:clamp(1.5rem,6.2vh,1.95rem);font-weight:600;color:var(--creme);opacity:1;padding:13px 4px;border-bottom:1px solid rgba(246,241,231,.14)}
+  .main-nav li:last-child a{border-bottom:none}
+  .main-nav ul a::before{content:counter(navi,decimal-leading-zero);font-family:'Nunito Sans',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;color:var(--sand);opacity:.75}
+  .main-nav ul a:hover,.main-nav ul a:active{color:var(--sand)}
+  .nav-extra{display:flex;flex-direction:column;gap:14px;max-width:420px;width:100%;margin:36px auto 0;opacity:0;transform:translateY(20px);transition:opacity .4s ease .57s,transform .4s ease .57s}
+  .main-nav.open .nav-extra{opacity:1;transform:none}
+  .nav-extra .btn{justify-content:center}
+  .nav-extra-phone{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:var(--creme);font-weight:800;font-size:1rem;text-decoration:none;padding:6px}
+  .nav-extra-phone:hover{color:var(--sand)}
 }
 @media (max-width:960px){
   .hero .container,.about .container,.salon .container,.kontakt .container{grid-template-columns:1fr;gap:40px}
@@ -304,6 +338,10 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
         <li><a href="#kontakt">Kontakt</a></li>
         <li><a href="#anfahrt">Anfahrt</a></li>
       </ul>
+      <div class="nav-extra">
+        <a class="btn btn-primary" href="#kontakt">Jetzt anfragen</a>
+        <a class="nav-extra-phone" href="tel:+492028700112"><svg class="icon"><use href="#i-phone"/></svg>(0202) 87 00 112</a>
+      </div>
     </nav>
     <div class="header-cta">
       <a class="header-phone" href="tel:+492028700112">
@@ -311,7 +349,7 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
       </a>
       <a class="btn btn-primary" href="#kontakt">Jetzt anfragen</a>
     </div>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleNav()"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleNav()"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -615,14 +653,23 @@ input:focus,textarea:focus{outline:2px solid var(--terra);border-color:transpare
 <a class="mobile-call" href="tel:+492028700112"><span><svg class="icon"><use href="#i-phone"/></svg>Anrufen: (0202) 87 00 112</span></a>
 
 <script>
-function toggleNav(){
+function setNav(open){
   var nav=document.getElementById('mainNav');
   var btn=document.querySelector('.nav-toggle');
-  var open=nav.classList.toggle('open');
+  nav.classList.toggle('open',open);
+  btn.classList.toggle('open',open);
+  document.body.classList.toggle('nav-open',open);
   btn.setAttribute('aria-expanded',open);
+  btn.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+}
+function toggleNav(){
+  setNav(!document.getElementById('mainNav').classList.contains('open'));
 }
 document.querySelectorAll('#mainNav a').forEach(function(a){
-  a.addEventListener('click',function(){document.getElementById('mainNav').classList.remove('open');});
+  a.addEventListener('click',function(){setNav(false);});
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')setNav(false);
 });
 function sendAnfrage(e){
   e.preventDefault();
