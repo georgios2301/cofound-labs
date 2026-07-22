@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         source: "/entwuerfe/hundepension-fuchswinkel",
         destination: "/entwuerfe/hundepension-fuchswinkel/index.html",
       },
+      {
+        source: "/entwuerfe/oktoberfest-santa-ponsa",
+        destination: "/entwuerfe/oktoberfest-santa-ponsa/index.html",
+      },
     ];
   },
 };
