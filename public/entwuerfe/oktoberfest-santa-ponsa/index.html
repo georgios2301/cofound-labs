@@ -266,10 +266,28 @@
   .band-karte {
     background: var(--blau-dunkel);
     border-radius: 14px;
-    padding: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
+  .band-foto {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    background: #1c2f5e;
+  }
+  .band-karte-text { padding: 1.4rem 1.5rem 1.6rem; }
   .band-karte h3 { font-size: 1.15rem; margin-bottom: .5rem; color: #f0c96c; }
   .band-karte p { font-size: .95rem; color: #dbe4f7; }
+  .band-karte .band-tag {
+    display: inline-block;
+    font-size: .78rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #a9bde8;
+    margin-bottom: .6rem;
+  }
 
   /* Highlights */
   .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
@@ -423,10 +441,38 @@
     <p class="lead">Genau: nur ein sehr großes Abendessen mit Bier. Und das wäre natürlich viel zu schade.</p>
     <p>Deshalb erwartet euch auch 2026 wieder ein starkes Musikprogramm mit Bands, Künstlern und Entertainern, die für Stimmung sorgen. Mit dabei sind unter anderem:</p>
     <div class="bands">
-      <div class="band-karte"><h3>ZWIRN</h3><p>Mehr Infos folgen in Kürze.</p></div>
-      <div class="band-karte"><h3>Happy Bavarians</h3><p>Mehr Infos folgen in Kürze.</p></div>
-      <div class="band-karte"><h3>Lola</h3><p>Mehr Infos folgen in Kürze.</p></div>
-      <div class="band-karte"><h3>Mia Weber</h3><p>Mehr Infos folgen in Kürze.</p></div>
+      <div class="band-karte">
+        <img class="band-foto" src="https://www.zwirn.band/wp-content/uploads/2025/02/Zwirn-am-Berg-1024x576.webp" alt="Partyband ZWIRN" loading="lazy" referrerpolicy="no-referrer">
+        <div class="band-karte-text">
+          <span class="band-tag">Partyband · Österreich</span>
+          <h3>ZWIRN</h3>
+          <p>Österreichische Party- und Après-Ski-Band aus dem Mühlviertel. Mit über 3.500 Auftritten und Hits wie „Hoiwa7i" zählen sie zu den stimmungsstärksten Live-Acts der Alpenparty-Szene – und sind auf Oktoberfesten von Wien bis Mallorca zu Hause.</p>
+        </div>
+      </div>
+      <div class="band-karte">
+        <img class="band-foto" src="https://happy-bavarians.de/images/Oktoberfestband.jpg" alt="Oktoberfestband Happy Bavarians" loading="lazy" referrerpolicy="no-referrer">
+        <div class="band-karte-text">
+          <span class="band-tag">Oktoberfestband · München</span>
+          <h3>Happy Bavarians</h3>
+          <p>Bayerische Showband aus dem Raum München, bekannt aus Radio und TV. Sie bringen echtes Wiesn-Feeling auf die Bühne – zünftige Blasmusik, Alphorn, Schuhplattler und Party quer durch den Abend, von gemütlich bis ausgelassen.</p>
+        </div>
+      </div>
+      <div class="band-karte">
+        <img class="band-foto" src="https://static.wixstatic.com/media/5c0814_60aaff9cff2f4f3b9296a1ecd3f542e3~mv2.png/v1/fit/w_1200,h_640,al_c/5c0814_60aaff9cff2f4f3b9296a1ecd3f542e3~mv2.png" alt="Schlagersängerin Mia Weber" loading="lazy" referrerpolicy="no-referrer">
+        <div class="band-karte-text">
+          <span class="band-tag">Party-Schlager · Wahlheimat Mallorca</span>
+          <h3>Mia Weber</h3>
+          <p>Schlagersängerin mit Herz und Ohrwurm-Garantie. Die gebürtige Erfurterin lebt seit Jahren auf Mallorca und steht für tanzbaren Popschlager mit guter Laune und echter Nähe zum Publikum – Party-Stimmung von der Insel für die Wiesn.</p>
+        </div>
+      </div>
+      <div class="band-karte">
+        <div class="band-foto" role="presentation" aria-hidden="true"></div>
+        <div class="band-karte-text">
+          <span class="band-tag">Live-Act</span>
+          <h3>Lola</h3>
+          <p>Party- und Stimmungsmusik für die Festzelt-Bühne. Weitere Infos und Auftrittszeiten folgen in Kürze.</p>
+        </div>
+      </div>
     </div>
     <p style="margin-top:2rem">Weitere Programmpunkte, Auftrittszeiten und besondere Shows werden hier nach und nach veröffentlicht.</p>
   </div>
