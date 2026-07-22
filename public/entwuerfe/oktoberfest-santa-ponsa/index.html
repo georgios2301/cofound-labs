@@ -140,13 +140,33 @@
   .hero {
     position: relative;
     min-height: 100vh;
-    background:
-      linear-gradient(180deg, rgba(250,245,236,0) 55%, var(--creme) 98%),
-      url("/entwuerfe/oktoberfest-santa-ponsa/assets/hero.webp") center top / cover no-repeat;
     display: flex;
     align-items: flex-start;
+    overflow: hidden;
+  }
+  /* Hero-Bild als echtes <img>: wird vom Preload-Scanner sofort geladen,
+     keine Verzögerung über CSSOM/Render-Tree wie bei background-image. */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+  }
+  /* Creme-Verlauf nach unten (vorher Teil des background-Stacks). */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(250,245,236,0) 55%, var(--creme) 98%);
+    z-index: 1;
+    pointer-events: none;
   }
   .hero-inner {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
@@ -386,6 +406,7 @@
 <div class="band" role="presentation"></div>
 
 <section class="hero" id="start" style="padding:0">
+  <img class="hero-bg" src="/entwuerfe/oktoberfest-santa-ponsa/assets/hero.webp" alt="Oktoberfest Santa Ponsa – Brezn, Bier und Festzelt-Stimmung" width="1920" height="1080" fetchpriority="high" decoding="async">
   <div class="hero-inner">
     <span class="hero-datum">23. Oktober – 1. November 2026 · zum 3. Mal</span>
     <h1>O'zapft is <span class="ort">in Santa Ponsa!</span></h1>
