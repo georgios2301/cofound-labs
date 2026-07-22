@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Oktoberfest Santa Ponsa 2026 – 23. Oktober bis 1. November</title>
+<meta name="description" content="O'zapft is in Santa Ponsa! Vom 23. Oktober bis 1. November 2026 – zum 3. Mal auf Mallorca. Live-Musik, bayerische Spezialitäten, Festzelt-Atmosphäre. Jetzt Tisch reservieren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rot: #7a1b14;
+    --rot-dunkel: #5c130e;
+    --blau: #31519b;
+    --blau-dunkel: #24407e;
+    --creme: #faf5ec;
+    --creme-tief: #f1e8d8;
+    --braun: #a85c22;
+    --tinte: #2b2019;
+    --weiss: #ffffff;
+    --gingham:
+      repeating-linear-gradient(0deg, rgba(49,81,155,.85) 0 10px, transparent 10px 20px),
+      repeating-linear-gradient(90deg, rgba(49,81,155,.85) 0 10px, transparent 10px 20px),
+      #fff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: "Karla", sans-serif;
+    color: var(--tinte);
+    background: var(--creme);
+    line-height: 1.65;
+    font-size: 1.0625rem;
+  }
+
+  h1, h2, h3 { font-family: "Alfa Slab One", serif; font-weight: 400; line-height: 1.15; }
+
+  a { color: var(--rot); }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--blau);
+    outline-offset: 3px;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------- Gingham-Band (Signatur) ---------- */
+  .band {
+    height: 14px;
+    background: var(--gingham);
+    background-size: 20px 20px;
+  }
+
+  /* ---------- Navigation ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--rot);
+    color: var(--weiss);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .8rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .nav-logo {
+    font-family: "Alfa Slab One", serif;
+    font-size: 1.05rem;
+    color: var(--weiss);
+    text-decoration: none;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .nav-logo .raute { color: #f0c96c; }
+  nav.links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  nav.links a {
+    color: var(--weiss);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .95rem;
+  }
+  nav.links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .nav-burger {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: .4rem;
+    margin-left: auto;
+  }
+  .nav-burger .linie {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--weiss);
+    margin: 5px 0;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .nav-burger[aria-expanded="true"] .linie:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] .linie:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] .linie:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  @media (max-width: 820px) {
+    .nav-inner { flex-wrap: nowrap; }
+    .nav-burger { display: block; }
+    nav.links {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      flex-basis: 100%;
+      order: 4;
+      padding: .4rem 0 .8rem;
+    }
+    nav.links.open { display: flex; }
+    nav.links a {
+      padding: .85rem .2rem;
+      font-size: 1.05rem;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    nav.links a:last-child { border-bottom: 0; }
+    .nav-inner { flex-wrap: wrap; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(250,245,236,0) 55%, var(--creme) 98%),
+      url("/entwuerfe/oktoberfest-santa-ponsa/assets/hero.jpg") center top / cover no-repeat;
+    display: flex;
+    align-items: flex-start;
+  }
+  .hero-inner {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: max(36vh, 21vw) 1.5rem 4.5rem;
+    text-align: center;
+  }
+  @media (min-width: 821px) {
+    .hero-inner { padding-top: max(29vh, 16.8vw); }
+  }
+  .hero-datum {
+    display: inline-block;
+    background: var(--blau);
+    color: var(--weiss);
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: .85rem;
+    padding: .5rem 1.3rem;
+    border-radius: 999px;
+    margin-bottom: 1.3rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    color: var(--rot);
+    text-shadow: 0 2px 0 rgba(255,255,255,.6);
+  }
+  .hero h1 .ort { display: block; color: var(--blau); font-size: .55em; margin-top: .3rem; }
+  .hero-sub {
+    max-width: 620px;
+    margin: 1.4rem auto 2.2rem;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 500;
+  }
+  .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    padding: .9rem 2rem;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43,32,25,.18); }
+  .btn-rot { background: var(--rot); color: var(--weiss); }
+  .btn-blau-outline { background: var(--weiss); color: var(--blau); box-shadow: inset 0 0 0 2px var(--blau); }
+
+  /* ---------- Sektionen ---------- */
+  section { padding: 4.5rem 0; scroll-margin-top: 110px; }
+  @media (max-width: 820px) {
+    section { scroll-margin-top: 80px; }
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    color: var(--blau);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .8rem;
+    margin-bottom: .8rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 12px; height: 12px;
+    background: var(--blau);
+    transform: rotate(45deg); /* bayerische Raute */
+  }
+  section h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    color: var(--rot);
+    margin-bottom: 1.2rem;
+  }
+  section p + p { margin-top: 1rem; }
+  .lead { font-size: 1.15rem; }
+
+  /* Wann & wo */
+  .fakten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0 1.5rem;
+  }
+  .fakt {
+    background: var(--weiss);
+    border: 2px solid var(--creme-tief);
+    border-radius: 14px;
+    padding: 1.4rem 1.5rem;
+  }
+  .fakt .label {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--blau);
+  }
+  .fakt .wert {
+    font-family: "Alfa Slab One", serif;
+    font-size: 1.25rem;
+    color: var(--tinte);
+    margin-top: .3rem;
+  }
+  .fakt .zusatz { font-size: .9rem; color: #6b5c4e; margin-top: .3rem; }
+
+  /* Musik & Bands */
+  .abschnitt-blau { background: var(--blau); color: var(--weiss); }
+  .abschnitt-blau h2 { color: var(--weiss); }
+  .abschnitt-blau .eyebrow { color: #cdd9f5; }
+  .abschnitt-blau .eyebrow::before { background: #cdd9f5; }
+  .bands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+  .band-karte {
+    background: var(--blau-dunkel);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .band-karte h3 { font-size: 1.15rem; margin-bottom: .5rem; color: #f0c96c; }
+  .band-karte p { font-size: .95rem; color: #dbe4f7; }
+
+  /* Highlights */
+  .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+  .hl {
+    background: var(--weiss);
+    border-radius: 14px;
+    padding: 1.6rem;
+    border-top: 6px solid var(--rot);
+  }
+  .hl:nth-child(even) { border-top-color: var(--blau); }
+  .hl h3 { font-size: 1.1rem; margin-bottom: .6rem; color: var(--rot); }
+  .hl:nth-child(even) h3 { color: var(--blau); }
+  .hl p { font-size: .97rem; }
+
+  /* Speisen */
+  .speisen-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: .8rem;
+    margin-top: 1.8rem;
+    list-style: none;
+  }
+  .speisen-liste li {
+    background: var(--weiss);
+    border: 2px dashed var(--braun);
+    border-radius: 10px;
+    padding: .9rem 1.1rem;
+    font-weight: 700;
+    color: var(--braun);
+    text-align: center;
+  }
+  .hinweis {
+    margin-top: 1.6rem;
+    font-style: italic;
+    color: #6b5c4e;
+  }
+
+  /* Reservieren CTA */
+  .reservieren {
+    background: var(--rot);
+    color: var(--weiss);
+    text-align: center;
+  }
+  .reservieren h2 { color: var(--weiss); }
+  .reservieren .eyebrow { color: #f3cdc9; justify-content: center; }
+  .reservieren .eyebrow::before { background: #f3cdc9; }
+  .reservieren p { max-width: 640px; margin-left: auto; margin-right: auto; }
+  .reservieren .btn { margin-top: 2rem; background: var(--weiss); color: var(--rot); font-size: 1.15rem; }
+
+  /* Zwei-Spalten-Sektionen */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 780px) { .duo { grid-template-columns: 1fr; } }
+
+  /* Kontakt */
+  .kontakt { background: var(--creme-tief); }
+  .kontakt-liste { list-style: none; margin-top: 1.5rem; }
+  .kontakt-liste li {
+    padding: .8rem 0;
+    border-bottom: 1px solid #ded2bd;
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+  }
+  .kontakt-liste .k-label { font-weight: 700; min-width: 175px; }
+
+  footer {
+    background: var(--rot-dunkel);
+    color: #e8cfcb;
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    font-size: .92rem;
+  }
+  footer .prost { font-family: "Alfa Slab One", serif; color: var(--weiss); font-size: 1.15rem; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#start">Oktoberfest <span class="raute">◆</span> Santa Ponsa</a>
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="hauptmenue" aria-label="Menü öffnen">
+      <span class="linie"></span>
+      <span class="linie"></span>
+      <span class="linie"></span>
+    </button>
+    <nav class="links" id="hauptmenue" aria-label="Hauptnavigation">
+      <a href="#wann-wo">Wann &amp; wo</a>
+      <a href="#musik">Musik</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#speisen">Speisen</a>
+      <a href="#gruppen">Gruppen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+<div class="band" role="presentation"></div>
+
+<section class="hero" id="start" style="padding:0">
+  <div class="hero-inner">
+    <span class="hero-datum">23. Oktober – 1. November 2026 · zum 3. Mal</span>
+    <h1>O'zapft is <span class="ort">in Santa Ponsa!</span></h1>
+    <p class="hero-sub">Feiern, lachen, anstoßen und gemeinsam eine richtig gute Zeit erleben – bayerische Stimmung, Live-Musik, gutes Essen und echte Festzelt-Atmosphäre auf Mallorca.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-rot" href="#reservieren">Jetzt Tisch reservieren</a>
+      <a class="btn btn-blau-outline" href="#highlights">Programm entdecken</a>
+    </div>
+  </div>
+</section>
+
+<section id="willkommen">
+  <div class="wrap">
+    <span class="eyebrow">Willkommen</span>
+    <h2>Zum dritten Mal in Santa Ponsa</h2>
+    <p class="lead">Vom 23. Oktober bis 1. November 2026 heißt es wieder: feiern, lachen, anstoßen und gemeinsam eine richtig gute Zeit erleben. Das Oktoberfest Santa Ponsa findet in diesem Jahr bereits zum dritten Mal statt und bringt bayerische Stimmung, Live-Musik, gutes Essen und echte Festzelt-Atmosphäre nach Mallorca.</p>
+    <p>Ob mit Freunden, Familie, Kollegen oder als Urlaubsgast auf der Insel – hier treffen sich Menschen, die Lust auf Musik, gute Laune und ein besonderes Event in Santa Ponsa haben.</p>
+    <p>Freut euch auf ein abwechslungsreiches Programm, tolle Bands, leckere Spezialitäten und viele Highlights rund um das Oktoberfest.</p>
+  </div>
+</section>
+
+<div class="band" role="presentation"></div>
+
+<section id="wann-wo">
+  <div class="wrap">
+    <span class="eyebrow">Wann und wo?</span>
+    <h2>Zehn Tage Festzelt-Stimmung</h2>
+    <div class="fakten">
+      <div class="fakt">
+        <span class="label">Datum</span>
+        <div class="wert">23.10. – 01.11.2026</div>
+        <div class="zusatz">Zehn Tage Oktoberfest</div>
+      </div>
+      <div class="fakt">
+        <span class="label">Ort</span>
+        <div class="wert">Santa Ponsa, Mallorca</div>
+        <div class="zusatz">Genaue Adresse wird in Kürze bekannt gegeben</div>
+      </div>
+      <div class="fakt">
+        <span class="label">Anfahrt</span>
+        <div class="wert">Infos folgen</div>
+        <div class="zusatz">Parkmöglichkeiten &amp; mögliche Shuttle-Services werden rechtzeitig hier veröffentlicht</div>
+      </div>
+    </div>
+    <p>Mitten in Santa Ponsa entsteht wieder ein Treffpunkt für alle, die Oktoberfest-Stimmung auf Mallorca erleben möchten.</p>
+  </div>
+</section>
+
+<section class="abschnitt-blau" id="musik">
+  <div class="wrap">
+    <span class="eyebrow">Musik &amp; Bands</span>
+    <h2>Was wäre ein Oktoberfest ohne Musik?</h2>
+    <p class="lead">Genau: nur ein sehr großes Abendessen mit Bier. Und das wäre natürlich viel zu schade.</p>
+    <p>Deshalb erwartet euch auch 2026 wieder ein starkes Musikprogramm mit Bands, Künstlern und Entertainern, die für Stimmung sorgen. Mit dabei sind unter anderem:</p>
+    <div class="bands">
+      <div class="band-karte"><h3>ZWIRN</h3><p>Mehr Infos folgen in Kürze.</p></div>
+      <div class="band-karte"><h3>Happy Bavarians</h3><p>Mehr Infos folgen in Kürze.</p></div>
+      <div class="band-karte"><h3>Lola</h3><p>Mehr Infos folgen in Kürze.</p></div>
+      <div class="band-karte"><h3>Mia Weber</h3><p>Mehr Infos folgen in Kürze.</p></div>
+    </div>
+    <p style="margin-top:2rem">Weitere Programmpunkte, Auftrittszeiten und besondere Shows werden hier nach und nach veröffentlicht.</p>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="wrap">
+    <span class="eyebrow">Highlights 2026</span>
+    <h2>Nicht nur Musik und gutes Essen</h2>
+    <p class="lead">Auch in diesem Jahr gibt es beim Oktoberfest Santa Ponsa besondere Highlights.</p>
+    <div class="highlights">
+      <div class="hl">
+        <h3>Dirndl-Contest</h3>
+        <p>Wer trägt das schönste Dirndl? Traditionell, charmant und garantiert unterhaltsam. Weitere Informationen zur Teilnahme folgen rechtzeitig.</p>
+      </div>
+      <div class="hl">
+        <h3>FC Germania Mallorca</h3>
+        <p>Auch der erste deutsche Fußballclub auf Mallorca wird Teil des Oktoberfestes sein. Freut euch auf ein besonderes Highlight rund um den Verein.</p>
+      </div>
+      <div class="hl">
+        <h3>Live-Musik &amp; Entertainment</h3>
+        <p>An verschiedenen Tagen sorgen Bands, DJs und Entertainer für die richtige Stimmung: von bayerisch bis Party, von gemütlich bis ausgelassen.</p>
+      </div>
+      <div class="hl">
+        <h3>Weitere Überraschungen</h3>
+        <p>Das Programm wird laufend erweitert. Es lohnt sich also, regelmäßig vorbeizuschauen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band" role="presentation"></div>
+
+<section id="speisen">
+  <div class="wrap">
+    <span class="eyebrow">Speisen &amp; Getränke</span>
+    <h2>Herzhaft, süß und süffig</h2>
+    <p class="lead">Natürlich gehört zu einem Oktoberfest auch das passende Essen. Euch erwarten herzhafte Spezialitäten, Klassiker und passende Getränke für echte Festzeltstimmung.</p>
+    <ul class="speisen-liste">
+      <li>Bayerische Klassiker</li>
+      <li>Herzhafte Spezialitäten</li>
+      <li>Kleine Gerichte &amp; Snacks</li>
+      <li>Süße Leckereien</li>
+      <li>Getränke</li>
+      <li>Bier &amp; Softdrinks</li>
+    </ul>
+    <p class="hinweis">Speisekarte folgt in Kürze – hier veröffentlichen wir bald die komplette Speisekarte.</p>
+  </div>
+</section>
+
+<section class="reservieren" id="reservieren">
+  <div class="wrap">
+    <span class="eyebrow">Tisch reservieren</span>
+    <h2>Sichert euch rechtzeitig euren Platz</h2>
+    <p>Wer sicher dabei sein möchte, sollte sich rechtzeitig einen Tisch sichern. Gerade an den Wochenenden und bei besonderen Programmpunkten kann es schnell voll werden.</p>
+    <p>Über unser Reservierungstool könnt ihr bequem online euren Tisch anfragen oder direkt reservieren. Nach der Reservierung erhaltet ihr weitere Informationen zur Buchung und zum Ablauf.</p>
+    <a class="btn" href="#" aria-disabled="true">Jetzt Tisch reservieren</a>
+    <p style="margin-top:.9rem; font-size:.9rem; opacity:.85">Das Online-Reservierungstool wird in Kürze freigeschaltet.</p>
+  </div>
+</section>
+
+<section id="gruppen">
+  <div class="wrap duo">
+    <div>
+      <span class="eyebrow">Für Gruppen &amp; Unternehmen</span>
+      <h2>Firmenfeiern &amp; besondere Anlässe</h2>
+      <p>Das Oktoberfest Santa Ponsa eignet sich auch perfekt für Gruppen, Firmenfeiern, Vereinsabende oder besondere Anlässe mit Freunden und Familie.</p>
+      <p>Ob kleine Runde oder größere Gruppe – gerne besprechen wir gemeinsam, welche Möglichkeiten es gibt. Für Gruppenanfragen oder besondere Wünsche schreibt uns gerne an.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Künstler, DJs &amp; Entertainer gesucht</span>
+      <h2>„Ja, genau da passe ich hin!"</h2>
+      <p>Für das Oktoberfest Santa Ponsa 2026 suchen wir noch DJs, Entertainer und Künstler. Ob Stimmungsmusik, Party, Moderation, Showeinlage oder etwas ganz Eigenes – wenn ihr Lust habt, Teil unseres Oktoberfests zu werden, dann meldet euch gerne bei uns.</p>
+      <p>Es wird ein Festgehalt bezahlt. Alle weiteren Details besprechen wir persönlich nach Absprache.</p>
+      <p><strong>Bewerbungen bitte an:</strong><br><a href="mailto:marketing@oktoberfest-santa-ponsa.com">marketing@oktoberfest-santa-ponsa.com</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="band" role="presentation"></div>
+
+<section id="partner">
+  <div class="wrap">
+    <span class="eyebrow">Werbepartner &amp; Sponsoren</span>
+    <h2>Werdet Teil dieses besonderen Events</h2>
+    <p class="lead">Das Oktoberfest Santa Ponsa bietet auch in diesem Jahr wieder interessante Möglichkeiten für Werbepartner, Sponsoren und lokale Unternehmen.</p>
+    <p>Ob Sichtbarkeit vor Ort, Platzierung auf der Website, Social-Media-Präsenz oder individuelle Kooperationen – wir freuen uns über Partner, die Teil dieses besonderen Events werden möchten.</p>
+    <p class="hinweis">Weitere Informationen zu Werbemöglichkeiten folgen in Kürze.</p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <span class="eyebrow">Kontakt</span>
+    <h2>Meldet euch gerne bei uns</h2>
+    <p>Du hast Fragen zum Oktoberfest Santa Ponsa, möchtest reservieren, als Künstler dabei sein oder dich als Werbepartner informieren? Dann melde dich gerne bei uns.</p>
+    <ul class="kontakt-liste">
+      <li><span class="k-label">Künstlerbewerbungen</span><a href="mailto:marketing@oktoberfest-santa-ponsa.com">marketing@oktoberfest-santa-ponsa.com</a></li>
+      <li><span class="k-label">Allgemeine Anfragen</span><span>Kontaktadresse folgt in Kürze</span></li>
+      <li><span class="k-label">Adresse</span><span>Veranstaltungsadresse folgt in Kürze</span></li>
+      <li><span class="k-label">Social Media</span><span>Instagram · Facebook · TikTok – Links folgen in Kürze</span></li>
+    </ul>
+    <p style="margin-top:1.8rem"><strong>Wir freuen uns auf euch – und auf zehn Tage Oktoberfest-Stimmung mitten in Santa Ponsa.</strong></p>
+  </div>
+</section>
+
+<div class="band" role="presentation"></div>
+
+<footer>
+  <div class="prost">O'zapft is!</div>
+  <p>Oktoberfest Santa Ponsa 2026 · 23. Oktober bis 1. November · 3. Ausgabe</p>
+</footer>
+
+<script>
+  const burger = document.querySelector(".nav-burger");
+  const menue = document.getElementById("hauptmenue");
+
+  burger.addEventListener("click", () => {
+    const offen = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!offen));
+    burger.setAttribute("aria-label", offen ? "Menü öffnen" : "Menü schließen");
+    menue.classList.toggle("open", !offen);
+  });
+
+  menue.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    e.preventDefault();
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", "Menü öffnen");
+    menue.classList.remove("open");
+    const ziel = document.querySelector(link.getAttribute("href"));
+    const sanft = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(() => {
+      ziel.scrollIntoView({ behavior: sanft ? "smooth" : "auto" });
+      history.pushState(null, "", link.getAttribute("href"));
+    });
+  });
+</script>
+</body>
+</html>
