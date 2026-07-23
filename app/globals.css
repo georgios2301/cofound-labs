@@ -814,6 +814,30 @@ html.lenis body { height: auto; }
 }
 .field-help { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
 
+/* ---- Datei-Upload-Feld ---- */
+.file-drop {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px; border: 2px dashed var(--line-2); border-radius: 10px;
+  background: var(--bg); color: var(--ink); font-weight: 700; font-size: 15px;
+  cursor: pointer; transition: border-color .15s ease, background .15s ease;
+}
+.file-drop:hover { border-color: var(--ink); background: var(--accent-tint); }
+.file-drop.is-busy { opacity: .7; cursor: default; }
+.file-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.file-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border: 1.5px solid var(--ink); border-radius: 8px; background: var(--paper);
+}
+.file-item .file-ic { display: inline-flex; color: var(--accent-ink); }
+.file-item .file-name { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-item .file-size { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.file-item .file-remove {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border: 1.5px solid var(--line-2); border-radius: 6px;
+  background: var(--paper); color: var(--ink); cursor: pointer; flex-shrink: 0;
+}
+.file-item .file-remove:hover { border-color: var(--ink); background: var(--accent-tint); }
+
 .wiz-nav { display: flex; gap: 12px; align-items: center; margin-top: 22px; }
 .wiz-nav .wiz-next { margin-left: auto; }
 .wiz .angaben-form .btn-primary { width: auto; align-self: auto; margin-top: 0; }

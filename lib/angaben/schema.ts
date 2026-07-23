@@ -4,7 +4,7 @@
 // im Dashboard-Modul „Angaben". Neues Kunden-Formular = neuer Eintrag in
 // FORMS unten. Antworten werden als JSON (Feld-Name -> Wert) gespeichert.
 
-export type FieldType = "text" | "email" | "tel" | "url" | "textarea" | "select";
+export type FieldType = "text" | "email" | "tel" | "url" | "textarea" | "select" | "files";
 
 export interface Field {
   name: string; // Schlüssel in den gespeicherten Antworten
@@ -14,6 +14,15 @@ export interface Field {
   help?: string;
   options?: string[]; // nur bei type "select"
   half?: boolean; // im Zwei-Spalten-Raster (kurze Felder)
+  accept?: string; // nur bei type "files": erlaubte Dateitypen (input accept)
+}
+
+// Gespeicherte Datei im Antwort-JSON (bei type "files": Array davon).
+export interface UploadedFile {
+  path: string; // Storage-Pfad im Bucket angaben-uploads
+  name: string; // Original-Dateiname
+  size: number;
+  type: string; // MIME-Type
 }
 
 export interface Step {
@@ -101,6 +110,13 @@ const OKTOBERFEST: AngabenForm = {
           label: "Speisekarte (Gerichte, Getränke, ggf. Preise)",
           type: "textarea",
           placeholder: "z. B.\nHaxe – 18 €\nBrezn – 4 €\nMaß Bier – 11 €\n…",
+        },
+        {
+          name: "speisekarte_dateien",
+          label: "Oder Speisekarte als Foto / PDF hochladen",
+          type: "files",
+          accept: "image/*,application/pdf",
+          help: "Bilder (JPG, PNG) oder PDF – mehrere möglich, max. 20 MB pro Datei.",
         },
         {
           name: "reservierung_art",

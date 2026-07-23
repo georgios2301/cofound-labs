@@ -44,14 +44,40 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid_data" }, { status: 400, headers: NO_STORE });
   }
 
-  // Nur bekannte Felder übernehmen, Strings kappen, leere weglassen.
-  const known = new Set(allFields(form).map((f) => f.name));
-  const clean: Record<string, string> = {};
+  // Feld-Typen zum Validieren heranziehen.
+  const fieldType = new Map(allFields(form).map((f) => [f.name, f.type]));
+  const clean: Record<string, unknown> = {};
+
   for (const [k, v] of Object.entries(answers as Record<string, unknown>)) {
-    if (!known.has(k) || typeof v !== "string") continue;
-    const val = v.trim().slice(0, 5000);
-    if (val) clean[k] = val;
+    const type = fieldType.get(k);
+    if (!type) continue; // unbekanntes Feld überspringen
+
+    if (type === "files") {
+      // Array hochgeladener Dateien: nur valide Einträge (Pfad muss im Slug-
+      // Ordner liegen) übernehmen.
+      if (!Array.isArray(v)) continue;
+      const files = v
+        .filter(
+          (f): f is { path: string; name: string; size: number; type: string } =>
+            !!f &&
+            typeof f === "object" &&
+            typeof (f as { path?: unknown }).path === "string" &&
+            (f as { path: string }).path.startsWith(`${form.slug}/`),
+        )
+        .slice(0, 20)
+        .map((f) => ({
+          path: f.path,
+          name: typeof f.name === "string" ? f.name.slice(0, 200) : "datei",
+          size: typeof f.size === "number" ? f.size : 0,
+          type: typeof f.type === "string" ? f.type.slice(0, 120) : "",
+        }));
+      if (files.length) clean[k] = files;
+    } else if (typeof v === "string") {
+      const val = v.trim().slice(0, 5000);
+      if (val) clean[k] = val;
+    }
   }
+
   if (Object.keys(clean).length === 0) {
     return NextResponse.json({ error: "empty" }, { status: 400, headers: NO_STORE });
   }
