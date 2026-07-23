@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         source: "/entwuerfe/oktoberfest-santa-ponsa",
         destination: "/entwuerfe/oktoberfest-santa-ponsa/index.html",
       },
+      {
+        source: "/entwuerfe/zahnarzt-peters",
+        destination: "/entwuerfe/zahnarzt-peters/index.html",
+      },
     ];
   },
 };

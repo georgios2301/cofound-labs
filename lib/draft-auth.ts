@@ -9,6 +9,7 @@ const PASSWORDS: Record<string, string> = {
   // Bestand: bleibt bei fuchswinkel bzw. altem DRAFT_PASSWORD-Env-Override.
   "hundepension-fuchswinkel": process.env.DRAFT_PASSWORD ?? "fuchswinkel",
   "oktoberfest-santa-ponsa": "diana",
+  "zahnarzt-peters": "peters",
 };
 
 export const DRAFT_COOKIE_PREFIX = "draft_auth_";
