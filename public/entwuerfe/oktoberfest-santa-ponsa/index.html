@@ -176,6 +176,20 @@
   @media (min-width: 821px) {
     .hero-inner { padding-top: max(29vh, 16.8vw); }
   }
+  .hero-deko {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: .2rem;
+    margin-bottom: 1rem;
+  }
+  .hero-deko svg {
+    height: clamp(64px, 11vw, 100px);
+    width: auto;
+    filter: drop-shadow(0 3px 6px rgba(43,32,25,.25));
+  }
+  .hero-deko .deko-krug { transform: rotate(-7deg); }
+  .hero-deko .deko-brezel { transform: rotate(6deg); margin-left: -.3rem; }
   .hero-datum {
     display: inline-block;
     background: var(--blau);
@@ -406,8 +420,48 @@
 <div class="band" role="presentation"></div>
 
 <section class="hero" id="start" style="padding:0">
-  <img class="hero-bg" src="/entwuerfe/oktoberfest-santa-ponsa/assets/hero.webp" alt="Oktoberfest Santa Ponsa – Brezn, Bier und Festzelt-Stimmung" width="1920" height="1080" fetchpriority="high" decoding="async">
+  <img class="hero-bg" src="/entwuerfe/oktoberfest-santa-ponsa/assets/hero.webp" onerror="this.onerror=null;this.src='assets/hero.webp'" alt="Oktoberfest Santa Ponsa – Brezn, Bier und Festzelt-Stimmung" width="1920" height="1080" fetchpriority="high" decoding="async">
   <div class="hero-inner">
+    <div class="hero-deko" aria-hidden="true">
+      <svg class="deko-krug" viewBox="-3 -4 80 94" xmlns="http://www.w3.org/2000/svg">
+        <!-- Henkel -->
+        <path d="M52 34 C 68 32, 70 58, 52 60" fill="none" stroke="#2b2019" stroke-width="7" stroke-linecap="round"/>
+        <path d="M52 34 C 68 32, 70 58, 52 60" fill="none" stroke="#cfe0f7" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Krug-Körper (Glas) -->
+        <rect x="14" y="20" width="42" height="60" rx="7" fill="#f6b731" stroke="#2b2019" stroke-width="4"/>
+        <!-- Glas-Facetten -->
+        <line x1="26" y1="28" x2="26" y2="72" stroke="#ffffff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+        <line x1="36" y1="28" x2="36" y2="72" stroke="#ffffff" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/>
+        <line x1="46" y1="28" x2="46" y2="72" stroke="#ffffff" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+        <!-- Schaumkrone -->
+        <circle cx="20" cy="17" r="9" fill="#ffffff" stroke="#2b2019" stroke-width="4"/>
+        <circle cx="35" cy="12" r="11" fill="#ffffff" stroke="#2b2019" stroke-width="4"/>
+        <circle cx="50" cy="17" r="9" fill="#ffffff" stroke="#2b2019" stroke-width="4"/>
+        <path d="M14 22 h42" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <svg class="deko-brezel" viewBox="-11 -9 126 98" xmlns="http://www.w3.org/2000/svg">
+        <!-- Brezel-Schlingen: pro Arm Outline+Fill, damit Überlappung sichtbar bleibt -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M18 54 C 4 22, 30 6, 52 6 C 74 6, 100 22, 86 54" stroke="#2b2019" stroke-width="19"/>
+          <path d="M18 54 C 4 22, 30 6, 52 6 C 74 6, 100 22, 86 54" stroke="#a85c22" stroke-width="13"/>
+          <path d="M18 54 C 26 38, 50 40, 70 68" stroke="#2b2019" stroke-width="19"/>
+          <path d="M18 54 C 26 38, 50 40, 70 68" stroke="#a85c22" stroke-width="13"/>
+          <path d="M86 54 C 78 38, 54 40, 34 68" stroke="#2b2019" stroke-width="19"/>
+          <path d="M86 54 C 78 38, 54 40, 34 68" stroke="#a85c22" stroke-width="13"/>
+        </g>
+        <!-- Laugen-Glanz -->
+        <path d="M30 18 C 38 13, 48 12, 54 13" fill="none" stroke="#c97b3d" stroke-width="5" stroke-linecap="round"/>
+        <!-- Salz -->
+        <g fill="#fdf6e9">
+          <rect x="34" y="12" width="6" height="3" rx="1.5" transform="rotate(-18 37 13)"/>
+          <rect x="60" y="11" width="6" height="3" rx="1.5" transform="rotate(14 63 12)"/>
+          <rect x="14" y="38" width="6" height="3" rx="1.5" transform="rotate(-30 17 39)"/>
+          <rect x="86" y="36" width="6" height="3" rx="1.5" transform="rotate(24 89 37)"/>
+          <rect x="48" y="50" width="6" height="3" rx="1.5" transform="rotate(-10 51 51)"/>
+          <rect x="66" y="58" width="6" height="3" rx="1.5" transform="rotate(20 69 59)"/>
+        </g>
+      </svg>
+    </div>
     <span class="hero-datum">23. Oktober – 1. November 2026 · zum 3. Mal</span>
     <h1>O'zapft is <span class="ort">in Santa Ponsa!</span></h1>
     <p class="hero-sub">Feiern, lachen, anstoßen und gemeinsam eine richtig gute Zeit erleben – bayerische Stimmung, Live-Musik, gutes Essen und echte Festzelt-Atmosphäre auf Mallorca.</p>

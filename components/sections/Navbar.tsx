@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_LINKS, SITE_NAME, PHONE_E164, PHONE_DISPLAY } from "@/lib/constants";
+import {
+  NAV_LINKS,
+  SITE_NAME,
+  PHONE_E164,
+  PHONE_DISPLAY,
+  ANALYSE_URL,
+  ANALYSE_LABEL,
+} from "@/lib/constants";
 
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
@@ -22,7 +29,16 @@ function Logo({ onClick }: { onClick?: () => void }) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const close = () => setOpen(false);
+
+  // Header-Dock: ab 80px Scroll schrumpft die Bar + wirft Schatten.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Scroll-Lock + Escape, solange das Vollbild-Menü offen ist.
   useEffect(() => {
@@ -39,7 +55,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="nav" aria-label="Hauptnavigation">
+      <nav
+        className={"nav" + (scrolled ? " is-scrolled" : "")}
+        aria-label="Hauptnavigation"
+      >
         <div className="nav-inner">
           <Logo />
 
@@ -52,8 +71,13 @@ export default function Navbar() {
           </div>
 
           <div className="nav-right">
-            <a className="nav-cta" href="/#kontakt">
-              Jetzt anfragen
+            <a
+              className="nav-cta"
+              href={ANALYSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {ANALYSE_LABEL}
             </a>
             <button
               className={"hamburger" + (open ? " open" : "")}
@@ -80,8 +104,14 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="mm-extra">
-          <a className="btn btn-y" href="/#kontakt" onClick={close}>
-            Jetzt anfragen
+          <a
+            className="btn btn-y"
+            href={ANALYSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
+          >
+            {ANALYSE_LABEL}
           </a>
           <a className="mm-phone" href={`tel:${PHONE_E164}`}>
             {PHONE_DISPLAY}

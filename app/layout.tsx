@@ -10,6 +10,8 @@ import {
   EMAIL,
 } from "@/lib/constants";
 import CookieBanner from "@/components/ui/CookieBanner";
+import SmoothScroll from "@/components/ui/SmoothScroll";
+import ScrollTop from "@/components/ui/ScrollTop";
 
 // „Plakat"-Typografie: Anton (Display), Hanken Grotesk (Body), JetBrains Mono (Labels)
 const anton = Anton({
@@ -33,7 +35,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const HOME_TITLE = `Individuelle Software & Apps — in 7 Tagen nutzbar | ${SITE_NAME}`;
+const HOME_TITLE = `Das digitale Betriebssystem für lokale Betriebe | ${SITE_NAME}`;
 
 export const metadata: Metadata = {
   title: {
@@ -58,9 +60,10 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: SITE_DESCRIPTION,
   },
+  // OFFLINE-MODUS: Seite abgeschaltet – nichts indexieren.
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   verification: {
     google: "JFN6j-BG43reeb6-x465OP5_dbQ0s3nEXWIvw8UdDPU",
@@ -152,7 +155,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <SmoothScroll />
         {children}
+        <ScrollTop />
         <CookieBanner />
       </body>
     </html>

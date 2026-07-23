@@ -5,25 +5,41 @@ import {
   cookieNameForSlug,
 } from "@/lib/draft-auth";
 
-// Passwortschutz für unveröffentlichte Entwürfe unter /entwuerfe/<slug>/.
-// Pro Entwurf eigenes Passwort + eigenes Cookie. Ohne gültiges Cookie geht es
-// zur Passwort-Seite /zugang (eigenes Formular im Cofound-Stil); das Cookie
-// setzt /api/zugang nach korrekter Eingabe.
+// OFFLINE-MODUS (Neuausrichtung): Die öffentliche Seite ist abgeschaltet.
+// Nur die Startseite („Bald kommt hier was Großes hin") ist erreichbar; jede
+// andere Seiten-Route wird dorthin zurückgeleitet. Private Entwürfe unter
+// /entwuerfe/<slug> bleiben per Passwort zugänglich (bestehende Logik).
 export function proxy(request: NextRequest) {
-  const slug = slugFromPath(request.nextUrl.pathname);
-  const expected = slug ? passwordForSlug(slug) : undefined;
-  if (
-    slug &&
-    expected &&
-    request.cookies.get(cookieNameForSlug(slug))?.value === expected
-  ) {
+  const { pathname } = request.nextUrl;
+
+  // Entwürfe: Passwortschutz pro Slug (eigenes Cookie). Ohne gültiges Cookie
+  // zur Passwort-Seite /zugang.
+  if (pathname === "/entwuerfe" || pathname.startsWith("/entwuerfe/")) {
+    const slug = slugFromPath(pathname);
+    const expected = slug ? passwordForSlug(slug) : undefined;
+    if (
+      slug &&
+      expected &&
+      request.cookies.get(cookieNameForSlug(slug))?.value === expected
+    ) {
+      return NextResponse.next();
+    }
+    const login = new URL("/zugang", request.url);
+    login.searchParams.set("from", pathname);
+    return NextResponse.redirect(login);
+  }
+
+  // Startseite und die Zugang-Seite (Formular für die Entwürfe) bleiben offen.
+  if (pathname === "/" || pathname === "/zugang") {
     return NextResponse.next();
   }
-  const login = new URL("/zugang", request.url);
-  login.searchParams.set("from", request.nextUrl.pathname);
-  return NextResponse.redirect(login);
+
+  // Alles andere ist offline → zurück zur Startseite.
+  return NextResponse.redirect(new URL("/", request.url));
 }
 
 export const config = {
-  matcher: "/entwuerfe/:path*",
+  // Greift auf allen Seiten-Routen, ausgenommen Next-Interna, API und Dateien
+  // mit Endung (Bilder, sitemap.xml, robots.txt, statische Case-Study-HTMLs).
+  matcher: ["/((?!_next/|api/|.*\\..*).*)"],
 };
