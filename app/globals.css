@@ -726,3 +726,62 @@ html.lenis body { height: auto; }
   .rl-line { padding: 0; margin: 0; }
   .rl-inner { transform: none; animation: none; }
 }
+
+/* =========================================================================
+   Angaben-Formular (Akquise: fehlende Inhalte nachreichen, /angaben/*)
+   ========================================================================= */
+.angaben-page { padding: 40px 0 88px; background: var(--bg); min-height: 100svh; }
+.angaben-wrap { max-width: 760px; }
+.angaben-head { margin-bottom: 32px; }
+.angaben-logo { display: inline-block; margin-bottom: 28px; }
+.angaben-logo img { display: block; height: 34px; width: auto; }
+.angaben-head h1 { font-size: clamp(30px, 6.5vw, 52px); line-height: 1.02; margin: 10px 0 18px; }
+.angaben-sub { color: var(--muted); font-size: 16.5px; line-height: 1.6; max-width: 620px; }
+
+/* Formular-Grundlage erbt .contact-form; hier nur die Gruppen-Struktur. */
+.angaben-form { gap: 22px; max-width: none; }
+.angaben-group {
+  border: var(--bw) solid var(--ink);
+  border-radius: 14px;
+  background: var(--paper);
+  padding: 24px 22px 26px;
+  box-shadow: 4px 4px 0 var(--accent), 4px 4px 0 1.5px var(--ink);
+}
+.angaben-group legend {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  font-family: var(--font-body); font-weight: 800; font-size: 19px;
+  letter-spacing: -.01em; color: var(--ink);
+  padding: 0; margin-bottom: 6px;
+}
+.angaben-group .ag-num {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+  color: var(--ink); background: var(--accent);
+  border: 1.5px solid var(--ink); border-radius: 6px;
+  padding: 3px 8px; line-height: 1;
+}
+.angaben-group--pflicht { box-shadow: 4px 4px 0 var(--ink); border-color: var(--ink); }
+.angaben-group .ag-pflicht {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: #fff; background: #c0341d;
+  border-radius: 5px; padding: 4px 9px; line-height: 1;
+}
+.angaben-group .ag-hint { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 4px 0 8px; }
+.angaben-group .ag-hint a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+.angaben-group .field { margin-top: 16px; }
+.angaben-group legend + .field { margin-top: 8px; }
+
+/* Zwei-Spalten-Raster für kurze Felder (ab Tablet). */
+.angaben-group .ag-grid { display: grid; gap: 16px; margin-top: 4px; }
+@media (min-width: 620px) {
+  .angaben-group .ag-grid { grid-template-columns: 1fr 1fr; }
+  .angaben-group .ag-grid .field { margin-top: 0; }
+}
+
+.angaben-form .btn-primary { align-self: stretch; width: 100%; margin-top: 6px; }
+.angaben-form .form-note { text-align: center; }
+
+@media (max-width: 560px) {
+  .angaben-page { padding: 24px 0 64px; }
+  .angaben-group { padding: 20px 16px 22px; }
+}

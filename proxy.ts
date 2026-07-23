@@ -30,7 +30,9 @@ export function proxy(request: NextRequest) {
   }
 
   // Startseite und die Zugang-Seite (Formular für die Entwürfe) bleiben offen.
-  if (pathname === "/" || pathname === "/zugang") {
+  // Ebenso die (nicht verlinkten) Angaben-Formulare unter /angaben/*, über die
+  // Akquise-Kunden fehlende Inhalte für ihren Entwurf nachreichen.
+  if (pathname === "/" || pathname === "/zugang" || pathname.startsWith("/angaben")) {
     return NextResponse.next();
   }
 
