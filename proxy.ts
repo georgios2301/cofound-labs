@@ -12,6 +12,7 @@ import {
   verifyAdminGate,
 } from "@/lib/admin-gate";
 import { firstAllowedPath, sectionAllowed, sectionForPath } from "@/lib/admin-sections";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "@/lib/supabase/public-config";
 
 // OFFLINE-MODUS (Neuausrichtung): Die öffentliche Seite ist abgeschaltet.
 // Nur die Startseite („Bald kommt hier was Großes hin") ist erreichbar; jede
@@ -65,8 +66,8 @@ async function guardAdmin(request: NextRequest): Promise<NextResponse> {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll: () => request.cookies.getAll(),

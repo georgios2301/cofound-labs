@@ -1,9 +1,10 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { createClient } from "@supabase/supabase-js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./public-config";
 
-const URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const URL = SUPABASE_URL;
+const ANON = SUPABASE_ANON_KEY;
 
 /** An den eingeloggten Admin gebundener Client (respektiert RLS + Session). */
 export async function supabaseServer() {
