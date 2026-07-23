@@ -785,3 +785,39 @@ html.lenis body { height: auto; }
   .angaben-page { padding: 24px 0 64px; }
   .angaben-group { padding: 20px 16px 22px; }
 }
+
+/* ---- Mehrschritt-Wizard (Angaben-Formular mit Autosave) ---- */
+.wiz-steps { display: flex; gap: 8px; margin-bottom: 10px; }
+.wiz-step { flex: 1; min-width: 0; }
+.wiz-bar { height: 5px; border-radius: 9999px; transition: background .2s ease; }
+.wiz-step-label {
+  display: block; margin-top: 6px; font-family: var(--font-mono);
+  font-size: 10px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase;
+  color: var(--muted-2); line-height: 1.2;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.wiz-step-label.is-active { color: var(--ink); }
+.wiz-count { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+.wiz-saved { color: var(--muted-2); }
+@media (max-width: 620px) {
+  .wiz-step-label { display: none; }
+  .wiz-count .wiz-saved { display: block; margin-top: 2px; }
+}
+
+/* Auto-Raster: volle Breite, „half"-Felder teilen sich ab Tablet eine Zeile. */
+.ag-grid--auto { grid-template-columns: 1fr !important; }
+.ag-grid--auto .field { margin-top: 0; }
+@media (min-width: 620px) {
+  .ag-grid--auto { grid-template-columns: 1fr 1fr !important; }
+  .ag-grid--auto .field { grid-column: 1 / -1; }
+  .ag-grid--auto .field--half { grid-column: auto; }
+}
+.field-help { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+.wiz-nav { display: flex; gap: 12px; align-items: center; margin-top: 22px; }
+.wiz-nav .wiz-next { margin-left: auto; }
+.wiz .angaben-form .btn-primary { width: auto; align-self: auto; margin-top: 0; }
+@media (max-width: 480px) {
+  .wiz-nav { flex-direction: column-reverse; align-items: stretch; }
+  .wiz-nav .wiz-next, .wiz-nav .btn-ghost { width: 100%; }
+}

@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import AngabenOktoberfest from "@/components/ui/AngabenOktoberfest";
+import { notFound } from "next/navigation";
+import AngabenWizard from "@/components/ui/AngabenWizard";
+import { getAngabenForm } from "@/lib/angaben/schema";
 
 export const metadata: Metadata = {
   title: "Fehlende Angaben – Oktoberfest Santa Ponsa",
   robots: { index: false, follow: false },
 };
 
-// Nicht öffentlich verlinkte Erhebungsseite: nur per Direktlink für Diana.
-// Sammelt die noch fehlenden Inhalte, damit der Oktoberfest-Entwurf live gehen
-// kann. Der Proxy (proxy.ts) lässt /angaben/* trotz Offline-Modus durch.
+// Nicht öffentlich verlinkte Erhebungsseite: nur per Direktlink für den Kunden.
+// Der Proxy (proxy.ts) lässt /angaben/* trotz Offline-Modus durch. Das Formular
+// speichert den Fortschritt lokal und sendet die Angaben ins Dashboard-Modul.
 export default function AngabenPage() {
+  const form = getAngabenForm("oktoberfest-santa-ponsa");
+  if (!form) notFound();
+
+  const [line1, line2] = form.headline.split("\n");
+
   return (
     <main className="angaben-page">
       <div className="wrap angaben-wrap">
@@ -19,17 +26,20 @@ export default function AngabenPage() {
           <Link href="/" className="angaben-logo">
             <Image src="/logo-full.png" alt="Cofound Labs" width={158} height={48} />
           </Link>
-          <p className="kicker">Oktoberfest Santa Ponsa 2026</p>
-          <h1 className="anton">Diese Angaben fehlen<br />noch für den Livegang</h1>
-          <p className="angaben-sub">
-            Hallo Diana! Deine Website steht schon – es fehlen nur noch ein paar
-            Inhalte, damit wir sie online stellen können. Trag hier ein, was du
-            hast, am Handy oder am PC. Du musst nicht alles auf einmal machen:
-            sende einfach, was gerade da ist, und den Rest später.
-          </p>
+          <p className="kicker">{form.label}</p>
+          <h1 className="anton">
+            {line1}
+            {line2 && (
+              <>
+                <br />
+                {line2}
+              </>
+            )}
+          </h1>
+          <p className="angaben-sub">{form.intro}</p>
         </header>
 
-        <AngabenOktoberfest />
+        <AngabenWizard form={form} />
       </div>
     </main>
   );
