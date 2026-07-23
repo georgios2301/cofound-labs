@@ -38,13 +38,13 @@ export default function ComingSoon() {
       />
       <div style={{ position: "relative", textAlign: "center", maxWidth: 900 }}>
         <Image
-          src="/logo-full.png"
+          src="/logo-mark.png"
           alt={SITE_NAME}
-          width={480}
-          height={130}
+          width={200}
+          height={200}
           priority
           style={{
-            width: "clamp(180px, 34vw, 280px)",
+            width: "clamp(72px, 12vw, 104px)",
             height: "auto",
             margin: "0 auto 34px",
           }}
