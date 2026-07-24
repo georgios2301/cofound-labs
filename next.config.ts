@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
         source: "/entwuerfe/zahnarzt-peters",
         destination: "/entwuerfe/zahnarzt-peters/index.html",
       },
+      {
+        source: "/entwuerfe/kompetenzzentrum-gemeinden",
+        destination: "/entwuerfe/kompetenzzentrum-gemeinden/index.html",
+      },
     ];
   },
 };

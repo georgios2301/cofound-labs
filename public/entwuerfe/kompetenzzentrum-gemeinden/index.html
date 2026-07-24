@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kompetenzzentrum für Städte und Gemeinden – Website-Entwurf</title>
+<meta name="description" content="Entwurf einer Website für ein Kompetenzzentrum für Städte und Gemeinden: Personaleinsätze, Abteilungsführung, Beratung und Revision für die öffentliche Hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --navy:#0A2540;
+  --navy-800:#0F3253;
+  --blau:#006AB3;
+  --blau-dark:#005490;
+  --blau-hell:#E9F2F9;
+  --akzent:#B45309;
+  --papier:#FFFFFF;
+  --grund:#F5F7F9;
+  --linie:#DCE3EA;
+  --linie-soft:#E9EEF3;
+  --text:#12212F;
+  --muted:#5B6874;
+  --creme:#EEF3F7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--text);background:var(--papier);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+h1,h2,h3,h4{font-family:'Archivo',Helvetica,Arial,sans-serif;font-weight:600;line-height:1.08;
+  letter-spacing:-0.022em;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+button,input,textarea,select{font:inherit;color:inherit}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Kapitelnummer / Eyebrow */
+.kapitel{display:flex;align-items:center;gap:14px;font-family:'Archivo',sans-serif;font-size:.72rem;
+  font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.kapitel .num{color:var(--akzent);font-weight:700}
+.kapitel::after{content:"";flex:1;height:1px;background:var(--linie)}
+
+section{padding:104px 0;border-top:1px solid var(--linie)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:56px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.85rem)}
+.sec-head p{color:var(--muted);font-size:1.06rem;max-width:52ch}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;
+  font-family:'Archivo',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.01em;
+  border:1px solid transparent;cursor:pointer;transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease}
+.btn-primary{background:var(--blau);color:#fff}
+.btn-primary:hover{background:var(--navy);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--linie);color:var(--navy);background:transparent}
+.btn-ghost:hover{border-color:var(--navy);background:var(--creme)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:var(--blau-hell)}
+
+/* Topbalken */
+.topbar{background:var(--navy);color:#B9CBDC;font-size:.86rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;height:42px;flex-wrap:wrap}
+.topbar-left{display:flex;gap:26px;align-items:center}
+.topbar-left span{display:inline-flex;align-items:center;gap:8px}
+.topbar-left .dot{width:5px;height:5px;background:var(--akzent);border-radius:50%}
+.topbar a{color:#fff;font-weight:600}
+.topbar a:hover{color:var(--blau-hell)}
+
+/* Kopfzeile */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--linie)}
+.site-header .wrap{display:flex;align-items:center;gap:36px;height:80px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:46px;height:46px;background:var(--blau);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.02em}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text strong{font-family:'Archivo',sans-serif;font-size:1.12rem;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.brand-text small{font-size:.73rem;color:var(--muted);letter-spacing:.055em;text-transform:uppercase}
+.main-nav{margin-left:auto}
+.nav-extra{display:none}
+.main-nav ul{display:flex;align-items:center;gap:30px;list-style:none}
+.main-nav ul a{font-size:.95rem;font-weight:500;color:var(--navy);position:relative;padding:6px 0}
+.main-nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--akzent);transition:right .25s ease}
+.main-nav ul a:hover::after{right:0}
+.header-cta{display:inline-flex}
+.nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--linie);cursor:pointer;
+  width:48px;height:48px;padding:12px}
+.nav-toggle span{display:block;width:22px;height:2px;margin:0 auto;background:var(--navy);
+  transition:transform .35s cubic-bezier(.4,0,.2,1),opacity .25s ease,background .3s ease}
+.nav-toggle span+span{margin-top:5px}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:scaleX(.3)}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+.hero{padding:88px 0 0;border-top:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);gap:64px;align-items:start}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.15rem);letter-spacing:-.03em;margin-bottom:26px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--blau)}
+.hero-lead{font-size:1.19rem;color:var(--muted);max-width:50ch;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-tel{display:inline-flex;align-items:center;gap:9px;font-family:'Archivo',sans-serif;font-weight:600;
+  color:var(--navy);padding:15px 4px}
+.hero-tel:hover{color:var(--blau)}
+
+/* Leistungsindex im Hero */
+.index-card{border:1px solid var(--linie);background:var(--grund)}
+.index-card h3{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;padding:20px 24px;border-bottom:1px solid var(--linie)}
+.index-list{list-style:none}
+.index-list li+li{border-top:1px solid var(--linie-soft)}
+.index-list a{display:flex;align-items:baseline;gap:16px;padding:17px 24px;transition:background .2s ease}
+.index-list a:hover{background:#fff}
+.index-list a:hover .t{color:var(--blau)}
+.index-list .t{transition:color .2s ease}
+.index-list .n{font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;color:var(--akzent);letter-spacing:.08em}
+.index-list .t{font-family:'Archivo',sans-serif;font-size:1.02rem;font-weight:600;color:var(--navy)}
+.index-list .d{display:block;font-size:.88rem;color:var(--muted);font-family:'Source Sans 3',sans-serif;font-weight:400;margin-top:2px}
+.index-list .arrow{margin-left:auto;color:var(--blau);opacity:0;transform:translateX(-6px);transition:opacity .2s ease,transform .2s ease}
+.index-list a:hover .arrow{opacity:1;transform:none}
+
+/* Kennzahlen */
+.kennzahlen{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--linie);margin-top:80px}
+.kennzahlen>div{padding:30px 28px}
+.kennzahlen>div+div{border-left:1px solid var(--linie)}
+.kennzahlen .zahl{font-family:'Archivo',sans-serif;font-size:2.3rem;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.kennzahlen .label{font-size:.92rem;color:var(--muted);margin-top:8px}
+
+/* Ausgangslage */
+.situationen{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--linie)}
+.situation{padding:36px 34px;display:flex;flex-direction:column;gap:12px;position:relative;transition:background .22s ease}
+.situation:nth-child(-n+2){border-bottom:1px solid var(--linie)}
+.situation:nth-child(odd){border-right:1px solid var(--linie)}
+.situation:hover{background:var(--grund)}
+.situation .frage{font-family:'Archivo',sans-serif;font-size:1.16rem;font-weight:600;color:var(--navy);
+  display:flex;gap:14px;align-items:flex-start}
+.situation .frage .icon{width:24px;height:24px;color:var(--blau);margin-top:3px;stroke-width:1.5}
+.situation p{color:var(--muted);font-size:1rem;padding-left:38px}
+.situation .loesung{padding-left:38px;font-size:.92rem;font-weight:600;color:var(--blau);
+  display:inline-flex;align-items:center;gap:8px;font-family:'Archivo',sans-serif}
+.situation .loesung:hover{color:var(--navy)}
+
+/* Leistungssäulen */
+.saeulen{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.saeule{border:1px solid var(--linie);display:flex;flex-direction:column;background:#fff;
+  transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease}
+.saeule:hover{border-color:#BFD2E1;box-shadow:0 18px 44px rgba(10,37,64,.09);transform:translateY(-3px)}
+.saeule-kopf{padding:30px 30px 24px;border-bottom:1px solid var(--linie-soft);display:flex;flex-direction:column;gap:14px}
+.saeule-num{font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--akzent)}
+.saeule-kopf h3{font-size:1.45rem}
+.saeule-kopf p{color:var(--muted);font-size:1rem}
+.saeule-liste{list-style:none;padding:8px 30px 30px;flex:1}
+.saeule-liste li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--linie-soft);font-size:.99rem}
+.saeule-liste li:last-child{border-bottom:none}
+.saeule-liste .icon{width:17px;height:17px;color:var(--blau);margin-top:5px;stroke-width:2.1}
+.saeule-liste strong{font-weight:600;color:var(--navy);display:block}
+.saeule-liste span{color:var(--muted);font-size:.92rem}
+
+/* Revision Split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.split h2{font-size:clamp(1.9rem,3.3vw,2.6rem);margin-bottom:22px}
+.split p+p{margin-top:18px}
+.split p{color:var(--muted)}
+.zitat{border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);padding:24px 0;margin-top:34px}
+.zitat p{font-family:'Archivo',sans-serif;font-size:1.24rem;font-weight:500;color:var(--navy);line-height:1.42;
+  letter-spacing:-.012em;text-wrap:balance}
+.bild-slot{position:relative;background:var(--creme);border:1px solid var(--linie);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:28px}
+.bild-slot .icon{width:34px;height:34px;color:#8AA3B8;stroke-width:1.4}
+.bild-slot span{font-size:.9rem;color:#6E8399;font-weight:500}
+
+/* Platzhalter für Kundendaten (werden vor dem Livegang ersetzt) */
+.ph{display:inline-block;background:var(--creme);border:1px dashed #A5BCCF;color:#57708A;
+  padding:1px 9px;font-size:.92em;font-weight:500;letter-spacing:.01em;white-space:nowrap}
+.ph-lg{padding:4px 14px;font-size:.95em}
+.topbar .ph{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.32);color:#DCE7F0}
+.site-footer .ph{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.26);color:#C6D6E4}
+
+/* Kompetenzzentren */
+.kz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.kz{border:1px solid var(--linie);padding:38px 36px;background:var(--grund);display:flex;flex-direction:column;gap:16px;
+  transition:background .22s ease,border-color .22s ease}
+.kz:hover{background:#fff;border-color:#BFD2E1}
+.kz-tag{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:#fff;border:1px solid var(--linie);
+  padding:6px 12px;font-family:'Archivo',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--akzent)}
+.kz h3{font-size:1.42rem}
+.kz p{color:var(--muted);font-size:1rem}
+.kz ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.kz ul li{display:flex;gap:11px;align-items:flex-start;font-size:.97rem;color:var(--navy)}
+.kz ul .icon{width:16px;height:16px;color:var(--blau);margin-top:5px;stroke-width:2.2}
+
+/* Ablauf */
+.ablauf{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linie)}
+.schritt{padding:32px 30px 34px;border-bottom:1px solid var(--linie);position:relative}
+.schritt+.schritt{border-left:1px solid var(--linie)}
+.schritt .nr{font-family:'Archivo',sans-serif;font-size:2.6rem;font-weight:700;color:var(--linie);line-height:1;
+  letter-spacing:-.04em;transition:color .25s ease}
+.schritt:hover .nr{color:var(--blau)}
+.schritt h3{font-size:1.12rem;margin:16px 0 10px}
+.schritt p{font-size:.96rem;color:var(--muted)}
+
+/* Warum / Band */
+.band{background:var(--navy);color:#DCE7F0;border-top:none}
+.band h2{color:#fff}
+.band .kapitel{color:#93A9BE}
+.band .kapitel::after{background:rgba(255,255,255,.18)}
+.band .sec-head p{color:#B9CBDC}
+.vorteile{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.16)}
+.vorteil{padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+.vorteil+.vorteil{border-left:1px solid rgba(255,255,255,.16)}
+.vorteil .icon{width:26px;height:26px;color:#7FB8E0;stroke-width:1.5}
+.vorteil h3{color:#fff;font-size:1.08rem}
+.vorteil p{font-size:.95rem;color:#B9CBDC}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:56px;align-items:center}
+.person{border:1px solid var(--linie);background:#fff}
+.person .portrait{height:300px;border-bottom:1px solid var(--linie)}
+.person .person-body{padding:26px 28px}
+.person h3{font-size:1.3rem}
+.person .rolle{font-size:.95rem;color:var(--akzent);font-weight:600;margin:6px 0 14px;font-family:'Archivo',sans-serif}
+.person a{color:var(--blau);font-size:.97rem;display:inline-flex;align-items:center;gap:8px}
+.person a:hover{color:var(--navy)}
+
+/* Kontakt */
+.kontakt{background:var(--grund)}
+.kontakt-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.standorte{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--linie);background:#fff;margin-bottom:34px}
+.standort{padding:28px 26px;display:flex;flex-direction:column;gap:8px}
+.standort+.standort{border-left:1px solid var(--linie)}
+.standort .ort{font-family:'Archivo',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--akzent);display:flex;align-items:center;gap:8px}
+.standort .adresse{font-size:1.02rem;color:var(--navy);font-weight:600;line-height:1.45}
+.standort .route{font-size:.9rem;color:var(--blau);display:inline-flex;align-items:center;gap:7px;margin-top:4px}
+.standort .route:hover{color:var(--navy)}
+.kontaktzeile{display:flex;flex-direction:column;gap:4px;margin-bottom:26px}
+.kontaktzeile .tel{font-family:'Archivo',sans-serif;font-size:2.05rem;font-weight:700;color:var(--navy);letter-spacing:-.02em}
+.kontaktzeile .tel:hover{color:var(--blau)}
+.kontaktzeile .mail{color:var(--blau);font-size:1.05rem}
+.kontaktzeile .fax{font-size:.92rem;color:var(--muted)}
+.formular{background:#fff;border:1px solid var(--linie);padding:38px 36px;display:flex;flex-direction:column;gap:16px}
+.formular h3{font-size:1.35rem;margin-bottom:2px}
+.formular>p{font-size:.97rem;color:var(--muted);margin-bottom:8px}
+.feld{display:flex;flex-direction:column;gap:7px}
+.feld label{font-size:.82rem;font-weight:600;color:var(--navy);letter-spacing:.02em}
+.feld input,.feld select,.feld textarea{border:1px solid var(--linie);padding:13px 14px;font-size:1rem;background:#fff;
+  transition:border-color .2s ease,box-shadow .2s ease}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--blau);box-shadow:0 0 0 3px rgba(0,106,179,.12)}
+.feld textarea{resize:vertical;min-height:110px}
+.feld-paar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hinweis{font-size:.84rem;color:var(--muted);line-height:1.5}
+
+/* Fusszeile */
+.site-footer{background:var(--navy);color:#93A9BE;font-size:.92rem;padding:52px 0 30px}
+.footer-top{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,.8fr));gap:48px;
+  padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
+.footer-top h4{color:#fff;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+.footer-top ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-top a:hover{color:#fff}
+.footer-brand strong{font-family:'Archivo',sans-serif;color:#fff;font-size:1.1rem;display:block;margin-bottom:10px}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:.86rem}
+.footer-bottom .links{display:flex;gap:22px}
+
+/* Reveal (JS-Fallback siehe <noscript> im Body) */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@keyframes auf{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .a1{animation:auf .7s cubic-bezier(.2,.7,.3,1) both .05s}
+.hero .a2{animation:auf .7s cubic-bezier(.2,.7,.3,1) both .16s}
+.hero .a3{animation:auf .7s cubic-bezier(.2,.7,.3,1) both .27s}
+.hero .a4{animation:auf .7s cubic-bezier(.2,.7,.3,1) both .38s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero .a1,.hero .a2,.hero .a3,.hero .a4{animation:none}
+  .saeule:hover,.btn-primary:hover{transform:none}
+  .main-nav,.main-nav li,.nav-extra,.nav-toggle span{transition:none!important}
+}
+
+/* Mobile Navigation (Vollbild-Overlay) */
+@media (max-width:1080px){
+  .header-cta{display:none}
+  .nav-toggle{display:block;position:relative;z-index:220}
+  body.nav-open{overflow:hidden}
+  body.nav-open .site-header{z-index:210;background:transparent;border-bottom-color:transparent;backdrop-filter:none}
+  body.nav-open .brand{position:relative;z-index:220}
+  body.nav-open .brand-text strong{color:#fff}
+  body.nav-open .brand-text small{color:#93A9BE}
+  body.nav-open .nav-toggle{border-color:rgba(255,255,255,.3)}
+  body.nav-open .nav-toggle span{background:#fff}
+  .main-nav{position:fixed;inset:0;z-index:200;margin-left:0;
+    background:linear-gradient(165deg,var(--navy) 0%,#071B2E 100%);
+    display:flex;flex-direction:column;justify-content:center;padding:110px 30px 44px;
+    opacity:0;visibility:hidden;clip-path:circle(0 at calc(100% - 44px) 40px);
+    transition:clip-path .6s cubic-bezier(.66,0,.26,1),opacity .45s ease,visibility 0s .6s}
+  .main-nav.open{opacity:1;visibility:visible;clip-path:circle(150% at calc(100% - 44px) 40px);
+    transition:clip-path .6s cubic-bezier(.66,0,.26,1),opacity .3s ease,visibility 0s}
+  .main-nav ul{flex-direction:column;gap:0;counter-reset:navi;max-width:440px;width:100%;margin:0 auto}
+  .main-nav li{counter-increment:navi;opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+  .main-nav.open li{opacity:1;transform:none}
+  .main-nav.open li:nth-child(1){transition-delay:.15s}
+  .main-nav.open li:nth-child(2){transition-delay:.21s}
+  .main-nav.open li:nth-child(3){transition-delay:.27s}
+  .main-nav.open li:nth-child(4){transition-delay:.33s}
+  .main-nav.open li:nth-child(5){transition-delay:.39s}
+  .main-nav.open li:nth-child(6){transition-delay:.45s}
+  .main-nav ul a{display:flex;align-items:baseline;gap:18px;font-family:'Archivo',sans-serif;
+    font-size:clamp(1.45rem,5.6vh,1.9rem);font-weight:600;color:#fff;padding:14px 4px;
+    border-bottom:1px solid rgba(255,255,255,.14)}
+  .main-nav ul a::before{content:counter(navi,decimal-leading-zero);font-family:'Archivo',sans-serif;
+    font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--akzent)}
+  .main-nav ul a::after{display:none}
+  .main-nav li:last-child a{border-bottom:none}
+  .main-nav ul a:hover,.main-nav ul a:active{color:#7FB8E0}
+  .nav-extra{display:flex;flex-direction:column;gap:14px;max-width:440px;width:100%;margin:36px auto 0;
+    opacity:0;transform:translateY(20px);transition:opacity .4s ease .57s,transform .4s ease .57s}
+  .main-nav.open .nav-extra{opacity:1;transform:none}
+  .nav-extra-tel{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#fff;
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:1.05rem;padding:8px}
+  .nav-extra-tel:hover{color:#7FB8E0}
+}
+
+/* Responsive Layout */
+@media (max-width:1080px){
+  .hero-grid,.split,.team-grid,.kontakt-grid{grid-template-columns:1fr;gap:44px}
+  .sec-head{grid-template-columns:1fr;gap:20px;align-items:start}
+  .saeulen{grid-template-columns:1fr}
+  .kennzahlen{grid-template-columns:1fr 1fr}
+  .kennzahlen>div:nth-child(3){border-left:none}
+  .kennzahlen>div:nth-child(-n+2){border-bottom:1px solid var(--linie)}
+  .ablauf{grid-template-columns:1fr 1fr}
+  .schritt:nth-child(3){border-left:none}
+  .vorteile{grid-template-columns:1fr 1fr}
+  .vorteil:nth-child(3){border-left:none}
+  .vorteil:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}
+  .bild-slot{min-height:320px}
+}
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .wrap{padding:0 22px}
+  section{padding:72px 0}
+  .hero{padding-top:60px}
+  .topbar-left span:nth-child(2){display:none}
+  .kennzahlen{grid-template-columns:1fr;margin-top:56px}
+  .kennzahlen>div+div{border-left:none;border-top:1px solid var(--linie)}
+  .kennzahlen>div:nth-child(-n+2){border-bottom:none}
+  .situationen,.kz-grid{grid-template-columns:1fr}
+  .situation:nth-child(odd){border-right:none}
+  .situation+.situation{border-top:1px solid var(--linie)}
+  .situation:nth-child(-n+2){border-bottom:none}
+  .ablauf,.vorteile,.standorte,.feld-paar{grid-template-columns:1fr}
+  .schritt+.schritt{border-left:none}
+  .vorteil+.vorteil{border-left:none;border-top:1px solid rgba(255,255,255,.16)}
+  .standort+.standort{border-left:none;border-top:1px solid var(--linie)}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .formular{padding:30px 24px}
+  .split{gap:36px}
+}
+</style>
+</head>
+<body>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c.6-3.7 3.6-5.6 7.2-5.6s6.6 1.9 7.2 5.6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 7.8 7 9.5 4.1-1.7 7-5.2 7-9.5V6l-7-3Z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8.5 16.5V11M13 16.5V7.5M17.5 16.5v-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.6 6.5 8.4 6 8.4-6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="m20 16-5-5L5 19"/></symbol>
+  <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6.5" rx="7" ry="3"/><path d="M5 6.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/><path d="M5 11.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M6 8h12"/><path d="M6 8 3.5 14h5L6 8ZM18 8l-2.5 6h5L18 8Z"/></symbol>
+</defs></svg>
+
+<!-- Topbalken -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <span><i class="dot"></i>Zwei Standorte</span>
+      <span>Dienstleistungen für die öffentliche Hand seit über 20 Jahren</span>
+    </div>
+    <span class="ph">Telefonnummer</span>
+  </div>
+</div>
+
+<!-- Kopfzeile -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3.5 20h17M5 20V10m4.7 10V10m4.6 10V10M19 20V10M12 3l8 5H4l8-5Z"/></svg></span>
+      <span class="brand-text">
+        <strong>Kompetenzzentrum</strong>
+        <small>für Städte und Gemeinden</small>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#revision">Revision</a></li>
+        <li><a href="#kompetenzzentren">Kompetenzzentren</a></li>
+        <li><a href="#ablauf">Zusammenarbeit</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-extra">
+        <a class="btn btn-light" href="#kontakt">Erstgespräch vereinbaren</a>
+        <span class="nav-extra-tel"><svg class="icon"><use href="#i-phone"/></svg><span class="ph">Telefonnummer</span></span>
+      </div>
+    </nav>
+    <a class="btn btn-primary header-cta" href="#kontakt">Erstgespräch vereinbaren</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kapitel a1"><span class="num">seit über 20 Jahren</span> Kompetenzzentrum für Städte und Gemeinden</div>
+          <h1 class="a1">Ihre Verwaltung läuft weiter.<br><em>Auch wenn jemand fehlt.</em></h1>
+          <p class="hero-lead a2">Wir übernehmen Personaleinsätze, führen Abteilungen, beraten in Finanz- und
+            Organisationsfragen und prüfen als Revisionsstelle. Für Kantone, Städte, Gemeinden und Institutionen
+            der öffentlichen Hand.</p>
+          <div class="hero-actions a3">
+            <a class="btn btn-primary" href="#kontakt">Unverbindliches Erstgespräch</a>
+            <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+            <span class="hero-tel"><svg class="icon"><use href="#i-phone"/></svg><span class="ph ph-lg">Telefonnummer</span></span>
+          </div>
+        </div>
+        <div class="index-card a4">
+          <h3>Leistungsübersicht</h3>
+          <ul class="index-list">
+            <li><a href="#leistungen"><span class="n">01</span><span><span class="t">Personaleinsätze</span><span class="d">Temporär oder langfristig, lückenlose Überbrückung</span></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="#leistungen"><span class="n">02</span><span><span class="t">Führung von Abteilungen</span><span class="d">Im Auftragsverhältnis, mit voller Verantwortung</span></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="#leistungen"><span class="n">03</span><span><span class="t">Beratung</span><span class="d">Finanzen, Planung und Organisation</span></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="#revision"><span class="n">04</span><span><span class="t">Revision</span><span class="d">Jahres- und Spezialprüfungen für die Finanzkommission</span></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a></li>
+            <li><a href="#kompetenzzentren"><span class="n">05</span><span><span class="t">Kompetenzzentren</span><span class="d">Erbschaftssteuern und Verlustscheine</span></span><svg class="icon arrow"><use href="#i-arrow"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kennzahlen reveal">
+        <div><div class="zahl">20+</div><div class="label">Jahre im Einsatz für die öffentliche Hand</div></div>
+        <div><div class="zahl">40+</div><div class="label">Kunden, viele davon seit Jahren</div></div>
+        <div><div class="zahl">2</div><div class="label">Standorte, regional verankert</div></div>
+        <div><div class="zahl">5</div><div class="label">Leistungsfelder aus einer Hand</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ausgangslage -->
+  <section id="ausgangslage">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Ausgangslage</div>
+          <h2>Wann Gemeinden uns anrufen</h2>
+        </div>
+        <p>Meist geht es um eine Lücke, die kurzfristig entsteht, oder um eine Aufgabe, für die im Haus die
+          Zeit oder das Spezialwissen fehlt. Für beides gibt es bei uns eine klare Antwort.</p>
+      </div>
+
+      <div class="situationen reveal">
+        <div class="situation">
+          <div class="frage"><svg class="icon"><use href="#i-swap"/></svg>Eine Stelle ist plötzlich vakant.</div>
+          <p>Stellenwechsel, Krankheit, Mutterschaftsurlaub oder Militärdienst: die Arbeit bleibt trotzdem liegen.
+            Unsere qualifizierten Sachbearbeiterinnen und Sachbearbeiter überbrücken lückenlos.</p>
+          <a class="loesung" href="#leistungen">Personaleinsätze <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="situation">
+          <div class="frage"><svg class="icon"><use href="#i-user"/></svg>Eine Abteilung braucht eine Leitung.</div>
+          <p>Wir führen Finanzverwaltungen, Steuerämter, Betreibungsämter, Gemeindekanzleien und
+            Einwohnerkontrollen, temporär oder unbefristet, eingebunden in Ihre bestehende Organisation.</p>
+          <a class="loesung" href="#leistungen">Führung von Abteilungen <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="situation">
+          <div class="frage"><svg class="icon"><use href="#i-doc"/></svg>Eine Spezialaufgabe liegt liegen.</div>
+          <p>Erbschaftsinventare, Verlustscheinbewirtschaftung, Abfallstatistik, Pendenzenabarbeitung: Aufgaben,
+            für die das Fachwissen fehlt oder das Pensum zu knapp bemessen ist.</p>
+          <a class="loesung" href="#kompetenzzentren">Kompetenzzentren <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="situation">
+          <div class="frage"><svg class="icon"><use href="#i-shield"/></svg>Die Jahresrechnung muss geprüft werden.</div>
+          <p>Unsere Revisoren kennen das Planungs- und Tagesgeschäft der Gemeindeverwaltungen. Der Prüfungsbericht
+            wird zur belastbaren Grundlage für die Finanzkommission.</p>
+          <a class="loesung" href="#revision">Revision <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Dienstleistungen</div>
+          <h2>Unsere Leistungen auf einen Blick</h2>
+        </div>
+        <p>Fundierte Kenntnisse und jahrelange Erfahrung in den vielfältigsten Bereichen der öffentlichen
+          Verwaltungen und Institutionen. Als Einsatz vor Ort, nicht als Konzept auf Papier.</p>
+      </div>
+
+      <div class="saeulen">
+        <article class="saeule reveal">
+          <div class="saeule-kopf">
+            <span class="saeule-num">Personal</span>
+            <h3>Personaleinsätze &amp; Führung</h3>
+            <p>Unsere Fachpersonen nehmen sämtliche Funktionen und Verantwortlichkeiten nach gesetzlichen
+              Vorschriften und Pflichtenheften wahr.</p>
+          </div>
+          <ul class="saeule-liste">
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Führung von Abteilungen</strong><span>Finanzverwaltung, Steueramt, Betreibungsamt, Kanzlei, Einwohnerkontrolle</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Temporäre Personaleinsätze</strong><span>Bei Mutterschaft, Militär, Ferien, Krankheit oder Stellenwechsel</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Coaching &amp; Einarbeitung</strong><span>Neue Mitarbeitende fundiert in ihre Funktion einführen</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Einzelaufgaben</strong><span>Datenkontrolle, Pendenzen, kant. Abfallstatistik, Verlustscheinverwaltung</span></span></li>
+          </ul>
+        </article>
+
+        <article class="saeule reveal">
+          <div class="saeule-kopf">
+            <span class="saeule-num">Beratung</span>
+            <h3>Lösungs- und umsetzungs&shy;orientiert</h3>
+            <p>Unsere vertieften Kenntnisse der Aufgaben und Organisation öffentlicher Verwaltungen machen uns
+              zum versierten Partner im Finanz- und Organisationsbereich.</p>
+          </div>
+          <ul class="saeule-liste">
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Finanz- und Investitionsplanung</strong></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Cashmanagement &amp; Budgetierung</strong></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Kosten-/Leistungsanalysen</strong><span>Wirkungsanalysen</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Organisations- und Pensumsbemessungsanalysen</strong></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Moderation von Rundtischgesprächen</strong></span></li>
+          </ul>
+        </article>
+
+        <article class="saeule reveal">
+          <div class="saeule-kopf">
+            <span class="saeule-num">Revision</span>
+            <h3>Prüfung mit Verwaltungs&shy;praxis</h3>
+            <p>Im Auftrag der Finanzkommission, nach gesetzlichen Vorgaben und gemeinsamer Revisionsplanung.</p>
+          </div>
+          <ul class="saeule-liste">
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Ordentliche Jahresprüfung</strong><span>Prüfungsbericht als Grundlage für die politische Wertung</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Spezialprüfungen</strong><span>z. B. vor Abschluss eines Leistungsvertrags mit Spitex oder Alterszentrum</span></span></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Ansprechpartner für beide Seiten</strong><span>Für die geprüfte Stelle wie für die Finanzkommission</span></span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revision Detail -->
+  <section id="revision">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <div class="kapitel">Revision</div>
+          <h2>Damit das Vertrauen gerechtfertigt bleibt.</h2>
+          <p>Unsere erfahrenen Revisoren kennen das Planungs- und Tagesgeschäft der Gemeindeverwaltungen. Sie nehmen
+            im Auftrag der Finanzkommission sämtliche Revisionsarbeiten vor, die nach gesetzlichen Vorgaben und
+            mittels gemeinsamer Revisionsplanung bestimmt werden.</p>
+          <p>Die geprüften Stellen wie auch die Finanzkommission verfügen mit uns über kompetente Ansprechpartner.
+            Nebst den ordentlichen Jahresprüfungen führen wir Spezialprüfungen als Entscheidungsgrundlage durch,
+            etwa vor dem Abschluss eines neuen Leistungsvertrages mit einem externen Leistungserbringer.</p>
+          <div class="zitat">
+            <p>Unser Prüfungsbericht dient der Finanzkommission als Grundlage für die politische Wertung
+              der Jahresrechnung an den Gemeinderat.</p>
+          </div>
+        </div>
+        <div class="bild-slot reveal" style="min-height:400px">
+          <svg class="icon"><use href="#i-photo"/></svg>
+          <span>Bildplatz: Sitzung Finanzkommission /<br>Arbeitssituation im Team</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kompetenzzentren -->
+  <section id="kompetenzzentren">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Kompetenzzentren</div>
+          <h2>Spezialgebiete in guten Händen</h2>
+        </div>
+        <p>Unsere Kompetenzzentren betreuen einzelne Dossiers gemäss vereinbartem Leistungskatalog sach- und
+          termingerecht, ohne dass Sie die Entscheidungskompetenz abgeben. Sie konzentrieren sich auf Ihre
+          Kernaufgaben.</p>
+      </div>
+
+      <div class="kz-grid">
+        <article class="kz reveal">
+          <span class="kz-tag"><svg class="icon" style="width:14px;height:14px"><use href="#i-scale"/></svg>Kompetenzzentrum</span>
+          <h3>Erbschafts- und Schenkungssteuern</h3>
+          <p>Je nach Mandat übernehmen wir einzelne oder sämtliche Arbeiten zur Erstellung von Erbschafts- und
+            Schenkungsinventaren sowie der steuerlichen Veranlagungsgrundlagen.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Korrespondenz und Dokumente werden von uns erstellt und Ihnen zur Unterschrift vorgelegt</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Nur eine Ansprechperson für Ihre Kundinnen und Kunden</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Mitarbeitende mit spezifischer Ausbildung und jahrelanger Praxis</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Sämtliche Unterlagen verbleiben im Besitz des Auftraggebers</li>
+          </ul>
+        </article>
+
+        <article class="kz reveal">
+          <span class="kz-tag"><svg class="icon" style="width:14px;height:14px"><use href="#i-coins"/></svg>Kompetenzzentrum</span>
+          <h3>Verlustscheinbewirtschaftung</h3>
+          <p>Konsequentes Inkasso gewinnt an Bedeutung. Wir bewirtschaften Verlustscheine und Forderungen aus
+            administrativen Abschreibungen effizient und umfassend. Die eingesetzten Mittel sind meist schon
+            nach kurzer Zeit amortisiert.</p>
+          <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Aufbereitung und Ersterfassung der Schuldner- und Forderungsdaten</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Erarbeitung von Inkassogrundsätzen und Vornahme der Inkassoschritte</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Administration und Überwachung von Raten- und Stundungsplänen</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Schnittstellen zur Buchhaltung für den direkten Zahlungsverkehr</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zusammenarbeit -->
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Zusammenarbeit</div>
+          <h2>In vier Schritten im Einsatz</h2>
+        </div>
+        <p>Vom ersten Telefonat bis zur Berichterstattung: klar geregelt, mit einem Leistungskatalog, den Sie
+          jederzeit anpassen können.</p>
+      </div>
+
+      <div class="ablauf reveal">
+        <div class="schritt">
+          <div class="nr">01</div>
+          <h3>Erstgespräch</h3>
+          <p>Sie schildern die Ausgangslage: Vakanz, Projekt oder Prüfauftrag. Unverbindlich und kostenlos.</p>
+        </div>
+        <div class="schritt">
+          <div class="nr">02</div>
+          <h3>Leistungskatalog</h3>
+          <p>Wir halten Aufgaben, Umfang, Zeitraum und Ansprechpersonen schriftlich fest. Die Entscheidungskompetenz
+            bleibt bei Ihnen.</p>
+        </div>
+        <div class="schritt">
+          <div class="nr">03</div>
+          <h3>Einsatz</h3>
+          <p>Unsere Fachperson bindet sich in Ihre bestehende Organisation ein, temporär oder langfristig.</p>
+        </div>
+        <div class="schritt">
+          <div class="nr">04</div>
+          <h3>Berichterstattung</h3>
+          <p>Regelmässige Abstimmung, saubere Übergabe und, bei Prüfaufträgen, der Bericht an die Finanzkommission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum wir -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Warum wir</div>
+          <h2>Erfahrung aus der Verwaltung, nicht aus dem Lehrbuch</h2>
+        </div>
+        <p>Wir arbeiten seit über 20 Jahren ausschliesslich für die öffentliche Hand. Diese Spezialisierung ist der
+          Unterschied: für Ihre Abläufe, Ihre Fristen und Ihre Gremien.</p>
+      </div>
+      <div class="vorteile reveal">
+        <div class="vorteil">
+          <svg class="icon"><use href="#i-shield"/></svg>
+          <h3>Nur öffentliche Hand</h3>
+          <p>Kantone, Städte, Gemeinden und Institutionen. Kein Nebengeschäft, kein Branchenmix.</p>
+        </div>
+        <div class="vorteil">
+          <svg class="icon"><use href="#i-user"/></svg>
+          <h3>Eine Ansprechperson</h3>
+          <p>Ein fester Kontakt pro Mandat, auch wenn mehrere Fachpersonen im Einsatz sind.</p>
+        </div>
+        <div class="vorteil">
+          <svg class="icon"><use href="#i-clock"/></svg>
+          <h3>Temporär oder langfristig</h3>
+          <p>Einsätze lassen sich auf Wochen oder auf Jahre ausgestalten. Sie geben den Rahmen vor.</p>
+        </div>
+        <div class="vorteil">
+          <svg class="icon"><use href="#i-chart"/></svg>
+          <h3>Entscheidungskompetenz bleibt</h3>
+          <p>Wir bearbeiten die Dossiers, unterschrieben wird bei Ihnen. Alle Unterlagen bleiben in Ihrem Besitz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="wrap">
+      <div class="team-grid">
+        <div class="person reveal">
+          <div class="portrait bild-slot" style="border:none">
+            <svg class="icon"><use href="#i-photo"/></svg>
+            <span>Porträtfoto<br>Inhaber:in</span>
+          </div>
+          <div class="person-body">
+            <h3><span class="ph ph-lg">Vor- und Nachname</span></h3>
+            <div class="rolle">Inhaber · Betriebsökonom HWV</div>
+            <span style="display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.97rem"><svg class="icon"><use href="#i-mail"/></svg><span class="ph">E-Mail-Adresse</span></span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="kapitel">Das Team</div>
+          <h2 style="font-size:clamp(1.9rem,3.3vw,2.6rem);margin-bottom:22px">Menschen, die Ihre Verwaltung von innen kennen</h2>
+          <p style="color:var(--muted)">Hinter dem Kompetenzzentrum steht ein Team aus Fachpersonen mit langjähriger Erfahrung in
+            Finanzverwaltungen, Steuerämtern, Betreibungsämtern und Gemeindekanzleien. Jede Mitarbeiterin und jeder
+            Mitarbeiter bringt Praxis mit, und die Gewissheit, dass die Arbeit fach- und termingerecht ausgeführt wird.</p>
+          <p style="color:var(--muted);margin-top:18px">Für jedes Mandat benennen wir eine feste Ansprechperson. So wissen Sie
+            jederzeit, mit wem Sie sprechen, unabhängig davon, wie viele Fachbereiche beteiligt sind.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
+            <a class="btn btn-primary" href="#kontakt">Team kennenlernen</a>
+            <a class="btn btn-ghost" href="#kontakt">Direkt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="kontakt" id="kontakt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="kapitel">Kontakt</div>
+          <h2>Sprechen wir über Ihre Ausgangslage</h2>
+        </div>
+        <p>Ein kurzes Telefonat genügt meist, um einzuschätzen, ob und wie wir unterstützen können.
+          Das Erstgespräch ist unverbindlich.</p>
+      </div>
+
+      <div class="kontakt-grid">
+        <div class="reveal">
+          <div class="standorte">
+            <div class="standort">
+              <div class="ort"><svg class="icon" style="width:14px;height:14px"><use href="#i-pin"/></svg>Hauptsitz</div>
+              <div class="adresse"><span class="ph">Strasse und Nummer</span><br><span class="ph">PLZ und Ort</span></div>
+              <span class="route">Route planen <svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></span>
+            </div>
+            <div class="standort">
+              <div class="ort"><svg class="icon" style="width:14px;height:14px"><use href="#i-pin"/></svg>Zweitstandort</div>
+              <div class="adresse"><span class="ph">Strasse und Nummer</span><br><span class="ph">PLZ und Ort</span></div>
+              <span class="route">Route planen <svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></span>
+            </div>
+          </div>
+
+          <div class="kontaktzeile">
+            <span class="tel"><span class="ph ph-lg">Telefonnummer</span></span>
+            <span class="mail" style="margin-top:10px"><span class="ph">E-Mail-Adresse</span></span>
+            <span class="fax" style="margin-top:6px">Fax <span class="ph">Faxnummer</span></span>
+          </div>
+
+          <div style="border:1px solid var(--linie);background:#fff;padding:24px 26px;display:flex;gap:14px;align-items:flex-start">
+            <svg class="icon" style="width:22px;height:22px;color:var(--blau);margin-top:2px"><use href="#i-clock"/></svg>
+            <div>
+              <strong style="font-family:'Archivo',sans-serif;color:var(--navy);display:block;margin-bottom:4px">Erreichbarkeit</strong>
+              <span style="color:var(--muted);font-size:.97rem">Montag bis Freitag, 08:00–12:00 und 13:30–17:00 Uhr.
+                Ausserhalb dieser Zeiten schreiben Sie uns, wir melden uns am nächsten Werktag zurück.</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="formular reveal" id="anfrageForm" onsubmit="sendAnfrage(event)">
+          <h3>Anfrage senden</h3>
+          <p>Wir melden uns in der Regel am selben oder am nächsten Werktag.</p>
+          <div class="feld-paar">
+            <div class="feld"><label for="f-name">Name</label><input id="f-name" required placeholder="Vor- und Nachname"></div>
+            <div class="feld"><label for="f-org">Gemeinde / Institution</label><input id="f-org" placeholder="z. B. Gemeinde Muster"></div>
+          </div>
+          <div class="feld-paar">
+            <div class="feld"><label for="f-mail">E-Mail</label><input id="f-mail" type="email" required placeholder="name@gemeinde.ch"></div>
+            <div class="feld"><label for="f-tel">Telefon</label><input id="f-tel" placeholder="062 000 00 00"></div>
+          </div>
+          <div class="feld">
+            <label for="f-thema">Anliegen</label>
+            <select id="f-thema">
+              <option>Personaleinsatz / Überbrückung</option>
+              <option>Führung einer Abteilung</option>
+              <option>Beratung Finanzen &amp; Organisation</option>
+              <option>Revision der Jahresrechnung</option>
+              <option>Kompetenzzentrum Erbschafts- und Schenkungssteuern</option>
+              <option>Kompetenzzentrum Verlustscheine</option>
+              <option>Anderes Anliegen</option>
+            </select>
+          </div>
+          <div class="feld"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" placeholder="Kurz zur Ausgangslage: Was fehlt, ab wann, für wie lange?"></textarea></div>
+          <button class="btn btn-primary" type="submit" id="sendBtn" style="width:100%">Anfrage senden</button>
+          <p class="hinweis">Ihre Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und nicht an
+            Dritte weitergegeben.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <strong>Kompetenzzentrum für Städte und Gemeinden</strong>
+        <p>Dienstleistungen in der öffentlichen Hand: Personaleinsätze, Abteilungsführung, Beratung
+          und Revision. Seit über 20 Jahren.</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">Personaleinsätze</a></li>
+          <li><a href="#leistungen">Führung von Abteilungen</a></li>
+          <li><a href="#leistungen">Beratung</a></li>
+          <li><a href="#revision">Revision</a></li>
+          <li><a href="#kompetenzzentren">Kompetenzzentren</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><span class="ph">Adresse Hauptsitz</span></li>
+          <li><span class="ph">Adresse Zweitstandort</span></li>
+          <li><span class="ph">Telefonnummer</span></li>
+          <li><span class="ph">E-Mail-Adresse</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="jahr">2026</span> Kompetenzzentrum für Städte und Gemeinden</span>
+      <div class="links">
+        <a href="#kontakt">Impressum</a>
+        <a href="#kontakt">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setNav(open){
+  var nav=document.getElementById('mainNav');
+  var btn=document.querySelector('.nav-toggle');
+  nav.classList.toggle('open',open);
+  btn.classList.toggle('open',open);
+  document.body.classList.toggle('nav-open',open);
+  btn.setAttribute('aria-expanded',open);
+  btn.setAttribute('aria-label',open?'Menü schliessen':'Menü öffnen');
+}
+function toggleNav(){
+  setNav(!document.getElementById('mainNav').classList.contains('open'));
+}
+document.querySelectorAll('#mainNav a').forEach(function(a){
+  a.addEventListener('click',function(){setNav(false);});
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')setNav(false);
+});
+
+// Demo-Entwurf: kein Versand, nur Bestätigungszustand.
+function sendAnfrage(e){
+  e.preventDefault();
+  var btn=document.getElementById('sendBtn');
+  btn.textContent='Anfrage gesendet ✓';
+  btn.disabled=true;
+  btn.style.opacity='.85';
+}
+
+document.getElementById('jahr').textContent=new Date().getFullYear();
+
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>

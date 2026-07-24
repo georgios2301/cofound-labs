@@ -10,6 +10,7 @@ const PASSWORDS: Record<string, string> = {
   "hundepension-fuchswinkel": process.env.DRAFT_PASSWORD ?? "fuchswinkel",
   "oktoberfest-santa-ponsa": "diana",
   "zahnarzt-peters": "peters",
+  "kompetenzzentrum-gemeinden": "gemeinde",
 };
 
 export const DRAFT_COOKIE_PREFIX = "draft_auth_";
